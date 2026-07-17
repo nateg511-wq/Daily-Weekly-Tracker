@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — The Fed &amp; Macro Regime (Updated July 8, 2026)</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Running header/footer use a repeating <thead>/<tfoot> table scaffold so
+  they reserve space on every printed page (Chrome ignores @page margins).
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>FED &amp; MACRO REGIME · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 8, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>The Fed &amp; Macro Regime<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Liquidity as the Master Driver — Researched, Scored, and Re-Rated</div>
+  <div class="note">Originally written June 19, 2026; scores committed by me on June 19, 2026. Fully re-researched &amp; <strong>updated on July 8, 2026</strong> — the July draft scores are re-rated from the new evidence and are <strong>awaiting my stamp</strong>.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 25% OF MY THESIS</div>
+    <div class="m">Written June 19, 2026 · Updated &amp; Re-verified July 8, 2026 · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — June Committed vs. July 8 Draft</h2>
+  <div class="sub">June column committed by me on June 19, 2026. July 8 column is a re-rated DRAFT from the full re-research — it is not stamped yet.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My June P</th><th class="c">Draft P (Jul 8)</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c">38</td><td class="c my">35</td><td class="c">0.85</td><td class="c">9</td><td class="c signeg">−2.3</td><td>Bear — headwind, patience</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c">40</td><td class="c my">36</td><td class="c">0.85</td><td class="c">9</td><td class="c signeg">−2.1</td><td>Bear — hike risk is live</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c">46</td><td class="c my">42</td><td class="c">0.80</td><td class="c">9</td><td class="c signeg">−1.2</td><td>Mild Bear</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c">54</td><td class="c my">52</td><td class="c">0.75</td><td class="c">9</td><td class="c sig">+0.3</td><td>Neutral — pivot pushed out</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c">61</td><td class="c my">61</td><td class="c">0.65</td><td class="c">9</td><td class="c sig">+1.3</td><td>Mild Bull — structural accumulate</td></tr>
+  </table>
+  <div class="formula"><strong>Draft P:</strong> 35 / 36 / 42 / 52 / 61 · <strong>My Weight:</strong> 25% · <strong>My Impact:</strong> 9 · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Draft scores re-rated July 8, 2026 from the June baseline (38 / 40 / 46 / 54 / 61) — awaiting my stamp.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds the macro regime is <em>good for crypto</em> by then — not "the Fed cuts by then." Near-term it's low: a hawkish hold is priced for July 29, a September hike is a coin flip, and the market now puts &gt;75% on at least one 2026 hike. Long-term it's above water: the labor market is cracking, and cracks eventually force easing.</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. Every source is on the last page — click and judge for yourself.</p>
+    <p><strong>Impact</strong> — 9 out of 10. Liquidity is the tide; it moves the whole market at once.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus — updated July 8, 2026</div>
+  <p><strong>The crowd:</strong> "Inflation and the Fed are back in play" (Yardeni, July 8). Futures price <strong>&gt;75%</strong> odds of at least one hike before year-end (up from 58% at the start of June), a <strong>~58%</strong> September hike after the Iran oil spike, and a ~73% hold for July 29. Cuts are off the board. The loud story: hawkish Warsh + Hormuz oil = crypto stays dead indefinitely.</p>
+  <p><strong>Me:</strong> near-term the crowd is right — my draft P is 35–36 out to 3 months, if anything below consensus gloom. Liquidity is the tide and it's still out. My edge is the <em>sequencing</em>: the July 2 jobs report shows the labor market visibly cracking (+57K with −74K of revisions and participation at a 2021 low), Warsh has publicly staked his chairmanship on price stability, so the Fed will <strong>hike into that weakness before it eases</strong> — the worst near-term order of events for crypto, but a policy-error hike raises the amplitude of the easing cycle that follows.</p>
+  <p><strong>My edge:</strong> the crowd is pricing the hike; almost nobody is pricing what comes after it. QT is dead, bank reserves are down ~$418B in a year, the RRP is empty — the plumbing is quietly tightening toward the point where the Fed has to add liquidity again. That's why the 3-year P holds at 61 while everything nearer gets marked down.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of July 8, 2026 — hard numbers only, sources on the last page. ★ = new since the June 19 check</div>
+  <ul>
+    <li class="fix"><strong>The labor market cracked.</strong> June payrolls <strong>+57K</strong> vs ~115K consensus (released July 2); April revised −31K and May −43K — <strong>−74K combined</strong>. Leisure/hospitality −61K. Unemployment "fell" to <strong>4.2%</strong> only because participation dropped 0.3pp to <strong>61.5%</strong> — the lowest since March 2021. Wages +0.3% m/m.</li>
+    <li class="fix"><strong>Core inflation is going the wrong way.</strong> May core PCE <strong>3.4% y/y</strong> (+0.3% m/m, released June 25–26) — the <strong>highest since October 2023</strong>, up from 3.3% at the June check. Headline PCE 4.1%. June CPI lands <strong>July 14</strong>; the Cleveland Fed nowcast says ~<strong>3.96%</strong> headline — cooling from 4.2%, still hot.</li>
+    <li class="fix"><strong>The market now prices the hike, not the cut.</strong> As of July 6–7, futures put <strong>&gt;75%</strong> on at least one hike before year-end 2026 (vs ~60–66% on June 19). After the oil spike, September hike odds hit <strong>~58%</strong>. July 29 is a ~73% hold. The July 2 jobs miss briefly swung it dovish (July hike odds 29%→22%) — oil swung it right back.</li>
+    <li class="fix"><strong>Iran re-armed the inflation scare.</strong> July 7: Iran hit commercial vessels in Hormuz and the US revoked the Iran oil-sale waiver (wind-down by <strong>July 17</strong>); US retaliatory strikes followed in the early hours of July 8. Brent settled <strong>$74.16 (+3%)</strong> July 7 and traded ~<strong>$76–78</strong> July 8. The spike came too late for the June CPI data — it lands in July's.</li>
+    <li><strong>Warsh is uniformly hawkish.</strong> July 1 at Sintra (first international appearance): inflation "too elevated," no hint on July, and he joined Lagarde/Bailey/Macklem against forward guidance. And the line he's staked the chairmanship on — <em>"This Committee will deliver price stability"</em> — comes from the June 17 FOMC statement and press conference (recirculated in July 6 coverage). Rate policy is his primary tool; balance-sheet reduction ambitions are intact but gradual — no asset sales imminent.</li>
+    <li><strong>Rates and the dollar confirm the squeeze.</strong> 10Y <strong>4.53%</strong> July 8 (one-month high, vs 4.46% June 19); 2Y ~4.21%. DXY ~<strong>101.0–101.1</strong> — holding near, ~0.7pt below, its late-June 13-month peak of 101.8 (CNBC July 8 called it a one-week high). The $58B 3Y auction (July 7) was strong — reported as stopping through with the highest indirect take since April (per TFTC; auction internals not independently confirmed) — dollar-asset demand is intact.</li>
+    <li><strong>Policy rate and balance sheet: still 3.50–3.75%, still ~$6.74T flat.</strong> QT remains done (H.4.1, week of June 24–25: ~$6.736T). But the plumbing is quietly tightening: TGA ~<strong>$919B</strong> (elevated = drain), RRP essentially empty (<strong>$2B</strong>), bank reserves <strong>$2.951T</strong> — down from $3.369T a year ago. <strong>Correction from the forensic audit:</strong> the eSLR recalibration was <em>finalized Nov 25, 2025</em> (Federal Register Dec 1, 2025) and has been <strong>in effect since April 1, 2026</strong> — it is a liquidity positive already delivered and in the price, not a pending catalyst.</li>
+    <li class="fix"><strong>ETF flows just inflected.</strong> June was the <strong>worst month on record for spot BTC ETFs: −$4.06B</strong>, and June 29–July 2 was the 8th straight negative week (−$526.6M). Then: <strong>+$223.5M July 2</strong> (ending a second 10-day outflow streak), <strong>+$265.7M July 6</strong> (largest daily inflow in over a month; IBIT +$209.4M), and a third straight green day July 7 (+$21–47M depending on tracker). AUM ~$77B, up from a June 30 trough that providers put at ~$71–73B (methodologies differ).</li>
+    <li><strong>Prices under the headwind:</strong> BTC opened <strong>$63,318</strong> July 8 and slid toward ~$62K on the strikes (Bitstamp daily close $62,274; BTC had already printed a ~$61.7K 21-month low on July 6, pre-escalation); ETH ~$1,742–1,769. Roughly where it sat on June 19 (~$62.5K) — stabilization, not recovery.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The canonical anchor: <strong>2020-21 ZIRP + QE</strong> ran BTC ~$3,800 → $69,044 (~15–18×) — a unique COVID/zero-rate/open-ended-QE setup, not a repeatable base case. The <strong>2024-25 cuts</strong> ran ~$60K → a ~$126K ATH (Oct 6, 2025) — but that top came on a non-Fed tariff shock and has since halved to ~$62K. From here, a retest of the $126K high ≈ <strong>+100%</strong>.</p>
+    <p>Discount it hard, twice. First: easing is not an automatic catalyst — the last cycle topped on a non-Fed shock, and a Dec 10, 2025 cut drew a sell-the-fact dip. Second: the pivot that unlocks any of this just got <strong>pushed further out</strong> — the Fed is priced to hike before it eases. The Prize doesn't feed the math — it tells you what the 3-year lean is worth acting on when the tide finally turns.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case my bearish lean is wrong</div>
+  <ul>
+    <li><strong>The labor market may force the Fed's hand faster than anyone prices.</strong> +57K with −74K of revisions and participation at a 2021 low is not "solid but cooling" anymore — one more print like that and the hike is off the table. The market went dovish within hours of the July 2 report; only oil dragged it back.</li>
+    <li><strong>The inflation data could break my way this month.</strong> June CPI nowcasts ~3.96% — cooling — and the oil spike missed the June window. A soft July 14 CPI plus a soft July 25 core PCE flips the board before the July 28–29 FOMC.</li>
+    <li><strong>Real money is stepping back in at $62K.</strong> Three green ETF days in four since July 2, including the biggest daily inflow in over a month. Capitulation-scale outflow months often mark exhaustion rather than the middle of the move.</li>
+    <li><strong>Crypto keeps decoupling from the Fed — symmetrically.</strong> The Oct 2025 top and the May 2026 selloff weren't Fed-driven; crypto can rally without a pivot just as it fell without one. (Though note: BTC and ETH fell <em>on the July 8 strikes</em> — this week it's trading macro.)</li>
+    <li><strong>Latent liquidity positives are queued:</strong> Waller publicly fighting scarce-reserve regimes, a $919B TGA that eventually gets spent down, and reserves drifting toward levels that historically force balance-sheet support. (The eSLR recalibration — once on this list — was finalized Nov 2025 and took effect April 1, 2026; that card has been played.) The plumbing that's tightening today can loosen without a single rate cut.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events — some prove the claim right, some prove it wrong</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>~July 8</td><td>June FOMC minutes released</td><td>How live the hike is inside the room — hawkish minutes firm up September</td></tr>
+    <tr><td>July 14</td><td>June CPI (nowcast ~3.96%)</td><td>Soft print = look-through case alive, re-rate 1-month up · hot print = hike locks in</td></tr>
+    <tr><td>July 17</td><td>Iran oil-waiver wind-down deadline</td><td>Supply actually tightens — the energy spike gets a second leg into July data</td></tr>
+    <tr><td>July 25</td><td>June PCE (before the FOMC)</td><td>Core 3.4% still rising vs rolling over — the Fed's actual gauge decides the tone</td></tr>
+    <tr><td>July 28–29</td><td>FOMC (~73% hold priced)</td><td>Surprise hike = re-rate 3/6-month down hard · any dovish tilt = re-rate up</td></tr>
+    <tr><td>September FOMC</td><td>Hike ~58% priced (post-oil)</td><td>A hike into a cracking labor market = policy error confirmed — 3-year conviction rises</td></tr>
+    <tr><td>Any payroll Friday</td><td>Second straight sub-100K print</td><td>The easing case comes forward — re-rate the 1-year up</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> soft July 14 CPI + no September hike + sustained ETF inflows = the headwind is fading — re-rate the 1/3-month up toward neutral. The other way: a September hike delivered into this labor market confirms the policy-error path — near-term Bear stands, and the 3-year structural-accumulate gets <em>more</em> conviction, not less.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp pending">◷ UPDATED DRAFT — JULY 8, 2026 · AWAITING MY STAMP</div>
+    <div class="nums">Draft P: 35 / 36 / 42 / 52 / 61 · My Weight: 25% · My Impact: 9</div>
+    <p>These are re-rated draft scores from the July 8 re-research — marked down near-term on the &gt;75% hike odds, the 3.4% core PCE, and the Iran oil re-spike; the 3-year holds at 61 on the cracking labor market and the tightening plumbing that eventually forces the Fed's hand. The June committed scores (<strong>38 / 40 / 46 / 54 / 61</strong>, committed June 19, 2026) remain the last human-stamped values.</p>
+    <p><strong>Override any P and re-stamp — the master blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Re-researched July 8, 2026 (previous check June 19, 2026)</div>
+  <ul>
+    <li class="fix"><strong>June's "energy fades vs. sticks" swing factor fired: STICKS.</strong> Iran hit three vessels in Hormuz July 7, the US struck back and revoked the oil-sale waiver (wind-down July 17); Brent is back to ~$76–78. The look-through's shelf life just got extended — exactly the branch the June report flagged as the pillar's gate.</li>
+    <li class="fix"><strong>The June hike-lean trigger fired and deepened.</strong> Hike-by-December went from the ~60–66% I logged on June 19 to <strong>&gt;75%</strong> by July 6–7, with September alone at ~58%. Cuts are effectively priced out — "higher-for-longer" graduated to "hike-first."</li>
+    <li class="fix"><strong>New fact — the labor market cracked.</strong> Payrolls +172K (May print) → <strong>+57K</strong> (June, July 2 release) with −74K revisions and participation at 61.5%, the lowest since March 2021. This is the dovish seed the June report didn't have — but it arrives before the hike, not instead of it.</li>
+    <li><strong>Core PCE went 3.3% → 3.4%</strong> (31-month high) — the core story got worse, not better. Headline CPI nowcast for June is ~3.96% (due July 14): marginally better, still hot.</li>
+    <li><strong>ETF flows inflected.</strong> Record −$4.06B June, then +$223.5M (Jul 2), +$265.7M (Jul 6), +$46.6M (Jul 7). Stabilization at ~$62K, not a regime change. Rates/dollar worse: 10Y 4.46→4.53%, DXY 100.7→~101.1. Balance sheet flat, but TGA $919B / RRP empty / reserves −$418B y/y — plumbing quietly tightening.</li>
+    <li><strong>Score re-rates (June committed → July 8 draft):</strong> 1-month 38→35 · 3-month 40→36 · 6-month 46→42 · 1-year 54→52 · 3-year 61→61 (hold). Draft only — awaiting my stamp.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded July 8, 2026 — click and judge the quality yourself. Official data first, then reporting, then prices &amp; flows, then rate odds (market-implied sentiment, not fact).</div>
+  <ul>
+    <li><span class="grp">Official data:</span> <a href="https://www.bls.gov/news.release/archives/empsit_07022026.htm">BLS — Employment Situation, June 2026 (released July 2)</a> · <a href="https://www.bea.gov/news/2026/personal-income-and-outlays-may-2026">BEA — Personal Income &amp; Outlays, May 2026 (core PCE 3.4%)</a> · <a href="https://www.bls.gov/schedule/news_release/cpi.htm">BLS — CPI release schedule (June CPI: July 14, 8:30am)</a> · <a href="https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting">Cleveland Fed — inflation nowcast (June headline ~3.96%)</a> · <a href="https://www.federalreserve.gov/releases/h41/current/">Fed — H.4.1 balance sheet (~$6.736T, QT done)</a>.</li>
+    <li><span class="grp">The reporting:</span> <a href="https://www.cnbc.com/2026/07/02/jobs-report-june-2026-.html">CNBC — June jobs miss (+57K, −74K revisions)</a> · <a href="https://www.hiringlab.org/2026/07/02/june-2026-jobs-report-an-unmoving-tide/">Indeed Hiring Lab — participation 61.5%</a> · <a href="https://www.cnbc.com/2026/06/25/pce-inflation-report-may-2026-.html">CNBC — May PCE (core 3.4%, highest since Oct 2023)</a> · <a href="https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html">CNBC — Warsh at Sintra (July 1)</a> · <a href="https://www.cnn.com/2026/07/01/economy/fed-chairman-warsh-first-global-speech">CNN — Warsh's first global speech</a> · <a href="https://finance.yahoo.com/economy/policy/articles/fed-chairman-kevin-warsh-just-100100246.html">Yahoo Finance — "This Committee will deliver price stability"; &gt;75% hike odds</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-08/yardeni-says-inflation-fed-back-in-play-as-iran-crisis-returns">Bloomberg — Yardeni: "inflation, Fed back in play" (July 8)</a> · <a href="https://www.cnbc.com/2026/07/07/oil-prices-iran-strait-hormuz.html">CNBC — Hormuz strikes, Brent +3% (July 7)</a> · <a href="https://www.tftc.io/treasury-3-year-auction-stops-through-iran-hormuz-strikes">TFTC — 3Y auction stops through; 10Y 4.52%</a> · <a href="https://247wallst.com/investing/2026/07/03/kevin-warsh-just-signaled-the-feds-6-7-trillion-balance-sheet-isnt-going-anywhere-fast/">24/7 Wall St — Warsh balance-sheet gradualism</a> · <a href="https://www.wisdomtree.com/us/insights/blog/warshs-reality-check-the-fed-balance-sheet">WisdomTree — Warsh's balance-sheet reality check</a> · <a href="https://www.federalregister.gov/documents/2025/12/01/2025-21626/regulatory-capital-rule-modifications-to-the-enhanced-supplementary-leverage-ratio-standards-for-us">Federal Register — eSLR final rule (Dec 1, 2025; effective Apr 1, 2026)</a>.</li>
+    <li><span class="grp">The prices &amp; flows:</span> <a href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-wednesday-july-8-2026-crypto-prices-down-following-us-iran-strikes-130336886.html">Yahoo Finance — BTC ~$62–63K, ETH ~$1.74–1.77K (July 8)</a> · <a href="https://tradingeconomics.com/united-states/2-year-note-yield">Trading Economics — 2Y yield</a> · <a href="https://www.investing.com/indices/usdollar-historical-data">Investing.com — DXY ~101 (13-month+ highs)</a> · <a href="https://www.kucoin.com/news/flash/us-spot-bitcoin-etfs-record-4-1b-in-outflows-in-june-2026">KuCoin — June ETF outflows −$4.06B, worst month on record</a> · <a href="https://99bitcoins.com/news/bitcoin-btc/bitcoin-etf-outflows-june-2026/">99Bitcoins — June outflow detail, AUM ~$77B (single source; trackers differ on exact AUM)</a> · <a href="https://www.coindesk.com/markets/2026/07/03/finally-usd221-million-flow-into-bitcoin-etfs-ending-a-painful-10-day-outflow-streak">CoinDesk — 10-day outflow streak ends (+$223.5M, July 2)</a> · <a href="https://www.coindesk.com/tech/2026/07/07/live-markets-bitcoin-and-ether-etfs-drew-inflows-on-monday">CoinDesk — BTC/ETH ETF inflows Monday July 6</a> · <a href="https://cryptobriefing.com/blackrock-ibit-bitcoin-etf-inflows-july-6/">Crypto Briefing — IBIT +$209.4M (July 6)</a> · <a href="https://streetstats.finance/liquidity/fed-balance-sheet">StreetStats — TGA $919B / RRP $2B / reserves $2.951T (dashboard, secondary read of H.4.1)</a>.</li>
+    <li><span class="grp">The odds (market-implied, not fact):</span> <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME FedWatch — ~73.4% July hold; hike odds by meeting</a> · year-end &gt;75% hike odds and post-oil September ~58% as quoted in the Yahoo Finance and Bloomberg reporting above.</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

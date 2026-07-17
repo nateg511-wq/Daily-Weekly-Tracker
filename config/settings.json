@@ -1,0 +1,37 @@
+{
+  "_comment": "Engine knobs. Rarely edited. EQUAL-WEIGHT MODEL: every pillar counts the same. The master signal for a window is the SIMPLE MEAN of all pillar signals (the qualitative pillars in scores.json + the computed Bitcoin-TA pillar). Add a pillar and it auto-rebalances to 1/N. 'impact' is a single uniform value shared by ALL pillars (deliberately flat, so pillars differ only by their P odds and Quality). final_weights define THE FINAL NUMBER across windows (equal is the headline; horizon is the longer-money variant).",
+  "impact": 8,
+  "final_weights": {
+    "equal":   { "1": 0.20, "3": 0.20, "6": 0.20, "12": 0.20, "36": 0.20 },
+    "horizon": { "1": 0.10, "3": 0.15, "6": 0.20, "12": 0.30, "36": 0.25 }
+  },
+  "quant": {
+    "honesty_cap": 25,
+    "quality":       { "1": 0.75, "3": 0.70, "6": 0.55, "12": 0.60, "36": 0.50 },
+    "quality_basis": {
+      "1":  "835+ weekly bars, indicator agreement; edge modest by design",
+      "3":  "monthly bars + analog sample thin (n=3) but unanimous",
+      "6":  "quarterly layer weakest; inputs can disagree in sign; analog windows flip (n=3)",
+      "12": "analogs 3/3 positive + power-law converge; n=3 is thin",
+      "36": "n=3, regime-unique tailwinds in analogs; halving effect may be attenuating"
+    },
+    "window_blend": {
+      "1":  { "weekly": 0.7, "analog": 0.3 },
+      "3":  { "monthly": 0.6, "analog": 0.4 },
+      "6":  { "quarterly": 0.35, "monthly": 0.35, "analog": 0.30 },
+      "12": { "analog": 0.5, "powerlaw": 0.5 },
+      "36": { "analog": 0.5, "powerlaw": 0.5 }
+    }
+  },
+  "data": {
+    "bitstamp_start": 1293840000,
+    "coinmetrics_split": "2011-08-18",
+    "halvings": ["2012-11-28", "2016-07-09", "2020-05-11", "2024-04-19"],
+    "genesis": "2009-01-03",
+    "altcoin_assets": ["btc", "eth", "xrp", "ltc", "bch", "ada", "doge", "bnb", "sol", "dot", "link", "xlm", "trx", "etc", "xmr", "eos"]
+  },
+  "indicator_weights": {
+    "Moving Averages": 0.20, "RSI (14)": 0.15, "MACD (12/26/9)": 0.15,
+    "Bollinger Bands": 0.15, "Support/Resist": 0.15, "Volume / OBV": 0.10, "Trendlines": 0.10
+  }
+}

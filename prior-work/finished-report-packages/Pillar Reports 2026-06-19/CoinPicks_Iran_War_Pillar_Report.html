@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — Iran War Risk</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Subject: Iran–Israel/US war risk -> crypto. Iran-only.
+  Facts re-verified by swarm 2026-06-19 (trust 90/100).
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .sig.zero{ color:var(--muted); }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>IRAN WAR RISK · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · June 19, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Iran War Risk<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Middle East Conflict Risk — Researched, Scored, and Personally Committed</div>
+  <div class="note">AI-researched draft, truth-checked by a verification swarm against live primary sources. Final scores committed by me on June 19, 2026.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 25% OF MY THESIS</div>
+    <div class="m">Written June 19, 2026 · Last Checked June 19, 2026 · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== MY COMMITTED SCORES ====================-->
+<section class="sec first avoid">
+  <h2>My Committed Scores</h2>
+  <div class="sub">Committed by me on June 19, 2026 — AI drafts shown for the record</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My P</th><th class="c">AI Draft</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c my">50</td><td class="c">50</td><td class="c">0.60</td><td class="c">7</td><td class="c sig zero">0.0</td><td>Neutral — no edge</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c my">55</td><td class="c">55</td><td class="c">0.65</td><td class="c">7</td><td class="c sig">+0.5</td><td>Mild Bull</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c my">62</td><td class="c">62</td><td class="c">0.70</td><td class="c">7</td><td class="c sig">+1.2</td><td>Bull</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c my">75</td><td class="c">75</td><td class="c">0.65</td><td class="c">7</td><td class="c sig">+2.3</td><td>Bull (dip-buy)</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c my">85</td><td class="c">85</td><td class="c">0.55</td><td class="c">7</td><td class="c sig">+2.7</td><td>Strong Bull</td></tr>
+  </table>
+  <div class="formula"><strong>My Weight:</strong> 25% · <strong>My Impact:</strong> 7 (confirmed from subject selection) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Positive = Bull · negative = Bear · zero = Neutral. Math verified.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Near-term a coin flip (a fragile ceasefire just wobbled and US–Iran talks broke off); long-term high (war shocks have historically faded and crypto recovered).</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. It <em>falls</em> with the horizon (0.70 → 0.55): the near-term reaction is well-documented, but the multi-year read leans on a thin sample. Every source is on the last page — click and judge for yourself.</p>
+    <p><strong>Impact</strong> — 7 out of 10. A war shock hits crypto hard for days — but it's one input among many, and even a regime-change war in 2026 barely moved crypto on Iran-specific grounds.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus</div>
+  <p><strong>The crowd:</strong> a hot Middle East war is pure risk-off — "missiles fly, crypto dumps." With Iran's Supreme Leader killed and a ceasefire that keeps cracking, the loud story is "stay out until it's over."</p>
+  <p><strong>Me:</strong> ~50% good-for-crypto near-term (real dip risk), rising to ~85% over three years — the dip has historically been a buy, not the start of a bear.</p>
+  <p><strong>My edge:</strong> the crowd treats a war shock like a regime change <em>for crypto</em>. History says it's a multi-day flush that fades — and in 2026 crypto barely flinched on Iran itself (the current drop is macro, not missiles). Be scared for a week, constructive for a year.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of June 19, 2026 — hard numbers only, sources on the last page</div>
+  <ul>
+    <li><strong>June 2025 "12-Day War":</strong> Israel's Operation Rising Lion (June 13); US Operation Midnight Hammer struck Fordow / Natanz / Isfahan (June 21–22; 7 B-2s, 14 GBU-57 bunker-busters, Tomahawks); Iran hit Al Udeid, Qatar (June 23 — intercepted, no casualties); ceasefire June 24.</li>
+    <li><strong>Crypto in that war:</strong> BTC slid from ~$108k pre-war to a <strong>~$98,225 intraday low (June 22)</strong>, then reclaimed <strong>$107k+ by June 25</strong> — a fast V. Brent spiked from ~$69 toward <strong>~$79</strong>, then fell back to ~$69 at the ceasefire.</li>
+    <li><strong>2026 — a far larger war.</strong> The US and Israel launched a regime-change campaign on <strong>Feb 28, 2026</strong>; Supreme Leader <strong>Khamenei was killed</strong> that day (confirmed by Iran's own government March 1). ~<strong>40 days</strong> of fighting; ceasefire <strong>April 8, 2026</strong>.</li>
+    <li><strong>Fragile since:</strong> CENTCOM self-defense strikes <strong>May 25</strong> (IRGC boats in the Strait of Hormuz + a Bandar Abbas SAM site); a direct Israel–Iran missile exchange <strong>June 7–8</strong> (Iran hit Israel's Ramat David airbase; Israel struck central/western Iran).</li>
+    <li><strong>Today (June 19):</strong> Israel–Hezbollah agreed to renew their ceasefire (June 4 statement; IDF stays in southern Lebanon); <strong>US–Iran nuclear talks in Switzerland were called off</strong>. A June MoU opened a <strong>60-day window</strong> toward a final nuclear deal (reportedly sanctions relief + a ~$300B reconstruction fund).</li>
+    <li><strong>Crypto now:</strong> BTC ~<strong>$62.5k</strong>, ~<strong>24%</strong> below the ~$82k mid-May peak (May 6) — the slide is <strong>macro/Fed-driven, with Iran a secondary factor</strong>. Brent calm ~$80, no acute supply panic despite the escalation.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The upside is the <strong>"buy-the-invasion" rebound.</strong> Anchor: Russia's invasion of Ukraine (Feb 24, 2022) — BTC fell ~8% to a <strong>~$34,300 intraday low</strong>, bounced toward ~$40k the same day, posted a <strong>+14.5% up-day on Feb 28</strong>, and ended <strong>~+25–29% above the low within a week</strong> (~+38% by late March). The June 2025 Iran war rhymed: a dip to ~$98k, fully recovered within a week.</p>
+    <p><strong>The Prize = catching the V-reclaim</strong> — but note it took <em>weeks</em> in 2022, not a day, and it's a thin two-event sample. The Prize doesn't feed the math; it tells you what the lean is worth acting on.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong</div>
+  <ul>
+    <li><strong>BTC is a risk asset here, not a safe haven.</strong> In a real Strait-of-Hormuz oil shock → inflation path, crypto falls <em>with</em> equities — the opposite of the implied "digital-gold dip-buy."</li>
+    <li><strong>It already broke once.</strong> The 2026 war re-ignited four months after its ceasefire (June 7–8 exchange; talks called off today). "Time heals" is directly contradicted by repeated re-escalation.</li>
+    <li><strong>Thin sample.</strong> The bullish long-term read rests on ~2 dip-and-recover events, both in a bull regime — geopolitical shocks don't always V-recover.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events — some prove the claim right, some prove it wrong</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>By Aug 2026</td><td>60-day MoU window yields a signed nuclear deal</td><td>De-escalation confirmed — re-rate up</td></tr>
+    <tr><td>Any time</td><td>Strait of Hormuz closure / oil shock</td><td>Risk-off → re-rate near-term down</td></tr>
+    <tr><td>Any time</td><td>Renewed direct Israel–Iran or US strikes</td><td>Fresh dip — buy-the-dip test</td></tr>
+    <tr><td>2026</td><td>MoU window collapses, ceasefire breaks</td><td>Diplomacy fails — re-rate 3/6-month down</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> a wider, sustained regional war (not a contained flare-up) <em>plus</em> a Hormuz oil shock = treat the dip-buy thesis as broken. A contained, fading conflict keeps the long-term Bull.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp">✔ COMMITTED BY ME ON JUNE 19, 2026</div>
+    <div class="nums">My P: 50 / 55 / 62 / 75 / 85 · My Weight: 25% · My Impact: 7</div>
+    <p>Kept the AI draft scores as my own. A <strong>dip-watching pillar, not a panic-selling one</strong> — even a regime-change war in 2026 didn't crater crypto on Iran-specific grounds. The long-window optimism leans on a thin two-event sample, so I sized it modestly.</p>
+    <p><strong>My numbers ARE my call. The trade plan comes when all my pillars combine in the master spreadsheet.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Re-verified June 19, 2026 (first committed report in this format)</div>
+  <ul>
+    <li><strong>The 2026 war is confirmed and far larger than 2025</strong> — a regime-change campaign (Feb 28 → Apr 8); <strong>Khamenei was killed</strong> (confirmed by Iran's government March 1). The ceasefire is fragile: June 7–8 missile exchange; US–Iran talks called off June 19.</li>
+    <li><strong>Correction:</strong> the 12-Day-War BTC bottom was <strong>~$98,225 (June 22, 2025)</strong>, reclaiming ~$107k by June 25 — pre-strike was the low-$100ks, not ~$105.7k.</li>
+    <li><strong>Correction:</strong> the 2022 "Prize" rebound took <strong>weeks</strong> (~+25–29% above the low within a week), not "+15% in 24 hours."</li>
+    <li><strong>BTC ~$62.5k, ~24% below the May peak</strong> — macro/Fed-driven, Iran secondary.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded June 19, 2026 — click and judge the quality yourself. Official records first, then reporting, then prices, then betting markets (sentiment only).</div>
+  <ul>
+    <li><span class="grp">Official records:</span> <a href="https://www.cbsnews.com/news/pentagon-briefing-us-strikes-iran-nuclear-sites/">Pentagon briefing — Operation Midnight Hammer (B-2s, GBU-57s, Tomahawks)</a> · <a href="https://www.globalsecurity.org/military/library/news/2025/06/mil-250624-centcom01.htm">CENTCOM — Al Udeid defended, no casualties</a> · <a href="https://www.jpost.com/international/article-897292">CENTCOM self-defense strikes, May 25 2026 (quoted)</a>.</li>
+    <li><span class="grp">The 2026 war:</span> <a href="https://en.wikipedia.org/wiki/Assassination_of_Ali_Khamenei">Assassination of Ali Khamenei (confirmed by Iran, Mar 1 2026)</a> · <a href="https://www.npr.org/2026/02/28/nx-s1-5730158/israel-iran-strikes-trump-us">NPR — Khamenei killed (Feb 28 2026)</a> · <a href="https://www.aljazeera.com/news/2026/6/7/iran-fires-missiles-at-israel-after-beirut-attack-crossed-all-red-lines">Al Jazeera — June 7 Iran–Israel missile exchange</a> · <a href="https://www.aljazeera.com/news/2026/6/4/israel-and-lebanon-agree-to-conditional-ceasefire">Al Jazeera — Israel–Lebanon ceasefire renewal (June 4)</a> · <a href="https://www.irishtimes.com/world/middle-east/2026/06/19/us-iran-talks-in-switzerland-abruptly-called-off/">Irish Times — Switzerland talks called off (June 19)</a>.</li>
+    <li><span class="grp">The prices:</span> <a href="https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=86400&amp;start=2025-06-10T00:00:00Z&amp;end=2025-07-01T00:00:00Z">Coinbase API — BTC June 2025 ($98,225 low; $107.4k recovery)</a> · <a href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-friday-june-19-2026-prices-keep-falling-post-fed-decision-123239380.html">Yahoo Finance — BTC ~$62.5k, June 19 2026 (Fed-driven)</a> · <a href="https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&amp;s=RBRTE&amp;f=D">EIA — Brent daily (June 2025 spike to ~$79)</a> · <a href="https://www.statmuse.com/money/ask/bitcoin-price-february-2022">StatMuse — BTC Feb 2022 daily closes</a> · <a href="https://bitcoinmagazine.com/markets/bitcoin-reacts-to-russia-ukraine-invasion">Bitcoin Magazine — 2022 Ukraine BTC reaction</a>.</li>
+    <li><span class="grp">The odds (sentiment only, not fact):</span> <a href="https://polymarket.com/">Polymarket — US–Iran nuclear-deal / peace markets</a> (directional: a near-term framework deal priced as likely, "permanent peace" priced lower and falling; live percentages not cited).</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,6 @@
+timeframe,type,value_now,slope_per_bar,direction,anchor_first,anchor_last,n_points
+weekly,support,64431.92,-448.64,falling,2025-04-13,2026-02-08,5
+weekly,resistance,82151.79,-741.91,falling,2025-05-25,2026-05-10,5
+monthly,support,68367.84,492.15,rising,2024-08-31,2026-02-28,3
+monthly,resistance,154045.97,2776.65,rising,2024-03-31,2025-10-31,3
+quarterly,resistance,126354.48,3437.42,rising,2021-12-31,2025-12-31,3

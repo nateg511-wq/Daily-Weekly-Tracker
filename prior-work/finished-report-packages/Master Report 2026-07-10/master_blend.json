@@ -1,0 +1,89 @@
+{
+  "asof": "2026-07-10",
+  "scoreset": "july10_draft",
+  "final_number": {
+    "equal": 0.66,
+    "horizon": 1.13
+  },
+  "quant_source": "(relative) BTC-TA/data/pillar_scores.json",
+  "qual_weights_sum": 1.05,
+  "windows": {
+    "1mo": {
+      "pillars": {
+        "CLARITY Act": 0.0,
+        "Iran War Risk": -0.67,
+        "Tokenization": 0.43,
+        "Fed & Macro": -2.45
+      },
+      "qual_blend": -0.62,
+      "quant": -1.32,
+      "master_50q": -0.97,
+      "master_60q": -0.9,
+      "master_40q": -1.04,
+      "call": "Mild Bear"
+    },
+    "3mo": {
+      "pillars": {
+        "CLARITY Act": 0.61,
+        "Iran War Risk": -0.09,
+        "Tokenization": 1.13,
+        "Fed & Macro": -2.14
+      },
+      "qual_blend": -0.06,
+      "quant": -1.34,
+      "master_50q": -0.7,
+      "master_60q": -0.57,
+      "master_40q": -0.83,
+      "call": "Mild Bear"
+    },
+    "6mo": {
+      "pillars": {
+        "CLARITY Act": 1.53,
+        "Iran War Risk": 0.59,
+        "Tokenization": 1.9,
+        "Fed & Macro": -0.86
+      },
+      "qual_blend": 0.84,
+      "quant": -0.53,
+      "master_50q": 0.16,
+      "master_60q": 0.29,
+      "master_40q": 0.02,
+      "call": "Neutral"
+    },
+    "1yr": {
+      "pillars": {
+        "CLARITY Act": 5.18,
+        "Iran War Risk": 1.82,
+        "Tokenization": 3.0,
+        "Fed & Macro": 0.4
+      },
+      "qual_blend": 2.62,
+      "quant": 1.63,
+      "master_50q": 2.12,
+      "master_60q": 2.22,
+      "master_40q": 2.03,
+      "call": "Bull"
+    },
+    "3yr": {
+      "pillars": {
+        "CLARITY Act": 7.18,
+        "Iran War Risk": 2.54,
+        "Tokenization": 3.92,
+        "Fed & Macro": 1.29
+      },
+      "qual_blend": 3.74,
+      "quant": 1.6,
+      "master_50q": 2.67,
+      "master_60q": 2.88,
+      "master_40q": 2.46,
+      "call": "Bull"
+    }
+  },
+  "june_committed_master": {
+    "1mo": -0.73,
+    "3mo": -0.48,
+    "6mo": 0.31,
+    "1yr": 2.22,
+    "3yr": 2.69
+  }
+}

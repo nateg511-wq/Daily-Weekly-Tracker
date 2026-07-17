@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Research Package — Start Here (July 10, 2026)</title>
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+  .sec{ margin-top:6mm; }
+  .sec.first{ margin-top:2mm; }
+  h1{ font-size:22pt; margin:4mm 0 1mm; letter-spacing:-.4px; }
+  h1 .l2{ color:var(--blue); }
+  .deck{ font-size:11pt; color:#3a4759; margin:0 0 4mm; font-weight:500; }
+  h2{ font-size:12.5pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 2.5mm; font-style:italic; }
+  p{ margin:0 0 2.4mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.6mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  strong{ color:#10243f; }
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.2mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  td.c,th.c{ text-align:center; }
+  td.my{ font-weight:700; color:var(--blue-dk); }
+  .sig{ font-weight:700; color:#0f7a4f; } .signeg{ font-weight:700; color:#b91c1c; } .signeu{ font-weight:700; color:#6b7280; }
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:3.5mm 5mm; margin:2.5mm 0; }
+  .box h3{ margin:0 0 1.6mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.2mm 0; }
+  .finalnum{ background:#eafaf1; border:1.5px solid #8fdcb4; border-radius:8px; padding:4.5mm 6mm; margin:2.5mm 0; }
+  .finalnum .fig{ font-size:22pt; font-weight:800; color:#0f7a4f; letter-spacing:-.5px; display:inline-block; margin-right:4mm; }
+  .finalnum .lab{ font-size:8.6pt; color:#1a5c3d; letter-spacing:.6px; font-weight:700; text-transform:uppercase; }
+  .finalnum .exp{ font-size:8.8pt; color:#2c5443; margin-top:1mm; }
+  .warnbox{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin:2.5mm 0; }
+  .avoid{ page-break-inside:avoid; }
+  .file{ font-family:ui-monospace,Menlo,monospace; font-size:8.5pt; color:var(--blue-dk); }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>RESEARCH PACKAGE · START HERE · JULY 10, 2026</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 10, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<section class="sec first">
+  <h1>CoinPicks Market Direction<br><span class="l2">Research Package</span></h1>
+  <div class="deck">Five pillars — four researched narratives and one pure-math read of the Bitcoin chart — scored on one standard, blended into one table, and distilled to one number. Everything in this folder is current as of <strong>July 10, 2026</strong>.</div>
+
+  <div class="finalnum avoid">
+    <div class="lab">The Final Number · July 10, 2026 · BTC $63,987</div><br>
+    <span class="fig">+0.66</span><span style="font-size:11pt;font-weight:700;color:#0f7a4f;">Mild Bull — time-arbitraged</span>
+    <div class="exp">Equal-weight mean of the five window signals below (scale −10 to +10; horizon-weighted variant +1.13). Positive because the far windows outweigh the near ones — <strong>not a buy-today signal</strong>: the same table says Mild Bear for the next quarter. It is a "the storm is priced, the recovery isn't" number.</div>
+  </div>
+
+  <div class="box avoid">
+    <h3>The five windows underneath it</h3>
+    <table class="data">
+      <tr><th>Window</th><th class="c">Master Signal</th><th>Call</th></tr>
+      <tr><td><strong>1 month</strong></td><td class="c signeg">−0.97</td><td><strong>Mild Bear</strong> — hawkish Fed minutes, CPI July 14, Iran strike-pause-strike</td></tr>
+      <tr><td><strong>3 months</strong></td><td class="c signeg">−0.70</td><td><strong>Mild Bear</strong> — Sept-hike window + the historical final-flush quarter</td></tr>
+      <tr><td><strong>6 months</strong></td><td class="c signeu">+0.16</td><td><strong>Neutral</strong> — basing; DTCC October + Nasdaq Dec 6 + peak hawkishness passes</td></tr>
+      <tr><td><strong>1 year</strong></td><td class="c sig">+2.12</td><td><strong>Bull</strong> — the first window where all five pillars agree</td></tr>
+      <tr><td><strong>3 years</strong></td><td class="c sig">+2.67</td><td><strong>Bull</strong> — law + adoption + cycle + valuation</td></tr>
+    </table>
+    <p style="font-size:8.4pt;color:#43505f;margin-top:1.5mm;">Bands: |s| &lt; 0.5 Neutral · &lt; 1.5 Mild · &lt; 3 Bull/Bear · &lt; 5 Strong · else Very Strong. Calls identical at every blend mix tested.</p>
+  </div>
+</section>
+
+<section class="sec avoid">
+  <h2>Reading order</h2>
+  <div class="sub">Twenty minutes to the whole picture; each report stands alone and can be checked independently — every fact is dated with sources on its last page.</div>
+  <table class="data">
+    <tr><th>#</th><th>File</th><th>What it is</th></tr>
+    <tr><td>1</td><td class="file">CoinPicks_Master_Direction_Report.pdf</td><td><strong>The summary.</strong> The final number, the five-window table, the full pillar matrix, where the lenses agree/fight, six weeks of dated triggers, sensitivity.</td></tr>
+    <tr><td>2</td><td class="file">CoinPicks_Bitcoin_TA_Quant_Pillar_Report.pdf</td><td><strong>The math pillar.</strong> 7 indicators on 16 years of data, halving-cycle analogs, power-law valuation — with charts. Fully reproducible from code.</td></tr>
+    <tr><td>3</td><td class="file">Pillar Reports (updated 2026-07-10)/ — 4 PDFs</td><td><strong>The story pillars.</strong> CLARITY Act · Iran War Risk · Tokenization RWA · Fed &amp; Macro. Each: thesis, dated facts, honest bear case, dated triggers, and the full score lineage (June → Jul 8 → Jul 10).</td></tr>
+    <tr><td>4</td><td class="file">Prior versions (June 19 + July 8, for the record)/</td><td>Every earlier version, preserved untouched — the score history is fully auditable.</td></tr>
+    <tr><td>—</td><td class="file">master_blend.py · master_blend.json · README.md</td><td>The blend engine (runnable Python — flip one flag to reproduce any score set), its output, and regeneration instructions.</td></tr>
+  </table>
+</section>
+
+<section class="sec avoid">
+  <h2>How the scoring works — one paragraph</h2>
+  <p>Every pillar answers the same question on five windows (1 month / 3 months / 6 months / 1 year / 3 years): <strong>P</strong> = the odds (0–100) that this force is <em>good for crypto</em> by then, <strong>Quality</strong> = how trustworthy the evidence is (0–1), and <strong>Impact</strong> = how hard this force moves the whole market (0–10). These combine into a <strong>Signal = ((P − 50) ÷ 50) × Quality × Impact</strong>, so a coin-flip view scores zero no matter how loud the headlines are, and weak evidence can't shout. The four story pillars (weighted 25/25/30/25) blend into a qualitative signal; the Bitcoin TA pillar is the quantitative signal; the master is 50/50 of the two; and the Final Number averages the five master windows.</p>
+</section>
+
+<section class="sec avoid">
+  <h2>The five pillars at a glance (July 10 draft P's)</h2>
+  <table class="data">
+    <tr><th>Pillar</th><th class="c">1mo</th><th class="c">3mo</th><th class="c">6mo</th><th class="c">1yr</th><th class="c">3yr</th><th>One-line read</th></tr>
+    <tr><td><strong>CLARITY Act</strong> (law)</td><td class="c">50</td><td class="c">54</td><td class="c">60</td><td class="c">82</td><td class="c">92</td><td>Merged text imminent, ethics frozen, market at 40% — a coin flip with a July 24 tell</td></tr>
+    <tr><td><strong>Iran War Risk</strong></td><td class="c">42</td><td class="c">49</td><td class="c">56</td><td class="c">70</td><td class="c">83</td><td>170 targets struck, zero US casualties, oil fell, talks requested — performative war</td></tr>
+    <tr><td><strong>Tokenization (RWA)</strong></td><td class="c">53</td><td class="c">58</td><td class="c">64</td><td class="c">74</td><td class="c">85</td><td>Records + DTCC pilot this month; the densest catalyst pipeline of the five</td></tr>
+    <tr><td><strong>Fed &amp; Macro</strong></td><td class="c">34</td><td class="c">36</td><td class="c">44</td><td class="c">53</td><td class="c">61</td><td>Hawkish minutes, Sept hike ~66% priced — but reserves just jumped $132B</td></tr>
+    <tr><td><strong>Bitcoin TA</strong> (quant)</td><td class="c">39</td><td class="c">38</td><td class="c">44</td><td class="c">67</td><td class="c">70</td><td>Bounce reclaimed the 200-week line; prior cycles 3-for-3 up over 12 months from here</td></tr>
+  </table>
+  <p style="font-size:8.6pt;color:#43505f;">P values shown (50 = coin flip). Note Fed &amp; Macro (judged) and Bitcoin TA (computed) — two methods sharing no inputs — match exactly at 6 months (44 = 44).</p>
+</section>
+
+<section class="sec avoid">
+  <h2>Status &amp; honesty notes</h2>
+  <ul>
+    <li><strong>Score status:</strong> July 10 scores are evidence-driven <strong>drafts awaiting the author's stamp</strong>; every report prints the full lineage (June committed → July 8 → July 10). Nothing hides its history.</li>
+    <li><strong>Verification:</strong> facts researched with primary-source discipline (Fed releases, Senate schedule, DOL data, exchange APIs, prediction-market APIs), independently fact-checked, and the whole package forensically audited (243-claim audit July 8; re-audited July 10 on the updates); score math recomputed independently; price data cross-checked across two exchanges; models that failed out-of-sample testing were excluded and say so.</li>
+    <li><strong>Known limits, in print inside the reports:</strong> cycle-analog claims rest on 3 completed cycles (and the reports show a live example of that fragility); the TA pillar caps its own conviction at P = 50 ± 25; single-source items are labeled in-line; current chart bars are partial and the completed-bar numbers are printed.</li>
+    <li><strong>The near-term calendar is the test:</strong> CPI Jul 14 · GENIUS rules Jul 18 · CLARITY cloture ~Jul 20–24 · FOMC Jul 29 · Senate recess Aug 7 · MoU expiry ~Aug 16. Each pillar's trigger table says in advance what each outcome does to the scores.</li>
+  </ul>
+  <div class="warnbox"><strong>This is research and education, not financial advice.</strong> The scores are probabilistic opinions with dated evidence — built to be argued with. If you check one thing manually, check the trigger tables: they are the falsifiable part.</div>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

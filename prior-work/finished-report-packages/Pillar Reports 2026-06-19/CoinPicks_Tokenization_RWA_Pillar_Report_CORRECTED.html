@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — Tokenization of Real-World Assets</title>
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>TOKENIZATION (RWA) · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · June 19, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Tokenization of<br>Real-World Assets<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Real Money On-Chain — Researched, Scored, and Personally Committed</div>
+  <div class="note">AI-researched draft, truth-checked by a verification swarm against live primary sources — then re-verified and <strong>date-corrected on June 19, 2026</strong>.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 30% OF MY THESIS</div>
+    <div class="m">Written June 19, 2026 · Last Checked June 19, 2026 · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== MY COMMITTED SCORES ====================-->
+<section class="sec first avoid">
+  <h2>My Committed Scores</h2>
+  <div class="sub">Committed by me on June 19, 2026 — AI drafts shown for the record. Windows re-set to the house standard; every date re-verified June 19.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My P</th><th class="c">AI Draft</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c my">53</td><td class="c">53</td><td class="c">0.90</td><td class="c">8</td><td class="c sig">+0.4</td><td>Bull</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c my">57</td><td class="c">57</td><td class="c">0.88</td><td class="c">8</td><td class="c sig">+1.0</td><td>Bull</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c my">62</td><td class="c">62</td><td class="c">0.85</td><td class="c">8</td><td class="c sig">+1.6</td><td>Bull</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c my">72</td><td class="c">72</td><td class="c">0.78</td><td class="c">8</td><td class="c sig">+2.7</td><td>Bull</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c my">85</td><td class="c">85</td><td class="c">0.70</td><td class="c">8</td><td class="c sig">+3.9</td><td>Bull</td></tr>
+  </table>
+  <div class="formula"><strong>My Weight:</strong> 30% · <strong>My Impact:</strong> 8 (kept from the AI draft) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Positive = Bull · negative = Bear · zero = Neutral. Math re-verified.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Near-term modest (real money is on-chain, but mostly permissioned and institutional); long-term high (a structural, stablecoin-scale adoption wave).</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. It falls with the horizon here (0.90 → 0.70): the near-term hard data is live and solid, but the long-dated TAM projections are softer. Every source is on the last page — click and judge for yourself.</p>
+    <p><strong>Impact</strong> — 8 out of 10. If tokenization compounds, it pulls trillions of TradFi assets onto rails crypto controls.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus</div>
+  <p><strong>The crowd:</strong> tokenization is inevitable — trillions of TradFi assets are coming on-chain. The headline that anchored everyone was BCG &amp; ADDX's <strong>$16.1T-by-2030</strong> (published 2022).</p>
+  <p><strong>Me:</strong> it's real and already institutional — but the open question is whether it stays <em>crypto-relevant</em> or just becomes TradFi-on-rails. I score it <strong>~53% good-for-crypto near-term</strong>, climbing to <strong>~85% over three years</strong>.</p>
+  <p><strong>My edge:</strong> the crowd conflates "adoption" with "good for crypto assets." Most on-chain RWA value is permissioned and institutional, the TAM was quietly cut to <strong>~$9.4T</strong> (BCG × Ripple, Apr 2025), and today's high rates flatter treasury AUM. The signal isn't raw adoption — it's whether the money lands on public, crypto-controlled rails.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of June 19, 2026 — hard numbers with exact dates, sources on the last page</div>
+  <ul>
+    <li class="fix"><strong>BlackRock proved the institutional case.</strong> BUIDL launched on Ethereum (tokenized by Securitize) on <strong>March 20, 2024</strong>, expanded to five more chains <strong>Nov 13, 2024</strong>, and went <strong>$0 → $1B AUM by March 13, 2025</strong> (~12 months). It sits at <strong>~$2.37B</strong> today.</li>
+    <li class="fix"><strong>The lead changed hands.</strong> Circle's <strong>USYC first overtook BUIDL</strong> as the largest tokenized US Treasury product on <strong>Jan 22, 2026</strong> (razor-thin, ~$1.69B vs ~$1.68B; ~94% of USYC was Binance collateral), and pulled <strong>decisively ahead by March 13, 2026</strong>. Live: USYC <strong>$3.07B</strong> · BUIDL <strong>$2.37B</strong> · Ondo USDY <strong>$2.16B</strong>.</li>
+    <li><strong>Tokenized US Treasuries ~$15.0B</strong> (live, Jun 19) — first crossed <strong>$10B in late January 2026</strong>. <strong>Total RWA ex-stablecoins ~$32.3B</strong>; <strong>tokenized private credit ~$6.1B</strong>, the fastest-growing category.</li>
+    <li class="fix"><strong>The law is on the books.</strong> The <strong>GENIUS Act</strong> was signed <strong>July 18, 2025</strong> (Public Law 119-27): first US federal stablecoin framework, ≥1:1 reserves in cash + <strong>T-bills ≤93 days</strong> + repo, and a ban on issuer-paid yield. Implementing-rules deadline: <strong>July 18, 2026</strong>.</li>
+    <li><strong>Stablecoins are the proof of concept</strong> — ~$5B (2020) → record <strong>~$322B</strong> (reported late May 2026). By law their reserves buy T-bills: <strong>Tether alone held ~$141B</strong> of US Treasury exposure (Q1 2026 attestation, Mar 31).</li>
+    <li><strong>The TAM was cut.</strong> BCG × Ripple's "Approaching the Tokenization Tipping Point" (<strong>Apr 7, 2025</strong>) projects <strong>~$9.4T by 2030 / $18.9T by 2033</strong> — down from the 2022 $16.1T-by-2030. Current on-chain value is <strong>&lt;1%</strong> of any endpoint.</li>
+    <li><strong>Tokenized equities went live.</strong> Robinhood (EU) and Kraken's <strong>xStocks</strong> (issued by Backed on Solana) both launched <strong>June 30, 2025</strong>.</li>
+    <li><strong>Macro backdrop:</strong> the Fed held at <strong>3.50–3.75%</strong> (June 2026, hawkish dot plot) — the rate tailwind that flatters tokenized-Treasury AUM.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The cleanest single-token anchor is <strong>ONDO</strong>, the name most tied to the RWA narrative: from its first-day close <strong>~$0.22 (Jan 18, 2024)</strong> it ran to a <strong>$2.14 all-time high (Dec 16, 2024)</strong> — roughly <strong>+894% (~10×) in 11 months</strong>.</p>
+    <p>But show the full round-trip: ONDO is back near <strong>~$0.35 today (~84% below that high)</strong>, and part of the Dec-2024 spike was a Trump-linked World Liberty Financial buy, not pure fundamentals. The durable signal is structural, not one token: RWA ex-stablecoins grew <strong>~5× (~380%) in three years to ~$24B by mid-2025</strong>, and BUIDL went $0 → $1B AUM in ~12 months. The Prize doesn't feed the math — it tells you what the lean is worth acting on, euphoria and round-trip included.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong</div>
+  <ul>
+    <li><strong>It's a rate trade in disguise.</strong> RWA "TVL" is concentrated in dollars and treasuries riding a high-rate environment — exactly the yield engine the thesis admits won't persist (Fed 3.50–3.75%, hawkish).</li>
+    <li><strong>Single-counterparty fragility.</strong> The treasury-fund lead changed hands on a razor-thin margin, with <strong>~94% of USYC held by Binance</strong> — institutional plumbing, not broad adoption.</li>
+    <li><strong>The Treasury bid is two-sided.</strong> Stablecoin T-bill demand eases front-end yields a little, but BIS finds outflows bite harder — a mass redemption forces <strong>T-bill fire-sales</strong> (the March 2023 USDC depeg was a near-miss).</li>
+    <li><strong>Credit &amp; equity risk.</strong> Private credit adds default and lockup/redemption risk; tokenized equities (xStocks/Robinhood) show <strong>~70% weekend liquidity drops</strong>, no public audits, and live regulatory/issuer-disavowal risk (OpenAI/SpaceX SPV tokens; EU probe).</li>
+    <li><strong>Regulatory cover is partial.</strong> GENIUS covers <em>stablecoins</em>; tokenized <em>securities</em> rely on a revocable SEC posture and a Jan-2026 taxonomy — durable market-structure law (CLARITY) still isn't passed.</li>
+    <li><strong>It may not be "crypto."</strong> Most volume is permissioned/institutional and may never accrue value to crypto majors.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events — some prove the claim right, some prove it wrong</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>Jun 30, 2026</td><td>Q2 on-chain RWA data close</td><td>Higher print confirms the growth trajectory — bullish (1-mo)</td></tr>
+    <tr><td>Jul 18, 2026</td><td>GENIUS Act implementing-rules deadline</td><td>Met = stablecoin rails de-risked; slipped/diluted = headwind (1-mo)</td></tr>
+    <tr><td>Jul 29, 2026</td><td>FOMC rate decision</td><td>Tokenized-Treasury yield/AUM tracks the Fed; a hold sustains demand (1-mo)</td></tr>
+    <tr><td>Sep 16, 2026</td><td>FOMC + dot plot</td><td>Sets the rate-path/yield backdrop for tokenized-Treasury flows (3-mo)</td></tr>
+    <tr><td>H2 2026</td><td>Nasdaq tokenized-securities rollout (SEC OK'd framework Mar 18, 2026)</td><td>First major US exchange tokenizing blue-chips = landmark proof (6-mo; date unconfirmed)</td></tr>
+    <tr><td>Any time</td><td>Tokenized-treasury depeg / counterparty failure (e.g. USYC's ~94% Binance)</td><td>Plumbing fragility realized — re-rate down</td></tr>
+    <tr><td>2027+</td><td>Growth stays permissioned / private-chain, no CLARITY</td><td>"TradFi-on-rails" wins — cap the long-term P</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> if rates fall and growth stays permissioned with no public-chain breakout and no market-structure law, treat the crypto-relevance thesis as failing — adoption that never touches public, crypto-controlled rails is TradFi, not crypto.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp">✔ COMMITTED BY ME ON JUNE 19, 2026</div>
+    <div class="nums">My P: 53 / 57 / 62 / 72 / 85 · My Weight: 30% · My Impact: 8</div>
+    <p>I kept the AI draft scores as my own and weighted the pillar at <strong>30%</strong> — accumulate-and-hold as a structural pillar, gated on one question: does adoption stay crypto-relevant, or collapse into permissioned TradFi rails? The live evidence leans toward the latter more than my long-window P's imply — eyes open.</p>
+    <p><strong>My numbers ARE my call. The trade plan comes when all my pillars combine in the master spreadsheet.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Rebuilt &amp; re-verified June 19, 2026</div>
+  <ul>
+    <li class="fix"><strong>Windows &amp; dates corrected.</strong> Re-set to the house-standard windows (1 month / 3 months / 6 months / 1 year / 3 years) and re-verified every date. The USYC-over-BUIDL "overtake" is now dated correctly: <strong>first on Jan 22, 2026</strong> (thin), <strong>decisive by March 13, 2026</strong> — not a single March date.</li>
+    <li><strong>TAM source dated:</strong> BCG × Ripple "Approaching the Tokenization Tipping Point" (Apr 7, 2025) — $9.4T by 2030 / $18.9T by 2033, superseding the 2022 $16.1T.</li>
+    <li><strong>Live figures refreshed (Jun 19):</strong> tokenized treasuries $15.0B; RWA ex-stablecoins $32.3B; private credit $6.1B; USYC $3.07B / BUIDL $2.37B / USDY $2.16B.</li>
+    <li><strong>Weight set to 30%</strong> (was 20% in the earlier draft) — on the strength of the verified Treasury-demand channel.</li>
+    <li><em>Scores are the re-mapped AI draft on the new windows — adjust any P and I'll re-stamp.</em></li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded June 19, 2026 — click and judge the quality yourself. Official records first, then live data, reporting, forecasts, and the Treasury-demand channel.</div>
+  <ul>
+    <li><span class="grp">Official records:</span> <a href="https://www.sec.gov/newsroom/speeches-statements/atkins-statement-genius-act-071825">SEC — GENIUS Act signed July 18 2025 (PL 119-27)</a> · <a href="https://www.bcg.com/publications/2022/relevance-of-on-chain-asset-tokenization">BCG/ADDX — original $16.1T-by-2030 (2022)</a> · <a href="https://www.coindesk.com/markets/2025/04/07/ripple-bcg-project-usd18-9t-tokenized-asset-market-by-2033-but-obstacles-remain">BCG × Ripple — revised $9.4T/2030, $18.9T/2033 (Apr 7 2025)</a> · <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Federal Reserve — FOMC 2026 calendar (Jul 29, Sep 16, Oct 28, Dec 9)</a>.</li>
+    <li><span class="grp">Live data:</span> <a href="https://app.rwa.xyz/treasuries">RWA.xyz — tokenized Treasuries $15.0B; USYC $3.07B / BUIDL $2.37B / Ondo USDY $2.16B</a> · <a href="https://app.rwa.xyz/">RWA.xyz — total RWA ex-stablecoins $32.3B; private credit $6.1B</a>.</li>
+    <li><span class="grp">The reporting:</span> <a href="https://finance.yahoo.com/news/circle-usyc-overtakes-blackrock-buidl-165753905.html">Yahoo/CoinDesk — USYC first overtakes BUIDL, $10.07B market (Jan 23 2026)</a> · <a href="https://www.coindesk.com/markets/2026/03/13/circle-overtakes-blackrock-in-tokenized-treasuries-as-market-hits-record-usd11-billion">CoinDesk — USYC's decisive lead, &gt;$11B market (Mar 13 2026)</a> · <a href="https://www.prnewswire.com/news-releases/blackrock-usd-institutional-digital-liquidity-fund-buidl-tokenized-by-securitize-surpasses-1b-in-aum-302401480.html">PRNewswire — BUIDL passes $1B AUM (Mar 13 2025)</a> · <a href="https://www.coindesk.com/business/2025/06/30/backed-finance-debuts-tokenized-stocks-on-bybit-kraken-and-solana-defi-protocols">CoinDesk — Robinhood &amp; Kraken xStocks tokenized equities (Jun 30 2025)</a>.</li>
+    <li><span class="grp">The Treasury-demand channel:</span> <a href="https://tether.io/news/tether-posts-1-04b-q1-2026-profit-despite-highly-volatile-global-markets-reaches-all-time-highs-8-23b-reserve-buffer-and-maintains-u-s-treasury-heavy-backing/">Tether — ~$141B US Treasury exposure (Q1 2026, Mar 31)</a> · <a href="https://www.bis.org/publ/work1270.pdf">BIS WP 1270 — stablecoin inflows lower T-bill yields; outflows a fire-sale "lower bound"</a> · <a href="https://x.com/SecScottBessent/status/1957489664870302091">Sec. Bessent — stablecoins "a surge in demand for US Treasuries" (Aug 18 2025)</a>.</li>
+    <li><span class="grp">The Prize (prices):</span> <a href="https://www.coingecko.com/en/coins/ondo">CoinGecko — ONDO: $2.14 ATH (Dec 16 2024), ~$0.35 now (~84% below)</a>.</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

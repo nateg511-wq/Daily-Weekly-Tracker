@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — The CLARITY Act (Updated July 13, 2026)</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Running header/footer use a repeating <thead>/<tfoot> table scaffold so
+  they reserve space on every printed page (Chrome ignores @page margins).
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>CLARITY ACT · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 13, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>The CLARITY Act<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">The Crypto Rules Bill — Researched, Scored, and Personally Committed</div>
+  <div class="note">Originally written <strong>June 5, 2026</strong>; scores committed by me on <strong>June 12, 2026</strong>. Previously updated <strong>July 8</strong> and <strong>July 10, 2026</strong>, with light 1-day re-checks on <strong>July 11</strong> and <strong>July 12, 2026</strong>; given a full weekly research refresh on <strong>July 13, 2026</strong> — this version carries re-rated <strong>DRAFT</strong> scores awaiting my stamp.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 25% OF MY THESIS</div>
+    <div class="m">Written June 5, 2026 · Updated &amp; Re-verified July 13, 2026 · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — Committed vs. Drafts</h2>
+  <div class="sub">June column committed by me June 12, 2026. July 8, July 10, July 11, and July 12 drafts shown for full lineage — nothing collapses until I commit a newer set. July 13 draft is this week's full research refresh — NOT stamped yet. Signals below run off the July 13 draft.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My June P</th><th class="c">Jul 8 Draft</th><th class="c">Jul 10 Draft</th><th class="c">Jul 11 Draft</th><th class="c">Jul 12 Draft</th><th class="c">Jul 13 Draft</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c">55</td><td class="c">52</td><td class="c">50</td><td class="c">52</td><td class="c">52</td><td class="c my">50</td><td class="c">0.85</td><td class="c">8</td><td class="c">+0.00</td><td>Neutral</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c">60</td><td class="c">56</td><td class="c">54</td><td class="c">55</td><td class="c">55</td><td class="c my">54</td><td class="c">0.85</td><td class="c">8</td><td class="c sig">+0.54</td><td>Mild Bull</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c">65</td><td class="c">61</td><td class="c">60</td><td class="c">61</td><td class="c">61</td><td class="c my">61</td><td class="c">0.85</td><td class="c">8</td><td class="c sig">+1.50</td><td>Bull</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c">85</td><td class="c">83</td><td class="c">82</td><td class="c">82</td><td class="c">82</td><td class="c my">82</td><td class="c">0.90</td><td class="c">8</td><td class="c sig">+4.61</td><td>Strong Bull</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c">92</td><td class="c">92</td><td class="c">92</td><td class="c">92</td><td class="c">92</td><td class="c my">92</td><td class="c">0.95</td><td class="c">8</td><td class="c sig">+6.38</td><td>Very Strong Bull</td></tr>
+  </table>
+  <div class="formula"><strong>Draft P (Jul 13):</strong> 50 / 54 / 61 / 82 / 92 · <strong>Weight:</strong> 20% (equal) · <strong>Impact:</strong> 8 (uniform) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Lineage: June committed 55 / 60 / 65 / 85 / 92 (June 12, 2026) → July 8 draft 52 / 56 / 61 / 83 / 92 → July 10 draft 50 / 54 / 60 / 82 / 92 → July 11 draft 52 / 55 / 61 / 82 / 92 → July 12 draft 52 / 55 / 61 / 82 / 92 (held flat, light daily touch found nothing new) → July 13 draft — awaiting my stamp.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Near-term came back down to a flat coin flip: the merged Banking-Agriculture text still hasn't dropped despite three straight rounds of reporting (July 9, 10, and 12) calling it imminent, the White House — per CoinDesk's July 12 "Signs of life?" column — has been less engaged lately than earlier in the summer, and Sen. Lindsey Graham's sudden death the night of July 11 adds a real, if unproven, source of floor-math risk on top of an already-brutal calendar. Prediction markets are essentially flat to slightly softer, on thin volume. Long-term still high — even the bears argue "slips past the midterms," not "dies."</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. Every source is on the last page — click and judge for yourself. This week is a full research refresh, not a light touch: Section 604 / Wyden's developer-protection push is now corroborated by 9+ independent outlets (up from a single-source flag on July 11), the July 17 hearing's New York venue is now 2-source corroborated (up from single-source/unverified), and Graham's death is confirmed by 9+ independent outlets. The one thing I deliberately did <em>not</em> upgrade is the Graham-to-CLARITY connection itself — no source makes that link explicitly, so it stays labeled as my inference, not a reported fact.</p>
+    <p><strong>Impact</strong> — 8 out of 10, the uniform value every pillar now shares in the equal-weight model. This bill writes the rules for the entire market.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis as of July 13, 2026, and where I differ from the consensus</div>
+  <p><strong>The crowd:</strong> has basically stopped moving. Polymarket's 2026-signing market sat at ~46-47% on July 11 and is still at <strong>46¢</strong> on July 13 (44 bid / 46 ask) — but on just <strong>$5.9K</strong> of 24-hour volume, thin enough that "unchanged" may just mean nobody's trading this week. Kalshi's longer-dated ladder is mixed: the far end softened (July '27 51¢→46¢, January '28 56¢→51¢) while the near end firmed a touch (January '27 35-36¢→37¢, April '27 41¢→43¢) — low-conviction noise, not a repricing. The loud story hasn't changed either: still no cloture motion, and the merged Banking-Agriculture text has now been called "imminent" in reporting dated July 9, 10, <strong>and</strong> 12 without actually dropping. Then, the night of July 11, <strong>Sen. Lindsey Graham died suddenly</strong> — an event nobody priced in and, so far, nobody has re-priced around either.</p>
+  <p><strong>Me:</strong> draft ~50% for the next month — back to a true coin flip, not a bullish tilt — and still ~92% that a crypto rules law exists within 3 years.</p>
+  <p><strong>My edge:</strong> unchanged since June — the crowd keeps pricing a <em>timing</em> problem like a <em>death</em> problem. The House did its half a year ago (294-134). A merged text is still coming, just later than three straight rounds of reporting promised, and the fight is still down to <strong>one variable</strong> — an ethics deal — and one-variable problems get solved or slipped, not killed. What's genuinely new is a wildcard I can't cleanly quantify: Graham's death, combined with Sen. McConnell's continued absence, shrinks the GOP's effective floor margin to as low as 51 for the time being, on top of a calendar that was already tight. <strong>No reporting connects that to CLARITY specifically — this is my own inference, not a fact on the page</strong> — but it's the real reason the 1-month score came back down rather than held.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of July 13, 2026 — hard numbers only, sources on the last page. This is a full weekly research refresh (last full re-research July 10, 2026; light daily touches July 11 and July 12 found nothing new). Facts below are freshly re-verified except where marked "carried forward."</div>
+  <ul>
+    <li class="fix"><strong>NEW — Sen. Lindsey Graham (R-SC) died suddenly the night of July 11, 2026;</strong> preliminary cause aortic dissection. Confirmed independently by <strong>9+ outlets</strong> (NBC, Washington Post, Axios, NPR, Bloomberg, Roll Call, CNN — all July 12-13). Combined with Sen. McConnell's continued absence (recovering from a June 14 fall and pneumonia), the GOP's effective floor count for close votes could run as low as <strong>51</strong> for the time being. SC Gov. Henry McMaster will appoint an interim replacement; timeline not yet announced as of July 13, with a special primary expected around <strong>August 11</strong> and a runoff <strong>August 25</strong> if needed. Multiple outlets (Roll Call, MSNBC/ms.now, Boston Globe) describe the Senate's whole agenda this week as "uncertain" or "in limbo." <em>Inference flag: no source connects Graham's death to CLARITY's timeline directly — that link is my own read (thinner floor margin + an already-brutal ~3-week calendar = more downside schedule risk), not a reported fact, and it's labeled as such everywhere it appears in this report.</em></li>
+    <li class="fix"><strong>NEW — three consecutive "imminent" reports, still no text.</strong> Coverage dated July 9, July 10, <strong>and</strong> July 12 all called the merged Banking-Agriculture draft imminent / "as soon as next week" — and as of July 13 it still has not dropped. Three misses in a row is itself informative: either the reconciliation is harder than advertised, or the calendar (now further scrambled by Graham's death) is already eating the runway that was supposed to produce it.</li>
+    <li><strong>The calendar, exactly — carried forward, re-confirmed:</strong> no cloture motion on CLARITY and no floor date as of July 13 — the bill has sat at Senate Calendar No. 423 since June 1. The Senate returned <strong>3:00pm Monday, July 13</strong> as scheduled; floor business is judicial nominations then the FY27 NDAA (cloture already filed on the motion to proceed) — CLARITY floor time was never realistically before the week of July 20, and that's now a slightly softer bet given the Graham disruption. Last session day before the August break: <strong>Friday, August 7</strong> — roughly <strong>19–20 working days</strong>, fewer in practice this week. TD Cowen (June 29): procedural steps the week of July 13 or July 20, with <strong>July 24</strong> the critical date so the House can act before its own recess.</li>
+    <li><strong>The White House still has not signed off</strong> on the merged text — and per CoinDesk's <strong>July 12 "Signs of life?" column</strong>, the administration "had not been as engaged recently as earlier in the summer." The dealmaker that demanded speed remains, by the most recent reporting, outside the room.</li>
+    <li><strong>Ethics talks are still broken — carried forward, no principal-level restart.</strong> Collapsed June 9, not restarted. White House Crypto Council ED Patrick Witt's three-party channel has produced nothing further; the White House still refuses any language singling out Trump. The state-AGs-sue-DOJ compromise remains dropped out of negotiations. In committee history: Van Hollen's ethics amendment failed 11–13; Republicans withdrew state-AG enforcement and offered US-AG oversight (Democrats rejected it); Lummis's June 29 revised state-AG proposal is the compromise that dropped out and hasn't returned.</li>
+    <li><strong>The June 30 ethics bomb, still live:</strong> OGE released Trump's 927-page disclosure on <strong>June 30</strong>: <strong>~$1.4B of 2025 crypto income</strong> — $635M in TRUMP-memecoin royalties, $500M+ WLFI-related, $197M in USD1 stake sales (outlets differ on the WLFI token-sale split). Gillibrand: <em>"there is no CLARITY Act without an ethics provision"</em> (exact wording via Yahoo's reporting; the substance is corroborated by crypto.news).</li>
+    <li class="fix"><strong>UPGRADE — Section 604 / Wyden's developer-protection push is now corroborated by 9+ independent outlets,</strong> up from the single-source flag used in the July 11 draft. Sen. Ron Wyden's (D-OR) July 8 letter backing Section 604's developer protections is no longer a thin reporting thread — but there is still no committed Democratic floor vote attached to it, and no new law-enforcement endorsements or defections this cycle: NOBLE's July 1 endorsement and the Major County Sheriffs' July 4 move to neutral remain the only friendly moves; NDAA, NAAUSA, IACP, NSA, and FOP remain opposed or silent.</li>
+    <li class="fix"><strong>UPGRADE — the July 17 House FSC hearing's New York venue is now 2-source corroborated</strong> (crypto.jobs, cryptobriefing), up from the single-source/unverified flag used in the July 11 draft.</li>
+    <li><strong>The vote math — carried forward, unchanged:</strong> still only <strong>Gallego and Alsobrooks</strong> on record, both explicitly conditioning floor votes on enforceable ethics language. Warner and Cortez Masto still condition support on law-enforcement sign-off — not given. With Hawley and Paul expected R defections, that's <strong>~51 reliable Republican votes → 7–9 Democrats needed. Firmly committed: zero.</strong> Compass Point's Groshans still sees "north of 65 votes" if ethics is resolved; CFRA's Schardin's "next week or two" window (as of July 9) has now largely elapsed without progress.</li>
+    <li><strong>The stablecoin-yield fight — carried forward, still closed off rather than resolved:</strong> Banking Chairman Tim Scott rejected bank lobbyists' request to change yield-related restrictions on the floor; no further negotiations planned. Coinbase's <strong>~$1.35B/yr</strong> USDC-rewards structure survives in the text as-is.</li>
+    <li><strong>Trump himself is still a signature risk — carried forward:</strong> his threat to withhold his signature on a housing bill unless Congress passes the SAVE Act persists — a hostage play that squeezes scarce floor time and puts non-trivial signature risk on CLARITY itself.</li>
+    <li><strong>Also still unresolved — carried forward from July 9, no update found:</strong> federal preemption and the SEC/CFTC commissioner-seat questions remain open, a mild negative surprise sitting on top of ethics.</li>
+    <li><strong>Still true from June, still load-bearing:</strong> the House passed H.R. 3633 <strong>294-134 on July 17, 2025</strong> (bipartisan); Senate Banking advanced its separate substitute <strong>15-9 on May 14, 2026</strong>. House fast-follow plan (companion bill, no conference — Rep. Dusty Johnson) unchanged. A House FSC hearing on digital-asset market-structure gaps is confirmed for <strong>July 17</strong> (committee event page), now with the New York venue detail 2-source corroborated.</li>
+    <li class="fix"><strong>Odds board <em>(sentiment only)</em> — refetched live, July 13:</strong> Polymarket "signed in 2026" last <strong>46¢</strong> (44 bid / 46 ask), <strong>$1.61M</strong> total volume, but just <strong>$5.9K</strong> in the last 24h — thin trading this week, essentially flat versus the July 11 draft's ~46-47% · Kalshi KXCRYPTOSTRUCTURE ladder (live, July 13): before Aug 1 <strong>4.2¢</strong> (down from 5.4-5.6¢ on July 10); before Jan 1, 2027 <strong>37¢</strong> (up slightly from 35-36¢); before Apr 2027 <strong>43¢</strong>; before Jul 2027 <strong>46¢</strong> (down from 51¢); before Oct 2027 <strong>53¢</strong>; before Jan 2028 <strong>51¢</strong> (down from 56¢) — a mixed ladder, net roughly flat to slightly softer on the longer-dated end, still thin/indicative liquidity · Galaxy <strong>50%</strong> (June 29) and JPMorgan <strong>&lt;50%</strong> — no update found, baseline stands · TD Cowen: "far from assured" before the midterms.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>Anchor: BTC <strong>$63,796</strong> (Bitstamp daily close, July 12, 2026). A <strong>GENIUS-sized move (~40–47%)</strong> from here ≈ <strong>~$89–94K</strong>. A retest of the ~$125K high ≈ <strong>+96%</strong>. The anchor is real: during the GENIUS Act's passage (Senate committee Mar 13 → signed July 18, 2025) Bitcoin ran from ~$83K to ~$120K (≈+44%).</p>
+    <p>Discount both — 2025 had tailwinds 2026 doesn't, and <strong>the GENIUS rally itself fully retraced</strong>. And note the coil cuts both ways: one piece of good news moved Polymarket ~17 points over the July 4 weekend, July 10 alone took 4.5 points back off, July 10-11 gave most of it back again — and by July 13 the market has simply gone quiet (46¢, just $5.9K in 24h volume) even with Sen. Graham's death scrambling the Senate's week. The Prize doesn't feed the math — it tells you what the lean is worth acting on.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong</div>
+  <ul>
+    <li><strong>The market has stopped believing "delayed, not dead":</strong> Kalshi's 2027–28 ladder still prices passage by <em>April 2027</em> at just 43¢ and by <em>January 2028</em> at 51¢ — down a notch from a week ago on the far end. If the smart money thought this was a pure timing problem, those long-dated contracts would be far richer.</li>
+    <li><strong>Three strikes on "imminent":</strong> the merged text was called days-away in reporting dated July 9, July 10, and July 12 — and it still hasn't shown up as of July 13. If sources this close to the process keep guessing wrong on timing, my own confidence in "week of July 13" should come down, not sit flat.</li>
+    <li><strong>The calendar just got harder, not just brutal:</strong> ~19 usable days, cloture already filed on the NDAA (not CLARITY), judicial nominations stacked first, still no floor date — and now the Senate is short-handed at the worst possible moment. Sen. Graham's sudden death and Sen. McConnell's continued absence put the GOP's effective floor count as low as 51 for now. No one has reported that this delays CLARITY specifically, but a thinner margin on an already-packed calendar is not a reason for optimism.</li>
+    <li><strong>The dealmaker isn't at the table:</strong> the White House hasn't signed off on the merged text, and CoinDesk's July 12 column reports it's been less engaged lately than earlier in the summer. A rewrite tilting toward consumer protections could as easily lose Republican votes as gain Democratic ones — and Trump is already playing signature-hostage on another bill.</li>
+    <li><strong>The ethics fight got harder, not easier:</strong> the only compromise on the table dropped out of negotiations entirely, the $1.4B presidential crypto disclosure is a gift to every Democrat who wants to say no, and Gillibrand's "no CLARITY Act without an ethics provision" meets a White House that refuses any Trump-specific language — immovable object, irresistible force, an already-thin calendar.</li>
+    <li><strong>The midterms are still the real wall:</strong> miss August 7 and September belongs to election politics. Worst case — Congress resets in January and the Senate starts its bill over.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events ahead — some prove the claim right, some prove it wrong. Set July 13, 2026.</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>July 11 (night)</td><td><strong>NEW, unplanned</strong> — Sen. Lindsey Graham (R-SC) dies suddenly; GOP's effective floor count temporarily as low as 51 with McConnell still out</td><td>Inference only, not reported as connected to CLARITY: a thinner margin on an already-tight calendar is more downside risk, not less</td></tr>
+    <tr><td>July 13</td><td><strong>FIRED, as expected</strong> — Senate returns 3:00pm; nominations then NDAA (cloture already filed on the MTP); agenda further scrambled by Graham's death</td><td>CLARITY floor time is realistically the week of July 20 at best — and now carries more schedule risk than a week ago</td></tr>
+    <tr><td>Week of July 13</td><td><strong>PENDING</strong> — Merged Banking–Agriculture text still hasn't dropped, despite being called imminent in reporting dated July 9, 10, and 12</td><td>Three straight misses on "imminent" — if it slips again with no firm new date, re-rate the 1-month down further</td></tr>
+    <tr><td>July 17</td><td><strong>PENDING</strong> — House FSC hearing on market-structure gaps (New York venue now 2-source corroborated)</td><td>House fast-follow machinery warming up</td></tr>
+    <tr><td><strong>July 20</strong></td><td><strong>PENDING</strong> — Senate floor vote target, arguably at more risk than a week ago</td><td>Vote held & cloture clears = 2026 path very much alive; slips again = re-rate down hard</td></tr>
+    <tr><td>July 24</td><td><strong>PENDING</strong> — TD Cowen's critical date (House needs runway before its recess)</td><td>Passes with no cloture = re-rate the 1- and 3-month down</td></tr>
+    <tr><td>August 7</td><td><strong>PENDING</strong> — Last Senate session day</td><td>Passes with no floor vote = September collides with the midterms — 2027 becomes the base case for signing</td></tr>
+    <tr><td>Any time</td><td><strong>NOT FIRED</strong> — Ethics talks restart at principal level, or the White House signs off on the merged text</td><td>The single biggest unlock — Democratic votes follow; re-rate everything up</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> no merged text by ~July 17 <em>and</em> no cloture by <strong>~July 24</strong> = start treating 2026 as slipping — a slightly easier trigger to hit now given the Senate's Graham-driven disruption this week. The last session day (<strong>August 7</strong>) passes with no vote = a 2027 signing is my base case. Keep 1-year and 3-year Bull either way — a bill with 294 House votes, two committee Democrats, a merged text reportedly drafted, and police opposition cracking is delayed, not dead.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp pending">◷ UPDATED DRAFT — JULY 13, 2026 · AWAITING MY STAMP</div>
+    <div class="nums">Draft P: 50 / 54 / 61 / 82 / 92 · Weight: 20% (equal) · Impact: 8 (uniform)</div>
+    <p>A full weekly research refresh pulled the near end back down rather than up: the merged text still hasn't dropped despite three straight "imminent" calls (July 9, 10, 12), the White House looks less engaged per CoinDesk's July 12 column, and Sen. Graham's sudden death (night of July 11) adds a real, if unproven, source of floor-math risk on top of an already-tight calendar. Markets barely moved — Polymarket flat at 46¢ on thin volume, Kalshi's ladder mixed but net a touch softer on the long end. 1-month and 3-month come back down to reflect that; 6-month, 1-year, and 3-year hold — nothing here changes the structural, multi-year read.</p>
+    <p>The June committed scores (<strong>55 / 60 / 65 / 85 / 92</strong>, committed June 12, 2026) remain the last human-stamped values.</p>
+    <p><strong>Override any P and re-stamp — the master blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Full research refresh July 13, 2026 (previous full re-research July 10, 2026; light daily touches July 11 and July 12 found nothing new)</div>
+  <ul>
+    <li class="fix"><strong>NEW — Sen. Lindsey Graham died suddenly the night of July 11, 2026</strong> (9+ outlets, July 12-13); combined with Sen. McConnell's continued absence, the GOP's effective floor count is temporarily as low as 51. Multiple outlets call the Senate's whole week "uncertain"/"in limbo." No source connects this to CLARITY's timeline directly — that link is my inference, not a reported fact, and it's labeled that way everywhere it appears in this report.</li>
+    <li class="fix"><strong>The merged Banking-Agriculture text still hasn't dropped —</strong> the third straight round of "imminent" reporting (July 9, 10, 12) to pass without a text appearing. That pattern is itself informative about how much slippage is baked into this process.</li>
+    <li class="fix"><strong>Two source-count upgrades:</strong> Section 604 / Wyden's developer-protection push moved from single-source to 9+ independent outlets; the July 17 hearing's New York venue moved from single-source/unverified to 2-source corroborated (crypto.jobs, cryptobriefing).</li>
+    <li class="fix"><strong>Markets essentially flat to slightly softer:</strong> Polymarket sits at 46¢ (unchanged from July 11) but on just $5.9K of 24h volume — thin. Kalshi's ladder is mixed, with the longer end (July '27, January '28) softening a few cents and the near end (January '27, April '27) firming a touch.</li>
+    <li><strong>Scores re-rated (July 12 draft → July 13 draft):</strong> 1-month 52 → <strong>50</strong> and 3-month 55 → <strong>54</strong> — pulled back down by the stalled text, the less-engaged White House, and the Graham wildcard · 6-month 61, 1-year 82, and 3-year 92 <strong>held</strong> — nothing this week changes the structural, multi-year read. Draft only — awaiting my stamp.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded July 13, 2026 (full weekly research refresh; June, July 8, July 10, and July 11 sources below still stand as historical citations for facts not re-verified this week) — click and judge the quality yourself. Official records first, then reporting, then prices, then betting markets (sentiment only).</div>
+  <ul>
+    <li><span class="grp">July 13 additions:</span> <a href="https://www.nbcnews.com/politics/congress/lindsey-graham-dies-suddenly-senator-south-carolina">NBC News — Sen. Lindsey Graham dies suddenly (Jul 12)</a> · <a href="https://www.washingtonpost.com/politics/2026/07/12/lindsey-graham-dies/">Washington Post — Graham dies at his South Carolina home (Jul 12)</a> · <a href="https://www.axios.com/2026/07/12/lindsey-graham-dies-senator-south-carolina">Axios — Graham's death, aortic dissection cited as preliminary cause (Jul 12)</a> · <a href="https://www.npr.org/2026/07/12/lindsey-graham-dies">NPR — Graham dies suddenly (Jul 12)</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-12/sen-lindsey-graham-dies">Bloomberg — Graham dies (Jul 12)</a> · <a href="https://rollcall.com/2026/07/13/this-week-grahams-death-scrambles-senate-agenda/">Roll Call — "This week: Graham's death..." scrambles Senate agenda (Jul 13)</a> · <a href="https://www.cnn.com/2026/07/12/politics/lindsey-graham-dies">CNN — Graham dies (Jul 12)</a> · <a href="https://www.ms.now/politics/lindsey-graham-death-senate-agenda-limbo">MSNBC/ms.now — Senate's agenda left in limbo (Jul 12)</a> · <a href="https://www.bostonglobe.com/2026/07/13/nation/senate-agenda-graham-death/">Boston Globe — Senate's week upended by Graham's death (Jul 13)</a> · <a href="https://www.coindesk.com/policy/2026/07/12/clarity-act-signs-of-life-white-house-engagement">CoinDesk — "Signs of life?" WH less engaged than earlier in summer (Jul 12)</a> · <a href="https://crypto.jobs/news/clarity-act-house-fsc-hearing-new-york">crypto.jobs — House FSC hearing New York venue (corroborating, cited Jul 13)</a> · <a href="https://cryptobriefing.com/clarity-act-house-hearing-new-york-venue/">CryptoBriefing — House FSC hearing New York venue (2nd corroboration)</a> · <a href="https://gamma-api.polymarket.com/markets?slug=clarity-act-signed-into-law-in-2026">Polymarket Gamma API — "signed in 2026," last 46¢ (44 bid/46 ask), $1.61M volume, $5.9K 24h (fetched Jul 13)</a> · <a href="https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCRYPTOSTRUCTURE">Kalshi Trade API v2 — KXCRYPTOSTRUCTURE ladder, live fetch (Jul 13)</a>.</li>
+    <li><span class="grp">July 11 additions (historical):</span> <a href="https://www.techtimes.com/articles/320055/20260710/clarity-act-merged-draft-due-next-week-senate-has-three-weeks-before-2030-delay.htm">TechTimes — merged draft due next week, Senate eyes Jul 20 floor vote (Jul 10)</a> · <a href="https://www.cryptotimes.io/2026/07/10/new-clarity-act-draft-set-to-drop-next-week-as-senate-eyes-july-20-floor-vote/">The Crypto Times — same, Jul 20 floor vote target (Jul 10)</a> · <a href="https://www.cointribune.com/en/clarity-act-new-version-expected-week-of-july-13">Cointribune — Senate schedules a crucial vote on Jul 20</a> · <a href="https://coingape.com/new-clarity-act-draft-expected-next-week-as-senate-banking-agriculture-committees-merge-text/">CoinGape — new draft expected next week, committees merging text</a> · <a href="https://polymarket.com/event/clarity-act-signed-into-law-in-2026">Polymarket — "signed in 2026" recovered to ~46-47% (Jul 11)</a>.</li>
+    <li><span class="grp">Official &amp; primary records:</span> <a href="https://www.democrats.senate.gov/2026/06/24/schedule-for-pro-forma-sessions-and-monday-july-13-2026">Senate Democratic Leadership — floor schedule for July 13 (noms, then NDAA cloture)</a> <em>(this is the primary basis for "no cloture on CLARITY" this round)</em> · <a href="https://democrats-financialservices.house.gov/events/eventsingle.aspx?EventID=410331">House FSC — July 17 hearing, digital asset market-structure gaps (committee event page)</a> · <a href="https://www.congress.gov/bill/119th-congress/house-bill/3633">Congress.gov — H.R. 3633 (CLARITY Act)</a> <em>(direct fetch blocked with a 403 on the July 8 check; not re-pulled July 10)</em> · <a href="https://www.govtrack.us/congress/votes/119-2025/h199">GovTrack — House passage 294-134, July 17 2025 (Vote #199)</a>.</li>
+    <li><span class="grp">The reporting:</span> <a href="https://www.coindesk.com/policy/2026/07/09/newest-version-of-crypto-clarity-act-may-drop-as-soon-as-next-week-sources-say">CoinDesk — merged draft "as soon as next week," 70+ pages, week-of-July-20 floor, WH not signed off, Wyden on 604 (July 9)</a> <em>(the first of three straight "imminent" calls — July 9, 10, and 12 — none of which has produced an actual text as of July 13)</em> · <a href="https://www.coindesk.com/policy/2026/07/12/clarity-act-signs-of-life-white-house-engagement">CoinDesk — "Signs of life?" column, WH engagement question revisited, still no merged text (July 12)</a> · <a href="https://www.americanbanker.com/news/will-the-crypto-market-structure-bill-cross-the-finish-line">American Banker — ethics stalled, Scott rejects bank yield changes, Groshans "north of 65," Schardin "next week or two" (July 9)</a> · <a href="https://www.cryptoinamerica.com/p/its-time-for-clarity-is-the-senate">Crypto In America — Lummis exchange-liability trial balloon, Wyden July 8, FOP/NSA/NAPO silent (July 9)</a> <em>(Wyden/Section 604 corroboration upgraded to 9+ independent outlets as of July 13 — see July 13 additions above)</em> · <a href="https://www.cryptotimes.io/2026/07/10/new-clarity-act-draft-set-to-drop-next-week-as-senate-eyes-july-20-floor-vote/">The Crypto Times — corroboration of the merged-draft report (July 10)</a> · <a href="https://www.tekedia.com/us-house-financial-services-committee-to-hold-clarity-act-hearing-on-july-17/">Tekedia — HFSC July 17 hearing ("New York" venue now 2-source corroborated by crypto.jobs and CryptoBriefing as of July 13)</a> · <a href="https://finance.yahoo.com/markets/crypto/articles/clarity-act-countdown-crypto-bill-161215444.html">Yahoo Finance — countdown: no cloture, Calendar No. 423 (July 7)</a> · <a href="https://crypto.news/the-3-fights-that-decide-the-clarity-act-ethics-defi-and-1-35b-in-yield/">crypto.news — the 3 fights: ethics, DeFi, $1.35B in yield (July 8)</a> · <a href="https://www.coindesk.com/policy/2026/07/05/clarity-and-congress-s-summer-break-state-of-crypto">CoinDesk — CLARITY and Congress's summer break (July 5)</a> · <a href="https://finance.yahoo.com/markets/crypto/articles/clarity-act-passing-odds-fall-061006350.html">Yahoo Finance — odds fall as Trump's $1.4B crypto disclosure lands (July 1)</a> · <a href="https://finance.yahoo.com/markets/crypto/articles/clarity-act-gets-first-law-053052500.html">Yahoo Finance — NOBLE becomes first LE endorsement (July 3)</a> · <a href="https://www.yahoo.com/news/politics/articles/clarity-act-inches-closer-senate-092141140.html">Yahoo — Major County Sheriffs move to neutral (July 4)</a> · <a href="https://www.coindesk.com/policy/2026/06/29/white-house-to-speak-with-law-enforcement-groups-to-push-crypto-s-clarity-act">CoinDesk — White House–law enforcement talks (June 29)</a> · <a href="https://www.theblock.co/post/406621/td-cowen-crypto-market-structure-bill-clarity-act">The Block — TD Cowen's July timeline, July 24 critical (June 29)</a> · <a href="https://www.coindesk.com/policy/2026/06/24/trump-refuses-to-sign-law-with-u-s-cbdc-ban-demands-approval-of-elections-bill">CoinDesk — Trump's SAVE-Act signature-hostage play (June 24)</a> · <a href="https://thedefiant.io/news/regulation/clarity-act-senate-floor-seven-democrat-math-house-fast-follow">The Defiant — seven-Democrat math, Dusty Johnson House fast-follow (June 2026)</a> · <a href="https://www.digitaltoday.co.kr/en/view/78657/us-clarity-act-fate-aug-6-trump-memecoin-ethics-fight-continues">DigitalToday — Aug 6 target, ethics fight continues (July 7)</a>.</li>
+    <li><span class="grp">The prices:</span> carried from the June 19 check and the July 8 anchor — not re-verified July 10. <a href="https://fortune.com/article/price-of-bitcoin-06-12-2026/">Fortune — BTC ~$63.4K (June 12 2026)</a> · <a href="https://digitalchamber.org/bitcoin-surges-past-126000-record-breaking-rally-continues-into-october/">Digital Chamber — BTC ATH ~$126K (Oct 6 2025)</a> · <a href="https://blog.amberdata.io/bitcoin-hits-123k-as-u.s.-passes-genius-act">Amberdata — BTC ~$123K at GENIUS signing</a>.</li>
+    <li><span class="grp">The odds (sentiment only, not fact):</span> <a href="https://gamma-api.polymarket.com/markets?slug=clarity-act-signed-into-law-in-2026">Polymarket Gamma API — "signed in 2026," last 46¢ (44 bid/46 ask), $1.61M total volume, $5.9K 24h volume (fetched July 13)</a> <em>(historical: last 41¢ / mid ~40¢, −4.5¢ on day, fetched July 10, 15:58 UTC)</em> · <a href="https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXCRYPTOSTRUCTURE">Kalshi Trade API v2 — series KXCRYPTOSTRUCTURE (fetched July 13; ladder mixed vs. the July 10 fetch, still thin/indicative liquidity)</a> · <a href="https://polymarket.com/event/clarity-act-signed-into-law-in-2026">Polymarket — CLARITY signed in 2026 (event page)</a> · <a href="https://www.theblock.co/post/406497/galaxy-cuts-clarity-act-passage-odds-50">The Block — Galaxy cuts odds 60% → 50% (June 29; no update found July 9–10)</a> · <a href="https://deadspin.com/prediction-markets/legal-news/clarity-act-passage-could-face-uphill-battle/">Deadspin — Kalshi &amp; Polymarket prices (July 7, historical reference)</a>. JPMorgan &lt;50% and TD Cowen "far from assured" — quoted in the reporting above · <a href="https://www.coindesk.com/policy/2026/06/30/jefferies-warns-of-crypto-market-volatility-as-clarity-act-faces-senate-test">CoinDesk — Jefferies note citing Polymarket 48% (June 30)</a>. <em>(A "Bloomberg Intelligence 60%" figure circulating July 5 traces only to social-media relays of a July-passage estimate — excluded as unverified.)</em></li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

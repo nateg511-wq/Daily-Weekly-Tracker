@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — The CLARITY Act (Corrected)</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Running header/footer use a repeating <thead>/<tfoot> table scaffold so
+  they reserve space on every printed page (Chrome ignores @page margins).
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>CLARITY ACT · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · June 19, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>The CLARITY Act<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">The Crypto Rules Bill — Researched, Scored, and Personally Committed</div>
+  <div class="note">AI-researched draft, truth-checked by a verification swarm — then re-verified and <strong>timeline-corrected on June 19, 2026</strong>. Scores committed by me on June 12, 2026.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 25% OF MY THESIS</div>
+    <div class="m">Written June 5, 2026 · Last Checked June 19, 2026 · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== MY COMMITTED SCORES ====================-->
+<section class="sec first avoid">
+  <h2>My Committed Scores</h2>
+  <div class="sub">Committed by me on June 12, 2026 — AI drafts shown for the record. Re-verified June 19; corrections were factual (timeline + odds), so scores stand.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My P</th><th class="c">AI Draft</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c my">55</td><td class="c">50</td><td class="c">0.85</td><td class="c">9</td><td class="c sig">+0.8</td><td>Bull</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c my">60</td><td class="c">52</td><td class="c">0.85</td><td class="c">9</td><td class="c sig">+1.5</td><td>Bull</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c my">65</td><td class="c">62</td><td class="c">0.85</td><td class="c">9</td><td class="c sig">+2.3</td><td>Bull</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c my">85</td><td class="c">85</td><td class="c">0.90</td><td class="c">9</td><td class="c sig">+5.7</td><td>Bull</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c my">92</td><td class="c">92</td><td class="c">0.95</td><td class="c">9</td><td class="c sig">+7.2</td><td>Bull</td></tr>
+  </table>
+  <div class="formula"><strong>My Weight:</strong> 25% (AI suggested 30%) · <strong>My Impact:</strong> 9 (confirmed from subject selection) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Positive = Bull · negative = Bear · zero = Neutral. Math re-verified.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Near-term a coin flip (the ethics talks just broke down); long-term high (even the bears say "slips to 2027," not "dies").</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. Every source is on the last page — click and judge for yourself.</p>
+    <p><strong>Impact</strong> — 9 out of 10. This bill writes the rules for the entire market.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus</div>
+  <p><strong>The crowd:</strong> Polymarket prices a 2026 signing around a coin flip (~45% on June 19, swung up near ~60% mid-June). The loud story: "the Senate clock is a wall."</p>
+  <p><strong>Me:</strong> ~55% for 2026 — and ~90% that a crypto rules law exists within 3 years.</p>
+  <p><strong>My edge:</strong> the crowd is pricing a <em>timing</em> problem like a <em>death</em> problem. The House already did its half (passed July 2025); the Senate is sliding the date, not killing the bill — Kalshi's "by August" odds crashed, but its "before 2027" odds held a coin flip.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of June 19, 2026 — hard numbers only, sources on the last page</div>
+  <ul>
+    <li class="fix"><strong>The House already passed it.</strong> The House passed H.R. 3633 (the CLARITY Act) on <strong>July 17, 2025, 294-134</strong> (bipartisan, Roll Call #199). The House chamber is done.</li>
+    <li class="fix"><strong>The Senate is writing its own bill.</strong> The <strong>Senate Banking Committee</strong> advanced a <em>separate</em> market-structure substitute <strong>15-9 on May 14, 2026</strong>; Democrats Gallego (AZ) and Alsobrooks (MD) crossed over. It must later be <strong>reconciled</strong> with the House-passed CLARITY Act.</li>
+    <li>Placed on the Senate Legislative Calendar (No. 423) on June 1. <strong>No floor date scheduled</strong>; Majority Leader Thune has not committed floor time as of June 19.</li>
+    <li>Needs <strong>60 votes</strong> = at least 7 Democrats. Committed so far: <strong>zero</strong>.</li>
+    <li>Ethics talks (over Trump-family crypto money) <strong>collapsed ~June 9–10</strong>; a restart was expected but isn't confirmed. Damaged, not dead.</li>
+    <li>Law-enforcement groups (sheriffs / FOP / DAs) still block the <strong>Section 604 developer-protection</strong> language — gating two swing votes (Cortez Masto, Warner).</li>
+    <li><strong>~6 usable weeks</strong> of floor time before the August break — with competing must-pass items (incl. FISA, funding) crowding the calendar.</li>
+    <li>Odds board <em>(sentiment only)</em>: <strong>Polymarket ~45%</strong> · <strong>Kalshi before-2027 ~50%</strong> · <strong>Galaxy 60%</strong> · <strong>JPMorgan &lt;50%</strong> · <strong>TD Cowen 40%</strong> (raised from ~33% after the May 14 markup).</li>
+    <li><strong>Bitcoin ~$63K</strong>, down ~22% from a mid-May ~$82K peak — on ETF outflows and macro, not this bill. All-time high ~<strong>$126K</strong> (Oct 6, 2025).</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>A <strong>GENIUS-sized move (~40–47%)</strong> from ~$63K ≈ <strong>~$89–93K</strong>. A retest of the ~$126K high ≈ <strong>+100%</strong>. The anchor is real: during the GENIUS Act's passage (Senate committee Mar 13 → signed July 18, 2025) Bitcoin ran from ~$83K to ~$120K (≈+44%).</p>
+    <p>Discount both — 2025 had tailwinds 2026 doesn't, and <strong>the GENIUS rally itself fully retraced</strong> (BTC is back near $63K). The Prize doesn't feed the math — it tells you what the lean is worth acting on.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong</div>
+  <ul>
+    <li><strong>The calendar is brutal:</strong> ~6 weeks, no scheduled date, a leader who won't commit, and must-pass items eating the floor.</li>
+    <li><strong>No Democratic upside:</strong> Democrats gain nothing politically from handing Trump a win — and the ethics fight just got uglier.</li>
+    <li><strong>The midterms are the real wall:</strong> miss August and election politics own the floor. Worst case — Congress resets in January and the Senate starts its bill over.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events — some prove the claim right, some prove it wrong</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>~July 4</td><td>Thune schedules floor time</td><td>Pre-recess path alive — odds jump</td></tr>
+    <tr><td>July 1</td><td>Still no floor date + no ethics deal</td><td>Re-rate the 1-month down</td></tr>
+    <tr><td>Early August</td><td>Recess starts with no floor vote</td><td>2026 signing in doubt — re-rate 3/6-month</td></tr>
+    <tr><td>Any time</td><td>Senate floor vote reaches 60</td><td>Passes; reconciliation with the House bill is next</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> August recess + no floor vote + no ethics deal = treat a 2026 signing as unlikely. Keep 1-year and 3-year Bull — slipping isn't dying, and the House already did its half.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp">✔ COMMITTED BY ME ON JUNE 12, 2026</div>
+    <div class="nums">My P: 55 / 60 / 65 / 85 / 92 · My Weight: 25% · My Impact: 9</div>
+    <p>I read the full report and overrode the AI near-term: its 1-month Neutral (P 50) is my mild Bull (P 55), and I trimmed the weight from 30% to 25%. The long-term calls I kept as drafted.</p>
+    <p><strong>My numbers ARE my call. The trade plan comes when all my pillars combine in the master spreadsheet.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Re-verified June 19, 2026 (originally written June 5 · committed June 12)</div>
+  <ul>
+    <li class="fix"><strong>Timeline corrected.</strong> Now states the House already passed H.R. 3633 (294-134, July 17, 2025); the May 14 15-9 vote is relabeled as the <strong>Senate Banking Committee's separate substitute</strong>, which must be reconciled with the House bill. The earlier framing read a chamber behind.</li>
+    <li><strong>Odds refreshed</strong> since the June 12 check: Kalshi before-2027 ~58% → <strong>~50%</strong>; TD Cowen ~33% → <strong>40%</strong> (raised after the May 14 markup); Polymarket ~49% → <strong>~45%</strong> (swung up near ~60% mid-June). Galaxy 60% and JPMorgan &lt;50% unchanged.</li>
+    <li><strong>The "~June 19" Thune trigger passed without firing</strong> — no floor time scheduled. Next checkpoint moves to pre-July-4 / pre-August recess.</li>
+    <li><em>Scores unchanged — the corrections were factual, not directional.</em></li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded June 19, 2026 — click and judge the quality yourself. Official records first, then reporting, then prices, then betting markets (sentiment only).</div>
+  <ul>
+    <li><span class="grp">Official records:</span> <a href="https://www.congress.gov/bill/119th-congress/house-bill/3633">Congress.gov — H.R. 3633 (CLARITY Act)</a> · <a href="https://www.govtrack.us/congress/votes/119-2025/h199">GovTrack — House passage 294-134, July 17 2025 (Vote #199)</a> · <a href="https://www.banking.senate.gov/newsroom/majority/scott-advances-stablecoin-debanking-legislation-out-of-banking-committee">Senate Banking — GENIUS out of committee, Mar 13 2025</a> · <a href="https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/">White House — GENIUS Act signed, July 18 2025</a>.</li>
+    <li><span class="grp">The reporting:</span> <a href="https://www.coindesk.com/policy/2026/05/14/clarity-act-clears-u-s-senate-committee-on-its-way-to-a-final-test-in-congress">CoinDesk — Senate Banking advances CLARITY 15-9 (May 14 2026)</a> · <a href="https://www.dwt.com/blogs/financial-services-law-advisor/2026/05/senate-banking-crypto-market-structure-bill">Davis Wright Tremaine — Senate substitute must be reconciled with the House CLARITY Act</a> · <a href="https://www.coinspeaker.com/clarity-act-senate-hurdles-ethics-section-604/">Coinspeaker — ethics collapse &amp; Section 604 dev-protection fight</a> · <a href="https://finance.yahoo.com/markets/crypto/articles/senate-clarity-act-floor-vote-121007136.html">Yahoo Finance — floor vote hinges on ethics &amp; August recess (June 19 2026)</a>.</li>
+    <li><span class="grp">The prices:</span> <a href="https://fortune.com/article/price-of-bitcoin-06-12-2026/">Fortune — BTC ~$63.4K (June 12 2026)</a> · <a href="https://digitalchamber.org/bitcoin-surges-past-126000-record-breaking-rally-continues-into-october/">Digital Chamber — BTC ATH ~$126K (Oct 6 2025)</a> · <a href="https://blog.amberdata.io/bitcoin-hits-123k-as-u.s.-passes-genius-act">Amberdata — BTC ~$123K at GENIUS signing</a>.</li>
+    <li><span class="grp">The odds (sentiment only, not fact):</span> <a href="https://polymarket.com/event/clarity-act-signed-into-law-in-2026">Polymarket — CLARITY signed in 2026 (~45%)</a> · <a href="https://cryptobriefing.com/galaxy-digital-clarity-act-odds-lowered/">Crypto Briefing — Galaxy 60% (June 9)</a> · <a href="https://blockonomi.com/jpmorgan-turns-cautious-on-crypto-as-clarity-act-odds-slip-lower/">Blockonomi — JPMorgan &lt;50%</a> · TD Cowen 40% (raised from one-in-three after the May 14 markup, quoted in the reporting above). Kalshi "before 2027" ~50% (quoted in reporting; live page rate-limited).</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

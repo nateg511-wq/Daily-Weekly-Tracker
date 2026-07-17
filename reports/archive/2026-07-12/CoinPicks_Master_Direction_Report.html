@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Master Direction Report — July 11, 2026</title>
+<!--
+  ============================================================
+  COINPICKS MASTER DIRECTION REPORT — HOUSE TEMPLATE v2
+  v4 of July 11, 2026: light 1-day re-research (quant refreshed; CLARITY/Iran/
+  Tokenization nudged; Fed & Macro held flat on no fresh primary data).
+  Adds THE FINAL NUMBER (cross-window synthesis).
+  Engine: engine/blend.py via run.py blend (score set 2026-07-11_draft).
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 36mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:6mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .finalnum{ background:#eafaf1; border:1.5px solid #8fdcb4; border-radius:8px; padding:6mm 8mm; margin-top:6mm; }
+  .cover .finalnum .fig{ font-size:26pt; font-weight:800; color:#0f7a4f; letter-spacing:-.5px; }
+  .cover .finalnum .lab{ font-size:9pt; color:#1a5c3d; letter-spacing:.6px; font-weight:700; text-transform:uppercase; }
+  .cover .finalnum .exp{ font-size:8.8pt; color:#2c5443; margin-top:1.5mm; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:6mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  li.warn:before{ content:"\26A0"; color:#b45309; }
+  strong{ color:#10243f; }
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores .signeu{ font-weight:700; color:#6b7280; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>MASTER DIRECTION REPORT · ALL PILLARS COMBINED · JULY 11, 2026</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 11, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Master Direction<br><span class="l2">Report</span></h1>
+  <div class="deck">Five Pillars, One Table, One Number — Light Daily Refresh, July 11, 2026</div>
+  <div class="note">Quant pillar recomputed on data through July 11; the four qualitative pillars given a light 1-day re-research (CLARITY, Iran, and Tokenization nudged on genuine new developments; Fed &amp; Macro held flat — no fresh H.4.1/claims data since July 10). Full score lineage (June committed → July 8 draft → July 10 draft → July 11 draft) preserved in every report. <strong>Draft scores and the equal-weight model await my stamp.</strong></div>
+  <div class="finalnum">
+    <div class="lab">The Final Number · July 11, 2026 · equal-weight model</div>
+    <div class="fig">+1.06</div>
+    <div class="exp"><strong>Mild Bull overall, time-arbitraged.</strong> Equal-weight mean of the five window signals (−10 max bear … +10 max bull). Horizon-weighted variant: <strong>+1.53</strong>. The structure underneath: Mild Bear at 1 month, Neutral at 3 months, Mild Bull at 6 months, Bull at 1 year, Strong Bull at 3 years. The number is positive because the far windows outweigh the near ones — it is <em>not</em> a buy-today signal; it is a "the storm is priced, the recovery isn't" signal.</div>
+  </div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS MASTER BLEND · ALL FIVE PILLARS EQUAL-WEIGHTED · 20% EACH</div>
+    <div class="m">Compiled July 11, 2026 · BTC $64,128 (daily, mid-session) · Engine: engine/blend.py — run.py blend (equal-weight, July 11 drafts) · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE MASTER TABLE ====================-->
+<section class="sec first avoid">
+  <h2>The Master Table</h2>
+  <div class="sub">The whole thesis in five rows, on the July 11 drafts. Signal range −10 (max bear) to +10 (max bull).</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">MASTER (equal-wt)</th><th class="c">Jul 10 Master</th><th>The Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c my signeg">−0.64</td><td class="c signeu">−0.77</td><td><strong>Mild Bear</strong> — Fed still the drag; CPI Tuesday; Iran talks live but MoU still "over"</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c my signeu">−0.26</td><td class="c signeu">−0.34</td><td><strong>Neutral</strong> — Sept-hike window + Aug 7 recess cliff; watch $58,526</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c my sig">+0.66</td><td class="c signeu">+0.53</td><td><strong>Mild Bull</strong> — basing; DTCC October, Nasdaq Dec 6, peak hawkishness passes</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c my sig">+2.34</td><td class="c signeu">+2.34</td><td><strong>Bull</strong> — all five pillars positive; the thesis window</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c my sig">+3.19</td><td class="c signeu">+3.19</td><td><strong>Strong Bull</strong> — law + adoption + cycle + value</td></tr>
+  </table>
+  <div class="formula"><strong>Formula:</strong> per pillar, Signal = ((P − 50) ÷ 50) × Quality × Impact, with Impact a uniform <strong>8</strong> for every pillar. <strong>MASTER = the simple mean of all five pillar signals</strong> — equal weight, 20% each (add a pillar and it auto-rebalances to 1/N). Bands: |s| &lt; 0.5 Neutral · &lt; 1.5 Mild · &lt; 3 Bull/Bear · &lt; 5 Strong · else Very Strong. "Jul 10 Master" is the prior cycle's reading, shown for comparison. Machine-verified two ways.</div>
+  <div class="box tight">
+    <h3>The Final Number — how it's built, and what moved</h3>
+    <p><strong>+1.06 = the equal-weight mean of the five MASTER signals above</strong> ((−0.64 − 0.26 + 0.66 + 2.34 + 3.19) ÷ 5). Weighting the longer windows harder (10/15/20/30/25%) gives <strong>+1.53</strong>. Both read <strong>Mild Bull</strong>, up modestly from July 10's +0.99 / +1.48. What moved: the near-term window (1mo −0.77 → −0.64) on CLARITY firming to a concrete July 20 floor-vote target, Iran cooling slightly (active Oman-mediated Hormuz talks, no new strikes since Jul 8-9), and Tokenization's continued acceleration (treasuries +2.8% in a day); the 6-month window also ticked up (+0.53 → +0.66) as the Bitcoin-TA cycle analog firmed. Fed &amp; Macro and the 1yr/3yr windows are unchanged — no fresh primary Fed data landed today, and nothing in one day moves a structural 3-year view. <strong>The near-term risk is real, and the 1-year-out case still outweighs it.</strong></p>
+  </div>
+</section>
+
+<!--==================== THE FULL MATRIX ====================-->
+<section class="sec avoid">
+  <h2>The Full Pillar Matrix</h2>
+  <div class="sub">Every pillar's signal on every window — July 11 draft scores (each report shows the full June → Jul 8 → Jul 10 → Jul 11 lineage).</div>
+  <table class="data scores">
+    <tr><th>Pillar (weight · impact)</th><th class="c">1 mo</th><th class="c">3 mo</th><th class="c">6 mo</th><th class="c">1 yr</th><th class="c">3 yr</th><th class="c">Status</th></tr>
+    <tr><td><strong>CLARITY Act</strong> (20% · 8)</td><td class="c sig">+0.27</td><td class="c sig">+0.68</td><td class="c sig">+1.50</td><td class="c sig">+4.61</td><td class="c sig">+6.38</td><td class="c">Jul 11 draft</td></tr>
+    <tr><td><strong>Iran War Risk</strong> (20% · 8)</td><td class="c signeg">−0.58</td><td class="c signeu">0.00</td><td class="c sig">+0.78</td><td class="c sig">+2.08</td><td class="c sig">+2.90</td><td class="c">Jul 11 draft</td></tr>
+    <tr><td><strong>Tokenization RWA</strong> (20% · 8)</td><td class="c sig">+0.58</td><td class="c sig">+1.27</td><td class="c sig">+2.04</td><td class="c sig">+3.00</td><td class="c sig">+3.92</td><td class="c">Jul 11 draft</td></tr>
+    <tr><td><strong>Fed &amp; Macro</strong> (20% · 8)</td><td class="c signeg">−2.18</td><td class="c signeg">−1.90</td><td class="c signeg">−0.77</td><td class="c sig">+0.36</td><td class="c sig">+1.14</td><td class="c">held flat</td></tr>
+    <tr><td><strong>Bitcoin TA — quant</strong> (20% · 8)</td><td class="c signeg">−1.32</td><td class="c signeg">−1.34</td><td class="c signeg">−0.26</td><td class="c sig">+1.63</td><td class="c sig">+1.60</td><td class="c">Jul 11 computed</td></tr>
+    <tr><td><strong>MASTER</strong> — mean of the five</td><td class="c my signeg">−0.64</td><td class="c my signeu">−0.26</td><td class="c my sig">+0.66</td><td class="c my sig">+2.34</td><td class="c my sig">+3.19</td><td class="c"><strong>equal-wt</strong></td></tr>
+  </table>
+  <div class="formula">P lineage (June → Jul 8 → Jul 10 → Jul 11) — CLARITY 55/60/65/85/92 → 52/56/61/83/92 → 50/54/60/82/92 → <strong>52/55/61/82/92</strong> · Iran 50/55/62/75/85 → 40/47/55/70/83 → 42/49/56/70/83 → <strong>44/50/57/70/83</strong> · Tokenization 53/57/62/72/85 → 52/56/62/73/85 → 53/58/64/74/85 → <strong>54/59/65/74/85</strong> · Fed 38/40/46/54/61 → 35/36/42/52/61 → 34/36/44/53/61 → <strong>34/36/44/53/61 (held)</strong> · Bitcoin TA 37/37/46/67/70 → 39/38/44/67/70 → <strong>39/38/47/67/70</strong> (computed). P and Quality unchanged in structure; Impact remains a uniform <strong>8</strong> for every pillar and every pillar carries an equal <strong>20%</strong> weight — the MASTER row is the simple mean of the five.</div>
+</section>
+
+<!--==================== THE STORY ====================-->
+<section class="sec">
+  <h2>The Story, Window by Window</h2>
+  <div class="sub">What the blend is saying on July 11, 2026</div>
+  <ul>
+    <li><strong>1 month — Mild Bear (−0.64, was −0.77).</strong> The Fed is still the dominant drag (−2.18, held flat: hawkish June minutes, ~62-66% Sept-hike odds, CPI lands Tuesday July 14). Iran improved but stays negative (−0.58, was −0.77: no new strikes since Jul 8-9, Iran's FM in Oman on Hormuz, but Trump still calls the MoU "over"). CLARITY turned mildly positive (+0.27, was 0.00) on a firmer, dated Senate floor-vote target (July 20) and a Polymarket uptick to ~46-47%. Tokenization firmed too (+0.58, was +0.43) on another day of treasury growth.</li>
+    <li><strong>3 months — Neutral (−0.26, was −0.34).</strong> Iran crossed to flat (0.00, was −0.10) as the near-term picture cools; CLARITY (+0.68) and Tokenization (+1.27) both firmed slightly; the Fed (−1.90) and the quant tape (−1.34: prior cycles 0-for-3 over the next quarter, median −12%) remain the drags. The window still holds the Sept-hike decision, the Aug 7 recess cliff, and the ~Aug 16 MoU expiry.</li>
+    <li><strong>6 months — Mild Bull (+0.66, was +0.53).</strong> Tokenization remains the strongest near-structural pillar (+2.04: DTCC's Russell-1000 pilot running this month, full launch October; Nasdaq Dec 6 target); CLARITY firms further (+1.50); Iran ticks up (+0.78); the Fed drag (−0.77) is unchanged; the tape's drag shrank (−0.53 → −0.26) as the 6-month cycle analog flipped from 0-of-3 to 1-of-3 positive (n=3 — soft, still net negative). Historical average cycle bottom (~Aug 30) sits inside this window.</li>
+    <li><strong>1 year — Bull (+2.34, unchanged).</strong> All five pillars positive: Legislation +4.61, Tokenization +3.00, Iran +2.08, Bitcoin TA +1.63, Fed +0.36. Cycle analogs 3-for-3 (median +27%), price 52% below power-law fair value, labor cracking fast enough to force the easing cycle into view. The window the whole thesis is built around.</li>
+    <li><strong>3 years — Strong Bull (+3.19, unchanged).</strong> Every pillar positive and the structural case compounds: CLARITY +6.38, Tokenization +3.92, Iran +2.90, Bitcoin TA +1.60, Fed +1.14. One day of incremental news doesn't move a 3-year structural view — that's by design.</li>
+  </ul>
+</section>
+
+<!--==================== AGREEMENT ====================-->
+<section class="sec avoid">
+  <h2>Where the Two Lenses Agree — and Where They Fight</h2>
+  <div class="sub">The point of running qualitative and quantitative on the same standard</div>
+  <div class="box">
+    <h3>The independent confirmation</h3>
+    <p><strong>Fed &amp; Macro (judged, held flat) and Bitcoin TA (computed) still trace a similar path:</strong> P 34/36/44/53/61 vs 39/38/47/67/70 — within 5 points at 1 month, 2 at 3 months, and just 3 points apart at 6 months (44 vs 47, was an exact match on Jul 10 before the quant 6-month analog firmed). Two methods that share no inputs keep landing on "bearish quarter, softening half-year." Iran no longer votes fully with them near-term — it's cooled to −0.58 as talks progress.</p>
+  </div>
+  <div class="box">
+    <h3>The real disagreement</h3>
+    <p><strong>Near-term:</strong> Tokenization and CLARITY both say the structural news is mildly good <em>right now</em> (P 54 and 52, records + a dated floor vote); macro and the tape still say risk-off (P 34–39). The master resolves it honestly: Mild Bear now, and the bullish pillars get paid in the windows where their evidence is strongest.</p>
+    <p><strong>Long-term:</strong> the four story pillars average about +3.6 at 3 years (CLARITY +6.38, Tokenization +3.92, Iran +2.90, Fed +1.14) versus the Bitcoin-TA pillar's +1.60 — roughly 2.2× higher. Remember why: the TA pillar is capped by construction (P never leaves 25–75) and its 3-year Quality is 0.50. Equal weight lets that gap show through honestly instead of burying it in a blend.</p>
+  </div>
+</section>
+
+<!--==================== TRIGGER WATCH ====================-->
+<section class="sec">
+  <h2>Trigger Watch — The Next Six Weeks, Re-Dated</h2>
+  <div class="sub">Fired July 8–11 triggers are already IN the draft scores. These are the forward triggers; each pillar report carries the full table.</div>
+  <table class="data">
+    <tr><th>Date / Level</th><th>Event</th><th>Re-rates</th></tr>
+    <tr><td>Weekend Jul 12</td><td>Weekly close vs the 200-week MA (~$62.9K)</td><td>Close above = TA repair signal #1 confirmed; below = bounce failed</td></tr>
+    <tr><td>Jul 13</td><td>Senate returns (NDAA eats week one) · merged CLARITY text expected this week</td><td>Text drops with White House sign-off = CLARITY up; without = timing risk stays</td></tr>
+    <tr><td>Jul 14</td><td>June CPI, 8:30am (nowcast ~3.96% headline)</td><td>Fed 1/3-month; cooler print = first crack in the hike case</td></tr>
+    <tr><td>Jul 17</td><td>Iran oil-waiver wind-down completes · NCUA GENIUS comments close</td><td>Iran/oil; Tokenization rules-sequencing</td></tr>
+    <tr><td>Jul 18</td><td>GENIUS implementing-rules statutory deadline</td><td>Core Treasury/OCC rules land = de-risked; total silence = headwind (partial miss is the base case)</td></tr>
+    <tr><td>Jul 20 (targeted)</td><td>Senate floor vote now targeted for CLARITY, per reporting — merged text due week of Jul 13 first</td><td>Vote held & cloture clears → CLARITY 1mo snaps up hard; slips again → 2026 fading further (Polymarket ~46-47%)</td></tr>
+    <tr><td>Jul 28–29</td><td>FOMC (hold ~70–77% priced) + June PCE Jul 25</td><td>Fed all windows; hike or hike-signal = re-rate down</td></tr>
+    <tr><td>Aug 7</td><td>Last Senate session day before recess</td><td>No CLARITY vote by now → 2026 signing in real doubt</td></tr>
+    <tr><td>~Aug 16</td><td>Islamabad Memorandum 60-day window expires</td><td>Iran: deal/extension = up hard; formal collapse = down hard</td></tr>
+    <tr><td>~Aug 30</td><td>Historical average cycle-bottom month (28) passes</td><td>TA: higher low after this + improving momentum = basing confirmed</td></tr>
+    <tr><td>$58,526 / $64,432 / ~$69.9K</td><td>TA levels: June-30 low · falling weekly trendline (~0.5% overhead) · 20-week MA</td><td>Break below the low = flush live; trendline + 20-week reclaims = repair #2 and #3</td></tr>
+    <tr><td>Coming days</td><td>Iran expected to publicly state Hormuz is open / vessels safe (per US officials, not yet delivered)</td><td>Statement delivered = Iran near-term up; continued silence/conditional-only stance = re-rate flat to down</td></tr>
+  </table>
+  <div class="flip"><strong>The master flip line (unchanged):</strong> the Iran flip line (sustained wider war + full Hormuz shock — the strait is already "severe"-rated) and the TA flip line (weekly close under $50,000) firing together turns the near-term Mild Bear into a full Bear and puts the 6-month Neutral under review. Either alone is a re-rate, not a regime change.</div>
+</section>
+
+<!--==================== ROBUSTNESS ====================-->
+<section class="sec avoid">
+  <h2>Robustness — Does Any One Pillar Drive the Call?</h2>
+  <div class="sub">Equal weight is now the fixed model — there is no qual/quant mix knob to tune. The test that matters instead: drop any single pillar and see whether the conclusion holds.</div>
+  <table class="data scores">
+    <tr><th>Final number with this pillar removed</th><th class="c">Final # (equal-wt)</th><th>Call · still positive?</th></tr>
+    <tr><td>— drop CLARITY Act</td><td class="c signeu">+0.65</td><td>Mild Bull · yes</td></tr>
+    <tr><td>— drop Iran War Risk</td><td class="c signeu">+1.06</td><td>Mild Bull · yes</td></tr>
+    <tr><td>— drop Tokenization RWA</td><td class="c signeu">+0.78</td><td>Mild Bull · yes</td></tr>
+    <tr><td>— drop Fed &amp; Macro</td><td class="c signeu">+1.49</td><td>Bull · yes</td></tr>
+    <tr><td>— drop Bitcoin TA</td><td class="c signeu">+1.30</td><td>Mild Bull · yes</td></tr>
+    <tr><td><strong>all five in (headline)</strong></td><td class="c my sig">+1.06</td><td><strong>Mild Bull</strong></td></tr>
+  </table>
+  <div class="formula">Every leave-one-out final number stays positive (+0.65 to +1.49) — <strong>no single pillar is doing the work</strong>; the Mild Bull conclusion survives dropping any one of them. The horizon-weighted final (+1.53) agrees. The near-term Mild Bear and the long-term Bull/Strong Bull calls also hold across all five drops. The one honest caveat: dropping the most-bullish pillar (CLARITY) gives the lowest final (+0.65) and dropping the most-bearish (Fed) the highest (+1.49) — magnitude shifts; the sign never does.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp pending">◷ COMPILED JULY 11, 2026 · QUANT RECOMPUTED, PILLARS LIGHTLY RE-RATED · AWAITING MY STAMP</div>
+    <div class="nums">MASTER: −0.64 / −0.26 / +0.66 / +2.34 / +3.19 · THE FINAL NUMBER: +1.06 (Mild Bull, time-arbitraged)</div>
+    <p>This is a light 1-day refresh: the quant pillar was fully recomputed on fresh price data, and the four qualitative pillars got a targeted re-check for what genuinely changed since July 10 (CLARITY's floor-vote date firmed, Iran's diplomacy advanced, Tokenization kept accelerating) rather than a full re-research — Fed &amp; Macro was held flat because no new H.4.1 or claims data has landed since the last cycle (next H.4.1 release July 16). The full lineage (June committed → July 8 → July 10 → July 11) is printed in every report. Awaiting my signature: <strong>(1)</strong> the five draft P-paths, <strong>(2)</strong> the equal-weight model and the final-number window weighting (leave-one-out shows the call is robust either way). The near-term calendar is dense — CPI Tuesday, the GENIUS deadline Saturday the 18th, the targeted CLARITY floor vote July 20 — and each pillar's trigger table says exactly what to re-rate when those land.</p>
+    <p><strong>Read as an investment posture: don't chase the bounce this month; the windows that pay are 6-plus months out; the levels and dates that would change this are printed above.</strong></p>
+  </div>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Each pillar report carries its full, freshly-verified source list. The master adds the engine and headline references for this July 11 refresh.</div>
+  <ul>
+    <li><span class="grp">The pillars:</span> the sibling reports in this folder — CoinPicks_CLARITY_Act / Iran_War / Tokenization_RWA / Fed_Macro Pillar Reports (lightly re-rated July 11) · CoinPicks_Bitcoin_TA_Quant_Pillar_Report (computed July 11).</li>
+    <li><span class="grp">The engine:</span> engine/blend.py → data/master_blend.json (score sets 2026-06-19_committed / 2026-07-08_draft / 2026-07-10_draft / 2026-07-11_draft in config/scores.json; final-number window weights in config/settings.json "final_weights") · engine/mapping.py → data/pillar_scores.json (Bitstamp data through Jul 11, 2026).</li>
+    <li><span class="grp">Headline checks (Jul 11):</span> <a href="https://www.techtimes.com/articles/320055/20260710/clarity-act-merged-draft-due-next-week-senate-has-three-weeks-before-2030-delay.htm">TechTimes — CLARITY merged draft due next week, Senate targets Jul 20 floor vote</a> · <a href="https://www.cnn.com/2026/07/11/world/live-news/iran-war-trump">CNN — Iran FM in Oman on Hormuz, MoU still "over" (Jul 11)</a> · <a href="https://app.rwa.xyz/treasuries">rwa.xyz — tokenized treasuries $15.58B, BUIDL $2.87B (Jul 11)</a> · <a href="https://polymarket.com/event/clarity-act-signed-into-law-in-2026">Polymarket — CLARITY 2026 passage ~46-47%</a> · <a href="https://www.usnews.com/news/business/articles/2026-07-09/us-jobless-claims-dip-modestly-to-215-000-last-week-as-layoffs-remain-at-historically-healthy-levels">US News — jobless claims 215K (unchanged data point, rel. Jul 9)</a>.</li>
+    <li><span class="grp">Price:</span> Bitstamp BTC/USD daily $64,128 (Jul 11, mid-session); cycle low $58,526 close (Jun 30) / $57,735 intraday (Jul 1); ATH $124,728 close (Oct 6, 2025); cross-checked against Coinbase.</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

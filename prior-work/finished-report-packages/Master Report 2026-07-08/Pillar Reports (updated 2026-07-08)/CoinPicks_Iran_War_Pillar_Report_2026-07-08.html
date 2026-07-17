@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — Iran War Risk (Updated July 8, 2026)</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Subject: Iran–Israel/US war risk -> crypto. Iran-only.
+  Written 2026-06-19 (scores committed). Fully re-researched
+  and updated 2026-07-08 — draft re-rates awaiting owner stamp.
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .sig.zero{ color:var(--muted); }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>IRAN WAR RISK · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 8, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Iran War Risk<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Middle East Conflict Risk — Researched, Scored, and Personally Committed</div>
+  <div class="note">Originally written June 19, 2026; scores committed by me June 19, 2026. Fully re-researched &amp; updated on July 8, 2026 against live primary sources — the re-rated scores in this version are <strong>DRAFT</strong>, awaiting my stamp.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 25% OF MY THESIS</div>
+    <div class="m">Written June 19, 2026 · Updated &amp; Re-verified July 8, 2026 · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — June Committed vs. July 8 Draft</h2>
+  <div class="sub">June column committed by me June 19, 2026 · Draft column re-rated July 8, 2026 — awaiting my stamp</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My June P</th><th class="c">Draft P (Jul 8)</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c">50</td><td class="c my">40</td><td class="c">0.60</td><td class="c">7</td><td class="c signeg">−0.8</td><td>Mild Bear — active shoot-back loop</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c">55</td><td class="c my">47</td><td class="c">0.65</td><td class="c">7</td><td class="c signeg">−0.3</td><td>Neutral</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c">62</td><td class="c my">55</td><td class="c">0.70</td><td class="c">7</td><td class="c sig">+0.5</td><td>Neutral (borderline; exact signal 0.49)</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c">75</td><td class="c my">70</td><td class="c">0.65</td><td class="c">7</td><td class="c sig">+1.8</td><td>Bull (dip-buy, delayed)</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c">85</td><td class="c my">83</td><td class="c">0.55</td><td class="c">7</td><td class="c sig">+2.5</td><td>Bull</td></tr>
+  </table>
+  <div class="formula"><strong>Draft P:</strong> 40 / 47 / 55 / 70 / 83 · <strong>My Weight:</strong> 25% · <strong>My Impact:</strong> 7 · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Draft scores re-rated July 8, 2026 from the June baseline (50 / 55 / 62 / 75 / 85) — awaiting my stamp.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Near-term now <em>below</em> a coin flip: Trump declared the ceasefire "over" on July 8 and both sides are actively trading strikes, with Hormuz effectively closed to commercial shipping. Long-term still high — these same two sides walked back from the brink twice this year (April 8, June 8), and war shocks have historically faded.</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. The near-term windows carry live fog-of-war (an exchange still in motion as of July 8); the multi-year read still leans on a thin sample, so Quality tops at 0.70 and falls to 0.55. Every source is on the last page — click and judge for yourself.</p>
+    <p><strong>Impact</strong> — 7 out of 10, unchanged. Even US strikes on 80+ targets inside Iran plus a "ceasefire over" headline moved BTC only ~2–3% on July 8. A war shock hits crypto hard for days — but it stays one input among many.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus — updated July 8, 2026</div>
+  <p><strong>The crowd:</strong> "the ceasefire is over" — Trump said it himself on July 8. Missiles into tankers, the Strait of Hormuz declared closed, US strikes on 80+ targets inside Iran, IRGC drones at US bases in Bahrain and Kuwait. The loud story is pure risk-off: stay out until it's over.</p>
+  <p><strong>Me:</strong> near-term I'm with the bears for once — 40% good-for-crypto at 1 month, because an active shoot-back loop with re-sanctioned oil is no place to be a hero. But the arc holds: 83% over three years. The dip is still a buy — it just isn't fully formed yet.</p>
+  <p><strong>My edge:</strong> the market itself is telling you how desensitized it is — the July 8 escalation bought a ~2–3% BTC dip to ~$61.7k, not a crash. The risk isn't the headlines the crowd fears; it's the quiet paths — a US-casualty event, a formal MoU death by ~Aug 16, a confirmed full Hormuz closure. I watch those, not the noise.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of July 8, 2026 — hard numbers only, sources on the last page. ★ = new since June 19</div>
+  <ul>
+    <li class="fix"><strong>Tanker attacks, night of July 6–7:</strong> the IRGC fired ≥2 missiles at commercial ships in/near the Strait of Hormuz. Two merchant vessels hit that night: Qatari LNG carrier <strong>Al Rekayyat</strong> (struck ~8nm off Limah, Oman — engine-room fire, crew abandoned ship) and Saudi crude tanker <strong>Wedyan</strong> (damaged); a third vessel was hit within 24 hours — <strong>three hit in total</strong> — and four more tankers turned back rather than transit. Tehran did not officially claim responsibility.</li>
+    <li class="fix"><strong>This was the second round in ten days.</strong> On <strong>June 27</strong> an Iranian one-way attack drone hit the tanker <strong>M/T Kiku</strong> (Panama-flagged, 2M+ bbl of crude); the US struck targets in Iran the same day (CENTCOM release), and the IRGC hit US sites in <strong>Kuwait and Bahrain on June 28</strong>. The ceasefire has now cracked at least <strong>three times</strong> since April (June 7–8, June 27–28, July 6–8).</li>
+    <li class="fix"><strong>US response, late July 7 → July 8:</strong> CENTCOM struck <strong>80+ Iranian targets</strong> early July 8 (hours after the ship attacks) — air defenses, coastal radar, C2, anti-ship missile sites, 60+ IRGC small boats; explosions on Qeshm Island and at Sirik. CENTCOM called it roughly <strong>8× larger than the June 27 round</strong>. Later July 8 the IRGC claimed attacks on <strong>85 US military sites in Bahrain and Kuwait</strong> — its second strike on Gulf bases in ~10 days (missiles/drones; Bahrain sirens 3x; no casualties reported) — and vowed to "retaliate in a harsher way."</li>
+    <li class="fix"><strong>Ceasefire declared over:</strong> at the NATO summit in Ankara on <strong>July 8</strong>, Trump: "I think it's over… I'll let our wonderful negotiators keep talking if they want, but I don't see it." Additional US strikes were underway Wednesday night.</li>
+    <li class="fix"><strong>Hormuz squeeze:</strong> Iran declared the strait shut back on <strong>~June 22</strong>; traffic had been recovering (a widened route opened June 27) until the July 6–8 attacks left it <strong>effectively closed to commercial shipping as of July 8</strong> (US says some vessels still transiting). Unofficial tracker data (straits.live): throughput ~39–41% of pre-crisis as of <strong>July 5 — pre-attack</strong> — with VLCC war-risk premiums ~8× normal. Insurance Journal (July 8): war-risk rates ~<strong>3% of hull value</strong>, up from 2% a week earlier ("probably at 5% at the least" per one underwriter), with underwriters advising owners to <strong>pause Hormuz voyages</strong>; trade press puts Hormuz-transit VLCC fixtures at ~$440–470K/day.</li>
+    <li class="fix"><strong>Oil re-sanctioned:</strong> the US Treasury revoked the MoU waiver allowing Iranian oil sales on <strong>July 7</strong> — wind-down completes by <strong>July 17</strong>.</li>
+    <li><strong>Oil price:</strong> Brent settled +3% at <strong>$74.16</strong> July 7, then +5.2% at <strong>$78.02</strong> July 8 (WTI +4.4%, $73.52) — ~+9% in two sessions, yet still <em>below</em> the ~$80 June 19 baseline (oil had faded to ~$72 during the de-escalation).</li>
+    <li><strong>Diplomacy — resumed, then stalled:</strong> after the June 19 Switzerland cancellation, talks restarted (a "Lake Lucerne Summit," then indirect technical talks in <strong>Doha, June 30–July 2</strong>; Vance July 1: "going well"; concluded July 2 with "positive progress" claimed but no breakthrough). Doha did produce two concrete outcomes: agreement to release the first <strong>$3B tranche</strong> of ~$6B in Qatar-held frozen Iranian funds, and an MoU-violations reporting channel. Sticking points: Hormuz transit fees (Iran July 4: will "definitely" charge; US rejects) and the rest of the frozen funds. The sides agreed in principle to reconvene after the Khamenei funeral processions (July 4–9) — the July 8 US strikes reportedly broke a promised funeral-period pause — but as of July 8 <strong>no date is set</strong>; Iran's FM says talks "will not commence if threats continue"; Tehran has <strong>not</strong> formally declared the MoU dead. The 60-day window runs to ~<strong>Aug 16</strong>.</li>
+    <li><strong>Israel is out of this round:</strong> no direct Israel–Iran exchange since June 7–8, and Israel was not a participant in the July 7–8 strikes (Netanyahu visited Haifa naval base July 7, "eye to eye" with Trump). Israel–Hezbollah simmers on — Rubio announced an Israel–Lebanon "framework deal" June 26 — but it is not the July driver.</li>
+    <li><strong>Crypto now:</strong> BTC slipped from <strong>$62,657</strong> in Asia hours July 8 toward ~<strong>$62K</strong> (−1.7 to −2.5% by outlet; some trackers print high-$61Ks), selloff explicitly attributed to the "ceasefire over" remarks and the strikes. Context that matters: BTC had <em>already</em> printed ~$61.7K on <strong>July 6 — a 21-month low — before this escalation</strong>, so the war headlines pushed price only back toward a level it had just visited. ~<strong>$450M</strong> total liquidations (~$350M in altcoins); SOL wiped out its July rally.</li>
+    <li><strong>The odds:</strong> Polymarket "US invades Iran before 2027" jumped <strong>11.5% → 14.5%</strong> on the strikes (independently reported); "Iran withdraws from MoU talks by Aug 15" at <strong>26%</strong> and "US–Iran final nuclear deal by Dec 31" at <strong>35.5%</strong> (read directly off Polymarket July 8 — live snapshots, they move).</li>
+    <li><strong>The baseline (still true, still load-bearing):</strong> June 2025 "12-Day War" — BTC dipped to a <strong>~$98,225 intraday low (June 22, 2025)</strong>, reclaimed $107k+ by June 25, a fast V. The far larger 2026 regime-change war (<strong>Feb 28 → Apr 8, 2026</strong>; Khamenei killed Feb 28, confirmed by Iran March 1) still didn't crater crypto on Iran-specific grounds.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The upside is still the <strong>"buy-the-invasion" rebound.</strong> Anchors: Russia–Ukraine (Feb 24, 2022) — BTC fell ~8% to a <strong>~$34,300 intraday low</strong>, posted a +14.5% up-day on Feb 28, ended <strong>~+25–29% above the low within a week</strong> (~+38% by late March). June 2025 rhymed: ~$98k dip, fully recovered within a week.</p>
+    <p><strong>The test is live right now.</strong> July 8's dip was only ~2–3% to ~$61.7k — a desensitized market means shallower dips and smaller Vs. The bigger prize is the settlement scenario: a signed deal plus the reported ~$300B reconstruction fund re-pricing the whole region after oil re-sanctioning. Still a thin sample; the Prize doesn't feed the math — it tells you what the lean is worth acting on.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong</div>
+  <ul>
+    <li><strong>BTC is a risk asset here, not a safe haven — and the oil-shock path now has numbers.</strong> Goldman's April scenario: Brent averages <strong>>$100 in 2026</strong> if Hormuz stays largely shut another month ($120 Q3 / $115 Q4); JPMorgan: <strong>$120–130</strong> if disruption persists through Q3, ~<strong>$150</strong> in a full-closure worst case. That is an inflation shock — crypto falls <em>with</em> equities, the opposite of the dip-buy.</li>
+    <li><strong>It keeps breaking.</strong> The ceasefire has now cracked at least three times since April — June 7–8, June 27–28, and July 6–8's "it's over." The rounds are getting closer together and bigger. Each one, "time heals" gets directly contradicted.</li>
+    <li><strong>The shallow dip may be complacency, not resilience.</strong> Markets are pricing a contained flare-up (BTC −2–3%, Brent $78 — below the June baseline). That pricing is fragile to a US-casualty event, a formal MoU withdrawal, or a confirmed full closure — any one repricing gaps down, not drifts.</li>
+    <li><strong>Thin sample, still.</strong> The bullish long-term read rests on ~2 dip-and-recover events, both in a bull regime — geopolitical shocks don't always V-recover.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events ahead — some prove the claim right, some prove it wrong. Reset July 8, 2026</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>July 17, 2026</td><td>Iranian oil-sale waiver wind-down completes (Treasury revoked July 7)</td><td>Sanctions bite — Tehran's pressure to escalate or deal rises</td></tr>
+    <tr><td>By ~Aug 16, 2026</td><td>Formal MoU withdrawal or 60-day window expires unsigned (Polymarket: 26% withdrawal by Aug 15)</td><td>Diplomacy dead — re-rate 1/3/6-month down</td></tr>
+    <tr><td>Any time</td><td>Confirmed full Hormuz closure / Brent through $90</td><td>Oil shock confirmed — re-rate near-term down hard</td></tr>
+    <tr><td>Any time</td><td>US-casualty event (Bahrain/Kuwait bases, Gulf shipping)</td><td>Escalation spiral — re-rate down hard</td></tr>
+    <tr><td>Any time</td><td>Doha / Lake Lucerne talks resume</td><td>Off-ramp reopens — partial re-rate up</td></tr>
+    <tr><td>By Dec 31, 2026</td><td>Final US–Iran nuclear deal signed (Polymarket: 35.5%)</td><td>De-escalation confirmed — re-rate up across windows</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> a US invasion / regime-change round two, or a sustained <em>full</em> Hormuz closure with Brent north of $100 = treat the dip-buy thesis as broken. June's flip line was "wider war + Hormuz oil shock" — as of July 8 we are halfway there. A contained shoot-back loop that burns out keeps the long-term Bull.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp pending">◷ UPDATED DRAFT — JULY 8, 2026 · AWAITING MY STAMP</div>
+    <div class="nums">Draft P: 40 / 47 / 55 / 70 / 83 · My Weight: 25% · My Impact: 7</div>
+    <p>The June committed scores (<strong>50 / 55 / 62 / 75 / 85</strong>, committed June 19, 2026) remain the last human-stamped values — the draft above re-rates every window down off the broken ceasefire, the live shoot-back loop, and the impaired MoU, while keeping the long arc intact.</p>
+    <p>Still a <strong>dip-watching pillar, not a panic-selling one</strong> — but for the first time the 1-month lean is Bear. The market's 2–3% shrug at 80+ strikes says desensitized; the accident paths into ~Aug 16 say don't lean on it.</p>
+    <p><strong>Override any P and re-stamp — the master blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Re-researched July 8, 2026 (previous check June 19, 2026)</div>
+  <ul>
+    <li><strong>Trigger FIRED — renewed direct strikes (twice):</strong> the June 27–28 round (tanker M/T Kiku hit; US strikes; IRGC hit Kuwait/Bahrain) and the ~8×-larger July 6–8 round (three tankers hit; 80+ targets struck; IRGC hit Gulf bases again). BTC dipped only ~2% — the buy-the-dip test is live now.</li>
+    <li><strong>Trigger FIRED (substantially) — Hormuz:</strong> the strait (declared shut by Iran since ~June 22) is effectively closed to commercial shipping after the July 6–8 attacks; war-risk rates ~3% of hull value and rising (Insurance Journal), underwriters advising pauses; Brent +8–9% in two sessions to $78. Not a total physical closure — some vessels still transiting.</li>
+    <li><strong>Trigger FIRED (ceasefire leg) — collapse:</strong> Trump declared the ceasefire "over" July 8 and hostilities resumed; the MoU is impaired but neither side has formally withdrawn.</li>
+    <li><strong>Trigger NOT fired — nuclear deal:</strong> the 60-day window (to ~Aug 16) is nominally alive but badly impaired — Doha ended July 2 with partial outcomes ($3B tranche agreed, violations channel) but no breakthrough; reconvening after the Khamenei funerals was agreed in principle, no date set.</li>
+    <li><strong>Material new facts:</strong> the previously-unlogged June 27–28 escalation round (M/T Kiku, US strikes, IRGC on Kuwait/Bahrain); IRGC missile attacks on three commercial tankers July 6–8; US Treasury revoked the Iranian oil waiver July 7 (wind-down by July 17); ~$450M crypto liquidations July 8; Polymarket invasion-before-2027 odds 11.5% → 14.5%.</li>
+    <li><strong>Score re-rates (June committed → July 8 draft):</strong> 1mo 50→40 · 3mo 55→47 · 6mo 62→55 · 1yr 75→70 · 3yr 85→83 — draft only, awaiting my stamp.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded July 8, 2026 — click and judge the quality yourself. Official statements are quoted inside the wire reporting below; then prices, then betting markets (sentiment only).</div>
+  <ul>
+    <li><span class="grp">The escalation (official statements via wire reporting):</span> <a href="https://www.npr.org/2026/07/07/g-s1-132265/tanker-attack-strait-of-hormuz">NPR — Hormuz tanker attacks (July 7)</a> · <a href="https://www.cnn.com/2026/07/07/middleeast/hormuz-tanker-iran-attack-intl-hnk">CNN — Iran tanker attack (July 7)</a> · <a href="https://www.cbsnews.com/live-updates/iran-us-war-strait-of-hormuz-trump-nato/">CBS live — Treasury waiver revocation, CENTCOM 80+ targets, IRGC 85-site claim</a> · <a href="https://www.nbcnews.com/world/iran/us-launches-new-attacks-iran-retaliation-attacks-commercial-ships-us-m-rcna353411">NBC — new US strikes (July 8)</a> · <a href="https://www.timesofisrael.com/liveblog-july-8-2026/">Times of Israel liveblog — strike detail, Netanyahu at Haifa (July 8)</a> · <a href="https://www.aljazeera.com/news/2026/7/8/trump-says-ceasefire-over-after-us-iran-trade-attacks">Al Jazeera — Trump "ceasefire over" quotes (July 8)</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-08/trump-says-us-ceasefire-with-iran-is-over-after-strikes">Bloomberg — ceasefire over (July 8)</a> · <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis">Wikipedia — 2026 Hormuz crisis timeline (secondhand compilation, used for sequencing only)</a>.</li>
+    <li><span class="grp">Diplomacy:</span> <a href="https://www.aljazeera.com/news/2026/7/7/ships-attacked-in-the-strait-of-hormuz-what-that-means-for-ongoing-talks">Al Jazeera — attacks vs the talks (July 7)</a> · <a href="https://www.aljazeera.com/news/2026/7/2/us-iran-talks-in-doha-what-were-the-outcomes-and-whats-next">Al Jazeera — Doha outcomes (July 2)</a> · <a href="https://www.cnn.com/2026/07/01/world/live-news/iran-war-trump">CNN live — Vance "going well" (July 1)</a>.</li>
+    <li><span class="grp">The prices:</span> <a href="https://www.cnbc.com/2026/07/07/oil-prices-iran-strait-hormuz.html">CNBC — Brent $74.16 (July 7)</a> · <a href="https://www.cnbc.com/2026/07/08/oil-prices-brent-wti-iran-us-hormuz.html">CNBC — Brent $78.02 / WTI $73.52 (July 8)</a> · <a href="https://straits.live/">straits.live — Hormuz throughput tracker (34 transits July 5)</a> · <a href="https://www.insurancejournal.com/news/international/2026/07/08/876716.htm">Insurance Journal — war-risk rates ~3% of hull value, pause advisories (July 8)</a> · <em>(the ~8× premium multiple, 39–41% throughput, and P&amp;I-withdrawal figures are from the unofficial straits.live tracker — single-source)</em> · <a href="https://www.coindesk.com/markets/2026/07/08/bitcoin-under-pressure-as-u-s-iran-escalation-lifts-oil">CoinDesk — BTC $62,657 under pressure (July 8)</a> · <a href="https://fortune.com/article/price-of-bitcoin-07-06-2026/">Fortune — BTC ~$61.7K 21-month low (July 6, pre-escalation)</a> · <a href="https://www.coindesk.com/markets/2026/07/08/crypto-and-stocks-tumble-after-trump-declares-ceasefire-over-following-iran-strikes">CoinDesk — ~$450M liquidations (July 8)</a>.</li>
+    <li><span class="grp">The odds (sentiment only, not fact):</span> <a href="https://polymarket.com/iran">Polymarket — Iran markets</a> (invasion before 2027: 14.5%; MoU withdrawal by Aug 15: 26%; final deal by Dec 31: 35.5%) · <a href="https://blockchain.news/news/us-strikes-iran-polymarket-invasion-odds-rise-to-145-0hnmsr8ee9d00">Blockchain.News — invasion odds 11.5% → 14.5% (secondhand write-up of the Polymarket move)</a>.</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>
