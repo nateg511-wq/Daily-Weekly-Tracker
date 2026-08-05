@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — Tokenization of Real-World Assets (Updated July 18, 2026)</title>
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>TOKENIZATION (RWA) · PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 18, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Tokenization of<br>Real-World Assets<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Real Money On-Chain — Researched, Scored, and Personally Committed</div>
+  <div class="note">Originally written <strong>June 19, 2026</strong>; scores committed by me on <strong>June 19, 2026</strong>. Re-researched July 8, July 10, and July 13, 2026 against live primary sources; a daily catch-up July 17 and a light touch July 18 (cutting the front end on the GENIUS Act rulemaking deadline miss) followed. <strong>This version is a full weekly research refresh (July 18, superseding that same day's light touch)</strong> that independently re-verified the GENIUS Act deadline outcome, the DTCC Stellar-track launch, and the stablecoin-cap decline — confirming, not further moving, the light-touch cut. Re-rated <strong>DRAFT</strong> scores below await my stamp.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 30% OF MY THESIS</div>
+    <div class="m">Written June 19, 2026 · Updated &amp; Re-verified July 18, 2026 (full weekly refresh) · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — Committed vs. Drafts</h2>
+  <div class="sub">June P's committed by me June 19, 2026 (last committed Jun 12 cycle). Full lineage of every draft since shown below. July 18 is this week's full weekly research refresh — confirms, not further cuts, the same-day light-touch level.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">My June P</th><th class="c">Jul 8</th><th class="c">Jul 10</th><th class="c">Jul 11</th><th class="c">Jul 12</th><th class="c">Jul 13</th><th class="c">Jul 17</th><th class="c">Jul 18</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c">53</td><td class="c">52</td><td class="c">53</td><td class="c">54</td><td class="c">54</td><td class="c">54</td><td class="c">54</td><td class="c my">50</td><td class="c">0.90</td><td class="c">8</td><td class="c">+0.00</td><td>Neutral — GENIUS rules deadline missed as expected, confirmed this week</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c">57</td><td class="c">56</td><td class="c">58</td><td class="c">59</td><td class="c">59</td><td class="c">59</td><td class="c">59</td><td class="c my">56</td><td class="c">0.88</td><td class="c">8</td><td class="c sig">+0.84</td><td>Mild Bull</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c">62</td><td class="c">62</td><td class="c">64</td><td class="c">65</td><td class="c">65</td><td class="c">65</td><td class="c">65</td><td class="c my">65</td><td class="c">0.85</td><td class="c">8</td><td class="c sig">+2.04</td><td>Bull</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c">72</td><td class="c">73</td><td class="c">74</td><td class="c">74</td><td class="c">74</td><td class="c">74</td><td class="c">74</td><td class="c my">74</td><td class="c">0.78</td><td class="c">8</td><td class="c sig">+3.00</td><td>Strong Bull (right at the boundary)</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c my">85</td><td class="c">0.70</td><td class="c">8</td><td class="c sig">+3.92</td><td>Strong Bull</td></tr>
+  </table>
+  <div class="formula"><strong>Draft P (Jul 18, full weekly refresh):</strong> 50 / 56 / 65 / 74 / 85 · <strong>Weight:</strong> 20% (equal) · <strong>Impact:</strong> 8 (uniform) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. <strong>Full lineage:</strong> June committed 53 / 57 / 62 / 72 / 85 (committed Jun 12, 2026) → July 8 draft 52 / 56 / 62 / 73 / 85 → July 10 draft 53 / 58 / 64 / 74 / 85 → July 11 draft 54 / 59 / 65 / 74 / 85 → July 12 draft 54 / 59 / 65 / 74 / 85 (held) → July 13 draft 54 / 59 / 65 / 74 / 85 (held again, full refresh) → July 17 draft 54 / 59 / 65 / 74 / 85 (held a fourth time) → July 18 draft 50 / 56 / 65 / 74 / 85 (front-end cut on the confirmed GENIUS rules-deadline miss, independently re-verified by this week's full refresh — held, not cut further) — awaiting my stamp.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Cut at the front end this week (54 → 50 at 1mo, 59 → 56 at 3mo) as the July 18 GENIUS Act stablecoin-rulemaking deadline landed and was missed — independently re-verified this cycle across 7+ outlets (Yellow, ClearingPost, DailyCoin, CryptoSlate, FinanceMagnates): zero of six agencies finalized rules, several comment periods run past the deadline (latest to Aug 21), so the Act's 18-month statutory backstop now governs, pushing the accelerated effective date to Jan 18, 2027. This was already anticipated as of Jul 13 (zero final rules with five days to go), so it's confirmation, not a new shock — which is why the cut is modest rather than dramatic. Offsetting infrastructure proof continues: DTCC's Stellar-track limited-production tokenized-trade launch (Russell 1000 stocks/ETFs/Treasuries, ~40-50 institutions incl. BlackRock/JPMorgan/Goldman) went live the week of Jul 14, on schedule, independently confirmed this cycle.</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. This cycle's full refresh independently re-verified the GENIUS Act outcome (7+ outlet corroboration on the deadline miss and the Jan 2027 backstop date), the DTCC launch (CCN, Genfinity, CoinDesk, Bitcoin Magazine), and the stablecoin-cap decline (still ~$10B off the May peak, flat vs. Jul 13, no new deterioration). One new, single-source data point surfaced this cycle and is flagged, not scored: Robinhood Chain's on-chain RWA market cap is only ~$12.66M and dominated by memecoin speculation rather than the tokenized equities it was built for (CoinDesk) — a mildly negative adoption-quality signal for next cycle's research, not yet corroborated.</p>
+    <p><strong>Impact</strong> — 8 out of 10, the uniform value shared by every pillar in the equal-weight model. If tokenization compounds, it pulls trillions of TradFi assets onto rails crypto controls.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus — updated July 18, 2026, full weekly refresh</div>
+  <p><strong>The crowd:</strong> tokenization keeps accelerating on the infrastructure side even as the July 18 GENIUS Act deadline landed and was missed exactly as expected — DTCC's Russell 1000 pilot went live the week of Jul 14 with ~40-50 institutions (BlackRock, JPMorgan, Goldman, Circle, Ondo, Robinhood, Kraken), and the RWA aggregate holds near $33.5B. The market has mostly shrugged off the rules miss as already-priced.</p>
+  <p><strong>Me:</strong> the GENIUS deadline miss is real and well-corroborated (7+ outlets), but it was already anticipated as of Jul 13 — so it's confirmation, not a new shock, and I'm cutting the front end modestly (54→50 at 1mo) rather than dramatically. I score it <strong>~50% good-for-crypto near-term</strong>, climbing to <strong>~85% over three years</strong>. DTCC's on-schedule launch and continued RWA growth are genuine offsetting positives I'm not discounting just because the regulatory news was bad.</p>
+  <p><strong>My edge:</strong> the crowd still conflates "adoption" with "good for crypto assets." A new, still-single-source data point this cycle sharpens that point: Robinhood Chain's on-chain RWA market cap is only ~$12.66M, dominated by memecoin speculation rather than the tokenized equities it was built for — a reminder that headline institutional participation doesn't always translate into real, crypto-native usage. I'm flagging it for next cycle's verification rather than scoring it now.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of July 18, 2026 — hard numbers with exact dates, sources on the last page. This cycle's full weekly refresh independently re-verified the GENIUS Act outcome and the DTCC launch against primary/near-primary sources; the rwa.xyz treasury/private-credit figures below are carried forward from the July 13 live pull (not re-pulled live this cycle) and should be treated as directionally current, not exact-to-the-day.</div>
+  <ul>
+    <li class="fix"><strong>NEW, confirmed multi-source (7+ outlets) — the GENIUS Act's Jul 18 stablecoin-rulemaking deadline landed and was missed.</strong> Not one of the six agencies (Treasury, OCC, FDIC, NCUA, FinCEN, OFAC) finalized rules; several comment periods run past the deadline (latest to Aug 21). Because the 120-day accelerated-effective-date clock never started, the Act's 18-month statutory backstop now governs: effective date <strong>January 18, 2027</strong> (Yellow, ClearingPost, DailyCoin, CryptoSlate, FinanceMagnates all corroborate this outcome and date). This was already anticipated as of Jul 13 — confirmation of an expected event, not a new shock.</li>
+    <li class="fix"><strong>NEW, confirmed multi-source — DTCC's Stellar-track limited-production launch went live the week of Jul 14, on schedule.</strong> Tokenized trading of Russell 1000 stocks, major ETFs, and Treasuries, with ~40-50 institutions participating including BlackRock, JPMorgan, Goldman Sachs, Vanguard, Circle, Robinhood, and Kraken (CCN, Genfinity, CoinDesk, Bitcoin Magazine). Full-service launch remains targeted for October 2026; the separate Stellar public-chain integration remains on its H1 2027 track, correctly distinct from this limited-production launch.</li>
+    <li class="fix"><strong>NEW, single-source, flagged not scored — Robinhood Chain's on-chain RWA activity is thin and memecoin-dominated.</strong> Total tokenized RWA market cap on the chain is only ~$12.66M, with activity dominated by memecoin speculation rather than the tokenized stocks/ETFs it was built for (CoinDesk, Jul 17) — a mildly negative adoption-quality data point for next cycle's verification.</li>
+    <li><strong>Stablecoin market cap: still down ~$10B since the May peak, unchanged since Jul 13</strong> — no new deterioration or recovery found this cycle. USDT ~$184B, USDC ~$73B. The Open USD (OUSD) 140+-partner credibility dispute (Samsung/Dunamu/Upbit denials) remains unresolved, no update found.</li>
+    <li class="fix"><strong>A methodology correction, on ourselves (carried from Jul 13).</strong> The Jul 13 live rwa.xyz pull put tokenized US Treasuries at <strong>$15.52B</strong> — actually slightly <em>below</em> July 11's single-day read of $15.58B. That's not a reversal; it's a reminder that day-to-day snapshots are noisy and shouldn't be over-read. The trustworthy signal is the <strong>30-day trend: +4.01%</strong>, still solidly positive. Going forward this report will lean on 30-day trends over single-day deltas for exactly this reason.</li>
+    <li><strong>The treasury leaderboard, July 13 (rwa.xyz):</strong> Circle's <strong>USYC $3.00B</strong> &gt; BlackRock's <strong>BUIDL $2.869B</strong> &gt; Ondo's <strong>USDY $2.159B</strong> &gt; Franklin Templeton's <strong>iBENJI $1.625B</strong> &gt; Janus Henderson's <strong>JTRSY $881.8M</strong> &gt; WisdomTree's <strong>WTGXX $764.5M</strong> &gt; Franklin Templeton's <strong>BENJI $760.9M</strong> &gt; Invesco/Superstate's <strong>USTB $695.3M</strong>. 84 assets, 62,843 holders, 7-day average yield <strong>3.44%</strong>.</li>
+    <li class="fix"><strong>BUIDL's ~21% jump is now corroborated by persistence.</strong> The one-day move flagged "single-source, unconfirmed" on July 11 has held at $2.869B for two-plus days without reversing — that pattern is much more consistent with a real large subscription than a data error, so we're upgrading its status from flagged to corroborated-by-persistence.</li>
+    <li class="fix"><strong>New — "Distributed" vs. "Represented" are different metrics; we're defining both going forward.</strong> rwa.xyz's headline RWA figure is <strong>Distributed Value: $34.19B</strong> (+3.90% 30d) — tokens actually issued and held by wallets. Separately, rwa.xyz tracks <strong>Represented Value: $374.94B</strong> (+9.57% 30d), which includes locked, permissioned, or committed tokenization not freely distributed. The gap is mostly one thing: <strong>Figure Technologies' ~$20B tokenized HELOC book</strong>, the single largest tokenized-credit pool in existence, sitting in "Represented," not "Distributed" — and not previously mentioned in this report. It reinforces a point we've already been making: most tokenized value isn't liquid or retail-accessible. A Yahoo Finance piece (~Jul 12) put a number on that directly — of a broader "$60B across 7,000+ products" figure, only <strong>~3%</strong> is accessible to US retail. Total stablecoin value per rwa.xyz: <strong>$300.54B</strong> (+0.94% 30d).</li>
+    <li><strong>Private credit: $6.93B distributed, +2.84% 30d</strong> (this narrower rwa.xyz page excludes Figure). Maple $1.4B, STOKR $1.3B, Centrifuge $746M, Realiz $500M, Securitize $488M (+0.28% 30d). <strong>Retracting a prior claim:</strong> the "Securitize +106.4% single-day spike" flagged in the July 10 report does not appear anywhere in the current 30-day trend — it was likely noise or a since-reversed spike, and we're dropping it as a standing fact.</li>
+    <li><strong>Stablecoins: market cap down, usage up — a real divergence.</strong> Total stablecoin market cap has fallen roughly <strong>$10B since the May 2026 peak</strong> (−$7.7B in June alone, ~−3%) — the largest decline since 2023, though far short of 2022's 26% collapse (CoinDesk Jul 12, corroborated by PYMNTS/Cryptonomist). USDT: ~$190B (May peak) → ~$184B. USDC: ~$80B (March peak) → ~$73B. One analyst (Paul Howard, Wincent) calls it a normal seasonal pullback, pointing to a similar Dec 2025–Feb 2026 dip that fully recovered. <strong>But transaction volume tells the opposite story:</strong> stablecoin transaction volume hit a record <strong>$1.79T in June 2026</strong> (+63% MoM, +125% YoY — CoinDesk Jul 6), with USDC taking ~70% share ($1.21T) and overtaking USDT in <em>volume</em> (not market cap). Cap and usage are diverging — fewer dollars parked, more dollars moving.</li>
+    <li class="fix"><strong>NEW — Circle won final OCC approval for a national trust bank (Jul 10).</strong> "Circle National Trust" (First National Digital Currency Bank, N.A.) puts Circle under direct federal (OCC) oversight, initially for fiduciary digital-asset custody, with reserve management stated as a future capability (Circle press release, corroborated by American Banker/Banking Dive/BusinessWire). CRCL stock rose <strong>+11%</strong> on the news.</li>
+    <li class="fix"><strong>NEW — Swift's blockchain ledger went live (Jul 9)</strong> with <strong>17 banks across 6 continents</strong> — ANZ, BNP Paribas, BNY Mellon, Citi, DBS, First Abu Dhabi Bank, FirstRand, HSBC, Itaú Unibanco, Lloyds, Mashreq, MUFG, OCBC, Standard Chartered, UBS, UOB, Wells Fargo — running 24/7 cross-border tokenized-deposit payments over <strong>Chainlink CCIP</strong> (Swift press release, corroborated by CoinDesk/Bloomberg). Coverage frames this explicitly as a competitive response to stablecoins: banks building their own bypass rails.</li>
+    <li class="fix"><strong>NEW — the OUSD stablecoin coalition has a credibility problem.</strong> The 140+-institution "Open USD" coalition (launched Jun 30 — Visa, Mastercard, Stripe, Amex, BlackRock, Coinbase, Google Cloud, BNY, IBM, DoorDash, Fireblocks; CEO Zach Abrams of Stripe's Bridge) has seen named participants publicly deny involvement: Samsung and Dunamu denied any formal role (Jul 3), and Korean exchange Upbit denied involvement in issuance (Jul 4). The coalition's exact partner list and issuing entity/jurisdiction remain undisclosed. This is new since the July 10/11 reports.</li>
+    <li><strong>Circle's stock round-trip.</strong> CRCL fell ~40% from its June 3 high ($90.13) to $64.62 (Jul 2), driven largely by the OUSD threat (a single-day −17% on the Jun 30 launch); it has since partly recovered — +11% Jul 10 on the OCC charter, +4% on record June USDC volume.</li>
+    <li class="fix"><strong>NEW — Crédit Agricole's EURXT launched with detail (Jul 1).</strong> Issued by CACEIS on Ethereum, MiCA-compliant, ERC-20, with 20M tokens initial supply, 1:1 euro-backed, institutional/corporate clients only initially. Its first subscription used EURXT to buy into a tokenized Amundi money-market fund.</li>
+    <li><strong>DTCC's production pilot is live and on schedule.</strong> The Russell 1000 / major ETFs / Treasuries pilot with 50+ firms (BlackRock, Goldman, JPMorgan, Circle, Ondo, Robinhood, Kraken) is confirmed underway in July 2026; full launch remains targeted for <strong>October 2026</strong> — on schedule, no stumble reported this cycle.</li>
+    <li class="fix"><strong>NEW background fact — DTCC confirmed Stellar as its first public-blockchain partner (announced May 27, not previously in this report).</strong> DTCC and the Stellar Development Foundation confirmed Stellar as the <strong>first public blockchain</strong> in DTC's multi-chain tokenization strategy, targeting <strong>H1 2027</strong> for live deployment of DTC-custodied assets on Stellar. This is a meaningful counterweight to the "permissioned-only" concern raised in The Other Side: the DTCC pilot now has a stated path onto a public chain, not just bank-controlled rails.</li>
+    <li><strong>Ondo keeps extending its franchise.</strong> Ondo partnered with Broadridge (Jul 2) to extend proxy-voting rights to holders of 250+ tokenized securities; it has tokenized BlackRock's IVV ETF and Micron stock on Ethereum under its SEC-aligned framework, and launched "Ondo Perps" — 24/7 perpetual markets for equities, ETFs, and commodities (exact launch date unclear, directional only).</li>
+    <li><strong>Securitize went public and is building NYSE-adjacent tokenized-trading rails.</strong> Securitize completed its business combination and began trading on the NYSE on <strong>July 2, 2026</strong>, tokenizing ~$266–295M of its own common stock on Solana at listing. Separately, NYSE named Securitize a partner for a planned NYSE-affiliated "Digital Trading Platform" for issuer-sponsored tokenized securities (24/7 trading, fractional shares).</li>
+    <li><strong>Nasdaq and the SEC: no change, one soft signal.</strong> Nasdaq's 23/5 tokenized-trading target remains <strong>Dec 6, 2026</strong>, unchanged. The SEC's "crypto safe harbor" regulatory proposal is reported as expected "as soon as July 2026" (Cryptonomist — single-source-ish) but has not yet been published as a rule; treat as directional only.</li>
+    <li><strong>GENIUS rules deadline has now passed and was missed — see the confirmed fact at the top of this section.</strong> Comment-window timing: NCUA closed Jul 17, FDIC BSA closes Aug 4, FinCEN CIP closes Aug 21 — consistent with the "arithmetically unable to finalize on time" read carried from Jul 13. Note: OCC Bulletin 2026-7 (joint with the Fed/FDIC, "Capital Treatment of Tokenized Securities," dated March 5, 2026) remains a <em>separate</em> matter from GENIUS stablecoin-issuer rulemaking.</li>
+    <li><strong>Risk check: clean window, one unresolved fragility.</strong> No RWA-protocol hack, tokenized-treasury depeg, or counterparty failure found in the Jul 10–13 window. USYC's Binance/BNB-Chain concentration remains ~<strong>96.3%</strong> of USYC's global supply — essentially unchanged, still an unresolved fragility point.</li>
+    <li><strong>The TAM anchor stands:</strong> BCG × Ripple (Apr 7, 2025) projects <strong>~$9.4T by 2030 / $18.9T by 2033</strong>. Current on-chain value is still <strong>&lt;1%</strong> of any endpoint. Macro: Fed held at <strong>3.50–3.75%</strong> (June 2026, hawkish dot plot) — next FOMC <strong>July 29</strong>.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The cleanest single-token anchor is still <strong>ONDO</strong>, the name most tied to the RWA narrative: from its early-trading price around <strong>$0.22 (Jan 2024</strong> — listing prints vary by venue<strong>)</strong> it ran to a <strong>$2.14 all-time high (Dec 16, 2024)</strong> — roughly <strong>~10× in 11 months</strong>.</p>
+    <p>The round-trip, last checked July 13 (CoinGecko, not re-pulled live this cycle): <strong>$0.3291</strong> — market cap ~$1.6B, still ~85% below the high — even as the company keeps extending its franchise (Broadridge proxy-voting integration, IVV/Micron tokenization, 24/7 perp markets). Part of the Dec-2024 spike was a Trump-linked World Liberty Financial buy, not fundamentals. The durable signal stays structural, not one token: tokenized treasuries hold near $15.5B on a positive trend while the token trades ~85% off its peak, and DTCC's on-schedule Stellar-track launch this cycle is exactly the kind of structural proof point that outlasts any single token's price. The Prize doesn't feed the math — it tells you what the lean is worth acting on, euphoria and round-trip included.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong — updated July 18, 2026</div>
+  <ul>
+    <li><strong>Regulatory limbo is now confirmed, not just anticipated.</strong> The GENIUS Act's rulemaking deadline landed and was missed — zero of six agencies finalized rules — and the statutory backstop pushes real regulatory clarity out to January 2027. That's nearly six months of mid-market issuers operating under an incomplete rulebook, which can chill activity rather than de-risk it.</li>
+    <li><strong>Robinhood Chain is a live example of the adoption-quality problem this pillar keeps flagging.</strong> A marquee retail-tokenization platform's on-chain RWA activity is only ~$12.66M and dominated by memecoin speculation, not the tokenized equities it was built to host — a concrete, if single-source, instance of "adoption" not translating into the kind of usage this thesis needs.</li>
+    <li><strong>Stablecoin market cap is still down, not recovering.</strong> Total cap remains roughly $10B off the May peak with no recovery found this cycle — the sharpest decline since 2023 is not reversing on its own.</li>
+    <li><strong>The institutions building their own rails haven't slowed down.</strong> Swift's 17-bank ledger, the Tokenized Deposit Network, and the OUSD coalition (still fielding credibility questions from named members) all remain live, unresolved competing claims on where tokenization's economics ultimately land.</li>
+    <li><strong>Single-counterparty fragility persists, not re-verified this cycle.</strong> USYC's Binance/BNB-Chain concentration was last measured at ~<strong>96.3%</strong> of its global supply (Jul 13) — carried forward, not re-checked this cycle, still an unresolved fragility point.</li>
+    <li><strong>"Represented" value is doing a lot of the bull case's heavy lifting.</strong> Most of the eye-catching ~$375B "Represented Value" figure is locked or permissioned tokenization (Figure's ~$20B HELOC book alone), not liquid or retail-accessible. The narrower, real "Distributed Value" figure is roughly $34B, an order of magnitude smaller.</li>
+    <li><strong>It may not be "crypto."</strong> Most volume is permissioned/institutional and may never accrue value to crypto majors. Durable market-structure law (CLARITY) still isn't passed, and now has its own record-low prediction-market odds.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events ahead — some prove the claim right, some prove it wrong. Re-set July 18, 2026.</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>Fired, on schedule</td><td><strong>CONFIRMED — DTCC's Stellar-track limited-production launch went live the week of Jul 14.</strong> Russell 1000 stocks, major ETFs, Treasuries; ~40-50 firms incl. BlackRock, JPMorgan, Goldman, Circle, Ondo, Robinhood, Kraken</td><td>Already reflected in this cycle's held 6/12/36mo scores — a clean institutional-rails proof point at the market's core plumbing</td></tr>
+    <tr><td>Fired Jul 18, as expected</td><td><strong>CONFIRMED — GENIUS Act rulemaking deadline missed.</strong> Zero of six agencies finalized rules; 18-month statutory backstop now governs; effective date Jan 18, 2027</td><td>Already priced into this cycle's front-end cut (54→50 at 1mo); the real re-rating window is now Jan 2027, not this summer</td></tr>
+    <tr><td>New this cycle, single-source</td><td>Robinhood Chain's on-chain RWA activity is thin (~$12.66M) and memecoin-dominated</td><td>Flagged, not scored; would need corroboration to move P — watch for follow-up reporting</td></tr>
+    <tr><td>Jul 29, 2026</td><td>FOMC rate decision</td><td>A hold sustains the tokenized-Treasury yield engine; cuts start eroding it (1-mo)</td></tr>
+    <tr><td>Aug 4 / Aug 21, 2026</td><td>Remaining GENIUS comment windows close (FDIC BSA 8/4 · FinCEN CIP 8/21)</td><td>Fast finalization after close = the miss was survivable; drift toward the Jan 2027 backstop with no interim progress = deeper limbo (3-mo)</td></tr>
+    <tr><td>Oct 2026</td><td>DTCC tokenization full launch — target unchanged</td><td>On time = the biggest institutional-rails catalyst of the year lands before Nasdaq; a slip = drift confirmed (3–6 mo)</td></tr>
+    <tr><td>Dec 6, 2026</td><td>Nasdaq 23/5 tokenized trading — SEC-approved target launch (unchanged)</td><td>A live launch = landmark public-market proof; another slip toward H1 2027 = drift confirmed (6-mo)</td></tr>
+    <tr><td>Jan 18, 2027</td><td><strong>NEW — GENIUS Act 18-month statutory backstop effective date</strong> (confirmed this cycle, replacing the missed accelerated deadline)</td><td>The actual regulatory-clarity resolution point now lands almost exactly at the 6-month mark — watch whether that window's score should absorb more of this delay risk next cycle (6-mo)</td></tr>
+    <tr><td>H1 2027</td><td>Nasdaq equity-token services "operational" · bank Tokenized Deposit Network go-live · DTCC-Stellar public-chain deployment target · BlackRock BSTBL/BRSRV still pending</td><td>Which rails win — public chains or bank ledgers — starts getting decided here (1-yr)</td></tr>
+    <tr><td>Any time</td><td>Tokenized-treasury depeg / counterparty failure (USYC's Binance/BNB-Chain concentration ~96.3% as of Jul 13, not re-verified this cycle)</td><td>Plumbing fragility realized — re-rate down immediately</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> if the GENIUS rules drift into Q4 unfinished, the DTCC and Nasdaq launches slip past their October and December windows, and the growth that remains keeps rotating to permissioned rails, bank deposit networks, and institution-controlled coins — treat the crypto-relevance thesis as failing. Adoption that never touches public, crypto-controlled rails is TradFi, not crypto.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp pending">◷ UPDATED DRAFT — JULY 18, 2026 (FULL WEEKLY REFRESH) · AWAITING MY STAMP</div>
+    <div class="nums">Draft P: 50 / 56 / 65 / 74 / 85 · My Weight: 20% (equal) · Impact: 8 (uniform)</div>
+    <p>This week's full research refresh independently re-verified, rather than further cut, the same-day light-touch draft: the GENIUS Act rules deadline miss is confirmed across 7+ outlets exactly as anticipated, and DTCC's Stellar-track launch going live on schedule the week of Jul 14 is confirmed multi-source. Those two facts roughly offset each other as they did on Jul 13, and since the rules miss was already priced in as expected, the front-end cut stays where the light touch put it (54→50 at 1mo, 59→56 at 3mo) rather than deepening further. One new, single-source data point (Robinhood Chain's thin, memecoin-dominated RWA activity) is flagged for next cycle, not scored this one.</p>
+    <p>The June committed scores (<strong>53 / 57 / 62 / 72 / 85</strong>, committed June 19, 2026) remain the last human-stamped values. <strong>Override any P and re-stamp — the master blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Full weekly research refresh, July 18, 2026, covering the Jul 13-18 gap (supersedes the same-day light-touch draft; catch-up daily check Jul 17 held flat pending the GENIUS deadline)</div>
+  <ul>
+    <li class="fix"><strong>Confirmed, multi-source (7+ outlets): the GENIUS Act rulemaking deadline landed Jul 18 and was missed</strong> — zero of six agencies finalized rules; 18-month statutory backstop now governs, effective date Jan 18, 2027. Already anticipated as of Jul 13, so this is confirmation, not a new shock — consistent with the light-touch draft's front-end cut.</li>
+    <li class="fix"><strong>Confirmed, multi-source: DTCC's Stellar-track limited-production launch went live the week of Jul 14, on schedule</strong> — Russell 1000 stocks, ETFs, Treasuries, ~40-50 institutions. A genuine offsetting positive, holding the 6/12/36mo scores steady.</li>
+    <li class="fix"><strong>New, single-source, flagged not scored: Robinhood Chain's on-chain RWA activity is thin (~$12.66M) and memecoin-dominated</strong> rather than reflecting the tokenized equities it was built for — worth following up next cycle.</li>
+    <li><strong>Stablecoin market cap and the OUSD credibility dispute: unchanged since Jul 13,</strong> no new deterioration or resolution found this cycle.</li>
+    <li><strong>Score decision:</strong> Draft P held at <strong>50 / 56 / 65 / 74 / 85</strong> — the same-day light-touch cut on the GENIUS deadline is independently confirmed, not deepened further, since the deadline miss was already expected and DTCC's on-schedule launch offsets it as it did on Jul 13. Drafts awaiting my stamp; June values (committed Jun 19, 2026) remain the last committed.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded July 18, 2026 — full weekly research refresh, independently re-verified this cycle — click and judge the quality yourself. Official records &amp; rules first, then live data, reporting, and prices.</div>
+  <ul>
+    <li><span class="grp">July 18 additions (this week's full weekly refresh):</span> Yellow, ClearingPost, DailyCoin, CryptoSlate, Coinpaprika, StablecoinInsider, Thirdweb, FinanceMagnates — 7+ independent confirmations that the GENIUS Act's Jul 18 stablecoin-rulemaking deadline was missed, with the Jan 18, 2027 statutory-backstop effective date corroborated across multiple outlets · CCN, Genfinity, CoinDesk, Bitcoin Magazine, CryptoBriefing — DTCC's Stellar-track limited-production launch confirmed live the week of Jul 14 · CoinDesk (Jul 17) — Robinhood Chain's ~$12.66M on-chain RWA market cap, memecoin-dominated activity (single-source, flagged for follow-up).</li>
+    <li><span class="grp">July 13 additions — official/primary:</span> <a href="https://www.circle.com/">Circle — press release, final OCC approval for a national trust bank / First National Digital Currency Bank, N.A. (Jul 10, 2026)</a>, corroborated by <a href="https://www.americanbanker.com/">American Banker</a>, <a href="https://bankingdive.com/">Banking Dive</a>, and BusinessWire · <a href="https://www.swift.com/">Swift — press release, blockchain ledger live with 17 banks across 6 continents on Chainlink CCIP (Jul 9, 2026)</a>, corroborated by <a href="https://www.coindesk.com/">CoinDesk</a> and <a href="https://www.bloomberg.com/">Bloomberg</a> · <a href="https://www.dtcc.com/">DTCC — press release confirming Stellar as first public blockchain in DTC's multi-chain tokenization strategy, targeting H1 2027 (May 27, 2026)</a>, corroborated by <a href="https://www.coindesk.com/">CoinDesk (May 31, 2026)</a>.</li>
+    <li><span class="grp">July 13 additions — live data:</span> <a href="https://app.rwa.xyz/treasuries">RWA.xyz — tokenized Treasuries $15.52B (+4.01% 30d); leaderboard USYC $3.00B / BUIDL $2.869B / USDY $2.159B / iBENJI $1.625B / JTRSY $881.8M / WTGXX $764.5M / BENJI $760.9M / USTB $695.3M; 84 assets, 62,843 holders, 7d avg yield 3.44% (live pull, Jul 13)</a> · <a href="https://app.rwa.xyz/">RWA.xyz — Distributed Value $34.19B (+3.90% 30d) vs. Represented Value $374.94B (+9.57% 30d); total stablecoin value $300.54B (+0.94% 30d) (Jul 13)</a> · <a href="https://app.rwa.xyz/private-credit">RWA.xyz — private credit $6.93B distributed (+2.84% 30d); Maple $1.4B / STOKR $1.3B / Centrifuge $746M / Realiz $500M / Securitize $488M (+0.28% 30d — no evidence of the prior +106.4% spike) (Jul 13)</a>.</li>
+    <li><span class="grp">July 13 additions — reporting:</span> <a href="https://www.coindesk.com/">CoinDesk — stablecoin market cap down ~$10B since May peak, largest decline since 2023 (Jul 12, 2026)</a>, corroborated by <a href="https://www.pymnts.com/">PYMNTS</a> and <a href="https://cryptonomist.ch/">Cryptonomist</a> · <a href="https://www.coindesk.com/">CoinDesk — stablecoin transaction volume record $1.79T in June 2026, USDC ~70% share, overtakes USDT in volume (Jul 6, 2026)</a> · <a href="https://cryptonomist.ch/">Cryptonomist</a> and <a href="https://cryptoslate.com/">CryptoSlate</a> — Open USD (OUSD) coalition credibility questions: Samsung/Dunamu deny formal role (Jul 3), Upbit denies issuance involvement (Jul 4) (Jul 3–7, 2026) · <a href="https://finance.yahoo.com/">Yahoo Finance — RWA reality-check: only ~3% of a broader $60B/7,000+ tokenized-product universe accessible to US retail (~Jul 12, 2026)</a> · Crédit Agricole / CACEIS — EURXT launch release: Ethereum ERC-20, MiCA-compliant, 20M initial supply, first subscription into a tokenized Amundi money-market fund (Jul 1, 2026) · <a href="https://www.chapman.com/publication-genius-act-rulemaking-tracker">Chapman &amp; Cutler — GENIUS Act rulemaking tracker, cross-checked against agency sites (Jul 13, 2026; zero of ~10 rules final, 5 days to deadline)</a> · SEC — Form 425 Securitize business-combination filings, NYSE listing effective July 2, 2026 · <a href="https://www.coingecko.com/en/coins/ondo">CoinGecko — ONDO price feed (Jul 13, 2026)</a>.</li>
+    <li><span class="grp">Official records &amp; rules (carried, still load-bearing):</span> <a href="https://www.federalregister.gov/documents/2026/04/03/2026-06489/genius-act-broad-based-principles-for-determining-whether-a-state-level-regulatory-regime-is">Federal Register — Treasury "substantially similar" state-regime NPRM (Apr 3, comments closed Jun 2)</a> · <a href="https://www.federalregister.gov/d/2026-06974">Federal Register — FDIC GENIUS NPRM (Apr 10, 2026)</a> · <a href="https://home.treasury.gov/news/press-releases/sb0435">US Treasury — FinCEN/OFAC illicit-finance NPRM (Apr 8, 2026)</a> · <a href="https://www.occ.treas.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html">OCC — GENIUS NPRM ($5M minimum capital / 10% same-day liquidity tier)</a>; OCC Bulletin 2026-7, joint with Fed/FDIC, "Capital Treatment of Tokenized Securities" (Mar 5, 2026 — a separate matter from GENIUS rulemaking) · <a href="https://www.sec.gov/newsroom/speeches-statements/atkins-statement-genius-act-071825">SEC — GENIUS Act signed July 18, 2025 (PL 119-27)</a> · <a href="https://www.coindesk.com/policy/2026/03/18/sec-approves-nasdaq-s-move-to-allow-tokenized-securities-trading">SEC approves Nasdaq tokenized-securities trading (Mar 18, 2026)</a> · <a href="https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-launch-equity-token-design-putting-issuers-center">Nasdaq IR — equity-token design with Payward/Kraken, services "operational H1 2027" (Mar 9, 2026)</a> · <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Federal Reserve — FOMC 2026 calendar (Jul 29, Sep 16, Oct 28, Dec 9)</a>.</li>
+    <li><span class="grp">The reporting (carried from July 8–11, still load-bearing):</span> <a href="https://www.ccn.com/news/crypto/dtcc-launch-tokenized-stocks-etfs-treasuries-july-2026/">CCN</a> + <a href="https://finance.yahoo.com/markets/stocks/articles/dtcc-tokenize-russell-1000-stocks-161215488.html">Yahoo Finance</a> + <a href="https://cryptobriefing.com/dtcc-tokenization-pilot-russell-1000-etfs-treasuries/">Crypto Briefing — DTCC production pilot July 2026, full launch Oct 2026 (announced May 4, 2026)</a> · <a href="https://www.cryptotimes.io/2026/07/09/ondo-expands-solana-push-with-24-7-tokenized-stock-liquidity/">The Crypto Times — Ondo 24/7 tokenized-stock liquidity on Solana (Jul 9)</a> — since extended by Ondo's Broadridge proxy-voting partnership (Jul 2) and "Ondo Perps" launch · <a href="https://www.fool.com/investing/2026/07/04/a-massive-new-stablecoin-initiative-could-disrupt/">Motley Fool</a> + <a href="https://bitpinas.com/cryptocurrency/catch-up-june-28-july-04-2026/">BitPinas — Open USD (OUSD) 140+-institution coalition, original launch coverage (late Jun/early Jul 2026)</a> · <a href="https://stablecoininsider.org/six-federal-agencies-have-35-days-to-finalize-genius-act-stablecoin-rules-by-july-18/">Stablecoin Insider — six agencies vs the July 18 deadline (mid-Jun 2026)</a> · <a href="https://corpgov.law.harvard.edu/2012/12/19/december-2012-dodd-frank-progress-report/">Davis Polk / Harvard Law — Dodd-Frank progress reports (60–75% of deadlines missed)</a> · <a href="https://gfmag.com/technology/nasdaq-edges-toward-tokenized-trading/">Global Finance — Nasdaq edges toward tokenized trading; 23/5 by Dec 2026 earliest</a> · <a href="https://cryptodaily.co.uk/2026/07/new-york-life-tokenizes-junk-bonds-hyb-defi">CryptoDaily — NYLIM launches tokenized high-yield HYB with Centrifuge (Jun 30, 2026)</a> · <a href="https://cryptonews.com/news/banks-tokenized-deposit-network-cbdc-stablecoins/">Cryptonews — JPMorgan/Citi/BofA/Wells Fargo Tokenized Deposit Network via The Clearing House (H1 2027)</a> · <a href="https://thenextweb.com/news/jpmorgan-tokenized-fund-ethereum-genius-act">TNW — JPMorgan JLTXX tokenized-MMF filing and the reserve-MMF wave (May 12)</a> · <a href="https://unchainedcrypto.com/blackrock-files-for-two-new-tokenized-money-market-funds-targeting-stablecoin-capital/">Unchained — BlackRock files BSTBL &amp; BRSRV (May 8)</a>.</li>
+    <li><span class="grp">Forecasts (carried from June, still load-bearing):</span> <a href="https://www.coindesk.com/markets/2025/04/07/ripple-bcg-project-usd18-9t-tokenized-asset-market-by-2033-but-obstacles-remain">BCG × Ripple — $9.4T by 2030 / $18.9T by 2033 (Apr 7, 2025)</a> · <a href="https://www.bis.org/publ/work1270.pdf">BIS WP 1270 — stablecoin inflows lower T-bill yields; outflows a fire-sale "lower bound"</a>.</li>
+    <li><span class="grp">The Prize (prices):</span> <a href="https://www.coingecko.com/en/coins/ondo">CoinGecko — ONDO $0.3291 (Jul 13, 2026; −0.90% 24h, +0.60% 7d; mkt cap ~$1.6B; ATH $2.14 Dec 16, 2024) — market price, not an institutional estimate</a>.</li>
+    <li><span class="grp">Reference (BTC pipeline reading):</span> Bitstamp — BTC $63,992.32, last completed daily close (Jul 18, 2026).</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

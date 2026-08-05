@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — Bitcoin Technical Analysis (Quant)</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Quantitative pillar: Bitcoin Technical Analysis
+  Generated from the BTC-TA pipeline on 2026-07-18.
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+  .chart{ width:100%; border:1px solid var(--line); border-radius:5px; margin:2mm 0; }
+  .cap{ font-size:8.2pt; color:var(--muted); font-style:italic; margin:0 0 2.5mm; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>BITCOIN TECHNICAL ANALYSIS · QUANT PILLAR REPORT</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · July 18, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Bitcoin Technical Analysis<br><span class="l2">Quant Pillar Report</span></h1>
+  <div class="deck">The Tape Itself — Measured, Scored, and Mapped to the Pillar Standard</div>
+  <div class="note">Machine-computed from 16 years of daily price data (5,837 days, 2010–2026) through a 7-indicator scoring stack, halving-cycle analogs, and a power-law valuation model. Every number is reproducible from the scripts in the BTC-TA folder. <strong>Scores are the model's draft — awaiting my stamp.</strong></div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS QUANT PILLAR REPORT · THE QUANTITATIVE SLEEVE OF MY THESIS</div>
+    <div class="m">Data through July 18, 2026 (BTC $63,992) · Pipeline re-run &amp; verified July 18, 2026 (full weekly refresh) · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — July 18 Model Draft</h2>
+  <div class="sub">Model draft computed July 18, 2026 (full weekly refresh; previous run July 13) — same standard as every qualitative pillar. Adjust any P and re-stamp. (July 13 draft was 39/38/46/67/70 — 1-month and 3-month each eased a point this cycle as the tape weakened further.)</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">Draft P</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c my">40</td><td class="c">0.75</td><td class="c">8</td><td class="c signeg">−1.2</td><td>Mild Bear — broken tape, repair signal #1 (200-week MA) still holding</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c my">37</td><td class="c">0.70</td><td class="c">8</td><td class="c signeg">−1.5</td><td>Mild Bear — the final-flush window, 0-of-3 analog</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c my">46</td><td class="c">0.55</td><td class="c">8</td><td class="c signeg">−0.4</td><td>Neutral (slight bear lean; exact −0.35)</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c my">67</td><td class="c">0.60</td><td class="c">8</td><td class="c sig">+1.6</td><td>Bull — the cycle turn</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c my">70</td><td class="c">0.50</td><td class="c">8</td><td class="c sig">+1.6</td><td>Bull — value + cycle</td></tr>
+  </table>
+  <div class="formula"><strong>Impact:</strong> 8 (the tape aggregates every driver, but adds no causal force of its own) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact · <strong>Honesty cap:</strong> P = 50 + 25 × (window score ÷ 100) — pure TA never claims odds more than 25 points from a coin flip, because its measured out-of-sample edge is modest. Math machine-verified.</div>
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds the tape is <em>good for Bitcoin</em> by then. Near-term low (weekly composite −50/100, all seven indicators still bearish — though price is holding above the 200-week average); long-term high (at this exact point in prior cycles, the next 12 months were positive 3-for-3, and price sits 53% below its power-law fair value).</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. Highest near-term (835 weekly bars, unanimous indicators), lowest at 3 years (only 3 completed cycles to learn from, and this cycle is already breaking the old pattern).</p>
+    <p><strong>Impact</strong> — 8 out of 10, now the uniform value shared by every pillar; the TA pillar carries an equal 20% weight in the master, same as each qualitative pillar. Price is the thing itself — but a mirror, not an engine.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where the numbers differ from the mood</div>
+  <p><strong>The crowd:</strong> −49% from the all-time high, a lower low on June 30, a weekly close under the 200-week average as recently as June 28 — "the cycle is dead, get out." (Price held at $63,992 (+9.3% off the June 30 low) through a full week of escalating Iran-war headlines — a 7th consecutive CENTCOM strike night, tit-for-tat desalination-plant strikes — that the Iran War Risk pillar treats as materially bearish. That resilience is the counter-evidence the crowd is ignoring.)</p>
+  <p><strong>The model:</strong> the short-term tape is still broken (P 40/37 for 1–3 months — this is not yet a dip-buying report), and the 6-month window is still a near coin flip with a slight bear lean (P 46). But the same data says P 67 at one year: every prior cycle at this exact month looked just as dead and was higher 12 months later, price is deep below fair value, and the froth that precedes real crashes is absent.</p>
+  <p><strong>The edge:</strong> the crowd reads one clock (the tape). The model reads three — tape (bearish), cycle clock (bottoming window: prior cycles bottomed at months 26–30; we're at month 26.9), and valuation (53% below the power-law fair line, under the −1σ "cheap" band). Two of the three clocks are already on the bull's side; the tape is the last one, and it always turns latest.</p>
+</section>
+
+<!--==================== THE FACTS: TAPE ====================-->
+<section class="sec">
+  <h2>The Facts — The Tape</h2>
+  <div class="sub">Computed July 18, 2026 from Bitstamp daily data (BTC $63,992, daily close as of July 18). Current weekly/monthly/quarterly bars are still forming — scores use them as-is. Quantified: on completed bars only, the weekly composite is −50.1, monthly −42.6, quarterly +7.7 — all consistent with the as-is reads below.</div>
+  <ul>
+    <li><strong>Weekly composite −45.9/100 (Moderate Bearish), 6-of-7 indicators agree.</strong> Price is below the 20-week ($69,831, −8.4%) and 50-week ($86,492, −26.0%) averages but holding <strong>above the 200-week ($63,093, +1.4%)</strong>; RSI 38.8; MACD line below zero (−5,723) — negative momentum; histogram −73, essentially flat vs last cycle; %B 0.27; agreement eased from 7-of-7 to 6-of-7 as one indicator flipped neutral-to-mixed.</li>
+    <li><strong>The first repair signal is still holding, through a much rougher week of Iran-war headlines.</strong> Price closed July 18 at $63,992 vs $63,093 weekly-basis (+1.4%) — still above the 200-week line despite the Iran War Risk pillar's own escalation (CENTCOM's 7th consecutive strike night, Kuwait/Iran desalination-plant strikes). Still unconfirmed until a weekly close clears the 20-week average (~$69.8K) — the real confirmation level.</li>
+    <li><strong>Monthly composite −30.0/100 (Slight Bearish), 5-of-7 agree.</strong> Below the 20-month average ($89,020, −28.1%), still above the 50-month ($59,902, +6.8%); RSI 43.8; monthly MACD line +144, histogram −6,046 — deeply negative, essentially unchanged from last cycle; %B 0.14 — near the lower band.</li>
+    <li><strong>Quarterly composite +9.1/100 (Neutral), agreement 1-of-7</strong> — the long tape still holds its bull structure (above the 20-quarter average, $57,422, +11.4%) but with falling momentum (RSI 53.4, MACD histogram −1,361) and heavy quarterly OBV distribution. The weakest, noisiest layer of the stack.</li>
+    <li><strong>Levels that matter:</strong> support $59,930 (weekly + monthly swing), then $49,577. Resistance $70,016, then $74,434, then $81,685 (each seen 1-2x by the level-clustering algorithm); the falling weekly resistance trendline sits far overhead at $81,410. The falling weekly support trendline sits right at price, $63,983 — essentially touching the current $63,992 close.</li>
+    <li class="fix"><strong>June 30 remains the cycle low: $58,526 close</strong> — the flush tagged the Fib golden pocket ($54,257–$57,802 = 61.8–65% retrace of the $15,479 → $126,272 run) and has held a bounce to <strong>$63,992 (+9.3% off the low)</strong> — through a full week of Iran War Risk escalation (7 consecutive CENTCOM strike nights, Kuwait/Iran desalination-plant strikes) that the qualitative pillars are treating as materially bearish. <strong>$58,526 is still the line in the sand.</strong></li>
+  </ul>
+</section>
+
+<section class="sec avoid">
+  <img class="chart" src="{{CHART_WEEKLY}}" alt="BTC weekly chart">
+  <div class="cap">Weekly tape, scored −45.9/100 with 6 of 7 indicators bearish: below the 20- and 50-week averages, holding above the 200-week, broken trendline, MACD regime negative. Machine-annotated from the same data that feeds the scores.</div>
+</section>
+
+<!--==================== THE FACTS: CYCLE + VALUE ====================-->
+<section class="sec">
+  <h2>The Facts — The Cycle Clock &amp; The Value Floor</h2>
+  <div class="sub">The two slower clocks. Same data, longer lenses.</div>
+  <ul>
+    <li><strong>The halving clock says "bottoming window."</strong> The three completed cycles topped 12–18 months after their halving (avg 15.8) and bottomed at months 26–30 (avg 28.4). This cycle topped at month 18 (Oct 6, 2025 — $124,728) and printed its low-so-far at month 26 (June 30). <strong>We are at month 26.9; the average-bottom date still projects to ~Aug 31, 2026.</strong></li>
+    <li class="fix"><strong>The cycle analogs are the spine of the long-window scores — and this cycle they moved a lot at 3 months and 3 years.</strong> Standing at this exact cycle-month in C1/C2/C3: next 1 month positive 1-of-3 (median −2.0%) · next 3 months positive <strong>0-of-3</strong> (median −19.9%, sharply worse than July 13's −12%) · next 6 months positive <strong>1-of-3</strong> (median −5.0%, unchanged) · next 12 months positive <strong>3-of-3</strong> (median +27.6%, essentially unchanged) · next 36 months positive <strong>3-of-3</strong> (median +741.4%, up sharply from July 13's +567%). Bearish quarter, still-soft half-year, bullish year — the data's own words. <em>Fragility disclosure, unchanged in kind: with n=3, single windows keep swinging hard on pure day-count alignment as the cycle-month clock advances — this cycle the 3-month and 3-year medians moved the most, in opposite directions, while 1-month and 6-month barely moved. Treat the analog levels as soft, the direction as the signal. And know what the 36-month number is: from month ~27 that window reaches month ~63 — it contains the NEXT halving's rally.</em></li>
+    <li><strong>1-year momentum turned positive at months 34–37 in every completed cycle (avg 35.5)</strong> → projects to <strong>~April 2027</strong> (80% window Jan–Jul 2027) for this cycle.</li>
+    <li><strong>The power-law floor:</strong> a log-log fit over the full 16-year series (R² 0.96) puts fair value at <strong>$135,528</strong>. Fit-window honesty: starting the fit in 2011, 2012, 2013, or 2015 instead moves fair value to $125,663 / $130,764 / $114,668 / $141,810 respectively (price 53–55% below fair across that whole range), and R² this high is near-automatic for this kind of regression — the level is soft, but the <strong>"below the −1σ cheap band" verdict holds across every window tested</strong> (−1σ $67,672; −2σ $33,790). Every halving-era cycle trough was −77% to −85% from ATH ($18.7K–$28.7K equivalent today) — the pre-halving 2011 bear went ~−93% (~$8.7K equivalent), excluded from the range but in the data; this cycle is −53% so far.</li>
+    <li><strong>No froth in the system:</strong> the altcoin-froth index (BTC dominance 77%, ETH/BTC 0.028) reads z = −0.87 — the opposite of the euphoric signature that preceded prior deep crashes. Validated on 16 years of data: high-froth days led to −39% average 12-month drawdowns vs −23% for low-froth days (gap significant, 95% CI excludes zero). <em>Data lags ~6 weeks (through May 23) — used as a tilt, not a score input.</em></li>
+    <li class="fix"><strong>What we rejected:</strong> a 5-feature logistic crash model was tested leave-one-cycle-out and <strong>failed</strong> (AUC 0.44 vs 0.58 for froth alone; 0.70 = useful). It is not in this report's numbers. The scores rest only on what survived out-of-sample testing.</li>
+  </ul>
+</section>
+
+<section class="sec avoid">
+  <img class="chart" src="{{CHART_CYCLE}}" alt="Halving cycle overlay">
+  <div class="cap">All four halving cycles aligned (log scale, price ÷ price-at-halving). Triangles mark where 1-year momentum turned positive in each prior cycle — months 34–37, projecting to ~April 2027 for this one. The red dot is today: month 26.9, the historical bottoming window.</div>
+</section>
+
+<section class="sec avoid">
+  <img class="chart" src="{{CHART_DOWNSIDE}}" alt="Downside map">
+  <div class="cap">The downside map, updated after the June 30 flush: the projected $54K–$61K bottom zone was hit ($58,526 close / $57,735 intraday, inside the golden pocket's doorstep) and bounced. Odds re-weighted accordingly: ~40% the low is in, ~35% one more flush to $54–58K, ~17% deeper bear, ~8% tail.</div>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>From $63,992: the 20-week average (~$69.8K, trend-repair confirmation) is <strong>+9%</strong>; a retest of the $124,728 ATH is <strong>+95%</strong>; the power-law fair line is <strong>+112%</strong>. The median 12-month analog from this cycle-month is <strong>+27.6%</strong> (~$82K by mid-2027); the median 36-month analog is now +741% — <strong>discount that one even harder than last cycle</strong>, it leans on two regimes (2017 mania, post-COVID ZIRP) that don't repeat on demand, and it just jumped from +567% purely on alignment drift.</p>
+    <p>The Prize doesn't feed the math — it tells you what the lean is worth acting on. Here it says: the payoff for surviving a bearish quarter is a full cycle turn.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case the model is wrong</div>
+  <ul>
+    <li><strong>n = 3.</strong> Every long-window claim rests on three completed cycles. Three coin flips landing heads is not a law of nature.</li>
+    <li><strong>This cycle already broke the pattern.</strong> A −53% drawdown at month 26 vs −77/−85% in prior cycles could mean dampened cycles (bullish read) — or it could mean <em>the bottom isn't in</em>: a historic-depth trough from this ATH is $18.7K–$28.7K, far below every level in this report.</li>
+    <li><strong>The ETF era changed the machine.</strong> Prior cycles had no spot-ETF flow channel, no CME basis trade at this scale, no corporate treasuries. Analogs may simply not transfer.</li>
+    <li><strong>The power law is a curve fit, not a promise.</strong> R² 0.96 in-sample says nothing about a structural break — a fit like this "said cheap" through most of 2022's decline too. It bounds scenarios; it doesn't time anything.</li>
+    <li><strong>The tape's edge is small by construction.</strong> The honesty cap exists because measured predictive validity is modest (froth AUC 0.58). If you removed the cap, this report would be louder — and less true.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Price and dated events — some prove the read right, some prove it wrong</div>
+  <table class="data">
+    <tr><th>When / Level</th><th>Event</th><th>Means</th></tr>
+    <tr><td>$58,526</td><td>Daily close below the June 30 low</td><td>Flush scenario live — golden pocket $54.3–57.8K is the target; re-rate 1/3-month down</td></tr>
+    <tr><td>~$63,100</td><td>Weekly close above the 200-week MA ($63,093)</td><td><strong>Holding as of the July 18 close, despite a full week of Iran War Risk escalation</strong> — still needs to hold into Sunday's weekly close</td></tr>
+    <tr><td>~$69,800</td><td>Weekly close above the 20-week MA</td><td>Trend repair confirmed — re-rate 1/3-month up</td></tr>
+    <tr><td>~Aug 31, 2026</td><td>Historical average-bottom month (28.4) passes</td><td>A higher low after this date + improving monthly momentum = basing confirmed</td></tr>
+    <tr><td>Jan–Jul 2027</td><td>Projected 1-yr momentum turn window (point: ~Apr 2027)</td><td>Arriving without new lows = cycle thesis on track; re-rate 1-year up</td></tr>
+    <tr><td>$50,000</td><td>Weekly close below</td><td>−60% from ATH; the dampened-cycle story is failing — see the flip line</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> a decisive weekly close below <strong>$50,000</strong> breaks the base case and the golden pocket both — treat the dampened-cycle thesis as broken and put the historic trough zone ($18.7K–$28.7K) back on the table. Above it, a bearish quarter is the plan, not a surprise.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp pending">◷ MODEL DRAFT — JULY 18, 2026 · AWAITING MY STAMP</div>
+    <div class="nums">Draft P: 40 / 37 / 46 / 67 / 70 · Quality: 0.75 / 0.70 / 0.55 / 0.60 / 0.50 · Impact: 8</div>
+    <p>This is the quantitative sleeve of the thesis — the same five windows, same formula, same table as every qualitative pillar, but computed instead of judged. The near-term read is the honest one: the tape is broken (repair signal #1 still holding through a full week of Iran War Risk escalation, still unconfirmed) and the 3-month analog worsened sharply (0-of-3, median −19.9%, vs −12% last cycle) — still the worst window in the set. The 6-month window remains a near coin flip with a slight bear lean. The long read is where the quant leans bullish: cycle clock + valuation + absent froth, with the 3-year cycle-analog median jumping further bullish (+741% vs +567%) purely on n=3 alignment drift — flagged, not over-read.</p>
+    <p><strong>These numbers enter the master blend as drafted. Override any P and re-stamp — the blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Pipeline re-run July 18, 2026 — full weekly refresh (previous full run July 13, 2026)</div>
+  <ul>
+    <li class="fix"><strong>Price held up through a rough week of Iran-war headlines: $63,796 (Jul 12) → $63,992 (Jul 18), +0.3%.</strong> June 30's $58,526 remains the cycle low; price is now +9.3% off it, despite the Iran War Risk pillar logging its worst week of the conflict (CENTCOM's 7th consecutive strike night, Kuwait/Iran desalination-plant strikes) over the same span — a genuine, if partial, decoupling this cycle.</li>
+    <li><strong>Repair signal #1 is holding, not yet confirmed:</strong> price stayed above the 200-week average (weekly-basis $63,093) through the entire Jul 13–18 window — still unconfirmed until a weekly close clears the 20-week average (~$69.8K). The falling weekly support trendline ($63,983) now sits essentially at price — a close below it would be an early warning; a decisive break above the falling resistance trendline ($81,410) remains the real repair signal #2.</li>
+    <li><strong>Composites eased slightly:</strong> weekly −50.0 → <strong>−45.9</strong> (agreement eased 7-of-7 → 6-of-7), monthly −31 → <strong>−30.0</strong> (5-of-7, unchanged), quarterly +9 → <strong>+9.1</strong> (1-of-7, unchanged).</li>
+    <li class="fix"><strong>Draft P moved 39/38/46/67/70 → 40/37/46/67/70.</strong> 1-month ticked up a point on the eased weekly composite; 3-month ticked down a point as the cycle-analog median worsened sharply (−12% → −19.9%, still 0-of-3 positive) even as the 3-year analog median jumped the other way (+567% → +741%, still 3-of-3 positive) — the same n=3 alignment fragility flagged in the Facts section above, cutting both directions this cycle. Treat the direction, not the exact level, as the signal.</li>
+    <li><strong>Data refreshed:</strong> Bitstamp daily through July 18, 2026 (5,845 days on the master series, 5,449 cached directly); Coin Metrics altcoin set still through May 23 (community data lags ~6 weeks — froth is a tilt, not a score input).</li>
+  </ul>
+</section>
+
+<!--==================== METHOD & SOURCES ====================-->
+<section class="sec sources">
+  <h2>Method &amp; Sources</h2>
+  <div class="sub">Everything is reproducible — the scripts and data live in the BTC-TA folder. Run order below.</div>
+  <ul>
+    <li><span class="grp">Price data:</span> Bitstamp OHLC API (daily, 2011–2026, no key) via <a href="#">fetch_btc_history.py</a> · Coin Metrics community reference price (2010–2011 close-only) via <a href="#">build_master_history.py</a> — 5,835 days total, each row tagged by source.</li>
+    <li><span class="grp">Indicator stack:</span> <a href="#">indicators.py</a> — SMA 20/50/200, EMA 12/26, RSI-14 (Wilder), MACD 12/26/9, Bollinger 20/2, OBV — on weekly (W-SUN), monthly, quarterly bars. <a href="#">levels.py</a> — swing-cluster S/R + least-squares trendlines.</li>
+    <li><span class="grp">Scoring:</span> <a href="#">score.py</a> — each indicator → conviction in [−100, +100] (bounded inputs mapped linearly, unbounded squashed with tanh); composite = fixed weights (MA .20, RSI .15, MACD .15, BB .15, S/R .15, OBV .10, TL .10); agreement = indicators sharing the composite's sign.</li>
+    <li><span class="grp">Cycle &amp; value:</span> <a href="#">cycle_analysis.py</a> — halving-aligned tops/bottoms/momentum turns, projections from C1–C3 · <a href="#">downside.py</a> / <a href="#">downside_map.py</a> — power-law bands (R² 0.96) + historical troughs + 6-method bottom-zone synthesis · <a href="#">test_altcoin_froth.py</a> — froth quartiles vs forward drawdowns, block-bootstrap CI.</li>
+    <li><span class="grp">The mapping (new):</span> <a href="#">pillar_mapping.py</a> — window scores from tape composites + cycle analogs + power-law value; P = 50 + 25×(S/100); Quality rubric per window; writes data/pillar_scores.json for the master blend.</li>
+    <li><span class="grp">Run order:</span> fetch_btc_history → build_master_history → fetch_altcoin_data → indicators → levels → score → charts → cycle_analysis → downside → downside_map → pillar_mapping.</li>
+    <li><span class="grp">Honesty notes:</span> current weekly/monthly/quarterly bars are partial as of July 18 (complete-bar composites: weekly −50.1 / monthly −42.6 / quarterly +7.7) · the multi-signal crash model failed out-of-sample (AUC 0.44) and is excluded · the AUC figures are the pipeline's own attestation · froth data lags ~6 weeks · n=3 on all cycle claims, and analog windows can cross into the next cycle — the 6-month analog remains fragile on pure alignment drift, printed in the Facts · the 2024 halving is dated Apr 19 (US ET; block 840,000 hit Apr 20 00:09 UTC — 0.03 cycle-month effect) · S/R levels are algorithmic swing-clusters with 1–2 touches each · the bottom-odds split (40/35/17/8) is a judgment synthesis, not a model output.</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

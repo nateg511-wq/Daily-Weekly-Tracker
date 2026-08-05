@@ -1,11 +1,43 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-07-17_draft",
+  "active_qual_set": "2026-08-04_draft",
   "pillars": {
-    "CLARITY Act":   { "quality": { "1": 0.85, "3": 0.85, "6": 0.85, "12": 0.90, "36": 0.95 } },
-    "Iran War Risk": { "quality": { "1": 0.60, "3": 0.65, "6": 0.70, "12": 0.65, "36": 0.55 } },
-    "Tokenization":  { "quality": { "1": 0.90, "3": 0.88, "6": 0.85, "12": 0.78, "36": 0.70 } },
-    "Fed & Macro":   { "quality": { "1": 0.85, "3": 0.85, "6": 0.80, "12": 0.75, "36": 0.65 } }
+    "CLARITY Act": {
+      "quality": {
+        "1": 0.85,
+        "3": 0.85,
+        "6": 0.85,
+        "12": 0.9,
+        "36": 0.95
+      }
+    },
+    "Iran War Risk": {
+      "quality": {
+        "1": 0.6,
+        "3": 0.65,
+        "6": 0.7,
+        "12": 0.65,
+        "36": 0.55
+      }
+    },
+    "Tokenization": {
+      "quality": {
+        "1": 0.9,
+        "3": 0.88,
+        "6": 0.85,
+        "12": 0.78,
+        "36": 0.7
+      }
+    },
+    "Fed & Macro": {
+      "quality": {
+        "1": 0.85,
+        "3": 0.85,
+        "6": 0.8,
+        "12": 0.75,
+        "36": 0.65
+      }
+    }
   },
   "score_sets": {
     "2026-06-19_committed": {
@@ -13,70 +45,544 @@
       "stamped_by": "Alex",
       "note": "June 12-19, 2026 committed scores from the original pillar reports.",
       "P": {
-        "CLARITY Act":   { "1": 55, "3": 60, "6": 65, "12": 85, "36": 92 },
-        "Iran War Risk": { "1": 50, "3": 55, "6": 62, "12": 75, "36": 85 },
-        "Tokenization":  { "1": 53, "3": 57, "6": 62, "12": 72, "36": 85 },
-        "Fed & Macro":   { "1": 38, "3": 40, "6": 46, "12": 54, "36": 61 }
+        "CLARITY Act": {
+          "1": 55,
+          "3": 60,
+          "6": 65,
+          "12": 85,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 50,
+          "3": 55,
+          "6": 62,
+          "12": 75,
+          "36": 85
+        },
+        "Tokenization": {
+          "1": 53,
+          "3": 57,
+          "6": 62,
+          "12": 72,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 38,
+          "3": 40,
+          "6": 46,
+          "12": 54,
+          "36": 61
+        }
       }
     },
     "2026-07-08_draft": {
       "status": "draft",
       "note": "July 8 re-research: CLARITY July-1 trigger fired; Iran ceasefire broke; Fed hike odds >75%.",
       "P": {
-        "CLARITY Act":   { "1": 52, "3": 56, "6": 61, "12": 83, "36": 92 },
-        "Iran War Risk": { "1": 40, "3": 47, "6": 55, "12": 70, "36": 83 },
-        "Tokenization":  { "1": 52, "3": 56, "6": 62, "12": 73, "36": 85 },
-        "Fed & Macro":   { "1": 35, "3": 36, "6": 42, "12": 52, "36": 61 }
+        "CLARITY Act": {
+          "1": 52,
+          "3": 56,
+          "6": 61,
+          "12": 83,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 40,
+          "3": 47,
+          "6": 55,
+          "12": 70,
+          "36": 83
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 56,
+          "6": 62,
+          "12": 73,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 35,
+          "3": 36,
+          "6": 42,
+          "12": 52,
+          "36": 61
+        }
       }
     },
     "2026-07-10_draft": {
       "status": "draft",
       "note": "July 10 re-research: merged CLARITY text imminent but odds fell; Iran performative-war read; DTCC pilot; hawkish minutes vs $132B reserve build.",
       "P": {
-        "CLARITY Act":   { "1": 50, "3": 54, "6": 60, "12": 82, "36": 92 },
-        "Iran War Risk": { "1": 42, "3": 49, "6": 56, "12": 70, "36": 83 },
-        "Tokenization":  { "1": 53, "3": 58, "6": 64, "12": 74, "36": 85 },
-        "Fed & Macro":   { "1": 34, "3": 36, "6": 44, "12": 53, "36": 61 }
+        "CLARITY Act": {
+          "1": 50,
+          "3": 54,
+          "6": 60,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 42,
+          "3": 49,
+          "6": 56,
+          "12": 70,
+          "36": 83
+        },
+        "Tokenization": {
+          "1": 53,
+          "3": 58,
+          "6": 64,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 36,
+          "6": 44,
+          "12": 53,
+          "36": 61
+        }
       }
     },
     "2026-07-11_draft": {
       "status": "draft",
       "note": "July 11 light re-research (1 day after last cycle; H.4.1/claims unchanged, next H.4.1 Jul 16): CLARITY firmed to a concrete Jul 20 floor-vote target + Polymarket 2026-passage odds ~46-47% (up from ~40%); Iran talks active (Oman/Hormuz) with no new strikes since Jul 8-9 but MoU still 'over' and Hormuz status unresolved; Tokenization treasuries $15.16B->$15.58B/day + BUIDL jump to $2.87B (single-source rwa.xyz live read); Fed & Macro held flat, no fresh primary data since Jul 10 (Sept-hike odds ~62% is a like-for-like flat read vs Jul 10's ~66% combined).",
       "P": {
-        "CLARITY Act":   { "1": 52, "3": 55, "6": 61, "12": 82, "36": 92 },
-        "Iran War Risk": { "1": 44, "3": 50, "6": 57, "12": 70, "36": 83 },
-        "Tokenization":  { "1": 54, "3": 59, "6": 65, "12": 74, "36": 85 },
-        "Fed & Macro":   { "1": 34, "3": 36, "6": 44, "12": 53, "36": 61 }
+        "CLARITY Act": {
+          "1": 52,
+          "3": 55,
+          "6": 61,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 44,
+          "3": 50,
+          "6": 57,
+          "12": 70,
+          "36": 83
+        },
+        "Tokenization": {
+          "1": 54,
+          "3": 59,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 36,
+          "6": 44,
+          "12": 53,
+          "36": 61
+        }
       }
     },
     "2026-07-12_draft": {
       "status": "draft",
       "note": "July 12 light re-research: all four pillars held flat, no material corroborated change since Jul 11. CLARITY - merged draft still due week of Jul 13, Jul 20 floor-vote target reconfirmed (Cointribune/CryptoTimes), same three disputes (ethics/conflict-of-interest, Sec.604 DeFi liability, stablecoin yield) still unresolved - status quo, not new news. Iran - Qatari mediation continuing, Trump says talks will continue despite calling MoU 'over'; no new strikes reported beyond the Jul 8-9 exchange already priced into the Jul 11 baseline; Hormuz-open statement from Iran still pending. Tokenization - rwa.xyz aggregate readings ($31-33.5B total RWA, BUIDL ~$2.5B) roughly consistent with Jul 11 read, no clear new dated catalyst. Fed & Macro - H.4.1 last published Jul 9 and jobless claims (215K, w/e Jul 4) last published Jul 9, both already reflected in the Jul 10/11 baseline; next H.4.1 and claims releases are Jul 16, so nothing new to move this pillar on - held flat per AGENTS.md guidance on weekly-cadence data.",
       "P": {
-        "CLARITY Act":   { "1": 52, "3": 55, "6": 61, "12": 82, "36": 92 },
-        "Iran War Risk": { "1": 44, "3": 50, "6": 57, "12": 70, "36": 83 },
-        "Tokenization":  { "1": 54, "3": 59, "6": 65, "12": 74, "36": 85 },
-        "Fed & Macro":   { "1": 34, "3": 36, "6": 44, "12": 53, "36": 61 }
+        "CLARITY Act": {
+          "1": 52,
+          "3": 55,
+          "6": 61,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 44,
+          "3": 50,
+          "6": 57,
+          "12": 70,
+          "36": 83
+        },
+        "Tokenization": {
+          "1": 54,
+          "3": 59,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 36,
+          "6": 44,
+          "12": 53,
+          "36": 61
+        }
       }
     },
     "2026-07-13_draft": {
       "status": "draft",
       "note": "July 13 FULL weekly re-research (primary-source deep dive on all four pillars, supersedes the Jul 11-12 light daily touches which held everything flat): Iran War Risk cut hardest (44/50/57/70/83 -> 38/45/53/68/83) - the 'quiet period' the daily checks assumed was wrong; CENTCOM ran a 3rd (~140 targets) and 4th (first sea-launched drones) strike round Jul 11-12, Iran hit Oman (a mediator) for the first time, IRGC declared the Strait of Hormuz 'closed' (the opposite of the awaited de-escalation signal, disputed by CENTCOM), Brent jumped >4% to $78.82 intraday, BTC gave back its bounce to ~$62-63K; zero US casualties and continuing Oman/Qatar/Pakistan mediation talks keep this from falling further, so 36mo held. CLARITY Act nudged down only at the front end (52/55/61/82/92 -> 50/54/61/82/92): the core dispute (merged text, ethics, WH sign-off) is factually unchanged since Jul 10, but Sen. Lindsey Graham's sudden death (confirmed night of Jul 11, 9+ outlets) temporarily thins the GOP's effective floor majority to ~51 during an already-brutal ~3-week calendar - no source ties this directly to CLARITY's timeline so the move is kept small and inferential, 6/12/36mo held on an unchanged structural case. Tokenization held flat at 54/59/65/74/85: new bullish infrastructure proof (Circle's final OCC national-trust-bank charter Jul 10, Swift's 17-bank blockchain ledger live Jul 9, DTCC's confirmed public-chain path via Stellar for H1 2027) roughly offsets new bearish signal (stablecoin market cap down ~$10B since the May peak, Open USD's 140+-partner claim under credibility scrutiny after Samsung/Dunamu/Upbit denials) - nets to no change pending the Jul 18 GENIUS Act statutory rulemaking deadline (zero final rules published with 5 days to go). Fed & Macro held flat at 34/36/44/53/61: H.4.1 and jobless claims unchanged since Jul 9 (next release Jul 16), no FOMC meeting in window, Sept-hike-odds unchanged on the corroborated CME measure since Jul 9 (a competing Polymarket reading diverges materially - flagged, not used to move P); June CPI (Jul 14), Fed Chair Warsh's debut congressional testimony (Jul 14-15), June PPI (Jul 15), and H.4.1/claims (Jul 16) all land in the next 72 hours and are flagged as the real re-rating opportunity for the next cycle, with the Iran/Hormuz oil shock (Brent >$78) as a live upside-inflation-surprise risk into those prints.",
       "P": {
-        "CLARITY Act":   { "1": 50, "3": 54, "6": 61, "12": 82, "36": 92 },
-        "Iran War Risk": { "1": 38, "3": 45, "6": 53, "12": 68, "36": 83 },
-        "Tokenization":  { "1": 54, "3": 59, "6": 65, "12": 74, "36": 85 },
-        "Fed & Macro":   { "1": 34, "3": 36, "6": 44, "12": 53, "36": 61 }
+        "CLARITY Act": {
+          "1": 50,
+          "3": 54,
+          "6": 61,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 38,
+          "3": 45,
+          "6": 53,
+          "12": 68,
+          "36": 83
+        },
+        "Tokenization": {
+          "1": 54,
+          "3": 59,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 36,
+          "6": 44,
+          "12": 53,
+          "36": 61
+        }
       }
     },
     "2026-07-17_draft": {
       "status": "draft",
       "note": "July 17 catch-up re-research covering the Jul 13-17 gap (no daily runs Jul 14-16; this cycle folds in four days of primary-sourced developments flagged in the Jul 13 note as the next re-rating opportunity). Iran War Risk cut hardest (38/45/53/68/83 -> 32/39/48/65/82): the 'quiet period' hoped for did not materialize - CENTCOM ran six consecutive nights of strikes through Jul 17 (NPR/CBS/CNN/ABC/Al Jazeera, corroborated by Wikipedia's live crisis page), the US struck a maritime control tower at Chabahar and bridges/rail at Bandar Abbas with 7 confirmed killed, Iran expanded retaliation beyond Oman to Qatar, Kuwait, and Bahrain, the Strait of Hormuz has been under a disputed Iranian 'closure' since Jul 12 with the US now blockading Iranian ports, and Trump has explicitly called the ceasefire 'over'; zero reported US casualties and continuing Oman/Qatar mediation keep 36mo from falling further. Fed & Macro moved up the most of any pillar (34/36/44/53/61 -> 38/40/47/55/62) on a cluster of primary-sourced disinflationary data that landed exactly when the Jul 13 note flagged it would: BLS CPI fell 0.4% m/m in June (largest drop since Apr 2020, core flat m/m), BLS PPI fell 0.3% m/m (core PPI 4.7% y/y, below the 5.2% forecast), DOL initial claims fell to 208K (vs. 217K forecast, still 'slow hire, slow fire'), and Fed Chair Warsh's first congressional testimony (House Jul 14 / Senate Jul 15, federalreserve.gov) struck a measured inflation-fighting-but-independent tone with balance-sheet changes pre-telegraphed, not a hawkish surprise; CME FedWatch cumulative Sept hike-probability eased to ~49% (44% for 25bp + 4.7% for 50bp) from the ~62% combined read used in the Jul 11-13 baseline - a market-priced easing that corroborates the primary data. CLARITY Act nudged down at the front end only (50/54/61/82/92 -> 48/52/61/82/92): prediction-market passage odds slid further to ~43% (from ~46-47%, corroborated across Yahoo Finance, TechTimes, crypto.news, Benzinga), the merged Senate draft still omits the Democrats' ethics-provision ask, and Sens. Murphy/Van Hollen/Merkley held a press conference formally opposing the bill; no floor vote has been scheduled despite the Jul 20 target, but the structural passage case (House fast-follow, GENIUS-Act precedent) is unchanged so 6/12/36mo held. Tokenization held flat at 54/59/65/74/85: infrastructure continues to build (RWA aggregate ~$33.5B, DTCC's limited production trades launching this month on schedule) but the real catalyst - the six-agency GENIUS Act stablecoin rulemaking - has a hard Jul 18 statutory deadline that has not yet landed as of this run, so no rules-driven move is booked until they're actually finalized.",
       "P": {
-        "CLARITY Act":   { "1": 48, "3": 52, "6": 61, "12": 82, "36": 92 },
-        "Iran War Risk": { "1": 32, "3": 39, "6": 48, "12": 65, "36": 82 },
-        "Tokenization":  { "1": 54, "3": 59, "6": 65, "12": 74, "36": 85 },
-        "Fed & Macro":   { "1": 38, "3": 40, "6": 47, "12": 55, "36": 62 }
+        "CLARITY Act": {
+          "1": 48,
+          "3": 52,
+          "6": 61,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 32,
+          "3": 39,
+          "6": 48,
+          "12": 65,
+          "36": 82
+        },
+        "Tokenization": {
+          "1": 54,
+          "3": 59,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 38,
+          "3": 40,
+          "6": 47,
+          "12": 55,
+          "36": 62
+        }
+      }
+    },
+    "2026-07-18_draft": {
+      "status": "draft",
+      "note": "July 18 FULL WEEKLY re-research (supersedes this morning's light daily touch on the same key; deep primary-source dive on all four pillars covering the Jul 13-18 gap since the last full refresh, with independent adversarial verification of every daily-note claim). CLARITY Act held at 44/48/59/82/92 (light-draft level confirmed, not further cut): independent re-check corroborates the ~30-32% record-low prediction-market passage read across 3+ outlets (CoinDesk 32%, Cryptobriefing 30.5-31%, Yahoo) as of Jul 17, and confirms no cloture filed - the FY2027 NDAA is occupying floor time first, pushing CLARITY to the week of Jul 20 at the earliest with Jul 27 as a fallback (CoinDesk, TechTimes, CryptoSlate, Yahoo/Forbes, multi-source). Correction: Sen. Graham's SC seat was NOT left vacant - Gov. McMaster appointed Darline Graham Nordone Jul 13, restoring the GOP to ~53 seats (governor.sc.gov, NBC, CBS, CNBC), so the 'floor majority thinned to ~51' framing used to justify part of the Jul 13 cut was stale; this is offset by the still-unresolved ethics/Sec.604/stablecoin-yield deadlock, which remains the binding constraint, so no net P change. Iran War Risk cut further (27/35/45/63/81 -> 24/33/44/60/79): CENTCOM's 7th consecutive strike night continued into Jul 18 (CNN/Al Jazeera liveblogs), Iran's Jul 17 strike on Kuwait's Shuaiba desalination/power plant was mirrored by a US hit on an Iranian desalination site at Jask, and a top Iranian adviser warned of a 'full-scale offensive' - all multi-source. Correction, applied to 12/36mo: the 'zero US casualties' anchor used in every prior cycle back to Jul 8 does not hold as stated - Pentagon officially confirms 13 KIA (March) plus 1 non-hostile death (Cmdr. Gabriel Edwards, helicopter crash, Jul 1), ~365-414 wounded (The Hill, ABC, Wash Times, Wikipedia), with Iranian casualty claims now 50 killed/500+ wounded since Jul 6 (single-source Health Ministry, rising trend). No NEW hostile-fire US death is confirmed since the Jul 8 ceasefire collapse specifically (a viral 3-KIA Kuwait claim was debunked by CENTCOM), so this is a corrected historical accounting, not a fresh shock, but it undercuts the long-horizon dip-buy thesis enough to warrant a modest 12/36mo correction. Also corrected: the '$90 Brent hard-trigger' framing carried in prior reports is stale - Brent already spiked well past $120 intraday in April 2026 per Wikipedia's 'Economic impact of the 2026 Iran war' page and CNBC/Al Jazeera; current Brent ~$85-87 (up ~10% this week) is elevated-but-off-peak, not a fresh record, and the trigger table is being re-leveled accordingly this cycle. Mediation (Araghchi in Muscat, Oman/Qatar) remains active, unbroken. Tokenization held at 50/56/65/74/85: independent re-check confirms the GENIUS Act Jul-18 stablecoin-rulemaking deadline was missed as the light draft reported (7+ outlets: Yellow, ClearingPost, DailyCoin, CryptoSlate, FinanceMagnates - zero of six agencies finalized rules, 18-month statutory backstop now governs, effective date Jan 18 2027) - this was already anticipated as of the Jul 13 baseline, so it's confirmation not a new shock and the light draft's cut stands unchanged. DTCC's Stellar-track limited-production tokenized-trade launch (Russell 1000 stocks/ETFs/Treasuries, ~40-50 institutions incl. BlackRock/JPMorgan/Goldman) went live the week of Jul 14 on schedule (CCN, Genfinity, CoinDesk, Bitcoin Magazine); RWA.xyz aggregate ~$33.5B confirmed; stablecoin cap still down ~$10B since May peak, flat vs Jul 13; Open USD's 140+-partner credibility dispute remains unresolved. New, single-source, not moving P: Robinhood Chain's on-chain RWA market cap is only ~$12.66M and dominated by memecoin speculation rather than the tokenized equities it was built for (CoinDesk) - flagged for next cycle, not yet corroborated. Fed & Macro nudged up at the front end (39/40/47/55/62 -> 42/40/47/55/62): a new, well-corroborated (CNBC, Coinpedia, BeInCrypto, CryptoBriefing, Slatestone) signal not captured in the daily touches - the Jul 28-29 FOMC (within the 1mo window) hike odds collapsed to ~12-17% (from ~46-47%) after the cooling June CPI (-0.4% m/m, largest drop since Apr 2020, BLS primary) and PPI (-0.3% m/m, BLS primary) prints and Fed Chair Warsh's measured Jul 14/15 congressional testimony (federalreserve.gov primary). 3/6/12/36mo held: the September cumulative hike-odds figure the daily draft used (~48.7%) does not reconcile with a same-day Investing.com Fed Rate Monitor read (~57.2% cumulative, more hawkish) nor a third source (~41.5%) - flagged as an unresolved data-quality conflict on the September number specifically, so no additional move beyond the July-meeting signal until CME FedWatch is re-pulled directly next cycle.",
+      "P": {
+        "CLARITY Act": {
+          "1": 44,
+          "3": 48,
+          "6": 59,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 24,
+          "3": 33,
+          "6": 44,
+          "12": 60,
+          "36": 79
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 56,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 42,
+          "3": 40,
+          "6": 47,
+          "12": 55,
+          "36": 62
+        }
+      }
+    },
+    "2026-07-24_draft": {
+      "status": "draft",
+      "note": "July 24 catch-up re-research covering the Jul 18-24 gap (no runs Jul 19-23; folds in six days of primary/multi-source-corroborated developments). Iran War Risk cut hardest (24/33/44/60/79 -> 18/27/38/56/77): the de-escalation this pillar has been waiting on did not arrive - CENTCOM ran a 9th consecutive strike night (CNBC, Jul 20), CENTCOM confirmed 3 additional US service members killed since Jul 18 (CNBC/NPR/Washington Times, bringing the confirmed toll past 17), Iran struck a tanker in the Strait of Hormuz (CNBC Jul 21/23) and Houthi forces hit two Saudi tankers in the Red Sea on Jul 23 in what CNN's live desk explicitly framed as 'a new escalation,' and Brent crude crossed $100/bbl for the first time since May (Bloomberg, ABC, CNBC, +30% this month) on supply fears - a real macro/risk-off shock, not just headline noise. A regional 10-day-ceasefire proposal is on the table (CNBC) but unaccepted as of this run, keeping 12/36mo from falling as far as the front end. CLARITY Act moved up the most (44/48/59/82/92 -> 50/54/62/83/92): Trump agreed to a compromise ethics provision (Sen. Lummis, confirmed across Bitcoin.com, PrimeXBT, CoinDesk, PYMNTS, Yahoo, 247wallst, Disruption Banking, crypto.news - 8+ outlets) that resolves the ethics deadlock this pillar had flagged since Jul 13 as the binding constraint; Senate Republicans released the updated draft Jul 22 with a $250k/day DOJ-enforced ban on officials issuing/profiting from digital assets. Move kept moderate rather than large because no floor vote is yet scheduled, Democrats had not fully reviewed the new text as of Jul 22, and crypto.news flags the enforcement provision sunsets with Trump's term (Jan 2029) - a real weakening critique, not resolved cheerleading. Fed & Macro nudged up (42/40/47/55/62 -> 45/44/49/55/62): initial jobless claims for the week ending Jul 18 fell to 187K vs. 212K expected - the fewest since September 1969 (FXStreet, Bloomberg, ABC, US News, DOL primary) - a strong, well-corroborated labor-cooling/disinflationary signal. 12/36mo held: the Sept cumulative hike-odds data-quality conflict flagged Jul 18 (CME vs. Investing.com vs. a third read) remains unresolved this cycle - no fresh H.4.1 release was located for Jul 16/23 in this pass, so the balance-sheet leg of this pillar is carried flat rather than guessed at. Tokenization nudged down at the front end only (50/56/65/74/85 -> 48/54/65/74/85): rwa.xyz shows tokenized Treasuries pulling back from the Jul 10 peak of $35.2B to $34.67B, with BlackRock's BUIDL down 12.22% week-over-week; the GENIUS Act's Jul 18 stablecoin-rulemaking deadline lapsed with zero of six agencies (OCC/FDIC/NCUA/Treasury/FinCEN/OFAC) finalizing rules, but that was already anticipated in the Jul 18 baseline note, so it's confirmation, not a fresh shock - 6/12/36mo held on the unchanged structural build-out (DTCC Stellar launch, Circle OCC charter) that underpins the long-horizon case.",
+      "P": {
+        "CLARITY Act": {
+          "1": 50,
+          "3": 54,
+          "6": 62,
+          "12": 83,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 18,
+          "3": 27,
+          "6": 38,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 48,
+          "3": 54,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 45,
+          "3": 44,
+          "6": 49,
+          "12": 55,
+          "36": 62
+        }
+      }
+    },
+    "2026-07-25_draft": {
+      "status": "draft",
+      "note": "July 25 FULL WEEKLY re-research (deep primary-source re-verification on all four pillars vs. the last full refresh, Jul 18 - this AMENDS today's earlier light-touch draft in place per the runbook's same-day-draft rule, rather than stacking a second draft). Independent adversarial verification was run on every extraordinary claim carried in the light touch; two of them (the 187K jobless-claims print and the CME FedWatch Sept-hike-odds surge) were confirmed directly against federalreserve.gov/DOL primary data and 9+ outlets, while a third (Tokenization's 'tokenized Treasuries pulling back to $34.67B') was found to be a metric mislabeling in the light draft's own sources (that figure is total cross-category RWA value, not Treasuries-specific - tokenized Treasuries actually grew $15.52B->$16.20B over the window) and is corrected here. Iran War Risk cut hardest (18/27/38/56/77 light-draft baseline -> 20/29/40/57/78 net vs. the Jul 18 full-refresh baseline of 24/33/44/60/79): CENTCOM ran 9 to 13 consecutive strike nights (Jul 19-23) before Adm. Cooper recommended, and Trump ordered, a stand-down around Jul 24-25 (Middle East Monitor, IranWire, Times of Israel) - the first pause in ~2 weeks, confirmed by CNN/Fox/Al Jazeera Jul 25 live desks; the first confirmed hostile-fire US deaths since the Jul 8 ceasefire collapse landed this window (2 KIA + 1 died-of-wounds, Iranian missile/drone strike on Muwaffaq Salti AB, Jordan, Jul 17-18, 5+ outlets), plus 1 non-hostile death (Erbil, Jul 19); the Pentagon's own casualty count (DCAS) briefly rose to 18 on Jul 23 then reverted to 14 on Jul 24 amid a credibly-sourced (NYT officials, Rep. Massie on record) dispute over whether that reversion is dodging the 90-day War Powers clock - a genuine unresolved integrity flag on the official count, not just a data-refresh. Brent touched $100/bbl intraday Jul 23 (first time since May, confirmed) before easing to ~$98 - the corrected watch level partially, not fully, fired. Escalation also widened geographically: a Qatari tanker was struck near Oman (Jul 20-21, confirmed), a Saudi tanker (Encelia) was hit by Houthi forces in the Red Sea (Jul 23, confirmed; a second claimed hit on tanker 'Layla' remains single-source), and Saudi Arabia and the Houthis traded strikes on Hodeidah and Saudi Aramco-linked Jizan/Yanbu oil infrastructure (Jul 24-25, 2-source). A 10-day regional ceasefire proposal (Qatar/Egypt/Oman/Pakistan, with Iran itself reportedly driving it per JPost) remains on the table, unaccepted - this and the confirmed strike halt keep the cut from going deeper and hold 12/36mo from falling much further. The House and Senate split on competing War Powers resolutions Jul 23 (House passed a nonbinding one 214-208; Senate's binding one failed 49-47) - no change in outcome, logged for completeness. Fed & Macro cut hard (45/44/49/55/62 Jul-18-baseline -> 36/35/45/54/62; light draft had cut 1mo/3mo together to 36/37): independently re-verified directly against federalreserve.gov and DOL - the Jul 23 H.4.1 confirms reserve balances fell exactly $80,572M w/w against a $73,405M TGA rebuild, and the 187K initial-claims print (week ended Jul 18, lowest since Sept 1969) is confirmed by DOL primary language and 9+ independent outlets, though multiple analysts (RTTNews, PNC Economics) flag a plausible seasonal-adjustment distortion (auto-plant retooling shutdown timing) that could partially reverse in coming prints - noted, not used to discount the confirmed number itself. CME FedWatch data (cross-checked across 5+ outlets) shows both the imminent Jul 28-29 meeting's hike odds tripling (~10-12% -> ~34-38%) and the September meeting's hike odds surging to ~80-82% from <53% a week earlier - this resolves the Jul 18/24 three-way September-odds conflict cleanly to the hawkish side (the ~17% dovish figure carried in earlier drafts is now identified as the outlier). The cut is concentrated in 1mo/3mo, which now capture both remaining 2026 FOMC meetings at meaningfully repriced hawkish odds; 6mo trimmed only modestly and 1yr/3yr held near-flat, since this is read as a supply-shock-driven repricing of a still-intact underlying disinflation trend (June CPI/PPI, UMich inflation expectations easing Jul 17), not a trend reversal. CLARITY Act moved up on net for the first time in over a week (light-draft 48/54/62/83/92 -> 42/50/61/83/92 vs. the Jul 18 baseline of 44/48/59/82/92): 1mo alone cut further (44->42) on Majority Leader Thune's on-record Jul 23 statement (confirmed primary-adjacent via CoinDesk/Punchbowl, not just the light draft's secondary Jul 24 recap) that the Senate 'won't get it done' before the Aug 7 recess, compounded by a stalled NDAA (50-46, short of cloture) and new sanctions/tariff legislation both now also queued ahead of CLARITY - a worse floor-time bottleneck than previously modeled; but 3mo/6mo/1yr move up because real negotiating progress happened for the first time: Trump personally signed off on compromise ethics-provision language (Jul 20) and Senate Republicans released a full draft with a concrete DOJ enforcement mechanism (Jul 22, $250k/day fines, sunsets 2029) - even though seven named Senate Democrats (Cortez Masto, Alsobrooks, Booker, Gallego, Hickenlooper, Warner, Warnock) formally rejected that draft the same evening as insufficient, replacing a vague three-way deadlock with a defined, enumerated negotiating agenda is genuine structural movement the light draft's 'vote count unchanged at 51 of 60' framing missed entirely (the correct, confirmed GOP conference size is 53, matching the Jul 18 post-Graham-seat-refill baseline, not 51). Tokenization corrected up from the light draft's mislabeled cut (48/54/65/74/85 -> 49/56/65/74/85 vs. the Jul 18 baseline of 50/56/65/74/85): the light draft's stated reason for its cut (tokenized Treasuries 'pulling back' to $34.67B) conflates the all-asset-class RWA Distributed Value figure with Treasuries specifically - a live rwa.xyz pull this cycle shows tokenized Treasuries actually grew from $15.52B (Jul 13) to $16.20B (Jul 25, +4.4%), and BUIDL's confirmed mid-week wobble (-12.2% by Jul 22) had partially recovered by Jul 25; 1mo still trims one point on two now-corroborated negatives the light draft didn't have - Robinhood Chain's memecoin-dominated, ~$13M RWA activity is upgraded from single-source to 2+-outlet-confirmed, and a new $18-24M oracle-key exploit hit Ostium (an RWA-adjacent Arbitrum perp platform) on Jul 15 - while DTCC's tokenization pilot moved from 'launched' to genuinely live production (JPMorgan/Goldman/BlackRock executing real tokenized-equity transactions, Jul 15, confirmed) and Ondo cleared a FINRA hurdle (Jul 23); no core RWA-rail failure, stablecoin depeg, or counterparty default was found in the window. 3mo/6mo/1yr/12yr held or matched baseline as the negatives and positives roughly offset.",
+      "P": {
+        "CLARITY Act": {
+          "1": 42,
+          "3": 50,
+          "6": 61,
+          "12": 83,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 20,
+          "3": 29,
+          "6": 40,
+          "12": 57,
+          "36": 78
+        },
+        "Tokenization": {
+          "1": 49,
+          "3": 56,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 36,
+          "3": 35,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      }
+    },
+    "2026-07-30_draft": {
+      "status": "draft",
+      "note": "July 30 FULL WEEKLY re-research (deep primary-source re-verification on all four pillars vs. the last full refresh, Jul 25 - this AMENDS the existing same-day draft in place with fully-verified numbers, superseding the lighter Jul 29/30 touches that had built on the pre-correction Jul 25 light-draft baseline rather than the corrected full-refresh one). Iran War Risk cut hardest (18/27/38/56/77 -> 16/25/37/55/77 net vs. the Jul 25 full-refresh baseline of 20/29/40/57/78): this pillar's own two most recent daily touches directly contradicted each other (one said 'lull, good chance of progress' through Jul 27-28, the other said 'Iran launched a surprise attack Jul 28 that broke the pause') - independent re-verification resolved it: both were true on different days. A real 2-3 day lull (Jul 25-27, Brent fell to ~$90) was overtaken when Iran's IRGC fired ballistic missiles at a US/CENTCOM base in Jordan on Jul 28 (5+ outlets, all missiles intercepted, zero US casualties) the same day Trump was touting 'friendly talks' with Netanyahu - both things happened. The US retaliated with a 'heavy wave of strikes' Jul 29 (Bandar Abbas, Kish/Qeshm islands, Khuzestan), and the war then widened to two entirely new fronts the light touches missed completely: US-Saudi joint strikes on Iran-backed militias across Iraq (Jul 29, CENTCOM-confirmed, 20 killed/32 wounded, Iraq's government protesting a sovereignty violation - Saudi Arabia's first turn as a direct co-belligerent), and a drone strike on a US-owned gas vessel at Egypt's Damietta port (Jul 29, first-ever hit on Egyptian soil in this war, attribution still unresolved/disputed). Brent rebounded from the Jul 27 lull-low (~$90) back to ~$92-93 by Jul 30 on the renewed strikes (the light draft's specific '$87.53' figure could not be corroborated and is dropped). Net: the week was escalatory, not the mild improvement either light touch suggested; kept from a deeper cut because the lull, while short, was real, zero new US casualties resulted from the Jordan attack, and Oman-mediated diplomacy continues however strained. The separately-flagged Pentagon 18-vs-14 casualty-count dispute is confirmed stale (dated Jul 24, not a fresh Jul 30 event as one light draft implied) and is not used to move P again. Fed & Macro cut further (36/37/46/54/62 -> 34/33/45/54/62 vs. the Jul 25 baseline of 36/35/45/54/62): independently confirmed directly against federalreserve.gov that the Jul 28-29 FOMC held at 3.50-3.75% on a 9-3 vote, with three regional-bank presidents (Hammack, Kashkari, Logan) dissenting in favor of an immediate hike - the first unified 3-member dissent since September 2016, a genuinely rare hawkish signal neither light draft's numbers fully captured. Chair Warsh's press conference was unusually combative and offered no forward guidance ('no soft inflation target... not on this committee's watch'), triggering a confirmed (if single-sourced) risk-off market reaction: equities fell 1.5-2.2% intraday and the 30-year yield hit its highest level since 2007. Jobless claims for the week ended Jul 25 came in at 197K (DOL primary, directly fetched) with the prior week revised UP to 188K from 187K - the seasonal-adjustment distortion flagged last cycle (auto-plant retooling timing) is now directly confirmed in the primary release itself (actual NSA claims fell less than the seasonal factors expected), meaning the '57-year-low' framing was real but already reversing as anticipated, not a durable labor-market signal. The September hike-odds figures cited in both light drafts (55.6% then 72-81%) could not be reconciled to a single verified number - four independent live pulls this cycle produced four different figures (55.8%, 62.4%, 70.2%, 81%) with no two agreeing - so the September number is treated as 'still elevated, majority-hike-priced' directionally, not as a precise point figure; no re-rate rests on it alone. CLARITY Act cut further across every window (46/54/62/83/92 light-draft -> 40/47/58/82/92 vs. the Jul 25 full-refresh baseline of 42/50/61/83/92 - its lowest reading yet in this pillar's history): direct pull of the Senate's own daily floor schedule (dailypress.senate.gov) confirms CLARITY was not on the calendar Jul 28-29 (floor time went to a Graham memorial ceremony, an exec-calendar nominee vote, and a Russia/Iran sanctions bill that passed 86-12) - flatly confirming no path to passage before the Aug 7 recess, which is why 1mo cuts hardest. 3mo/6mo cut too, but by less than the floor-schedule fact alone would suggest, because real, multi-sourced negotiating progress continued: Sens. Tillis and Gallego are reported (CoinDesk tier-1, 4+ corroborating outlets) to have struck new common ground on an ethics counteroffer, though the exact text is undisclosed and White House sign-off is explicitly unconfirmed (CoinDesk's own copy hedges 'whether they've actually done it is unclear') - so this is treated as real movement, not a finalized deal. A separate, new complication emerged and was rejected by both sides Jul 30: a developer/software-liability enforcement-leeway proposal, mocked by the White House and called 'not a serious proposal' by the DeFi Education Fund - a fresh friction point neither light draft caught. Also newly noted: SEC Chair Atkins said Jul 29 the SEC is 'ready, willing, and able' to write crypto market-structure rules unilaterally if Congress stalls - a modest reducer of legislative urgency, flagged not scored. Polymarket 'signed in 2026' hit a record low of 27% (Jul 29) before recovering slightly to 30% (Jul 30 live pull) - down from the Jul 25 baseline's ~35% but not as low as the light draft's cited 27%. The Alex Thorn/Galaxy Research 50%-to-30% estimate cut cited in the light draft is confirmed as a real fact but was mis-dated - it's from Jul 24-25, already contemporaneous with the last full refresh, not new Jul 25-30 news, so it isn't double-counted here. Tokenization corrected up from the light drafts' twice-repeated cut (48/54/65/74/85 both cycles -> 50/57/65/74/85 vs. the Jul 25 baseline of 49/56/65/74/85): a fresh, direct rwa.xyz pull (dated Jul 30) confirms the metric-mislabeling error flagged last cycle recurred in press coverage and the light drafts fell for it again - the cited '$34.67B tokenized Treasuries' figure is still the all-category RWA total, not Treasuries-specific; live data shows tokenized Treasuries essentially flat ($16.18B) and BUIDL continuing its recovery (+1.1% over 5 days, +4.8% off its Jul-22 wobble low) rather than declining. Robinhood Chain's on-chain RWA activity jumped roughly 5x to ~$70M (Jul 25, multi-source) on larger tokenized-stock trades (SpaceX overtaking GameStop) - genuine incremental adoption; Securitize Capital registered as an SEC investment adviser (Jul 27); no new RWA-rail failure, depeg, or counterparty default found in the window (the Jul 15 Ostium exploit remains outside this window). 1yr/3yr held on all four pillars as none of this week's developments bear on multi-year theses.",
+      "P": {
+        "CLARITY Act": {
+          "1": 40,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 16,
+          "3": 25,
+          "6": 37,
+          "12": 55,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 57,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      }
+    },
+    "2026-07-31_draft": {
+      "status": "draft",
+      "note": "July 31 light daily re-research (1 day after the Jul 30 full weekly refresh): three of four pillars held flat, no material corroborated change beyond what Jul 30 already priced in. CLARITY Act nudged down at the front end only (40/47/58/82/92 -> 38/47/58/82/92): multiple outlets (Cryptobriefing, CoinDesk 'State of Crypto', Bitcoin Foundation, FXStreet, Bitstore, Crypto in America) now say a cloture vote this week (through Aug 1) is unlikely and attention has shifted to the week of Aug 3 - the final week before the Aug 7 recess deadline, an even tighter window than the Jul 30 baseline's 'no floor time Jul 28-29' read; 3mo/6mo/12mo/36mo held since a post-recess fall path still exists within those horizons and no new structural development (ethics text, WH sign-off) landed since Jul 30. Iran War Risk held flat at 16/25/37/55/77: CENTCOM confirmed a 'heavy wave' of strikes Jul 29 in retaliation for Tuesday's (Jul 28) Iranian missile attack on US forces, and IRGC threatened Jul 30 to 'punish the aggressor' and reasserted 'full control' of Hormuz - both are corroborating detail on the same Jul 28-29 escalation cycle already reflected in the Jul 30 baseline note, not a fresh shock; no new de-escalation signal either. Tokenization held flat at 50/57/65/74/85: search results returned the same recycled/stale figures (the $34.67B all-category RWA total mislabeled as 'tokenized treasuries', and BUIDL's already-reported -12.22% weekly dip from the Jul 22 wobble) that the Jul 30 baseline already identified and corrected for - no genuinely new dated tokenization news found. Fed & Macro held flat at 34/33/45/54/62: the H.4.1 release due Thursday Jul 30 had not yet appeared in search results as of this run (last published data still dated Jul 23); no new jobless claims print since the 197K/week-ending-Jul-25 figure already baked into the Jul 30 baseline - next H.4.1 and claims data are the real re-rating trigger for the next cycle.",
+      "P": {
+        "CLARITY Act": {
+          "1": 38,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 16,
+          "3": 25,
+          "6": 37,
+          "12": 55,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 57,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-01_draft": {
+      "status": "draft",
+      "note": "August 1 light daily re-research: three of four pillars held flat, Iran War Risk nudged up modestly at the front end only. CLARITY Act held flat at 38/47/58/82/92: multiple outlets (CryptoBriefing, KuCoin, CryptoLaw, crypto.news, CoinDesk 'State of Crypto') confirm the cloture push has shifted to the week of Aug 3 as the last chance before the Aug 7 recess - the same timeline already priced into the Jul 31 baseline, not a new shock; no cloture vote occurred Jul 31-Aug 1 and no new ethics-text or White House sign-off development was found. Iran War Risk nudged up at the front end (1mo 16->19, 3mo 25->26; 6/12/36mo held at 37/55/77): globalsecurity.org's day-by-day war tracker reports the first quiet night with no new US strikes on Iran overnight Jul 31 following the heavy Jul 29-30 wave, Brent crude fell ~2% on the pause, and Saudi Arabia's proposed 'Maritime Defense Alliance' naval coalition for Red Sea shipping protection is drawing multinational backing (14 countries per search reporting) - three independent, different-type signals (military tracker, market price, diplomatic coalition-building) pointing the same direction, though still short of a confirmed ceasefire, so the move is kept small and front-end only; CNN confirms the Jul 30 Egypt port-drone-strike attribution remains disputed (Iran denies involvement), unchanged from the Jul 30 baseline. Tokenization held flat at 50/57/65/74/85: no genuinely new dated catalyst found beyond generic 2026 RWA market-size overview pieces already reflected in prior baselines. Fed & Macro held flat at 34/33/45/54/62 despite a fresh primary-source H.4.1 release (federalreserve.gov, week ended Jul 29): reserve balances fell $77,579M w/w to $2,984,570M and the TGA rose $81,153M to $910,776M - directionally consistent with the prior week's $80,572M reserve drain / $73,405M TGA rebuild already priced into the Jul 25/30 cuts, not a fresh shock, so no further move; no new jobless claims print since the 197K/week-ended-Jul-25 figure already baked in - next claims release is Aug 6 (week ending Aug 1).",
+      "P": {
+        "CLARITY Act": {
+          "1": 38,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 19,
+          "3": 26,
+          "6": 37,
+          "12": 55,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 57,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-02_draft": {
+      "status": "draft",
+      "note": "August 2 light daily re-research: Iran War Risk cut at the front end, reversing part of yesterday's uptick; CLARITY Act, Tokenization, and Fed & Macro all held flat, no material corroborated change. Iran War Risk (1mo 19->15, 3mo 26->23; 6/12/36mo held at 37/55/77): multi-source-corroborated fresh attacks on Hormuz shipping overnight into Aug 1 (Bloomberg: Qatari LNG tanker Gaslog Shanghai struck while transiting; UKMTO/globalsecurity.org: separate tanker hit by unknown projectile off Oman's Musandam Peninsula, engine room damaged, vessel disabled/not under command; Newsmax: two tankers struck and disabled attempting the southern corridor overnight into Aug 1, four more vessels turned back after warnings) directly contradict the 'quiet night' framing that justified yesterday's small front-end uptick - the pause was not durable. This is kept to a front-end-only, modest cut (not a return to the Jul 30 full-refresh cut level) because the Saudi-led Multinational Maritime Defense Alliance continued to solidify (Al Jazeera, The National, DefenseMirror, Tribune: now 14 confirmed members with 43 nations represented at a first Riyadh coordination meeting) as a genuine structural de-escalation-adjacent development supporting the long horizon, and no new US casualties or strikes-on-Iran-proper were reported in this window (attacks were on commercial shipping, not a resumption of the US-Iran strike campaign itself). An unattributed claim that Hormuz traffic has collapsed to ~10% of pre-war levels with a conditional truce holding only through Aug 5 could not be traced to a clear primary or reputable secondary source and is not used to move P per the single-source rule, though it is directionally consistent with the corroborated shipping-attack evidence above and flagged for next cycle. CLARITY Act held flat at 38/47/58/82/92: Genfinity (Jul 28), CoinDesk 'State of Crypto' (Jul 26), and Disruption Banking (Jul 31) all describe the same unresolved ethics deadlock and the week-of-Aug-3-before-Aug-7-recess timeline already priced into the Aug 1 baseline - no cloture motion filed, no new ethics-text or White House sign-off development found. Tokenization held flat at 50/57/65/74/85: no genuinely new dated catalyst found beyond generic RWA market-size overview pieces already reflected in prior baselines. Fed & Macro held flat at 34/33/45/54/62: September cumulative hike odds (~81-82%, CNBC/Southeast AgNET) are consistent with the ~80-82% figure already incorporated in the Jul 30 baseline, not a fresh move; no new H.4.1 release since Jul 29 (next due ~Aug 6) and no new jobless claims print since the 197K/week-ended-Jul-25 figure already baked in (next claims release also ~Aug 6) - both pillars' weekly-cadence data unchanged since last check.",
+      "P": {
+        "CLARITY Act": {
+          "1": 38,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 15,
+          "3": 23,
+          "6": 37,
+          "12": 55,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 57,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-03_draft": {
+      "status": "draft",
+      "note": "August 3 light daily re-research: all four pillars held flat, no material corroborated change beyond what the Aug 2 baseline already priced in. CLARITY Act held flat at 38/47/58/82/92: bill remains absent from the Senate's Aug 3 floor schedule (evening vote was on an unrelated CR vehicle, H.R. 6500) with no cloture motion filed as of this run, confirming the same 72-hour-to-Aug-7-recess bottleneck already baked into the Aug 2 note; Polymarket 'signed in 2026' sits at ~31% (Aug 3 live pull) vs. the ~30% used Aug 2 - flat within noise, not a fresh move. Iran War Risk held flat at 15/23/37/55/77: the Qatari LNG tanker (Gaslog Shanghai) struck transiting Hormuz overnight into Aug 1 - cited by Windward's Aug 2 intelligence report - is the same incident already incorporated into the Aug 2 baseline's front-end cut (not a new, distinct shock), and no new US-Iran strike-on-Iran-proper or US casualty was found for Aug 2-3; the Saudi-led Multinational Maritime Defense Alliance structural build-out continues unchanged. Tokenization held flat at 50/57/65/74/85: no genuinely new dated catalyst found; search results still surface the same $34.67B all-category RWA figure (already correctly identified in the Jul 30 note as a Treasuries-mislabeling, with tokenized Treasuries actually ~$15.86B-$16.2B per direct rwa.xyz-sourced reporting) - confirmation, not new information. Fed & Macro held flat at 34/33/45/54/62: H.4.1 last published Jul 30 (data through week ended Jul 29, already priced into the Aug 1/2 baselines) with the next release due Aug 6; jobless claims last published for the week ended Jul 25 (197K, already baked in), next release also Aug 6 - both pillars' weekly-cadence data unchanged since last check, per AGENTS.md guidance on holding flat rather than forcing a re-rate on stale data.",
+      "P": {
+        "CLARITY Act": {
+          "1": 38,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 15,
+          "3": 23,
+          "6": 37,
+          "12": 55,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 57,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-04_draft": {
+      "status": "draft",
+      "note": "August 4 light daily re-research: Iran War Risk nudged up at the front end on a genuine but disputed de-escalation signal; CLARITY Act, Tokenization, and Fed & Macro all held flat, no material corroborated change beyond what the Aug 3 baseline already priced in. Iran War Risk (1mo 15->19, 3mo 23->27, 6mo 37->39, 12mo 55->56; 36mo held at 77): multi-source corroborated (NPR, Axios, Al Jazeera, NBC, Washington Times, Breitbart, JPost, Townhall, CNN) reporting that Trump canceled a planned joint US-Israeli strike on Iranian energy infrastructure over the Aug 1-2 weekend after 'the perimeters of a deal' were agreed, with the framework said to include a full reopening of the Strait of Hormuz; a fresh Aug 4 report (globalsecurity.org) headlines 'Trump confirms resumption of talks with Iran, Strait of Hormuz deal nears.' This is a real, multi-sourced reduction in near-term strike risk (no US strikes on Iran proper reported since the cancellation) and is kept from a larger move because Iran publicly denies holding direct talks with the US (Foreign Ministry spokesman Baghaei: 'we currently have no negotiations with the United States; the negotiations are with Oman'), Trump responded by calling Iranian leadership 'unbelievably duplicitous,' and the Strait of Hormuz remains formally impassable pending a temporary Oman-brokered transit corridor that has not yet been finalized - so the move is front-and-mid-horizon only, with 36mo held given the unresolved, contradictory diplomatic signals. CLARITY Act held flat at 38/47/58/82/92: the Senate's Aug 4 floor plan (5:30pm roll-call vote) covered only cloture on the H.R. 6500 CR vehicle, with no cloture motion filed and no floor time allocated for CLARITY as of this run (Yahoo Finance, Bitcoin.com, KuCoin, CryptoSlate, Spendnode) - the same Friday Aug 7 recess-deadline window already priced into the Aug 3 baseline, not a new development. Tokenization held flat at 50/57/65/74/85: no genuinely new dated catalyst found beyond generic RWA market-size overview pieces already reflected in prior baselines. Fed & Macro held flat at 34/33/45/54/62: H.4.1 last published Jul 30 (data through week ended Jul 29, already priced into the Aug 1-3 baselines) with the next release due Aug 6; jobless claims last published for the week ended Jul 25 (197K, already baked in), next release also Aug 6 - both pillars' weekly-cadence data unchanged since last check, per AGENTS.md guidance on holding flat rather than forcing a re-rate on stale data.",
+      "P": {
+        "CLARITY Act": {
+          "1": 38,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 19,
+          "3": 27,
+          "6": 39,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 50,
+          "3": 57,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
       }
     }
   }
