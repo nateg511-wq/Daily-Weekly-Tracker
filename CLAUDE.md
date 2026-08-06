@@ -26,7 +26,9 @@ on first contact is to make the human open the hood, not to hand them a verdict.
 
 ## Owner & cadence
 
-The owner is **Alex (CoinPicks)** — only the owner stamps scores (see Stamping below).
+The owner is **Alex (CoinPicks)**. Stamping is normally owner-only (see Stamping
+below) — but as of **2026-08-06** Alex has granted standing authority to
+auto-stamp daily runs; see "Delegated auto-stamp authority" under Stamping.
 Default cadence: **weekly**, or ad-hoc when a trigger fires; the owner may ask for daily.
 Deliver finished PDFs from `reports/current/pdf/` to the owner (start with 00_START_HERE.pdf).
 All dates/stamps use the owner's local date (US Eastern) in YYYY-MM-DD.
@@ -107,10 +109,31 @@ the values, set `"status": "draft"`, write a one-line `note`), then point
 - If you have NO web research capability, do NOT invent a new score set — run the
   quant refresh only, keep the previous qualitative set, and say so in the report.
 
-**Stamping (owner only):** stamping = editing the set IN PLACE to
-`"status": "committed"` plus `"stamped_by": "<owner>"`. The `status` field is
-authoritative; a `_draft` key suffix is historical naming, never rename keys.
-`status` and `stamped_by` are the ONLY fields ever edited on an existing set.
+**Stamping:** stamping = editing the set IN PLACE to `"status": "committed"`
+plus `"stamped_by": "<owner>"`. The `status` field is authoritative; a `_draft`
+key suffix is historical naming, never rename keys. `status` and `stamped_by`
+are the ONLY fields ever edited on an existing set.
+
+**Delegated auto-stamp authority (as of 2026-08-06):** Alex has asked that
+DAILY light-touch runs auto-stamp themselves — no separate manual approval
+step. For a daily run only, after Step 6 (render/selfcheck/verify) passes
+clean, stamp the new set in the same pass: set `"status": "committed"` and
+`"stamped_by": "Alex (auto-stamped)"` — the `(auto-stamped)` suffix is
+mandatory so the lineage honestly shows which commits a human actually
+reviewed versus which were self-approved by the pipeline; never write plain
+`"Alex"` for an auto-stamped set. This delegation covers ordinary daily
+re-rates only. Do NOT auto-stamp, and instead leave the set as `"draft"` and
+flag it prominently for Alex's manual review, if any of the following hold:
+- it's a **full weekly refresh**, not a light daily touch;
+- any pillar's P moved by **more than ~8 points** on any window in one cycle;
+- the equal-weight FINAL NUMBER's **call band flips** (e.g. Bear→Neutral,
+  Neutral→Mild Bull) versus the last stamped set;
+- the change rests on a **single-source claim**, a claim you're materially
+  unsure about, or a genuinely novel/ambiguous situation not clearly covered
+  by the Research Discipline rules;
+- verification (Step 6) surfaces any inconsistency you can't fully resolve.
+When in doubt, leave it as a draft and say why — auto-stamp authority is for
+routine, well-evidenced moves, not a blanket license to skip judgment.
 
 ### Step 4 — Blend
 ```bash

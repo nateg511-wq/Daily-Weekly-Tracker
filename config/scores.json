@@ -621,7 +621,7 @@
       }
     },
     "2026-08-06_draft": {
-      "status": "draft",
+      "status": "committed",
       "note": "August 6 light daily re-research: Iran War Risk and Tokenization both nudged up on genuine, multi-sourced developments; CLARITY Act and Fed & Macro held flat. Iran War Risk (1mo 22->24, 3mo 29->31, 6mo 40->41; 12mo/36mo held at 56/77): Iran's Deputy Foreign Minister Gharibabadi said Aug 6 an \"understanding in principle has been reached on almost all the raised issues, including the map for maritime traffic entry and exit routes\" with Oman (IRNA, corroborated by Bloomberg x2, CBS, Al Jazeera x2, Euronews, Military.com, Fortune) - a genuine step up from the Aug 5 baseline's vaguer, still-unsigned \"50-50\" framing, since the route map itself is now agreed. Kept modest because a real, newly-surfaced sticking point emerged the same day: fees. Iran wants 5-7% of cargo value from transiting ships, Oman is discussing ~3%, and Washington wants zero fees - Jerusalem Post reports the proposed regime may not be \"feasible for the shipping industry,\" and eight shipping-lobby groups are already protesting (Fortune) - a genuine, multi-sourced complication that did not exist in the Aug 5 read. Trump called a fee joint-venture with Iran \"a beautiful thing\" (single-sourced quote, noted not scored). 12mo/36mo held pending an actual signed, operating agreement. CLARITY Act held flat at 38/47/58/82/92: as of Aug 6, no cloture motion had been filed (CoinGape, CryptoSlate, CoinDesk, Cryptonews, Bitcoin Foundation, Yahoo Finance) - \"just two days left in session\" before the Aug 7 last-realistic-vote date and the Aug 10 recess. A recirculating \"White House agrees on CLARITY ethics package\" story (Bravenewcoin, CryptoBriefing) traced back to primary dates of July 20-21, 2026 via direct fetch - stale, not new, and not used (this is the same ethics-package story already reflected, and later complicated/rejected, in this pillar's July history). Tokenization nudged up at 1mo/3mo (50->52, 57->59; 6mo/12mo/36mo held at 65/74/85): BlackRock launched two new tokenized money-market funds - BSTBL (BlackRock Select Treasury-Based Liquidity Fund) and BRSRV (BlackRock Daily Reinvestment Stablecoin Reserve Vehicle) - on Aug 3, 2026, following an SEC prospectus filing Aug 1; both target GENIUS Act stablecoin-reserve eligibility and use Securitize as transfer agent/tokenization provider, the same partner as BUIDL (CoinDesk, KuCoin, PYMNTS, Cointribune, BitcoinWorld, Solana Compass, CoinPaprika - 7+ independent outlets). This is a genuine institutional-adoption catalyst the Aug 1-5 daily touches missed entirely (they each reported \"no new catalyst found\"); caught late but incorporated now. Fed & Macro held flat at 34/33/45/54/62: DOL jobless claims for the week ended Aug 1 came in at 199K, with the prior week (ended Jul 25) revised up to 198K from 197K - a continued mild upward drift consistent with the trend already priced in, not a fresh shock. H.4.1 for the week ended Aug 5 had not yet been published as of this check (normal Thursday ~4:30pm ET release timing) - carried to next cycle.",
       "P": {
         "CLARITY Act": {
@@ -652,7 +652,8 @@
           "12": 54,
           "36": 62
         }
-      }
+      },
+      "stamped_by": "Alex (auto-stamped)"
     }
   }
 }
