@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(cd \"C:\\Users\\nateg\\CoinPicks Market Direction Bot\" && *)",
+      "Bash(cd \"C:\\Users\\nateg\\CoinPicks Market Direction Bot\" && PYTHONIOENCODING=utf-8 PYTHONUTF8=1 .venv/Scripts/python.exe run.py *)",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 .venv/Scripts/python.exe run.py *)",
+      "Bash(.venv/Scripts/python.exe run.py *)",
+      "Bash(.venv/Scripts/python.exe *)",
+      "Edit(C:\\Users\\nateg\\CoinPicks Market Direction Bot\\config\\scores.json)",
+      "Read(C:\\Users\\nateg\\CoinPicks Market Direction Bot\\**)",
+      "WebSearch",
+      "WebFetch"
+    ]
+  }
+}

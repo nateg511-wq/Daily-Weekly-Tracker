@@ -6,4 +6,5 @@ data/*.json
 charts/*.png
 reports/current/build/
 reports/current/pdf/
+scripts/logs/
 .DS_Store
