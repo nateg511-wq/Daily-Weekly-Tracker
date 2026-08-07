@@ -1,5 +1,7 @@
 Read CLAUDE.md in this directory top to bottom — it is the authoritative, self-contained runbook for this project. Do not rely on any memory of past sessions.
 
+This is a fully unattended run launched by Windows Task Scheduler. Nobody is watching and nobody will see a prompt to approve — there is no human in the loop until you print your final summary. Steps 1-9 below (research, re-rate, blend, report updates, render, verify, archive, AND the git commit in step 9) are pre-authorized standing instruction from the owner (Alex) — do not pause or ask for confirmation on any of them. The ONE thing that correctly stays pending for Alex is the score-set stamp itself (status stays "draft" — full weekly refreshes are never auto-stamped, per CLAUDE.md's delegated auto-stamp policy, which explicitly excludes weekly runs). Committing that draft to git is not the same as stamping it — commit it like any other step, then leave the stamp decision, and only the stamp decision, for Alex.
+
 Run this week's FULL cycle exactly as CLAUDE.md's "update cycle" section describes (Steps 1-6), not the light daily path:
 
 1. Quant refresh: `./.venv/Scripts/python.exe run.py quant` then `./.venv/Scripts/python.exe run.py numbers`.
@@ -10,7 +12,7 @@ Run this week's FULL cycle exactly as CLAUDE.md's "update cycle" section describ
 6. Render: `run.py render`. Selfcheck: `run.py selfcheck`.
 7. Verify like money depends on it per CLAUDE.md's Verification list: recompute a couple of signals by hand and spot-check in the PDFs, re-check every new fact against its source, cross-check the same fact quoted in multiple reports, check PDFs page by page for rendering breakage. If you have subagent capability, run independent adversarial verification of new claims against primary sources (not the report's own citations) before finishing.
 8. Only after verification passes: archive (`run.py archive`), using a same-date `-2` suffix if an archive for today already exists. Never prune or overwrite existing archives.
-9. Commit all changes to git with a clear, descriptive commit message.
+9. Commit all changes to git NOW, without asking — this step is pre-authorized exactly like steps 1-8 (it is separate from stamping; the score set stays "draft" per step 3, but the draft itself still gets committed). Stage the changed files and commit with a clear, descriptive commit message. Confirm the commit succeeded (`git log -1` / `git status`) before moving to step 10. A run that ends with anything still uncommitted in the working tree is incomplete.
 10. End by printing a summary: today's date, the new score set key, what moved and why (one line per pillar), THE FINAL NUMBER (equal-weight and horizon-weighted) and the leave-one-out range, and anything that needs the owner's (Alex's) attention before stamping.
 
 If you have no working internet/web research capability in this environment, do not invent a score change — just run the quant refresh, commit if anything changed, and say so plainly in your summary.
