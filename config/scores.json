@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-06_draft",
+  "active_qual_set": "2026-08-07_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -627,6 +627,41 @@
         "CLARITY Act": {
           "1": 38,
           "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 24,
+          "3": 31,
+          "6": 41,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 59,
+          "6": 65,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 45,
+          "12": 54,
+          "36": 62
+        }
+      },
+      "stamped_by": "Alex (auto-stamped)"
+    },
+    "2026-08-07_draft": {
+      "status": "committed",
+      "note": "August 7 light daily re-research: CLARITY Act re-rated down at 1mo/3mo on a confirmed, well-sourced negative trigger; Iran War Risk, Tokenization, and Fed & Macro all held flat pending unresolved/unpublished data. CLARITY Act (1mo 38->32, 3mo 47->44; 6mo/12mo/36mo held at 58/82/92): Senate Majority Leader Thune did NOT file cloture before the recess and told The Block on the record (Aug 6, ~11pm ET) the CLARITY Act vote is delayed until the Senate returns from its month-long recess in mid-September (\"We are getting that queued up first thing when we come back\") - corroborated by CoinGape, CryptoRank, and CryptoTimes reporting the same delay, and consistent with a separate Yahoo report (Aug 5) that Senate Democrats remained unified against cloture on ethics/illicit-finance/stablecoin-yield disputes. This is the exact trigger this pillar's own Aug 6 table flagged (\"window closing with nothing filed = re-rate down further\") now confirmed rather than merely anticipated, so 1mo moves down further and 3mo trims modestly since a mid-September return (later than earlier assumed) still falls inside the 3-month window but with less runway before the disputes must be resolved. 6/12/36mo hold - a bill delayed to September is not structurally dead. Iran War Risk held flat at 24/31/41/56/77: as of Aug 7 the Iran-Oman joint statement on the Hormuz route map remained unsigned and in final drafting (Iranian FM spokesman Baghaei, corroborated by AP-sourced Aug 7 wire coverage), and the fee dispute (Iran 5-7%, Oman ~3%, US 0%) remained unresolved with US officials saying no fees apply until a final agreement is reached - materially unchanged from the Aug 6 read, not a fresh trigger. Tokenization held flat at 52/59/65/74/85: no new dated catalyst found today beyond the Aug 3 BlackRock BSTBL/BRSRV launch already reflected in the Aug 6 draft; GENIUS Act rulemaking, DTCC (Oct target), and Nasdaq (Dec target) timelines unchanged. Fed & Macro held flat at 34/33/45/54/62: H.4.1 for the week ended Aug 5 published Aug 6 (federalreserve.gov) showed total assets $6,748,567M and reserve balances $2,993,349M, both up modestly (~+$8.8B reserves) after the prior week's -$77.6B drop - read as settlement-driven noise around a single print, not a policy signal, so not scored. The July BLS employment situation report (due 8:30am ET today, Aug 7) had not yet appeared in available reporting as of this check - carried to next cycle.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 44,
           "6": 58,
           "12": 82,
           "36": 92
