@@ -29,6 +29,7 @@ CHART_TOKENS = {
     "{{CHART_QUARTERLY}}": "btc_quarterly.png",
     "{{CHART_CYCLE}}": "halving_cycle.png",
     "{{CHART_DOWNSIDE}}": "downside_map.png",
+    "{{CHART_TREND}}": "final_number_history.png",
 }
 
 
