@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-09_draft",
+  "active_qual_set": "2026-08-10_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -729,6 +729,41 @@
       "status": "committed",
       "stamped_by": "Alex (auto-stamped)",
       "note": "August 9 light daily re-research: all four pillars held flat versus the Aug 8 committed full-weekly set - primary/wire-sourced checks found nothing that exceeds what that refresh already priced in. CLARITY Act held flat at 32/47/58/82/92: the Sept 15 cloture vote is now precisely dated (2:15pm ET Tuesday Sept 15, per an inter-party scheduling agreement reported by The Block, CryptoSlate, and Cointelegraph, all citing Thune's Aug 8 4:52am ET cloture filing on the H.R. 3633 motion to proceed) - this firms up, but does not exceed, the Aug 8 set's already-adopted 'Sept 15-16' hedge, so it is a confirmation, not a trigger; the underlying blockers (unanswered Democratic ethics counter-proposal, zero confirmed Democratic yes votes) are unchanged. Iran War Risk held flat at 20/28/41/56/77: Reuters (via Investing.com, US News, Jakarta Post, Japan Times, Haaretz, Rappler - wire distribution, treated as one corroborated source chain) reports Iranian FM Araqchi called the Iran-Oman shipping-route deal 'very close' but said reopening the strait also depends on new conditions including US compensation to Iran - a harder, more specific demand than the fee dispute already priced in on Aug 8 - while the UAE separately said Iran struck another ship in the strait and Oman publicly condemned 'repeated attacks on vessels' transiting the waterway without assigning blame. This is a continuation of, not an escalation beyond, the deteriorating picture the Aug 8 full-weekly re-rate already adopted (unsigned deal, ongoing attacks, hardening Iranian terms), so held flat pending either a signed agreement or a incident/demand that clearly exceeds Aug 8's baseline. Tokenization held flat at 52/60/66/74/85: no new dated catalyst found beyond the Aug 8 rwa.xyz all-time-high pull and the Aviva/Ripple/BlackRock developments already reflected in that set; search results returned only generic 2026-year-in-review overview pieces, not fresh dated items. Fed & Macro held flat at 40/38/47/55/62: no new Fed release since the Aug 6 H.4.1 (week ended Aug 5) or the Aug 7 BLS jobs report, both already priced in on Aug 8; the next H.4.1 and jobless-claims prints are due Aug 13, and the Aug 12 CPI print flagged in the Aug 8 note as the real September-decision catalyst has not yet landed. BTC held essentially flat at $65,183 (Bitstamp, Aug 9) vs. $65,006.64 on Aug 8 (+0.3%) - the quant pillar's bar rollover produced only noise-level P changes (39/37/45/68/70), not a research-relevant move.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 20,
+          "3": 28,
+          "6": 41,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 40,
+          "3": 38,
+          "6": 47,
+          "12": 55,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-10_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "August 10 light daily re-research: all four pillars held flat versus the Aug 9 committed set - primary/wire-sourced checks found nothing that exceeds what that set already priced in. CLARITY Act held flat at 32/47/58/82/92: the Sept 15 2:15pm ET cloture vote (The Block, CoinGape, Blockonomi, Disruption Banking, news.bitcoin.com all confirm) remains the only scheduled date, unchanged from Aug 9; Galaxy Research's cut of 2026 passage odds to 30% from 50% is confirmed dated to late July (Galaxy's Alex Thorn, cited by CryptoSlate/CryptoTimes around July 24-27) and was already priced into the score by the time it fell to 32/47 in the Aug 7 set - it is old news recirculating, not a fresh trigger. Iran War Risk held flat at 20/28/41/56/77: the Iran-Oman joint statement on the Hormuz shipping route remains in 'final drafting stage' per Iranian FM spokesman Baghaei (Aug 5, reiterated in Aug 8 wire coverage) with no signing reported as of Aug 10 (GlobalSecurity, Euronews, Al Jazeera, Wikipedia 2026 Strait of Hormuz crisis page checked, all show Aug 5-8 as the latest dated development) - same unsigned-deal picture already adopted, no new incident or concession clearing Aug 9's bar. Tokenization held flat at 52/60/66/74/85: rwa.xyz's $38.17B TVL print is dated Sunday Aug 9 (Bitcoin News, CoinSpectator) - the same figure already folded into the Aug 9 set's 'rwa.xyz all-time-high pull' language, not a new move since; no fresh dated catalyst found for Aug 10. Fed & Macro held flat at 40/38/47/55/62: initial jobless claims for the week ended Aug 6 (published Aug 8, 262K actual vs 263K expected) came in essentially in line with consensus - noise, not a surprise - and was already within the Aug 9 set's information set; no Fed release, no CPI (due Aug 12) or H.4.1/claims (due Aug 13) has landed since. BTC roughly flat at $65,061.97 (Bitstamp, Aug 10) vs. $65,183 on Aug 9 (-0.2%) - quant pillar mapping ticked 39->40 on the 1mo P (bar-rollover noise), not a research-relevant move.",
       "P": {
         "CLARITY Act": {
           "1": 32,
