@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — Tokenization of Real-World Assets (Updated August 11, 2026)</title>
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>TOKENIZATION (RWA) · PILLAR REPORT · AUGUST 11, 2026</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · August 11, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>Tokenization of<br>Real-World Assets<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Real Money On-Chain — Researched, Scored, and Personally Committed</div>
+  <div class="note">Originally written <strong>June 19, 2026</strong>; scores committed by me on <strong>June 19, 2026</strong>. Re-researched July 8, 13, 18, 25, and 30, 2026 against live primary sources, and again as a full weekly refresh on August 8, 2026 (nudged up at 3mo/6mo on a new RWA all-time high and two missed catalysts, committed and stamped by Alex). <strong>This version (August 11) is a light daily touch and HOLDS FLAT at 52/60/66/74/85</strong> — no new dated RWA/tokenization catalyst was found beyond generic market-sizing coverage; the Aug 9 rwa.xyz all-time-high print remains the most recent dated fact. <strong>This version's scores have been auto-stamped</strong> under Alex's standing delegated daily authority (in effect since 2026-08-06) — no pillar P moved anywhere in today's cycle; see My Decision below.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 30% OF MY THESIS</div>
+    <div class="m">Written June 19, 2026 · Updated &amp; Re-verified August 11, 2026 (light daily touch off the Aug 10 baseline — committed, auto-stamped) · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — Committed vs. Drafts</h2>
+  <div class="sub">June P's committed by me June 19, 2026 (last committed Jun 12 cycle). Full lineage of every draft since shown below. Aug 8 (nudged up at 3mo/6mo, full weekly refresh) committed and stamped by Alex; Aug 9, 10, and 11 are light daily touches — all held flat, all auto-stamped.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">Jun</th><th class="c">…</th><th class="c">8/7</th><th class="c">8/8</th><th class="c">8/9</th><th class="c">8/10</th><th class="c">8/11</th><th class="c">Qual.</th><th class="c">Imp.</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c">53</td><td class="c">…</td><td class="c">52</td><td class="c">52</td><td class="c">52</td><td class="c">52</td><td class="c my">52</td><td class="c">0.90</td><td class="c">8</td><td class="c sig">+0.29</td><td>Mild Bull — held; no acute 30-day catalyst beyond the confirmed Aug 3 BlackRock launch</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c">57</td><td class="c">…</td><td class="c">59</td><td class="c">60</td><td class="c">60</td><td class="c">60</td><td class="c my">60</td><td class="c">0.88</td><td class="c">8</td><td class="c sig">+1.41</td><td>Mild Bull — held from Aug 8's RWA-ATH nudge</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c">62</td><td class="c">…</td><td class="c">65</td><td class="c">66</td><td class="c">66</td><td class="c">66</td><td class="c my">66</td><td class="c">0.85</td><td class="c">8</td><td class="c sig">+2.18</td><td>Bull</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c">72</td><td class="c">…</td><td class="c">74</td><td class="c">74</td><td class="c">74</td><td class="c">74</td><td class="c my">74</td><td class="c">0.78</td><td class="c">8</td><td class="c sig">+3.00</td><td>Strong Bull (right at the boundary)</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c">85</td><td class="c">…</td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c">85</td><td class="c my">85</td><td class="c">0.70</td><td class="c">8</td><td class="c sig">+3.92</td><td>Strong Bull</td></tr>
+  </table>
+  <div class="formula"><strong>Committed P (Aug 11):</strong> 52 / 60 / 66 / 74 / 85 · <strong>Weight:</strong> 20% (equal) · <strong>Impact:</strong> 8 (uniform) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. <strong>Full lineage:</strong> June committed 53/57/62/72/85 (Jun 12) → ... (see prior versions of this report for the full Jul 8-Aug 7 path) → Aug 8 52/60/66/74/85 (up at 3mo/6mo — RWA all-time high, two missed catalysts confirmed — committed and stamped by Alex) → Aug 9-10 52/60/66/74/85 (held flat — no new dated catalyst found) → <strong>Aug 11 52/60/66/74/85</strong> (held flat — no fresh catalyst beyond generic coverage) — committed, auto-stamped.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds this is <em>good for crypto</em> by then. Held flat this cycle at 52/60/66/74/85. No fresh dated catalyst was found today — searches returned only generic 2026 market-sizing and RWA-explainer coverage (Yahoo Finance, Finextra, crypto.news, MetaMask, Investax, Blocklr), not dated news items. The Aviva/XRPL EU-regulator clearance and the Ripple/Zilo/Licuido equity move remain the most recent confirmed developments. BlackRock's confirmed Aug 3 BSTBL/BRSRV launch remains reflected, not double-counted. No new RWA-rail failure, depeg, or counterparty default was found.</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. Unchanged this cycle per house rules.</p>
+    <p><strong>Impact</strong> — 8 out of 10, the uniform value shared by every pillar in the equal-weight model. If tokenization compounds, it pulls trillions of TradFi assets onto rails crypto controls.</p>
+    <p><strong>Aug 3 catalyst (carried forward, committed):</strong> BlackRock launched two new tokenized money-market funds — BSTBL (BlackRock Select Treasury-Based Liquidity Fund) and BRSRV (BlackRock Daily Reinvestment Stablecoin Reserve Vehicle), following an SEC prospectus filing Aug 1. Both hold cash, short-term Treasuries, and repo agreements; BRSRV is purpose-built as a reserve asset for stablecoin issuers, targeting GENIUS Act eligibility. Securitize is transfer agent and tokenization provider for both, the same role it plays for BUIDL. Confirmed by 7+ independent outlets.</p>
+    <p><strong>GENIUS Act status, re-confirmed this cycle:</strong> FDIC's BSA/AML compliance-framework comment period closed Aug 4; a joint five-agency customer-identification (CIP) comment period runs through Aug 21; no agency has published a final rule. An unchanged, already-priced mild headwind against the Jan 18, 2027 statutory effective date — holds 12mo/36mo flat.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus — updated August 11, 2026, light daily touch</div>
+  <p><strong>The crowd:</strong> most coverage today is generic 2026 market-sizing and explainer content, not dated news — easy to mistake for fresh signal if you don't check dates.</p>
+  <p><strong>Me:</strong> holding at 52/60/66/74/85 — nothing found today exceeds the Aug 10 set's confirmed developments (RWA ATH, Aviva/XRPL clearance, Ripple equity move).</p>
+  <p><strong>My edge:</strong> this pillar's discipline is to notice when institutions actually ship product, not just when they announce intent — and to not manufacture a move on a quiet day. 1mo holds because there's no acute 30-day catalyst; 12mo/36mo hold because the GENIUS Act rulemaking delay remains an unchanged, already-priced headwind roughly offsetting the adoption tailwinds at those horizons.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of August 11, 2026, light daily touch — hard numbers with exact dates, sources on the last page. No new dated catalyst found today; the Aug 8-10 facts below are carried forward unchanged (still load-bearing).</div>
+  <ul>
+    <li><strong>No new dated RWA/tokenization catalyst found today</strong> — searches surfaced only generic 2026 market-sizing and explainer pieces (Yahoo Finance, Finextra, crypto.news, MetaMask, Investax, Blocklr), not fresh dated items.</li>
+    <li><strong>BTC (pipeline reference) closed at $64,355.00 on Aug 11</strong> — −1.1% vs. Aug 10's close of $65,061.97.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 8-10 (still load-bearing):</div>
+  <ul>
+    <li><strong>rwa.xyz's $38.17B total distributed-value print, dated Sunday Aug 9 (Bitcoin News, CoinSpectator), is the same all-time-high move already folded into prior sets' language</strong> — still the most recent dated RWA fact.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 8-9 (still load-bearing):</div>
+  <ul>
+    <li class="fix"><strong>Total RWA distributed value hit a new all-time high of $38.24B</strong> (rwa.xyz direct pull, Aug 8), up from $34.67B roughly two and a half weeks earlier — a genuine +10% move, not stagnation. Tokenized Treasuries specifically grew modestly and in-trend, $15.86B → $16.21B (87 products, 62,997 holders, 7d yield 3.29%).</li>
+    <li class="fix"><strong>★ CORRECTION, again — the $34.67B figure was never "tokenized Treasuries."</strong> KuCoin's "Tokenized Treasuries Dip to $34.67 Billion" headline (~Jul 22) mislabels the total-RWA distributed-value figure as Treasuries-specific; this is the same conflation this report has now caught twice. Do not cite that figure as a Treasuries number anywhere in this system.</li>
+    <li class="fix"><strong>★ NEW — the Central Bank of Ireland cleared Aviva Investors' tokenized USD Liquidity Fund on the XRP Ledger (Jul 29),</strong> the first time a major EU regulator has approved a public-blockchain tokenized fund structure (BNY Mellon custody, Komainu/Licuido on-chain layer) — confirmed by 6+ independent outlets, missed entirely by the daily "no new catalyst" checks.</li>
+    <li class="fix"><strong>★ NEW — Ripple took equity stakes in Zilo and Licuido (Aug 3),</strong> converting a commercial relationship into ownership and adding regulated transfer-agency, issuance, and collateral-mobility infrastructure directly to the XRPL stack that powered the Aviva launch (Ripple.com press release + 5 outlets).</li>
+    <li><strong>rwa.xyz also separately reports a "Represented Asset Value" of $373.55B</strong> (down 1.70% over 30 days) — a different metric (off-chain assets referenced via tokenization infrastructure, not tokens actually distributed on-chain). Never quote this interchangeably with the $38.24B distributed-value figure.</li>
+    <li><strong>No new RWA-rail failure, depeg, or counterparty default found</strong> in the Jul 30 - Aug 8 window.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 6-7 (still load-bearing):</div>
+  <ul>
+    <li><strong>GENIUS Act rulemaking status:</strong> FDIC's BSA/AML comment period closed Aug 4; a joint five-agency CIP comment period runs through Aug 21; no agency has published a final rule. Realistic final-rule timing has slipped toward late 2026/early 2027 against a fixed Jan 18, 2027 statutory effective date — an already-priced, mild headwind.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 6 (still load-bearing):</div>
+  <ul>
+    <li class="fix"><strong>BlackRock launched two tokenized money-market funds on Aug 3, 2026.</strong> BSTBL and BRSRV, following an SEC prospectus filing Aug 1, via Securitize (same transfer agent as BUIDL), targeting GENIUS Act stablecoin-reserve eligibility. Confirmed by CoinDesk, KuCoin, PYMNTS, Cointribune, BitcoinWorld, Solana Compass, and CoinPaprika (7 independent outlets).</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from the July 30 full refresh (still load-bearing):</div>
+  <ul>
+    <li class="fix"><strong>★ CORRECTION — the "$34.67B tokenized Treasuries pulling back" headline circulating this week (and cited in the Jul 29/30 daily touches) is a metric mislabel, again.</strong> That figure is the total cross-category RWA "Distributed Value" (all asset classes), not tokenized Treasuries specifically — the same conflation an earlier full refresh already corrected once. Multiple outlets (including one whose own body text contradicts its headline, admitting "tokenized U.S. treasuries lead at $15.86 billion") ran versions of this mislabeled headline. A direct rwa.xyz pull (Jul 30) shows tokenized Treasuries at <strong>$16.18B</strong>, essentially flat versus $16.20B a week ago — not declining.</li>
+    <li class="fix"><strong>NEW, direct pull — BlackRock's BUIDL continues recovering, not declining.</strong> BUIDL sits at <strong>$2.64B</strong> (Jul 30), up from $2.52B (Jul 22 wobble low) and $2.61B (Jul 25) — a steady +4.8% recovery, the opposite of the "down 12.22% w/w" framing the daily touches carried forward from a stale Jul 22 snapshot.</li>
+    <li class="fix"><strong>NEW, confirmed 4+ outlets — Robinhood Chain's on-chain RWA activity jumped roughly 5x to ~$70M (Jul 25).</strong> Tokenized-stock trading grew in size, with tokenized SpaceX overtaking tokenized GameStop as the chain's largest RWA holding (CoinDesk, CryptoTimes, Cryptopolitan, Incrypted, Crowdfund Insider). TVL roughly tripled to ~$312M, though stablecoins/memecoins still dominate overall activity. Separately, a Jul 29 report cites $885.5M in Robinhood Chain's <em>cumulative transfer volume</em> — a flow metric, not a balance figure; not conflated with the RWA-value numbers above.</li>
+    <li class="fix"><strong>NEW — Securitize Capital (BlackRock BUIDL's transfer-agent/tokenization partner) registered with the SEC as an investment adviser (Jul 27),</strong> and Citi initiated a Buy rating on Securitize's stock (SECZ), calling it "critical infrastructure" for RWA tokenization (Jul 27, sell-side sentiment).</li>
+    <li><strong>All-RWA totals, direct pull (Jul 30): Distributed Value ~$36.93B</strong> (+0.3% over 5 days), <strong>Represented Value ~$370.55B</strong> (−2.6% over 5 days, single-pull, unconfirmed trend), <strong>stablecoin total ~$296.86B</strong> (−0.4%). USDT $188.95B, USDC $72.14B.</li>
+    <li><strong>GENIUS Act: no new final rules in this window.</strong> FDIC's BSA/sanctions comment window remains open (closes Aug 4); the joint CIP comment window remains open (closes Aug 21). No agency completed rulemaking Jul 25-30.</li>
+    <li><strong>DTCC's tokenization pilot continues as planned</strong> — Russell 1000 stocks/ETFs/Treasuries, 50+ firms including BofA, Citi, Morgan Stanley, Robinhood, Circle, Ondo, Anchorage; October 2026 full-launch target unchanged, no new catalyst this window.</li>
+    <li><strong>Risk check: clean window, no new incidents.</strong> No RWA-protocol hack, tokenized-treasury depeg, or counterparty failure found Jul 25-30 (the Jul 15 Ostium oracle exploit, ~$18-24M, remains outside this window and was already logged last cycle). USYC's Binance/BNB-Chain concentration remains an unresolved fragility point, not re-verified this cycle.</li>
+    <li><strong>OUSD (Open USD) 140+-partner credibility dispute (Samsung/Dunamu/Upbit denials) remains unresolved</strong> — no new statements found this window.</li>
+    <li><strong>The treasury leaderboard, July 30 (rwa.xyz, direct pull):</strong> Circle's <strong>USYC $3.01B</strong> &gt; BlackRock's <strong>BUIDL $2.64B</strong> &gt; Ondo's <strong>USDY $2.15B</strong> &gt; Franklin Templeton's <strong>iBENJI $1.76B</strong> &gt; Centrifuge's <strong>JTRSY $881M</strong>.</li>
+    <li><strong>Circle won final OCC approval for a national trust bank (Jul 10, carried forward).</strong> "Circle National Trust" puts Circle under direct federal (OCC) oversight for fiduciary digital-asset custody. CRCL closed ~$66.79 (Jul 20).</li>
+    <li><strong>Swift's blockchain ledger (17 banks, 6 continents, carried forward)</strong> continues running 24/7 cross-border tokenized-deposit payments over Chainlink CCIP — framed as banks' competitive response to stablecoins.</li>
+    <li><strong>Ondo keeps extending its franchise (carried forward):</strong> Broadridge proxy-voting partnership, IVV/Micron tokenization, "Ondo Perps." Ondo DAO also voted to burn 100M ONDO (1% of supply, Jul 25) — tokenomics, not core-RWA news.</li>
+    <li><strong>Nasdaq and the SEC: no change.</strong> Nasdaq's 23/5 tokenized-trading target remains Dec 6, 2026, unchanged.</li>
+    <li><strong>The TAM anchor stands:</strong> BCG × Ripple (Apr 7, 2025) projects <strong>~$9.4T by 2030 / $18.9T by 2033</strong>. Current on-chain value is still <strong>&lt;1%</strong> of any endpoint.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The cleanest single-token anchor is still <strong>ONDO</strong>, the name most tied to the RWA narrative: from its early-trading price around <strong>$0.22 (Jan 2024</strong> — listing prints vary by venue<strong>)</strong> it ran to a <strong>$2.14 all-time high (Dec 16, 2024)</strong> — roughly <strong>~10× in 11 months</strong>.</p>
+    <p>The round-trip, last checked July 13 (CoinGecko, not re-pulled live this cycle): <strong>$0.3291</strong> — market cap ~$1.6B, still ~85% below the high — even as the company keeps extending its franchise (Broadridge proxy-voting integration, IVV/Micron tokenization, DAO-voted 100M-token burn on Jul 25). Part of the Dec-2024 spike was a Trump-linked World Liberty Financial buy, not fundamentals. The durable signal stays structural, not one token: total RWA distributed value sits at a fresh all-time high ($38.17B, Aug 9) and tokenized Treasuries hold near $16.2B on a flat-to-positive trend while the token trades ~85% off its peak, and the Aug 8 cycle's confirmed institutional moves — BlackRock's Aug 3 fund launch, the first EU regulator clearing a public-chain fund, Ripple converting a partnership into equity — are exactly the kind of adoption proof points that outlast any single token's price. The Prize doesn't feed the math — it tells you what the lean is worth acting on, euphoria and round-trip included.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case this is wrong — updated August 9, 2026, light daily touch</div>
+  <ul>
+    <li><strong>Two data points isn't a trend, and both are one-degree removed from crypto-native.</strong> A Central Bank of Ireland approval and a Ripple equity stake in two UK fintechs are real, but they're incremental institutional-infrastructure moves, not evidence of accelerating adoption — the +1/+1 nudge reflects that, but even a small move risks reading too much into routine business development.</li>
+    <li><strong>The RWA all-time high is still a small, largely institutional/permissioned number.</strong> $38.24B in total distributed value is real growth, but it's still under 1% of the BCG×Ripple $9.4T-by-2030 TAM anchor, and this pillar has twice now had to correct press coverage that inflated or mislabeled RWA figures — a reminder that headline numbers in this space need active skepticism, not just repetition.</li>
+    <li><strong>Regulatory limbo is still real.</strong> The GENIUS Act's rulemaking deadline was missed and zero of six agencies have finalized rules, with comment windows only now closing (FDIC Aug 4, CIP Aug 21) — nearly seven months of mid-market issuers operating under an incomplete rulebook, which can chill activity rather than de-risk it.</li>
+    <li><strong>The Represented-vs-Distributed value gap is still doing heavy lifting for the bull case.</strong> The much larger ~$373.55B "Represented Value" figure is mostly locked or permissioned tokenization, not liquid or retail-accessible — a distinct metric this report is careful not to conflate with the $38.24B distributed-value ATH.</li>
+    <li><strong>It may not be "crypto."</strong> Most volume is permissioned/institutional and may never accrue value to crypto majors. Durable market-structure law (CLARITY) still isn't passed, and its own prediction-market odds hit a fresh record low this week.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events ahead — some prove the claim right, some prove it wrong. Re-set August 11, 2026, light daily touch.</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>Checked Aug 11, not found</td><td>No new dated RWA/tokenization catalyst since the Aug 9 rwa.xyz all-time-high pull and the Aviva/Ripple developments — today's searches returned only generic market-sizing coverage</td><td>Held flat — no P move</td></tr>
+    <tr><td>Checked Aug 9-10, not found</td><td>No new dated RWA/tokenization catalyst since the Aug 8 rwa.xyz all-time-high pull and the Aviva/Ripple developments</td><td>Held flat — no P move</td></tr>
+    <tr><td>Jul 29 - Aug 8</td><td><strong>Total RWA distributed value hit a new all-time high ($38.24B);</strong> Central Bank of Ireland cleared Aviva's XRPL fund; Ripple took equity in Zilo/Licuido</td><td>Drove the Aug 8 3mo/6mo nudge up — already IN the committed baseline</td></tr>
+    <tr><td>Fired Aug 3</td><td><strong>BlackRock launched BSTBL and BRSRV,</strong> two tokenized money-market funds targeting GENIUS Act stablecoin-reserve eligibility, via Securitize</td><td>Confirmed, reflected in prior baselines — not double-counted this cycle</td></tr>
+    <tr><td>Watch</td><td>Whether BRSRV actually gets adopted by a major stablecoin issuer as reserve backing, or stays unused</td><td>Adoption = re-rate up further; no uptake after a quarter = the launch was noise, not signal</td></tr>
+    <tr><td>Watch</td><td>Whether the Aviva/Ripple XRPL institutional build-out attracts further EU-regulated fund launches, or stays a one-off</td><td>Follow-on launches = re-rate up further (broadening adoption); no follow-through = incremental only</td></tr>
+    <tr><td>Ongoing</td><td>GENIUS Act: zero of six agencies have finalized rules; FDIC comment window closed Aug 4, FinCEN CIP closes Aug 21</td><td>Fast finalization after close = the miss was survivable; drift with no progress = deeper limbo (3-mo)</td></tr>
+    <tr><td>Oct 2026</td><td>DTCC tokenization full launch — target unchanged</td><td>On time = the biggest institutional-rails catalyst of the year lands before Nasdaq; a slip = drift confirmed (3–6 mo)</td></tr>
+    <tr><td>Dec 6, 2026</td><td>Nasdaq 23/5 tokenized trading — SEC-approved target launch (unchanged)</td><td>A live launch = landmark public-market proof; another slip toward H1 2027 = drift confirmed (6-mo)</td></tr>
+    <tr><td>Jan 18, 2027</td><td>GENIUS Act 18-month statutory backstop effective date</td><td>The actual regulatory-clarity resolution point lands almost exactly at the 6-month mark (6-mo)</td></tr>
+    <tr><td>H1 2027</td><td>Nasdaq equity-token services "operational" · bank Tokenized Deposit Network go-live · DTCC-Stellar public-chain deployment target</td><td>Which rails win — public chains or bank ledgers — starts getting decided here (1-yr)</td></tr>
+    <tr><td>Any time</td><td>Tokenized-treasury depeg / counterparty failure (USYC's Binance/BNB-Chain concentration, not re-verified this cycle)</td><td>Plumbing fragility realized — re-rate down immediately</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line:</strong> if the GENIUS rules drift into Q4 unfinished, the DTCC and Nasdaq launches slip past their October and December windows, and the growth that remains keeps rotating to permissioned rails, bank deposit networks, and institution-controlled coins — treat the crypto-relevance thesis as failing. Adoption that never touches public, crypto-controlled rails is TradFi, not crypto.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp">✓ COMMITTED — AUGUST 11, 2026 (LIGHT DAILY TOUCH) · STAMPED BY ALEX (AUTO-STAMPED)</div>
+    <div class="nums">Committed P: 52 / 60 / 66 / 74 / 85 · My Weight: 20% (equal) · Impact: 8 (uniform)</div>
+    <p>Held flat for a third straight day. No new dated RWA/tokenization catalyst found — searches returned only generic 2026 market-sizing and explainer pieces, not fresh dated items. The Aug 9 rwa.xyz all-time-high print remains the most recent dated fact.</p>
+    <p>This is a routine, well-evidenced daily cycle — no pillar P moved anywhere in this run, no call band flipped — so it was auto-stamped under Alex's standing delegated daily authority (in effect since 2026-08-06). The June committed scores (<strong>53 / 57 / 62 / 72 / 85</strong>, committed June 19, 2026) and the Aug 10 committed scores (<strong>52 / 60 / 66 / 74 / 85</strong>) remain the prior human/auto-stamped values, identical to today's.</p>
+    <p><strong>Override any P and re-stamp — the master blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Light daily touch, August 11, 2026 — checking for changes since the Aug 10 touch.</div>
+  <ul>
+    <li><strong>No new dated RWA/tokenization catalyst found</strong> — searches returned only generic 2026 market-sizing and explainer pieces (Yahoo Finance, Finextra, crypto.news, MetaMask, Investax, Blocklr).</li>
+    <li><strong>GENIUS Act, DTCC, Nasdaq timelines: no change</strong> — no new final rules, no launch-date movement.</li>
+    <li><strong>No new RWA-rail failure, depeg, or counterparty default found.</strong></li>
+    <li><strong>Score decision:</strong> 1mo 52 → <strong>52</strong> · 3mo 60 → <strong>60</strong> · 6mo 66 → <strong>66</strong> · 12mo/36mo held at 74/85 — nothing found today exceeds the Aug 10 baseline. Auto-stamped: a routine, well-evidenced daily cycle under Alex's standing delegated authority.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded August 11, 2026, light daily touch — click and judge the quality yourself. Official records &amp; rules first, then live data, reporting, and prices.</div>
+  <ul>
+    <li><span class="grp">August 11 light daily check:</span> general web search for RWA/tokenization news dated Aug 10-11 — returned only generic 2026 market-sizing and explainer pieces (Yahoo Finance, Finextra, crypto.news, MetaMask, Investax, Blocklr), no fresh dated catalyst.</li>
+    <li><span class="grp">August 10 light daily check:</span> Bitcoin News, CoinSpectator — "Tokenized RWA Sector Hits $38B" (dated Aug 9, re-checked today, confirmed already priced in) · general web search for RWA/tokenization news dated Aug 9-10 — otherwise returned only generic year-in-review/market-overview pieces, no fresh dated catalyst.</li>
+    <li><span class="grp">August 9 light daily check:</span> general web search for RWA/tokenization news dated Aug 8-9 — returned only generic year-in-review/market-overview pieces (Yahoo Finance, Investax, BingX, crypto.news, MetaMask), no fresh dated catalyst.</li>
+    <li><span class="grp">August 8 full-weekly additions:</span> app.rwa.xyz — direct pull, Aug 8, 2026: tokenized Treasuries $16.21B (87 products, 62,997 holders, 7d yield 3.29%), total RWA distributed value $38.24B (new ATH), Represented Asset Value $373.55B (-1.70% 30d), stablecoin total ~$296-312B · Cointelegraph, DailyCoin, crypto.news, Coinpaprika, Yahoo Finance, Bitcoin.com — Central Bank of Ireland clears Aviva Investors' XRP Ledger fund (Jul 29) · Ripple.com press release + FOW, Cryptonomist, Fintech.global, CryptoNews, Yahoo Finance — Ripple takes equity stakes in Zilo and Licuido (Aug 3) · KuCoin — "Tokenized Treasuries Dip to $34.67 Billion" (the mislabeled headline, corrected again this cycle).</li>
+    <li><span class="grp">August 7 additions:</span> CryptoRank — "RWA Tokenization News Today: Market Size &amp; Trends 2026" (aggregator roundup, no new dated catalyst) · CoinGecko — "RWA Report 2026" (background) · checked and found nothing new beyond the Aug 6 BlackRock catalyst.</li>
+    <li><span class="grp">August 6 additions:</span> <a href="https://www.coindesk.com/business/2026/08/03/blackrock-expands-tokenized-cash-with-new-blockchain-based-money-market-offerings">CoinDesk — BlackRock expands tokenized cash with BSTBL/BRSRV (Aug 3)</a>, corroborated by <a href="https://www.kucoin.com/news/flash/blackrock-launches-2-tokenized-money-market-funds-for-stablecoin-issuers">KuCoin</a>, <a href="https://www.pymnts.com/blockchain/2026/blackrock-intros-pair-of-tokenized-money-market-offerings/">PYMNTS</a>, <a href="https://www.cointribune.com/en/blackrock-launches-two-tokenized-funds-at-the-heart-of-stablecoins">Cointribune</a>, <a href="https://bitcoinworld.co.in/blackrock-tokenized-money-market-funds-bstbl-brsrv/">BitcoinWorld</a>, <a href="https://solanacompass.com/news/blackrock-launches-brsrv-and-bstbl-tokenized-money-market-funds-on-solana">Solana Compass</a>, and <a href="https://coinpaprika.com/news/blackrock-chases-stablecoin-boom-two-on-chain/">CoinPaprika</a> · <a href="https://crypto.news/blackrock-deepens-rwa-push-with-2-tokenized-funds/">crypto.news — corroborating summary (Aug 3)</a>.</li>
+    <li><span class="grp">July 30 additions (prior full weekly refresh):</span> <a href="https://app.rwa.xyz/treasuries">app.rwa.xyz/treasuries — direct pull, Jul 30, 2026: tokenized Treasuries $16.18B, BUIDL $2.64B, USYC $3.01B, USDY $2.15B, iBENJI $1.76B, JTRSY $881M</a> · <a href="https://app.rwa.xyz/">app.rwa.xyz — direct pull, Jul 30: Distributed Value ~$36.93B, Represented Value ~$370.55B</a> · <a href="https://app.rwa.xyz/stablecoins">app.rwa.xyz/stablecoins — direct pull, Jul 30: total ~$296.86B, USDT $188.95B, USDC $72.14B</a> · <a href="https://www.kucoin.com/news/flash/tokenized-treasuries-dip-to-34-67-billion-as-rwa-sector-expands">KuCoin — the mislabeled "$34.67B tokenized Treasuries dip" headline</a> (its own body text admits "tokenized U.S. treasuries lead at $15.86 billion," confirming the conflation) · <a href="https://www.coindesk.com/business/2026/07/25/robinhood-chain-s-real-world-assets-jump-fivefold-as-tokenized-stocks-start-trading-in-bigger-size">CoinDesk — Robinhood Chain's RWA jump fivefold (Jul 25)</a>, corroborated by <a href="https://www.cryptotimes.io/2026/07/25/tokenized-spacex-overtakes-gamestop-on-robinhood-chain-as-rwas-explode-5x-to-70m/">CryptoTimes</a>, Cryptopolitan, Incrypted, Crowdfund Insider · <a href="https://www.coindesk.com/business/2026/07/27/securitize-builds-wall-street-credentials-with-sec-adviser-license-as-tokenization-expands">CoinDesk — Securitize Capital's SEC investment-adviser registration (Jul 27)</a>.</li>
+    <li><span class="grp">July 13 additions — official/primary:</span> <a href="https://www.circle.com/">Circle — press release, final OCC approval for a national trust bank / First National Digital Currency Bank, N.A. (Jul 10, 2026)</a>, corroborated by <a href="https://www.americanbanker.com/">American Banker</a>, <a href="https://bankingdive.com/">Banking Dive</a>, and BusinessWire · <a href="https://www.swift.com/">Swift — press release, blockchain ledger live with 17 banks across 6 continents on Chainlink CCIP (Jul 9, 2026)</a>, corroborated by <a href="https://www.coindesk.com/">CoinDesk</a> and <a href="https://www.bloomberg.com/">Bloomberg</a> · <a href="https://www.dtcc.com/">DTCC — press release confirming Stellar as first public blockchain in DTC's multi-chain tokenization strategy, targeting H1 2027 (May 27, 2026)</a>, corroborated by <a href="https://www.coindesk.com/">CoinDesk (May 31, 2026)</a>.</li>
+    <li><span class="grp">July 13 additions — live data:</span> <a href="https://app.rwa.xyz/treasuries">RWA.xyz — tokenized Treasuries $15.52B (+4.01% 30d); leaderboard USYC $3.00B / BUIDL $2.869B / USDY $2.159B / iBENJI $1.625B / JTRSY $881.8M / WTGXX $764.5M / BENJI $760.9M / USTB $695.3M; 84 assets, 62,843 holders, 7d avg yield 3.44% (live pull, Jul 13)</a> · <a href="https://app.rwa.xyz/">RWA.xyz — Distributed Value $34.19B (+3.90% 30d) vs. Represented Value $374.94B (+9.57% 30d); total stablecoin value $300.54B (+0.94% 30d) (Jul 13)</a> · <a href="https://app.rwa.xyz/private-credit">RWA.xyz — private credit $6.93B distributed (+2.84% 30d); Maple $1.4B / STOKR $1.3B / Centrifuge $746M / Realiz $500M / Securitize $488M (+0.28% 30d — no evidence of the prior +106.4% spike) (Jul 13)</a>.</li>
+    <li><span class="grp">July 13 additions — reporting:</span> <a href="https://www.coindesk.com/">CoinDesk — stablecoin market cap down ~$10B since May peak, largest decline since 2023 (Jul 12, 2026)</a>, corroborated by <a href="https://www.pymnts.com/">PYMNTS</a> and <a href="https://cryptonomist.ch/">Cryptonomist</a> · <a href="https://www.coindesk.com/">CoinDesk — stablecoin transaction volume record $1.79T in June 2026, USDC ~70% share, overtakes USDT in volume (Jul 6, 2026)</a> · <a href="https://cryptonomist.ch/">Cryptonomist</a> and <a href="https://cryptoslate.com/">CryptoSlate</a> — Open USD (OUSD) coalition credibility questions: Samsung/Dunamu deny formal role (Jul 3), Upbit denies issuance involvement (Jul 4) (Jul 3–7, 2026) · <a href="https://finance.yahoo.com/">Yahoo Finance — RWA reality-check: only ~3% of a broader $60B/7,000+ tokenized-product universe accessible to US retail (~Jul 12, 2026)</a> · Crédit Agricole / CACEIS — EURXT launch release: Ethereum ERC-20, MiCA-compliant, 20M initial supply, first subscription into a tokenized Amundi money-market fund (Jul 1, 2026) · <a href="https://www.chapman.com/publication-genius-act-rulemaking-tracker">Chapman &amp; Cutler — GENIUS Act rulemaking tracker, cross-checked against agency sites (Jul 13, 2026; zero of ~10 rules final, 5 days to deadline)</a> · SEC — Form 425 Securitize business-combination filings, NYSE listing effective July 2, 2026 · <a href="https://www.coingecko.com/en/coins/ondo">CoinGecko — ONDO price feed (Jul 13, 2026)</a>.</li>
+    <li><span class="grp">Official records &amp; rules (carried, still load-bearing):</span> <a href="https://www.federalregister.gov/documents/2026/04/03/2026-06489/genius-act-broad-based-principles-for-determining-whether-a-state-level-regulatory-regime-is">Federal Register — Treasury "substantially similar" state-regime NPRM (Apr 3, comments closed Jun 2)</a> · <a href="https://www.federalregister.gov/d/2026-06974">Federal Register — FDIC GENIUS NPRM (Apr 10, 2026)</a> · <a href="https://home.treasury.gov/news/press-releases/sb0435">US Treasury — FinCEN/OFAC illicit-finance NPRM (Apr 8, 2026)</a> · <a href="https://www.occ.treas.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html">OCC — GENIUS NPRM ($5M minimum capital / 10% same-day liquidity tier)</a>; OCC Bulletin 2026-7, joint with Fed/FDIC, "Capital Treatment of Tokenized Securities" (Mar 5, 2026 — a separate matter from GENIUS rulemaking) · <a href="https://www.sec.gov/newsroom/speeches-statements/atkins-statement-genius-act-071825">SEC — GENIUS Act signed July 18, 2025 (PL 119-27)</a> · <a href="https://www.coindesk.com/policy/2026/03/18/sec-approves-nasdaq-s-move-to-allow-tokenized-securities-trading">SEC approves Nasdaq tokenized-securities trading (Mar 18, 2026)</a> · <a href="https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-launch-equity-token-design-putting-issuers-center">Nasdaq IR — equity-token design with Payward/Kraken, services "operational H1 2027" (Mar 9, 2026)</a> · <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Federal Reserve — FOMC 2026 calendar (Jul 29, Sep 16, Oct 28, Dec 9)</a>.</li>
+    <li><span class="grp">The reporting (carried from July 8–11, still load-bearing):</span> <a href="https://www.ccn.com/news/crypto/dtcc-launch-tokenized-stocks-etfs-treasuries-july-2026/">CCN</a> + <a href="https://finance.yahoo.com/markets/stocks/articles/dtcc-tokenize-russell-1000-stocks-161215488.html">Yahoo Finance</a> + <a href="https://cryptobriefing.com/dtcc-tokenization-pilot-russell-1000-etfs-treasuries/">Crypto Briefing — DTCC production pilot July 2026, full launch Oct 2026 (announced May 4, 2026)</a> · <a href="https://www.cryptotimes.io/2026/07/09/ondo-expands-solana-push-with-24-7-tokenized-stock-liquidity/">The Crypto Times — Ondo 24/7 tokenized-stock liquidity on Solana (Jul 9)</a> — since extended by Ondo's Broadridge proxy-voting partnership (Jul 2) and "Ondo Perps" launch · <a href="https://www.fool.com/investing/2026/07/04/a-massive-new-stablecoin-initiative-could-disrupt/">Motley Fool</a> + <a href="https://bitpinas.com/cryptocurrency/catch-up-june-28-july-04-2026/">BitPinas — Open USD (OUSD) 140+-institution coalition, original launch coverage (late Jun/early Jul 2026)</a> · <a href="https://stablecoininsider.org/six-federal-agencies-have-35-days-to-finalize-genius-act-stablecoin-rules-by-july-18/">Stablecoin Insider — six agencies vs the July 18 deadline (mid-Jun 2026)</a> · <a href="https://corpgov.law.harvard.edu/2012/12/19/december-2012-dodd-frank-progress-report/">Davis Polk / Harvard Law — Dodd-Frank progress reports (60–75% of deadlines missed)</a> · <a href="https://gfmag.com/technology/nasdaq-edges-toward-tokenized-trading/">Global Finance — Nasdaq edges toward tokenized trading; 23/5 by Dec 2026 earliest</a> · <a href="https://cryptodaily.co.uk/2026/07/new-york-life-tokenizes-junk-bonds-hyb-defi">CryptoDaily — NYLIM launches tokenized high-yield HYB with Centrifuge (Jun 30, 2026)</a> · <a href="https://cryptonews.com/news/banks-tokenized-deposit-network-cbdc-stablecoins/">Cryptonews — JPMorgan/Citi/BofA/Wells Fargo Tokenized Deposit Network via The Clearing House (H1 2027)</a> · <a href="https://thenextweb.com/news/jpmorgan-tokenized-fund-ethereum-genius-act">TNW — JPMorgan JLTXX tokenized-MMF filing and the reserve-MMF wave (May 12)</a> · <a href="https://unchainedcrypto.com/blackrock-files-for-two-new-tokenized-money-market-funds-targeting-stablecoin-capital/">Unchained — BlackRock files BSTBL &amp; BRSRV (May 8)</a> — <em>superseded: see the Aug 6 additions above for the actual Aug 3 launch.</em></li>
+    <li><span class="grp">Forecasts (carried from June, still load-bearing):</span> <a href="https://www.coindesk.com/markets/2025/04/07/ripple-bcg-project-usd18-9t-tokenized-asset-market-by-2033-but-obstacles-remain">BCG × Ripple — $9.4T by 2030 / $18.9T by 2033 (Apr 7, 2025)</a> · <a href="https://www.bis.org/publ/work1270.pdf">BIS WP 1270 — stablecoin inflows lower T-bill yields; outflows a fire-sale "lower bound"</a>.</li>
+    <li><span class="grp">The Prize (prices):</span> <a href="https://www.coingecko.com/en/coins/ondo">CoinGecko — ONDO $0.3291 (Jul 13, 2026; −0.90% 24h, +0.60% 7d; mkt cap ~$1.6B; ATH $2.14 Dec 16, 2024) — market price, not an institutional estimate</a>.</li>
+    <li><span class="grp">Reference (BTC pipeline reading):</span> Bitstamp — BTC $65,061.97, last completed daily close (Aug 10, 2026).</li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

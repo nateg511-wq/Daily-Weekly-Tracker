@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Pillar Report — The Fed &amp; Macro Regime (Updated August 11, 2026)</title>
+<!--
+  ============================================================
+  COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
+  Running header/footer use a repeating <thead>/<tfoot> table scaffold so
+  they reserve space on every printed page (Chrome ignores @page margins).
+  ============================================================
+-->
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+    --fix:#eaf7ef; --fix-bd:#9bd9b5;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---- repeating page scaffold (header reserves space on EVERY page) ---- */
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+
+  /* ---- cover ---- */
+  .cover{ height:247mm; display:flex; flex-direction:column; page-break-after:always; }
+  .cover .spacer1{ flex:0 0 40mm; }
+  .cover .eyebrow{ font-size:8.5pt; letter-spacing:3px; color:var(--blue-dk); font-weight:700; }
+  .cover h1{ font-size:33pt; line-height:1.06; margin:3mm 0 0; letter-spacing:-.6px; }
+  .cover h1 .l2{ color:var(--blue); }
+  .cover .deck{ font-size:12.5pt; color:#3a4759; margin-top:5mm; font-weight:500; }
+  .cover .note{ font-style:italic; color:var(--muted); margin-top:7mm; font-size:10pt; max-width:135mm; }
+  .cover .grow{ flex:1 1 auto; }
+  .cover .infobox{ background:var(--box); border:1px solid var(--box-bd); border-radius:7px; padding:7mm 8mm; }
+  .cover .infobox .w{ font-size:10.5pt; font-weight:700; letter-spacing:.6px; color:var(--blue-dk); }
+  .cover .infobox .m{ font-size:9pt; color:#43505f; margin-top:2mm; letter-spacing:.2px; }
+
+  /* ---- sections ---- */
+  .sec{ margin-top:7mm; }
+  .sec.first{ margin-top:0; }
+  h2{ font-size:14pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 3mm; font-style:italic; }
+  p{ margin:0 0 2.6mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.8mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  li.fix:before{ content:"\2605"; color:#0f7a4f; }
+  .lead{ font-size:10.5pt; }
+  strong{ color:#10243f; }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.4mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  .scores td.c,.scores th.c{ text-align:center; }
+  .scores td.my{ font-weight:700; color:var(--blue-dk); }
+  .scores .sig{ font-weight:700; color:#0f7a4f; }
+  .scores .signeg{ font-weight:700; color:#b91c1c; }
+  .scores tr:nth-child(even) td{ background:#fafcff; }
+  .formula{ font-size:8.4pt; color:#43505f; margin-top:2mm; }
+
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:4mm 5mm; margin:2.5mm 0; }
+  .box.tight{ padding:3.5mm 5mm; }
+  .box h3{ margin:0 0 2mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.4mm 0; }
+  .claim p{ margin:1.6mm 0; }
+  .flip{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin-top:2.5mm; }
+
+  .decision{ background:#eafaf1; border:1px solid #8fdcb4; border-radius:7px; padding:5mm 6mm; }
+  .decision .stamp{ color:#0f7a4f; font-weight:800; letter-spacing:1px; font-size:10pt; }
+  .decision .stamp.pending{ color:#b45309; }
+  .decision .nums{ font-size:12pt; font-weight:800; margin:2.5mm 0; color:#10243f; }
+  .decision p{ font-size:9.3pt; }
+
+  .sources li{ font-size:8.7pt; line-height:1.45; }
+  a{ color:var(--blue-dk); text-decoration:none; word-break:break-word; }
+  .grp{ font-weight:700; color:#10243f; }
+  .avoid{ page-break-inside:avoid; }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>FED &amp; MACRO REGIME · PILLAR REPORT · AUGUST 11, 2026</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · August 11, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<!--==================== COVER ====================-->
+<section class="cover">
+  <div class="spacer1"></div>
+  <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
+  <h1>The Fed &amp; Macro Regime<br><span class="l2">Pillar Report</span></h1>
+  <div class="deck">Liquidity as the Master Driver — Researched, Scored, and Re-Rated</div>
+  <div class="note">Originally written and scores committed by me on June 12, 2026. Fully re-researched July 8, 13, 18, 25, and 30, 2026, and again as a full weekly refresh on August 8, 2026 (re-rated up to a moderated 40/38/47/55/62 on the BLS July jobs report, committed and stamped by Alex). <strong>This version (August 11) is a light daily touch and HOLDS FLAT at 40/38/47/55/62</strong> — no new Fed H.4.1 or BLS release has posted since Aug 8; the July CPI print (due Aug 12) that Morgan Stanley named as the real September decider, and the next H.4.1/claims print (Aug 13), both remain pending. <strong>This version's scores have been auto-stamped</strong> under Alex's standing delegated daily authority (in effect since 2026-08-06) — no pillar P moved anywhere in today's cycle; see My Decision below.</div>
+  <div class="grow"></div>
+  <div class="infobox">
+    <div class="w">COINPICKS PILLAR REPORT · WEIGHT: 25% OF MY THESIS</div>
+    <div class="m">Written June 12, 2026 · Updated &amp; Re-verified August 11, 2026 (light daily touch off the Aug 10 baseline — committed, auto-stamped) · Not Financial Advice</div>
+  </div>
+</section>
+
+<!--==================== THE SCORES ====================-->
+<section class="sec first avoid">
+  <h2>The Scores — Committed vs. Drafts</h2>
+  <div class="sub">June column committed by me on June 12, 2026. Every draft since shown for full lineage. Aug 8 (re-rated up, moderated, full weekly refresh) committed and stamped by Alex. Aug 9, 10, and 11 are light daily touches — all held flat, all auto-stamped.</div>
+  <table class="data scores">
+    <tr><th>Window</th><th class="c">Jun</th><th class="c">…</th><th class="c">8/7</th><th class="c">8/8</th><th class="c">8/9</th><th class="c">8/10</th><th class="c">8/11</th><th class="c">Qual.</th><th class="c">Imp.</th><th class="c">Signal</th><th>My Call</th></tr>
+    <tr><td><strong>1 month</strong></td><td class="c">38</td><td class="c">…</td><td class="c">34</td><td class="c">40</td><td class="c">40</td><td class="c">40</td><td class="c my">40</td><td class="c">0.85</td><td class="c">8</td><td class="c signeg">−1.36</td><td>Mild Bear — a weak jobs print cut Sept hike odds, but Aug 12 CPI (inside this window) is the real decider</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c">40</td><td class="c">…</td><td class="c">33</td><td class="c">38</td><td class="c">38</td><td class="c">38</td><td class="c my">38</td><td class="c">0.85</td><td class="c">8</td><td class="c signeg">−1.63</td><td>Mild Bear — Sept still in this window, repriced dovish but a real forecaster split remains</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c">46</td><td class="c">…</td><td class="c">45</td><td class="c">47</td><td class="c">47</td><td class="c">47</td><td class="c my">47</td><td class="c">0.80</td><td class="c">8</td><td class="c signeg">−0.38</td><td>Mild Bear, close to Neutral</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c">54</td><td class="c">…</td><td class="c">54</td><td class="c">55</td><td class="c">55</td><td class="c">55</td><td class="c my">55</td><td class="c">0.75</td><td class="c">8</td><td class="c sig">+0.60</td><td>Neutral/Mild Bull</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c">61</td><td class="c">…</td><td class="c">62</td><td class="c">62</td><td class="c">62</td><td class="c">62</td><td class="c my">62</td><td class="c">0.65</td><td class="c">8</td><td class="c sig">+1.25</td><td>Mild Bull — structural accumulate</td></tr>
+  </table>
+  <div class="formula"><strong>Committed P (Aug 11):</strong> 40 / 38 / 47 / 55 / 62 · <strong>Weight:</strong> 20% (equal) · <strong>Impact:</strong> 8 (uniform) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact. Full lineage: June committed 38/40/46/54/61 (Jun 12) → ... (see prior versions of this report for the full Jul 8-Aug 7 path) → Aug 8 40/38/47/55/62 (up, moderated from a same-day light draft's proposed 44/40/48/55/62 after independent verification — committed and stamped by Alex) → Aug 9-10 40/38/47/55/62 (held flat — no new Fed/BLS release) → <strong>Aug 11 40/38/47/55/62</strong> (held flat — still no new release; CPI due Aug 12) — committed, auto-stamped.</div>
+
+  <div class="box">
+    <h3>The Three Inputs, in Plain English</h3>
+    <p><strong>P</strong> — the odds the macro regime is <em>good for crypto</em> by then — not "the Fed cuts by then." Held flat this cycle at 40/38/47/55/62. No new Fed H.4.1 or BLS release has posted since Aug 8 — the Aug 6-week jobless claims print (262K, in line with consensus) remains the most recent data. The next H.4.1 and weekly jobless-claims prints are due Aug 13; the July CPI print (Aug 12) that Morgan Stanley flagged as the real September decider — landing inside this pillar's own 1-month window — has not yet landed.</p>
+    <p><strong>Quality</strong> — how trustworthy the evidence is. Unchanged this cycle per house rules.</p>
+    <p><strong>Impact</strong> — 8 out of 10, the uniform value every pillar now shares in the equal-weight model. Liquidity is the tide; it moves the whole market at once.</p>
+    <p><strong>Carried forward from Aug 8:</strong> jobless claims for the week ended Aug 1 came in at 199,000, 4-week average 198,750. Fed H.4.1 for the week ended Aug 5 (federalreserve.gov primary) was an unremarkable, stable print (reserves +$8.78B w/w, TGA -$3.45B w/w) — neutral, no liquidity-stress signal either way.</p>
+  </div>
+</section>
+
+<!--==================== THE CLAIM ====================-->
+<section class="sec claim">
+  <h2>The Claim</h2>
+  <div class="sub">The thesis, and where I differ from the consensus — updated August 11, 2026, light daily touch</div>
+  <p><strong>The crowd:</strong> is now waiting on the same two things this pillar is — the Aug 12 CPI print and the Aug 13 Fed data — and today produced no new release at all, giving nobody anything to react to.</p>
+  <p><strong>Me:</strong> holding at 40/38/47/55/62 — nothing has changed since Aug 8's moderated re-rate. Moving the score without new data would be exactly the kind of over-reaction this pillar's own history (moderating a same-day draft that moved too far, too fast) already corrected once this cycle.</p>
+  <p><strong>My edge:</strong> discipline on quiet days matters as much as discipline on loud ones — the temptation to find something to say is real, but the honest answer today is that the real test (Aug 12 CPI, Aug 13 Fed data) hasn't arrived yet.</p>
+</section>
+
+<!--==================== THE FACTS ====================-->
+<section class="sec">
+  <h2>The Facts</h2>
+  <div class="sub">As of August 11, 2026, light daily touch — hard numbers only, sources on the last page. The Aug 8-10 facts below are carried forward unchanged (still load-bearing). The Iran/Hormuz war-risk situation is covered in full in the Iran War Risk pillar report.</div>
+  <ul>
+    <li><strong>No new Fed H.4.1 or BLS release found today.</strong> The next H.4.1 (week ended Aug 12) and weekly jobless-claims print are both due Aug 13; the July CPI print is due Aug 12.</li>
+    <li><strong>BTC closed at $64,355.00 on Aug 11</strong> — −1.1% vs. Aug 10's close of $65,061.97.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 8-10 (still load-bearing):</div>
+  <ul>
+    <li><strong>Initial jobless claims for the week ended Aug 6 (published Aug 8): 262,000 actual vs. 263,000 expected</strong> — essentially in line with consensus, noise rather than a surprise.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 8-9 (still load-bearing):</div>
+  <ul>
+    <li class="fix"><strong>BLS Employment Situation, July 2026: nonfarm payrolls FELL 23,000</strong> versus a consensus estimate of ~83,000 (WSJ-sourced; a competing 95,000 Barron's-sourced figure is less corroborated and not adopted) — job losses concentrated in local-government education (-50,000) and retail trade (-19,000). A direct bls.gov fetch returned a 403 this cycle; the figure is confirmed via convergent CNBC, Yahoo Finance, Kiplinger, and CBS News reporting, all citing the same BLS release — meets the 2+ independent sufficiency bar.</li>
+    <li><strong>May and June payrolls revised down a combined 103,000</strong> — confirmed, matches the light draft exactly. (One Forbes-sourced fetch this cycle produced a garbled "-252,000 total" figure that doesn't reconcile with the BLS-consistent -103,000 figure elsewhere — treated as an unreliable summarization artifact, not a correction.)</li>
+    <li><strong>Unemployment ticked down to 4.1% from 4.2%,</strong> but the labor-force participation rate fell to 61.4% — its lowest level in over five years.</li>
+    <li class="fix"><strong>★ NEW this cycle — average hourly earnings rose just 3.2% y/y,</strong> down from 3.4% in June and now trailing CPI (3.5% June y/y) — real wages softening, a detail the same-day light draft didn't carry.</li>
+    <li class="fix"><strong>★ CORRECTED — CME FedWatch September-hold odds check out at ~56%,</strong> not the light draft's ~60%. Two independent corroborating sources (CBS News, a Forbes-sourced pull) both cite "56%, up from 45% the previous day"; a separate CNBC-sourced overview cited ~60%, a real but less-corroborated, likely later-intraday figure. Kalshi (a prediction market, not CME futures-implied pricing — a different instrument, labeled separately per research discipline) shows 65% hold.</li>
+    <li class="fix"><strong>★ NEW this cycle — real forecaster disagreement on magnitude:</strong> Bank of America explicitly called the report "a bit dovish on net" but is <strong>sticking with its call for 75bp of hikes in 2026</strong> (Sept/Oct/Dec) regardless. Richmond Fed President Barkin, an actual FOMC voter, described the labor market as "not loose, not tight" — a measured, non-alarmed read. Morgan Stanley's Ellen Zentner says the <strong>Aug 12 CPI print</strong> — inside this pillar's own 1-month window — will be the deciding factor for September, not this jobs report alone.</li>
+    <li class="fix"><strong>Jobless claims for the week ended Aug 1: 199,000, 4-week average 198,750</strong> — the lowest of this cycle, in real tension with the weak payrolls print. Points to "low-hire, low-fire" stagnation rather than an accelerating downturn, arguing for restraint on the size of the move.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Aug 7 (still load-bearing):</div>
+  <ul>
+    <li class="fix"><strong>Fed H.4.1 for the week ended Aug 5 (federalreserve.gov, direct pull):</strong> total assets $6,748,567M, reserve balances $2,993,349M — reserves +$8.78B w/w, TGA -$3.45B w/w. An unremarkable, stable print — no liquidity-stress signal either way; not used to move P.</li>
+  </ul>
+  <div class="sub" style="margin-top:3mm;">Carried forward from Jul 30-Aug 5 (still load-bearing):</div>
+  <ul>
+    <li class="fix"><strong>★ CONFIRMED, PRIMARY SOURCE — the FOMC held rates at 3.50-3.75% on Jul 29, 2026, on a 9-3 vote.</strong> Three regional-bank presidents — Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), Lorie Logan (Dallas) — dissented in favor of an immediate 25bp hike (federalreserve.gov statement, corroborated by CNBC, Forbes, Fox Business, TechTimes). This is the <strong>first unified 3-member dissent since September 2016</strong>. No SEP/dot plot this meeting (not a projections meeting; next SEP is Sept 15-16, 2026).</li>
+    <li class="fix"><strong>Chair Warsh's press conference was unusually combative and offered no forward guidance:</strong> "there is no soft inflation target... not on this committee's watch"; "the five-plus years of inflation above target cannot be cured in nine weeks." A confirmed (single-sourced) risk-off market reaction followed: S&amp;P 500 fell 1.85% in the final 65 minutes of trading (full day: S&amp;P −1.52%, Dow −2.19%, Nasdaq −1.74%); the 30-year Treasury yield rose to 5.21%, its highest since July 2007 — a "bear steepener" consistent with rising inflation-credibility concern.</li>
+    <li class="fix"><strong>★ CONFIRMED, PRIMARY SOURCE — jobless claims for the week ended Jul 25 came in at 197,000</strong> (DOL/ETA release, fetched and read directly), a genuine +9,000 increase; the prior week (ended Jul 18) was revised <em>up</em> to <strong>188,000</strong> from the originally-reported 187,000. The primary release itself confirms the seasonal-adjustment distortion flagged last cycle: actual non-seasonally-adjusted claims fell only 9.2% w/w versus the 13.3% seasonal factors expected — meaning the "lowest since 1969" framing was real but mechanically set to partially reverse, exactly as it did.</li>
+    <li class="fix"><strong>The September hike-odds figure could not be reconciled to a single number this cycle, despite four direct attempts.</strong> Live pulls produced 55.8% (Fox Business, Jul 28), 62.4% (Investing.com Fed Rate Monitor, timestamped Jul 30), 70.2% (KuCoin, pre-meeting), and 81% (Southeast AgNet, Jul 30) — no two agree. The qualitative direction — "still elevated, majority-hike-priced" — is the only defensible takeaway; no re-rate rests on a specific point figure.</li>
+    <li><strong>H.4.1 balance sheet: no new release found for the week ended Jul 29</strong> as of this check (normal Thursday-afternoon publication timing); the most recent confirmed release remains Jul 23 (week ended Jul 22: reserves fell $80,572M w/w against a $73,405M TGA rebuild, both figures directly confirmed against federalreserve.gov last cycle).</li>
+    <li><strong>Bank of America projects three 25bp hikes in 2026</strong> (to 4.25-4.50%) — single-source (Forbes, citing BofA), flagged not scored.</li>
+    <li><strong>Carried forward, not re-verified this cycle:</strong> June CPI (-0.4% m/m) and PPI (-0.3% m/m), both BLS-primary-confirmed in a prior cycle; Warsh's Jul 14/15 congressional testimony; the June FOMC minutes (unanimous 12-0 hold, dropped easing-bias language). None of these are contradicted by this cycle's findings — the hawkish FOMC outcome sits alongside, not against, the still-intact disinflation trend.</li>
+    <li><strong>The labor market cracked in slow motion, then partially un-cracked this week</strong> — June payrolls +57K vs ~115K consensus (carried forward); this cycle's 197K claims print, while up from 188K, remains historically low (4-week average 202,750).</li>
+    <li><strong>Policy rate and balance sheet: 3.50-3.75%, next FOMC (with SEP/dot plot) is Sept 15-16, 2026.</strong> Fed communications blackout ended with the Jul 29 meeting; watch for the first round of regional Fed president speeches, especially from the three dissenters.</li>
+    <li><strong>BTC closed at $64,706.50 (Jul 30)</strong> — holding up despite the hawkish FOMC surprise and confirmed equity/bond-market risk-off reaction. <strong>Updated: BTC closed at $64,661.55 on Aug 5</strong>, essentially flat vs. Jul 30 and up ~1.7% vs. the Jul 31 close of $63,579.68.</li>
+  </ul>
+</section>
+
+<!--==================== THE PRIZE ====================-->
+<section class="sec avoid">
+  <h2>The Prize</h2>
+  <div class="sub">Illustrative only — not price targets, not advice</div>
+  <div class="box tight">
+    <p>The canonical anchor: <strong>2020-21 ZIRP + QE</strong> ran BTC ~$3,800 → $69,044 (~15–18×) — a unique COVID/zero-rate/open-ended-QE setup, not a repeatable base case. The <strong>2024-25 cuts</strong> ran ~$60K → a ~$126K ATH (Oct 6, 2025) — but that top came on a non-Fed tariff shock and has since roughly halved to the low-$60Ks ($64,355.00 on the Aug 11 close). From here, a retest of the $126K high ≈ <strong>+94%</strong>.</p>
+    <p>Discount it hard, twice. First: easing is not an automatic catalyst — the last cycle topped on a non-Fed shock. Second: the pivot that would unlock any of this took a real step closer last week — a weak jobs report cut September hike odds — but a major forecaster (BofA) is keeping its hawkish call anyway, and the actual decisive data point (July CPI, Aug 12) hasn't landed yet, so this is one contested data point, not a confirmed pivot. The Prize doesn't feed the math — it tells you what the 3-year lean is worth acting on when the tide finally turns.</p>
+  </div>
+</section>
+
+<!--==================== THE OTHER SIDE ====================-->
+<section class="sec">
+  <h2>The Other Side</h2>
+  <div class="sub">The strongest honest case my re-rate — even the moderated one — is still wrong</div>
+  <ul>
+    <li><strong>Even the moderated move might not be moderated enough.</strong> Bank of America isn't hedging — it's keeping a full 75bp-of-hikes call after seeing the same data this report used to cut P. If BofA is right and the market's dovish repricing this week gets unwound at the Aug 12 CPI print or the September meeting itself, even 40/38 could prove too generous.</li>
+    <li><strong>I may still be over-reacting to one data print.</strong> This pillar has already seen one claims number ("lowest since 1969") partially reverse the following week on a seasonal-adjustment distortion — a single weak payrolls report, even a well-corroborated one, could be a similar one-off that a stronger August print reverses.</li>
+    <li><strong>The FOMC's own hawkish dissent hasn't gone away.</strong> Three regional presidents voted for an immediate hike on Jul 29 and Chair Warsh gave a combative, no-guidance press conference — a weak jobs report doesn't automatically mean those three change their vote in September; a hawkish Fed facing soft data is a live tension, not resolved.</li>
+    <li><strong>Downward revisions can themselves get revised.</strong> The BLS's own benchmark process regularly adjusts prior months; a 103,000 combined downward revision is a real, primary-sourced number today, but it is not the final word on May-June employment.</li>
+    <li><strong>Weak labor data plus a still-elevated inflation/oil backdrop (Iran-driven, and this cycle's Iran pillar got worse, not better) is stagflation risk, not straightforwardly bullish.</strong> If the Fed holds through a weakening labor market because inflation risk stays elevated, that's a worse outcome for risk assets than either a clean cut or a clean hold.</li>
+  </ul>
+</section>
+
+<!--==================== THE TRIGGERS ====================-->
+<section class="sec avoid">
+  <h2>The Triggers</h2>
+  <div class="sub">Dated events — some prove the claim right, some prove it wrong. Re-set August 11, 2026, light daily touch.</div>
+  <table class="data">
+    <tr><th>Date</th><th>Event</th><th>Means</th></tr>
+    <tr><td>Checked Aug 11, not found</td><td>No new Fed H.4.1 or BLS release since Aug 8; CPI still due Aug 12</td><td>Held flat — no P move</td></tr>
+    <tr><td>Published Aug 8, checked Aug 10</td><td>Initial jobless claims, week ended Aug 6: 262K actual vs. 263K expected — in line with consensus</td><td>Noise, not a surprise — held flat, no P move</td></tr>
+    <tr><td>Fired Aug 7, re-confirmed independently — DOVISH, moderated (carried forward)</td><td><strong>BLS July jobs report:</strong> payrolls fell 23,000 vs. ~83,000 expected, unemployment 4.1% on a falling participation rate, May/June revised down a combined 103,000; Sept hold odds rose to ~56%</td><td>Drove the Aug 8 1mo/3mo re-rate up — already IN the committed baseline</td></tr>
+    <tr><td><strong>Aug 12, 2026</strong></td><td><strong>PENDING — July CPI print.</strong> Morgan Stanley names this, not the jobs report alone, as the real decider for the September FOMC; lands inside this pillar's own 1-month window</td><td>Cool print confirms this cycle's dovish move; hot print reverses part of it — the single most important near-term trigger</td></tr>
+    <tr><td><strong>Aug 13, 2026</strong></td><td><strong>PENDING</strong> — next Fed H.4.1 balance-sheet release and next weekly jobless-claims print</td><td>First real data since Aug 6/7 — the next actual trigger for this pillar</td></tr>
+    <tr><td>Fired Jul 29 — HAWKISH, confirmed primary (carried forward)</td><td><strong>FOMC held 9-3</strong>, three regional presidents dissenting for an immediate hike — first unified 3-member dissent since Sept 2016; Bank of America still projects 75bp of 2026 hikes despite the jobs miss</td><td>Still a live tension against this cycle's dovish jobs data — not erased by one print, per a major forecaster's own stated view</td></tr>
+    <tr><td>Sept 15, 2026</td><td><strong>PENDING</strong> — next FOMC, with SEP/dot plot; the real test of whether the jobs-report dovish repricing holds through the Aug 12 CPI</td><td>A hold or cut would confirm this cycle's re-rate; a hike into weak labor data would be a genuine escalation, re-rate down hard</td></tr>
+    <tr><td>Ongoing</td><td>Iran/Hormuz oil-inflation risk — unresolved, see Iran War Risk pillar</td><td>Watch for pass-through into the Aug 12 CPI/PPI cycle — a worsening Iran read raises stagflation risk</td></tr>
+  </table>
+  <div class="flip"><strong>The flip line, unchanged from Aug 8:</strong> a weak July jobs report is a genuine dovish surprise, but a major forecaster (BofA) is keeping its hawkish call anyway and CME's own Oct/Dec curve still shows hike odds elevated — this is one contested data point inside a still-contested hiking cycle, not a confirmed pivot. If the Aug 12 CPI runs hot or the September meeting delivers a hike into weakening labor data anyway, treat that as confirmation this cycle's move was too generous, and re-rate down. If CPI cools and September holds or cuts, the near-term read likely improves further next cycle.</div>
+</section>
+
+<!--==================== MY DECISION ====================-->
+<section class="sec avoid">
+  <h2>My Decision</h2>
+  <div class="decision">
+    <div class="stamp">✓ COMMITTED — AUGUST 11, 2026 (LIGHT DAILY TOUCH) · STAMPED BY ALEX (AUTO-STAMPED)</div>
+    <div class="nums">Committed P: 40 / 38 / 47 / 55 / 62 · My Weight: 20% (equal) · Impact: 8 (uniform)</div>
+    <p>Held flat for a third straight day. No new Fed H.4.1 or BLS release has posted since Aug 8. The next H.4.1 and jobless-claims prints are due Aug 13, and the Aug 12 CPI print Morgan Stanley flagged as the real September decider is still pending.</p>
+    <p>This is a routine, well-evidenced daily cycle — no pillar P moved anywhere in this run, no call band flipped — so it was auto-stamped under Alex's standing delegated daily authority (in effect since 2026-08-06).</p>
+    <p>The June committed scores (<strong>38 / 40 / 46 / 54 / 61</strong>, committed June 12, 2026) and the Aug 10 committed scores (<strong>40 / 38 / 47 / 55 / 62</strong>) remain the prior human/auto-stamped values, identical to today's.</p>
+    <p><strong>Override any P and re-stamp — the master blend recomputes.</strong></p>
+  </div>
+</section>
+
+<!--==================== WHAT CHANGED ====================-->
+<section class="sec">
+  <h2>What Changed Since Last Check</h2>
+  <div class="sub">Light daily touch, August 11, 2026 — checking for changes since the Aug 10 touch.</div>
+  <ul>
+    <li><strong>No new Fed H.4.1 or BLS release found today.</strong> The Aug 6-week jobless claims (262K, in line) and the H.4.1 (week ended Aug 5) remain the most recent substantive releases, already priced into Aug 8.</li>
+    <li><strong>Next data confirmed for Aug 12 (CPI) and Aug 13 (H.4.1, jobless claims)</strong> — nothing further to score until then.</li>
+    <li><strong>Score decision:</strong> P held flat at <strong>40 / 38 / 47 / 55 / 62</strong> — nothing found today exceeds the Aug 10 baseline. Auto-stamped: a routine, well-evidenced daily cycle under Alex's standing delegated authority.</li>
+  </ul>
+</section>
+
+<!--==================== SOURCES ====================-->
+<section class="sec sources">
+  <h2>Sources</h2>
+  <div class="sub">Retrieved &amp; graded August 11, 2026, light daily touch — click and judge the quality yourself. Official data first, then reporting, then prices &amp; flows, then rate odds (market-implied sentiment, not fact).</div>
+  <ul>
+    <li><span class="grp">August 11 light daily check:</span> federalreserve.gov/releases/h41/ — release schedule confirms next H.4.1 due Aug 13 · dol.gov — weekly claims release schedule confirms next print Aug 13 · general web search for Fed/BLS/CPI news dated Aug 10-11 — no new release found; economic calendars (Kiplinger, FRED, BLS schedule) confirm CPI due Aug 12, PPI Aug 13.</li>
+    <li><span class="grp">August 10 light daily check:</span> DOL/ETA — initial jobless claims, week ended Aug 6, published Aug 8: 262,000 actual vs. 263,000 expected (in line with consensus) · federalreserve.gov/releases/h41/ — release schedule confirms next H.4.1 due Aug 13 · dol.gov — weekly claims release schedule confirms next print Aug 13 · general search for Fed/BLS news dated Aug 9-10 — no further new release found.</li>
+    <li><span class="grp">August 9 light daily check:</span> federalreserve.gov/releases/h41/ — release schedule confirms next H.4.1 due Aug 13 · dol.gov — weekly claims release schedule confirms next print Aug 13 · general search for Fed/BLS news dated Aug 8-9 — no new release found.</li>
+    <li><span class="grp">August 8 full-weekly re-verification:</span> CNBC, Yahoo Finance, Kiplinger, CBS News, Forbes — convergent independent reporting of BLS Employment Situation, July 2026 (direct bls.gov fetch returned 403 this cycle) · federalreserve.gov — H.4.1, week ended Aug 5 (primary, direct pull): reserves +$8.78B w/w, TGA -$3.45B w/w · DOL-sourced coverage — jobless claims 199K week ended Aug 1, 4-week average 198,750 · CBS News, Forbes-sourced pull — CME September-hold odds ~56% (2-source corroborated) · Kalshi — 65% hold (prediction market, labeled separately from CME) · Bank of America commentary (via multiple outlets, Aug 7-8) — sticking with 75bp-of-2026-hikes call · Morgan Stanley's Ellen Zentner (via reporting) — Aug 12 CPI named as the September decider · Richmond Fed President Barkin public remarks — "not loose, not tight."</li>
+    <li><span class="grp">August 7 additions:</span> <a href="https://www.federalreserve.gov/releases/h41/current/">federalreserve.gov — H.4.1, week ended Aug 5, 2026 (direct pull): total assets $6,748,567M, reserve balances $2,993,349M</a>, cross-checked against <a href="https://www.federalreserve.gov/releases/h41/20260730/">the prior week's release (week ended Jul 29): total assets $6,738,190M, reserve balances $2,984,570M</a>.</li>
+    <li><span class="grp">August 6 additions:</span> <a href="https://www.fastcompany.com/91586228/unemployment-benefits-filings-rose-to-199000-last-week-says-the-department-of-labor">Fast Company, citing DOL — jobless claims 199K week ended Aug 1, prior week revised to 198K</a>.</li>
+    <li><span class="grp">Jul 31-Aug 5 additions (prior week's catch-up):</span> CNBC, Southeast AgNET — September cumulative hike odds ~81-82% (checked Aug 2, consistent with the Jul 30 baseline).</li>
+    <li><span class="grp">July 30 additions (prior full weekly refresh):</span> <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm">federalreserve.gov — July 29 FOMC statement (primary): 9-3 hold, Hammack/Kashkari/Logan dissent</a> · <a href="https://www.federalreserve.gov/monetarypolicy/fomcpresconf20260729.htm">federalreserve.gov — press conference page</a> · <a href="https://www.federalreserve.gov/monetarypolicy/files/fomcprojtabl20260617.pdf">federalreserve.gov — last SEP (Jun 17, 2026; next Sept 15-16)</a> · <a href="https://oui.doleta.gov/press/2026/073026.pdf">DOL/ETA — weekly claims release USDL 26-1273-NAT (primary, fetched directly): 197K week ended Jul 25, 188K revision for Jul 18</a> · <a href="https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html">CNBC</a>, <a href="https://www.forbes.com/sites/tylerroush/2026/07/29/fed-keeps-interest-rates-unchanged-as-dissent-mounts/">Forbes</a>, <a href="https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-july-29-2026">Fox Business</a>, <a href="https://www.techtimes.com/articles/322145/20260729/three-fed-dissenters-signal-september-hike-live-after-most-hawkish-fomc-vote-nearly-ten-years.htm">TechTimes</a> — FOMC outcome and dissent corroboration · <a href="https://wolfstreet.com/2026/07/29/stocks-tank-long-term-treasury-yields-jump-after-warsh-starts-talking/">Wolf Street — risk-off market reaction (single-source, flagged)</a> · <a href="https://www.investing.com/central-banks/fed-rate-monitor">Investing.com Fed Rate Monitor — timestamped Jul 30 pull (62.4%)</a>, cross-checked against KuCoin (70.2%), Bloomingbit (73.5%→hike components), Southeast AgNet (81%) — none reconciling.</li>
+    <li><span class="grp">July 13 check:</span> <a href="https://www.federalreserve.gov/releases/h41/current/">federalreserve.gov — H.4.1, Table 1 &amp; Table 5, re-verified directly line-by-line (no discrepancy vs. the July 9 release)</a> · <a href="https://www.federalreserve.gov/releases/h41/">federalreserve.gov — H.4.1 release schedule (next: July 16)</a> · <a href="https://www.dol.gov/ui/data.pdf">dol.gov — weekly claims (unchanged since Jul 9; next Jul 16)</a> · <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">federalreserve.gov — July 2026 FOMC/testimony calendar</a> · confirmed no new CPI, PPI, FOMC, or H.4.1/claims release has landed since July 9–10; the next batch (CPI Jul 14, testimony Jul 14–15, PPI Jul 15, H.4.1/claims Jul 16) is still ahead.</li>
+    <li><span class="grp">Official data:</span> <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm">Fed — June 16–17 FOMC minutes (released July 8)</a> · <a href="https://www.federalreserve.gov/releases/h41/current/">Fed — H.4.1 balance sheet (rel. July 9: $6,735.6B; TGA $749.2B; reserves $3,098.9B; domestic RRP $2.75B; foreign-official RRP $346.1B)</a> · <a href="https://www.dol.gov/ui/data.pdf">DOL — weekly jobless claims (rel. July 9: 215K; continuing claims 1,814,000)</a> · <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm">Fed — June 17 FOMC statement</a> · <a href="https://www.bls.gov/news.release/archives/empsit_07022026.htm">BLS — Employment Situation, June 2026 (released July 2)</a> · <a href="https://www.bea.gov/news/2026/personal-income-and-outlays-may-2026">BEA — Personal Income &amp; Outlays, May 2026 (core PCE 3.4%)</a> · <a href="https://www.bls.gov/news.release/archives/cpi_06102026.htm">BLS — May 2026 CPI release (headline 4.2% y/y; core 2.9% y/y)</a> · <a href="https://www.bls.gov/schedule/news_release/cpi.htm">BLS — CPI release schedule (June CPI: July 14, 8:30am; July CPI: mid-August)</a> · <a href="https://www.bls.gov/schedule/news_release/ppi.htm">BLS — PPI release schedule (June PPI: July 15, 8:30am)</a> · <a href="https://www.federalreserve.gov/newsevents/speech/waller20260706a.htm">Fed — Waller's July 6 Rome speech</a>.</li>
+    <li><span class="grp">The reporting:</span> <a href="https://www.bloomberg.com/news/articles/2026-07-08/fed-minutes-show-a-few-officials-saw-case-for-june-rate-hike">Bloomberg — minutes: "a few" saw case for June hike</a> · <a href="https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html">CNBC — June minutes coverage</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-09/fed-s-warsh-names-leadership-for-five-new-task-forces">Bloomberg — Warsh's five task forces (July 9; single source)</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-09/us-jobless-claims-little-changed-last-week-as-layoffs-remain-low">Bloomberg — claims 215K, layoffs low</a> · <a href="https://www.aljazeera.com/news/2026/7/12/iran-declares-strait-of-hormuz-closed-as-us-strikes-continue">Al Jazeera — Iran declares Hormuz "closed until further notice" (July 12)</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-13/oil-jumps-as-iran-hormuz-conflict-escalates-shipping-halts">Bloomberg — Brent +4% toward $79 on Hormuz re-escalation (July 13)</a> · <a href="https://www.cnbc.com/2026/07/12/oil-prices-iran-hormuz-strikes-shipping.html">CNBC — CENTCOM strikes, Iran missile/drone attacks on five Gulf states (July 12)</a> · <a href="https://www.offshore-technology.com/news/hormuz-shipping-disruption-july-2026/">offshore-technology.com — Kpler data: six vessels transited the Strait July 12</a> · <a href="https://www.cnbc.com/2026/07/02/jobs-report-june-2026-.html">CNBC — June jobs miss (+57K, −74K revisions)</a> · <a href="https://www.hiringlab.org/2026/07/02/june-2026-jobs-report-an-unmoving-tide/">Indeed Hiring Lab — participation 61.5%</a> · <a href="https://www.cnbc.com/2026/06/25/pce-inflation-report-may-2026-.html">CNBC — May PCE (core 3.4%, highest since Oct 2023)</a> · <a href="https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html">CNBC — Warsh at Sintra (July 1)</a> · <a href="https://finance.yahoo.com/economy/policy/articles/fed-chairman-kevin-warsh-just-100100246.html">Yahoo Finance — "This Committee will deliver price stability"</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-08/yardeni-says-inflation-fed-back-in-play-as-iran-crisis-returns">Bloomberg — Yardeni: "inflation, Fed back in play" (July 8)</a> · <a href="https://www.spokesman.com/stories/2026/jul/13/warsh-heads-to-capitol-hill-as-inflation-data-and/">Spokesman-Review (Bloomberg reprint) — Warsh testimony schedule (House Jul 14, Senate Jul 15) + June PPI forecast (~5.2% y/y core)</a> · <a href="https://www.kucoin.com/news/flash/us-30-year-treasury-auction-stops-through-at-5-058-highest-since-2007">KuCoin flash — 30-year auction: $22B at 5.058%, stop-through, highest since 2007</a> · <a href="https://www.coindesk.com/markets/2026/07/13/the-week-ahead-cpi-ppi-warsh-testimony-and-the-fomc-calendar">CoinDesk — the week-ahead calendar: CPI, PPI, Warsh testimony (July 13)</a> · <a href="https://www.federalregister.gov/documents/2025/12/01/2025-21626/regulatory-capital-rule-modifications-to-the-enhanced-supplementary-leverage-ratio-standards-for-us">Federal Register — eSLR final rule (Dec 1, 2025; effective Apr 1, 2026)</a>. <strong>Flagged and discarded:</strong> <a href="https://www.cryptotimes.io/2026/07/13/core-inflation-hits-three-year-high-fed-under-pressure/">CryptoTimes (July 13)</a> and <a href="https://blockhead.co/2026/07/13/core-cpi-three-year-high-crypto-markets-react/">Blockhead (July 13)</a> both wrongly report "core inflation at a three-year high of 4.2%" — this conflates headline CPI (4.2%, correct) with core CPI (actually 2.9% per BLS); not used.</li>
+    <li><span class="grp">The prices &amp; flows:</span> <a href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-friday-july-10-2026-up-nearly-3-since-last-friday-130101171.html">Yahoo Finance — BTC ~$64.3K, ETH ~$1,796 (July 10 AM)</a> · <a href="https://www.athens-times.com/2026/07/13/bitcoin-slides-to-62k-as-hormuz-tensions-rattle-risk-assets/">athens-times — BTC weekend pullback to ~$62.6–63K (single source)</a> · <a href="https://farside.co.uk/btc/">Farside — BTC ETF flow table (authoritative; +$90.4M net, July 10)</a> · <a href="https://cryptorank.io/etf-flows/bitcoin">CryptoRank — BTC ETF flow cross-check (July 10)</a> · <a href="https://www.coindesk.com/markets/2026/07/09/bitcoin-ether-steady-gold-slides-as-us-iran-tensions-escalate-again">CoinDesk — BTC/ETH steady, gold slides (July 9)</a> · <a href="https://www.kucoin.com/news/flash/us-spot-bitcoin-etfs-record-4-1b-in-outflows-in-june-2026">KuCoin — June ETF outflows −$4.06B, worst month on record</a> · <a href="https://www.cnbc.com/2026/07/10/stock-market-news-today.html">CNBC — S&amp;P 500 closes 7,575.39 (+0.42%), Dow +149.60 (July 10)</a> · <a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics — 10Y ~4.58%</a> · <a href="https://tradingeconomics.com/united-states/currency">Trading Economics — DXY 101.13, +0.18% (July 13)</a>.</li>
+    <li><span class="grp">The odds (market-implied, not fact):</span> <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME FedWatch — the tool itself (July 28–29 hold 78.5%, July 13 read; September ~66% combined, July 9 read)</a> · <a href="https://www.fxempire.com/forecasts/article/bitcoin-price-btc-under-60k-likely-on-rising-sept-fed-rate-hike-bets-1609167">FXEmpire — Sept +25bp 50.8% (July 9; single relay, directionally corroborated)</a> · <a href="https://finance.yahoo.com/news/fed-rate-cut-odds-september-2026-140233812.html">Yahoo Finance — September odds relay (July 9)</a> · <a href="https://polymarket.com/event/fed-decision-in-september">Polymarket — "Fed Decision in September" ladder: No change 56.5%, +25bp 38.5%, cuts (tail) 3.75%+2.1% (July 9) — diverges materially from CME's ~66% combined hike odds; reported as an open divergence, not resolved.</a></li>
+  </ul>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>
