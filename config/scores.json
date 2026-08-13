@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-12_draft",
+  "active_qual_set": "2026-08-13_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -861,6 +861,41 @@
           "3": 38,
           "6": 47,
           "12": 55,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-13_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "August 13 light daily re-research: three pillars held flat, Fed & Macro re-rated up on the resolution of a long-pending, twice-primary-sourced trigger. CLARITY Act held flat at 32/47/58/82/92: Sept 15 2:15pm ET cloture remains the only scheduled date (KuCoin, news.bitcoin.com, The Block, PYMNTS, Bitcoin Foundation, Disruption Banking, Yahoo Finance all re-confirm); no floor-schedule, ethics-text, or WH sign-off movement found, Senate still in recess. Noted but not scored (single data-type, sentiment only): Polymarket's 'CLARITY signed in 2026' contract is reported down to ~15.5% (Disruption Banking, dated Aug 10), versus the ~30% read already carried in this report's own Facts - real further deterioration in market odds, but odds alone don't clear the sufficiency bar without a primary/2+-independent fact behind them; watch for confirmation next cycle. Iran War Risk held flat at 20/28/41/56/77: the Hormuz route deal remains unsigned as of Aug 13 - Araghchi's 'very close, conditioned on US honoring the June MoU' framing is unchanged (CNN, Al Jazeera, NPR, Fortune, Bloomberg re-checked, all still dated Aug 5-8, no newer development found). Tokenization held flat at 52/60/66/74/85: no new dated catalyst - broader third-party market-size estimates circulating today ($33.5B 'liquid on-chain value' per a different data provider) don't reconcile cleanly with rwa.xyz's own $38.17B distributed-value figure already in this report and are not adopted as a replacement metric; genuinely new dated RWA-specific catalyst: none found. Fed & Macro RE-RATED UP to 43/41/48/56/62 (was 40/38/47/55/62): the two triggers this pillar has named and carried as PENDING since Aug 8 both fired today. (1) The July CPI report (BLS, published Aug 12, primary release read directly): headline +0.1% m/m / +3.4% y/y, core +0.2% m/m / +2.5% y/y - landing exactly in line with the ~3.4%/~2.5% consensus this report was already carrying, i.e. a COOL, non-hot print. Per this pillar's own pre-committed flip line ('if CPI cools... the near-term read likely improves further next cycle'), this confirms rather than reverses the Aug 8 dovish re-rate. (2) Initial jobless claims for the week ended Aug 8 (DOL/ETA, published Aug 13, primary release): 209,000 actual vs. 202,000 expected, a genuine +9,000 miss to the weak side and an 8-week high - a second primary data point reinforcing the same loosening-labor-market direction as the Jul 7 payrolls miss. Two independent primary releases (BLS CPI, DOL claims), both already-named triggers, both pointing the same direction: a modest, disciplined re-rate (+3/+3/+1/+1/flat) is warranted - not a large move, because Bank of America's 75bp-hike call and the FOMC's own 9-3 hawkish dissent remain live, unresolved tensions this report has flagged since Jul 30, and CME FedWatch's post-CPI reading is itself contested across sources (one relay ~50/50 hike-vs-hold, inconsistent with the pre-CPI ~60% hold read) - not used to size the move. Fed H.4.1 balance-sheet release (week ended Aug 12) is scheduled 4:30pm ET Aug 13 and had not yet posted as of this research pass - carried as the next pending trigger. BTC $63,786.51 (Bitstamp, Aug 13) vs $64,211.10 on Aug 12 (-0.7%) - quant pillar draft P ticked to 43/36/45/68/71, a tape move already reflected in the computed quant pillar, not a qualitative-score input.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 20,
+          "3": 28,
+          "6": 41,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 43,
+          "3": 41,
+          "6": 48,
+          "12": 56,
           "36": 62
         }
       }
