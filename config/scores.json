@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-13_draft",
+  "active_qual_set": "2026-08-14_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -869,6 +869,41 @@
       "status": "committed",
       "stamped_by": "Alex (auto-stamped)",
       "note": "August 13 light daily re-research: three pillars held flat, Fed & Macro re-rated up on the resolution of a long-pending, twice-primary-sourced trigger. CLARITY Act held flat at 32/47/58/82/92: Sept 15 2:15pm ET cloture remains the only scheduled date (KuCoin, news.bitcoin.com, The Block, PYMNTS, Bitcoin Foundation, Disruption Banking, Yahoo Finance all re-confirm); no floor-schedule, ethics-text, or WH sign-off movement found, Senate still in recess. Noted but not scored (single data-type, sentiment only): Polymarket's 'CLARITY signed in 2026' contract is reported down to ~15.5% (Disruption Banking, dated Aug 10), versus the ~30% read already carried in this report's own Facts - real further deterioration in market odds, but odds alone don't clear the sufficiency bar without a primary/2+-independent fact behind them; watch for confirmation next cycle. Iran War Risk held flat at 20/28/41/56/77: the Hormuz route deal remains unsigned as of Aug 13 - Araghchi's 'very close, conditioned on US honoring the June MoU' framing is unchanged (CNN, Al Jazeera, NPR, Fortune, Bloomberg re-checked, all still dated Aug 5-8, no newer development found). Tokenization held flat at 52/60/66/74/85: no new dated catalyst - broader third-party market-size estimates circulating today ($33.5B 'liquid on-chain value' per a different data provider) don't reconcile cleanly with rwa.xyz's own $38.17B distributed-value figure already in this report and are not adopted as a replacement metric; genuinely new dated RWA-specific catalyst: none found. Fed & Macro RE-RATED UP to 43/41/48/56/62 (was 40/38/47/55/62): the two triggers this pillar has named and carried as PENDING since Aug 8 both fired today. (1) The July CPI report (BLS, published Aug 12, primary release read directly): headline +0.1% m/m / +3.4% y/y, core +0.2% m/m / +2.5% y/y - landing exactly in line with the ~3.4%/~2.5% consensus this report was already carrying, i.e. a COOL, non-hot print. Per this pillar's own pre-committed flip line ('if CPI cools... the near-term read likely improves further next cycle'), this confirms rather than reverses the Aug 8 dovish re-rate. (2) Initial jobless claims for the week ended Aug 8 (DOL/ETA, published Aug 13, primary release): 209,000 actual vs. 202,000 expected, a genuine +9,000 miss to the weak side and an 8-week high - a second primary data point reinforcing the same loosening-labor-market direction as the Jul 7 payrolls miss. Two independent primary releases (BLS CPI, DOL claims), both already-named triggers, both pointing the same direction: a modest, disciplined re-rate (+3/+3/+1/+1/flat) is warranted - not a large move, because Bank of America's 75bp-hike call and the FOMC's own 9-3 hawkish dissent remain live, unresolved tensions this report has flagged since Jul 30, and CME FedWatch's post-CPI reading is itself contested across sources (one relay ~50/50 hike-vs-hold, inconsistent with the pre-CPI ~60% hold read) - not used to size the move. Fed H.4.1 balance-sheet release (week ended Aug 12) is scheduled 4:30pm ET Aug 13 and had not yet posted as of this research pass - carried as the next pending trigger. BTC $63,786.51 (Bitstamp, Aug 13) vs $64,211.10 on Aug 12 (-0.7%) - quant pillar draft P ticked to 43/36/45/68/71, a tape move already reflected in the computed quant pillar, not a qualitative-score input.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 20,
+          "3": 28,
+          "6": 41,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 43,
+          "3": 41,
+          "6": 48,
+          "12": 56,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-14_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "August 14 light daily re-research: all four pillars held flat versus the Aug 13 committed set - the one pillar with a named pending trigger (Fed & Macro's H.4.1) had it fire and confirm rather than move the score. CLARITY Act held flat at 32/47/58/82/92: multiple outlets (DWT, CoinDesk, Bitcoin Foundation, Motley Fool, Yahoo Finance) reconfirm Thune's Aug 6-8 statements that there will be no floor vote in August and that the Senate returns Sept 14 with three weeks to work the bill - consistent with, not exceeding, the Sept 15 2:15pm ET cloture date already carried since Aug 8; no ethics-text or WH sign-off movement found. Polymarket's 'signed in 2026' contract shows conflicting cached reads across outlets this cycle (16%, 21%, 13%) that don't reconcile to one live number and sit within noise of the ~15.5% already carried in the Aug 13 note - per the sufficiency rule this sentiment-only data doesn't move P without a corroborating primary/2+-independent fact, so held. Iran War Risk held flat at 20/28/41/56/77: the Iran-Oman Hormuz deal remains unsigned as of Aug 13 - Reuters/US News/NBC/WaPo/Al Jazeera/The Hill all describe the same stalled-on-compensation picture already adopted (Iran demanding a naval-blockade withdrawal, compensation, asset unfreezing, and sanctions relief; Trump counter-demanding compensation for war deaths/damages across Iran, Lebanon, Syria, Yemen, and Gaza) - a hardening of the same unresolved dispute, not a fresh escalation or breakthrough. CNN's Aug 13 live desk (via Bloomberg's Aug 13 oil-market wrap, CNN itself returned HTTP 451/geo-blocked) reports Strait of Hormuz traffic remains low with a live tracker showing day 166 of closure; Brent eased to ~$87-90 (from the $98-100+ spikes logged in late July) on demand-side softness even as disruption continues - a lower-boil, still-closed status quo, not a new shock in either direction. Tokenization held flat at 52/60/66/74/85: rwa.xyz's Aug 9 pull ($38.17B total RWA TVL, $16.21B tokenized Treasuries across 87 products/63,010 addresses; Circle's USYC $3.00B, BlackRock's BUIDL $2.68B, Ondo $2.14B, Franklin Templeton's iBENJI $1.72B lead the Treasury products) is the same dated figure already folded into the Aug 9-13 committed sets, with added product-level detail but no new dated catalyst. Fed & Macro held flat at 43/41/48/56/62: the H.4.1 release (week ended Aug 12, federalreserve.gov primary, published 4:30pm ET Aug 13) that this report has carried as PENDING since Aug 13 has now posted - reserve balances fell $49,290M w/w to $2,944,059M against a $56,626M TGA rebuild to $963,950M - directionally the same reserve-drain/TGA-rebuild pattern already priced into this pillar's recent baselines (e.g. the $80,572M/$73,405M and $77,579M/$81,153M prior-week pairs), so this is confirmation of an already-adopted trend rather than a fresh trigger; no new jobless-claims print since the 209K/week-ended-Aug-8 figure already incorporated into the Aug 13 re-rate (next claims release is Aug 20, week ending Aug 15). BTC $62,802.46 (Bitstamp, Aug 14) vs $63,786.51 on Aug 13 (-1.5%) - quant pillar draft P ticked to 42/36/45/68/71, a tape move already reflected in the computed quant pillar, not a qualitative-score input.",
       "P": {
         "CLARITY Act": {
           "1": 32,
