@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-14_draft",
+  "active_qual_set": "2026-08-16_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -904,6 +904,41 @@
       "status": "committed",
       "stamped_by": "Alex (auto-stamped)",
       "note": "August 14 light daily re-research: all four pillars held flat versus the Aug 13 committed set - the one pillar with a named pending trigger (Fed & Macro's H.4.1) had it fire and confirm rather than move the score. CLARITY Act held flat at 32/47/58/82/92: multiple outlets (DWT, CoinDesk, Bitcoin Foundation, Motley Fool, Yahoo Finance) reconfirm Thune's Aug 6-8 statements that there will be no floor vote in August and that the Senate returns Sept 14 with three weeks to work the bill - consistent with, not exceeding, the Sept 15 2:15pm ET cloture date already carried since Aug 8; no ethics-text or WH sign-off movement found. Polymarket's 'signed in 2026' contract shows conflicting cached reads across outlets this cycle (16%, 21%, 13%) that don't reconcile to one live number and sit within noise of the ~15.5% already carried in the Aug 13 note - per the sufficiency rule this sentiment-only data doesn't move P without a corroborating primary/2+-independent fact, so held. Iran War Risk held flat at 20/28/41/56/77: the Iran-Oman Hormuz deal remains unsigned as of Aug 13 - Reuters/US News/NBC/WaPo/Al Jazeera/The Hill all describe the same stalled-on-compensation picture already adopted (Iran demanding a naval-blockade withdrawal, compensation, asset unfreezing, and sanctions relief; Trump counter-demanding compensation for war deaths/damages across Iran, Lebanon, Syria, Yemen, and Gaza) - a hardening of the same unresolved dispute, not a fresh escalation or breakthrough. CNN's Aug 13 live desk (via Bloomberg's Aug 13 oil-market wrap, CNN itself returned HTTP 451/geo-blocked) reports Strait of Hormuz traffic remains low with a live tracker showing day 166 of closure; Brent eased to ~$87-90 (from the $98-100+ spikes logged in late July) on demand-side softness even as disruption continues - a lower-boil, still-closed status quo, not a new shock in either direction. Tokenization held flat at 52/60/66/74/85: rwa.xyz's Aug 9 pull ($38.17B total RWA TVL, $16.21B tokenized Treasuries across 87 products/63,010 addresses; Circle's USYC $3.00B, BlackRock's BUIDL $2.68B, Ondo $2.14B, Franklin Templeton's iBENJI $1.72B lead the Treasury products) is the same dated figure already folded into the Aug 9-13 committed sets, with added product-level detail but no new dated catalyst. Fed & Macro held flat at 43/41/48/56/62: the H.4.1 release (week ended Aug 12, federalreserve.gov primary, published 4:30pm ET Aug 13) that this report has carried as PENDING since Aug 13 has now posted - reserve balances fell $49,290M w/w to $2,944,059M against a $56,626M TGA rebuild to $963,950M - directionally the same reserve-drain/TGA-rebuild pattern already priced into this pillar's recent baselines (e.g. the $80,572M/$73,405M and $77,579M/$81,153M prior-week pairs), so this is confirmation of an already-adopted trend rather than a fresh trigger; no new jobless-claims print since the 209K/week-ended-Aug-8 figure already incorporated into the Aug 13 re-rate (next claims release is Aug 20, week ending Aug 15). BTC $62,802.46 (Bitstamp, Aug 14) vs $63,786.51 on Aug 13 (-1.5%) - quant pillar draft P ticked to 42/36/45/68/71, a tape move already reflected in the computed quant pillar, not a qualitative-score input.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 20,
+          "3": 28,
+          "6": 41,
+          "12": 56,
+          "36": 77
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 43,
+          "3": 41,
+          "6": 48,
+          "12": 56,
+          "36": 62
+        }
+      }
+    },
+    "2026-08-16_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "August 16 light daily re-research: all four pillars held flat versus the Aug 14 committed set (no daily cycle ran Aug 15). CLARITY Act held flat at 32/47/58/82/92: the Sept 15 2:15pm ET cloture vote remains the only scheduled date (Bitcoin Foundation, Troutman Financial Services, CoinDesk re-confirm the Thune-filed cloture/motion-to-proceed timeline); the SEC's own Aug 14 open meeting on a separate 'Regulation Crypto' rulemaking (a ~400-page proposal for token-offering exemptions) was cancelled the day before the vote citing an 'unforeseen scheduling issue' (crypto.news, TechTimes, Genfinity) - relevant context on regulatory limbo across both branches but not a CLARITY-specific trigger, logged not scored; no floor-schedule, ethics-text, or WH sign-off movement found, Senate still in recess. Iran War Risk held flat at 20/28/41/56/77: UAE accused Iran/IRGC of striking two more ADNOC vessels Aug 14 (Al Jazeera, no injuries) and a further ADNOC vessel was hit in the hull Aug 15 (CBS News live desk citing UKMTO, no injuries) - three more tanker incidents in 48 hours, but comparable in kind (no casualties, no new state targeted, Iran did not claim direct responsibility - still UAE/IRGC attribution) to the Aug 8-13 incidents already priced into the committed baseline, so assessed as continuation not escalation. The report's own '~Aug 16' 60-day-window marker (dated from the June 15 MoU) passed without a formal MoU withdrawal by either side; Bloomberg's Aug 15 report ('Iran, Oman Home In on Hormuz Strait Deal as Ship Attacks Mount') still frames the interim arrangement as advancing, not collapsed - Araghchi's 'very close' framing, conditioned on the US honoring the June MoU, is unchanged. WTI ~$81/bbl (Vance interview, Aug 14) - well under the $100 flip line. Tokenization held flat at 52/60/66/74/85: no new dated RWA-specific catalyst found; general market-size commentary ($33.5B liquid on-chain value, tripling YoY) recirculates figures already known, not adopted as a new data point per the sufficiency rule. Fed & Macro held flat at 43/41/48/56/62: July retail sales (Census Bureau, published Aug 14, primary release) missed hard - headline -0.6% m/m vs +0.1% expected, core -0.2% m/m, the first decline in nine months - a genuine primary print reinforcing the same cooling-economy/dovish direction as the Aug 13 CPI-and-claims re-rate, but it was not a previously-named pending trigger for this pillar and is logged as reinforcing context rather than sized into a fresh move, consistent with this pillar's discipline against chasing every single print; FOMC minutes from the Jul 28-29 meeting (due Aug 19) remain the next actual pending item, not yet published. BTC $62,937.03 (Bitstamp, Aug 16) vs $62,802.46 on Aug 14 (+0.2%) - quant pillar draft P ticked to 41/36/45/68/71 (1mo P 42->41), a tape move already reflected in the computed quant pillar, not a qualitative-score input.",
       "P": {
         "CLARITY Act": {
           "1": 32,
