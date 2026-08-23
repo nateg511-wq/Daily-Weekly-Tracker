@@ -22,10 +22,18 @@ if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Forc
 $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
 $logFile = Join-Path $logDir "daily_$stamp.log"
 
-$prompt = Get-Content -Raw (Join-Path $root "scripts\daily_prompt.txt")
+$promptPath = Join-Path $root "scripts\daily_prompt.txt"
 
+# Pipe the prompt via stdin instead of passing it as a `-p <string>` CLI
+# argument. Passing a multi-KB string containing literal double-quotes as a
+# process argument goes through PowerShell's argument encoding, then the
+# claude.cmd shim's own cmd.exe re-quoting -- and an embedded `"` in that
+# chain can silently truncate the argument (observed 2026-08-19: the prompt
+# was cut off mid-sentence exactly at an embedded quote, and the run
+# correctly aborted rather than act on a garbled instruction). Stdin has no
+# such re-quoting step.
 try {
-    & claude -p $prompt --dangerously-skip-permissions --output-format text *>&1 | Tee-Object -FilePath $logFile
+    Get-Content -Raw $promptPath | & claude -p --dangerously-skip-permissions --output-format text *>&1 | Tee-Object -FilePath $logFile
 } finally {
     [Win32.Power]::SetThreadExecutionState($ES_CONTINUOUS) | Out-Null
 }

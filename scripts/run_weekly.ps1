@@ -24,10 +24,14 @@ if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Forc
 $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
 $logFile = Join-Path $logDir "weekly_$stamp.log"
 
-$prompt = Get-Content -Raw (Join-Path $root "scripts\weekly_prompt.txt")
+$promptPath = Join-Path $root "scripts\weekly_prompt.txt"
 
+# Pipe the prompt via stdin instead of passing it as a `-p <string>` CLI
+# argument -- see run_daily.ps1 for why (an embedded double-quote in a
+# multi-KB argument string can get silently truncated by the claude.cmd
+# shim's cmd.exe re-quoting; observed 2026-08-19 on the daily task).
 try {
-    & claude -p $prompt --dangerously-skip-permissions --output-format text *>&1 | Tee-Object -FilePath $logFile
+    Get-Content -Raw $promptPath | & claude -p --dangerously-skip-permissions --output-format text *>&1 | Tee-Object -FilePath $logFile
 } finally {
     [Win32.Power]::SetThreadExecutionState($ES_CONTINUOUS) | Out-Null
 }
