@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-28_draft",
+  "active_qual_set": "2026-08-29_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1171,6 +1171,41 @@
           "1": 38,
           "3": 37,
           "6": 46,
+          "12": 55,
+          "36": 61
+        }
+      }
+    },
+    "2026-08-29_draft": {
+      "status": "draft",
+      "stamped_by": null,
+      "note": "Aug 29 FULL WEEKLY refresh (four independent parallel research passes, one per pillar, primary-source-first, followed by a dedicated adversarial-verification pass that fact-checked the four highest-stakes new claims directly against primary sources, not the pillar research's own citations) vs the last COMMITTED baseline (2026-08-22_draft2: 32/47/58/82/92 · 14/22/38/54/76 · 52/60/66/74/85 · 43/41/48/56/62). Supersedes the 2026-08-28_draft daily catch-up, which was written but never rendered/selfchecked/archived/committed (git status showed it still sitting uncommitted at the start of this cycle) - treated as not-delivered per house discipline and its claims independently re-verified rather than trusted, consistent with how this report has always handled interrupted prior sessions. CLARITY Act HELD FLAT at 32/47/58/82/92: the Sept 15 2:15pm ET cloture-on-motion-to-proceed date is unchanged and reconfirmed (DeFiRate.com, CryptoSlate, Motley Fool, all Aug 22-27); the two binding disputes (Tillis-Gallego ethics counter-proposal awaiting a White House response, and the stablecoin-yield fight) remain unresolved with no released text or sign-off found anywhere Aug 22-29. CFTC Chair Michael Selig directed staff to explore a crypto market-structure rulemaking as a fallback if CLARITY stalls - adversarially confirmed directly via cftc.gov (speech dated Aug 20, 2026, not Aug 21-22 as first reported: 'If CLARITY continues to stall because of Democratic obstruction, the CFTC will utilize its existing authorities...') - this is the CFTC's analog to the SEC's already-logged Jul 29 unilateral-authority statement, doesn't touch either binding dispute, and gets the same treatment (logged, not scored). Two independent prediction-market pulls (DeFiRate Aug 27: Polymarket 13-14% / Kalshi 20-21%; live Aug 28 Polymarket pull: 14%) show a consistent low-teens read, but per house rules market prices alone - even when corroborated by a second independent pull - cannot move P without a corroborating news event, and none was found. Iran War Risk HELD FLAT at 14/22/38/54/76 on a genuinely two-sided ledger, the first in several cycles: BEARISH - Treasury/State launched 'Operation Economic Outcast' Aug 24 (adversarially confirmed directly via home.treasury.gov press releases sb0613/sb0614 and an OFAC action dated 20260824, corroborated by state.gov and 3+ trade-compliance outlets), designating ~60 entities/vessels across six countries under five EO 13902 sectoral determinations - for the first time digital assets was named as a sanctionable sector, with 30 crypto addresses across Bitcoin/Ethereum/TRON listed, a real and directly crypto-relevant escalation, not the 'promised but not landed' sanctions this pillar had been carrying; two more Hormuz tanker incidents (Aug 24 off Oman, Aug 27, both UKMTO-logged, comparable severity to the established pattern, no casualties); CENTCOM commander Adm. Cooper's Aug 28 on-record briefing confirmed the naval blockade continues at scale (~1,500 vessels transited under enforcement, ~75 turned back, zero Iranian oil exports since the blockade resumed); casualty toll settled at the upper end of the previously-reported range (IMO six-month count: 19-20 dead across 68-70 incidents). BULLISH - Oman's own Foreign Ministry co-issued a joint statement with Iran's Araghchi Aug 25 on a temporary Hormuz corridor and joint mine-clearing project (adversarially confirmed by direct fetch of fm.gov.om/en/53722, a genuine upgrade from prior cycles where only Iran claimed a deal and Oman had not confirmed - the IRGC's separate, still-unconfirmed-by-Oman revenue-sharing claim remains excluded); Hormuz weekly transit volume posted its first quantified increase, +30%+ w/w per Lloyd's List Intelligence (114 vs 87 transits, still a small fraction of the ~110-130/day pre-war baseline); Brent eased for a second straight week to ~$87-91/bbl (from ~$93-95 Aug 20-21), moving further from, not toward, the $100 flip line. Net: a real escalation (sanctions, specifically crypto-relevant) and a real de-escalation upgrade (Oman's own confirmation, transit recovery, falling Brent) roughly offset; the pillar's own explicit upside flip line (a US-accepted deal holding a full week clean) is not met since the Aug 27 attack breaks the 'clean week' clause and the corridor deal is still Iran+Oman only. Consistent with this pillar's standing discipline against chasing single-cycle mixed signals in either direction, held flat on all five windows. Tokenization HELD FLAT at 52/60/66/74/85: Coinbase launched tokenized-stock trading (NVDAc/METAc/AAPLc/GOOGLc) on Base Aug 24 under an ADGM permission (confirmed via coinbase.com plus 9+ outlets) - matches the exact profile (narrow product set, non-US-eligible-only) already established as insufficient alone via the Robinhood Chain precedent, so treated the same way for consistency; two consecutive cycles now show a sub-1% negative 30-day reading on tokenized Treasuries (Aug 22: -0.39%, Aug 28: -0.93%) - a trend worth flagging for next cycle, but rwa.xyz blocked direct re-verification this cycle (403) so it rests on the report's own prior pull, not fresh independent confirmation, and stays sub-threshold regardless; no new SEC/DTCC/Nasdaq dated developments and no RWA-rail failure, depeg, or counterparty default found Aug 22-29. Fed & Macro RE-RATED DOWN, further than the abandoned Aug 28 draft, to 36/35/45/55/61 (from the Aug 22 committed 43/41/48/56/62): Fed Chair Warsh's Aug 28 Jackson Hole speech is adversarially confirmed verbatim via the primary transcript at federalreserve.gov/newsevents/speech/warsh20260828a.htm ('while this summer's PCE and CPI readings were better than expected, they do not tell me that underlying trends have meaningfully improved') - a genuine hawkish surprise, corroborated by CNBC/PBS/Reuters/CNN/WaPo/Yahoo; July PCE (bea.gov primary, Aug 26) printed a modestly hot headline (+0.2% m/m/3.7% y/y, 0.1pp above consensus, core in line). CRITICAL CORRECTION from adversarial re-verification: the abandoned Aug 28 draft's cited CME September hike-odds move (~35.4%->~45.7%) understated the actual market reaction - independent re-pull of CME FedWatch data (via Motley Fool's direct 57.5% quote, CNBC's 'nearly 56%', and a third convergent 55.7% read, three independently-sourced citations clustering tightly in the high-50s, with the 45.7% figure identified as a stale/mismatched snapshot) shows odds actually jumped to roughly 56-58%, materially further into hike-more-likely-than-not territory than previously priced; the 2-year Treasury yield rose to a ~one-month high (+6.6-9bp). This corrected, larger market move justifies a deeper cut than the abandoned draft's 38/37/46/55/61: 1mo 43->36 (-7, largest cut, brackets the Sept 15 FOMC most directly), 3mo 41->35 (-6, captures the decision itself), 6mo 48->45 (-3, modest carryover), 1yr 56->55 (-1) and 3yr 62->61 (-1, minimal - Warsh explicitly declined to commit to a reaction function, and one speech/repricing doesn't reach a year-plus out). Two new primary prints this window not in the abandoned draft - Aug 27 jobless claims (DOL, week ended Aug 22: 203K vs 208K consensus) and Aug 27 H.4.1 (week ended Aug 26: reserve balances -$10,351M w/w, TGA -$2,876M w/w) - are routine/continuation and not independently trigger-worthy, added to the report's fact record but not sized into the move. No window moved more than 8 points and no master call band flipped (see blend) - LEFT AS DRAFT, NOT AUTO-STAMPED regardless: this is a FULL WEEKLY refresh, which the runbook's delegated auto-stamp authority explicitly and categorically excludes independent of move size; flagged for Alex's manual review and stamp decision.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 14,
+          "3": 22,
+          "6": 38,
+          "12": 54,
+          "36": 76
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 36,
+          "3": 35,
+          "6": 45,
           "12": 55,
           "36": 61
         }
