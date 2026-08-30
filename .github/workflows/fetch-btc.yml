@@ -1,0 +1,52 @@
+name: Fetch BTC price data
+
+# Runs the full quant pipeline (Bitstamp fetch -> indicators -> levels -> score
+# -> cycle -> mapping -> charts) on GitHub's own runners, which have normal,
+# unrestricted internet access, and commits the results straight into the
+# repo. This exists because the Claude cloud routine that runs the daily/
+# weekly research cycle executes in a network-sandboxed environment that
+# blocks bitstamp.net (and most other external domains) at the proxy level --
+# so it can never fetch price data itself. By the time that routine clones
+# this repo each morning, data/*.csv and data/*.json should already be fresh
+# from this workflow, and charts/*.png should already exist for the report
+# renderer -- the routine only needs to read what's here, not fetch anything.
+#
+# Scheduled ~30 minutes before the daily routine's 8:00am ET / 12:00 UTC
+# trigger, so there's a fresh run waiting by the time it fires. Also runs on
+# manual dispatch for seeding/testing.
+
+on:
+  schedule:
+    - cron: "30 11 * * *"   # 11:30 UTC daily = 7:30am ET
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run quant pipeline (fetch + indicators + levels + score + cycle + mapping + charts)
+        run: python run.py quant
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ charts/
+          if git diff --cached --quiet; then
+            echo "No data changes -- nothing to commit."
+          else
+            git commit -m "Auto-refresh BTC price data and quant indicators"
+            git push
+          fi

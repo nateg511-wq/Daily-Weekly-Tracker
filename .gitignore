@@ -1,10 +1,15 @@
 .venv/
 __pycache__/
 *.pyc
-data/*.csv
-data/*.json
-charts/*.png
 reports/current/build/
 reports/current/pdf/
 scripts/logs/
 .DS_Store
+
+# data/*.csv, data/*.json, and charts/*.png were previously gitignored as
+# disposable local cache. They're now tracked on purpose: the cloud daily/
+# weekly routine runs in a network-sandboxed environment that can't reach
+# bitstamp.net, so a separate GitHub Actions workflow (.github/workflows/
+# fetch-btc.yml) fetches and commits this data on a schedule instead, and
+# the cloud routine reads it from the git checkout rather than fetching it
+# itself. See that workflow's comments for the full picture.
