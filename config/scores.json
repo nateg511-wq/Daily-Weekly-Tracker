@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-08-31_draft",
+  "active_qual_set": "2026-09-01_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1228,6 +1228,41 @@
           "3": 17,
           "6": 34,
           "12": 51,
+          "36": 75
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 36,
+          "3": 35,
+          "6": 45,
+          "12": 55,
+          "36": 61
+        }
+      }
+    },
+    "2026-09-01_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "Sept 1 light daily catch-up vs the 2026-08-31_draft committed baseline (covering the Aug 31-Sept 1 gap; US markets closed Aug 31 for Labor Day). CLARITY Act, Tokenization, and Fed & Macro all held flat: CLARITY Act (no material development since Aug 31 - the Tillis-Gallego ethics counteroffer sent to the White House remains from Jul 30/31 with no WH sign-off found through Sept 1, Sept 15 2:15pm ET cloture date unchanged, no fresh prediction-market pull with a corroborating news event); Tokenization (only stale/recycled RWA market-size summaries found dated to Q1 2026 or the already-priced Aug 9 rwa.xyz snapshot - no fresh dated catalyst, no rail failure/depeg/counterparty default); Fed & Macro (CME FedWatch September hike odds continued the same post-Jackson-Hole drift already priced into the Aug 31 baseline - Forbes/KuCoin pegged it at ~66% at 11:40am ET Aug 31, up from the ~60.4% CNBC read the Aug 31 baseline used, but this is the same intraday drift sequence with no new primary data print or news event behind it, so per the sufficiency rule and this pillar's own standing discipline against chasing odds drift, it does not independently move P; no new H.4.1 or jobless claims release landed Aug 31-Sept 1, both US federal holidays/pre-release - next H.4.1 due Sept 3). Iran War Risk RE-RATED DOWN modestly at the front/mid end (9/17/34/51/75 -> 7/15/32/50/75): the Aug 30-31 flip-line-firing cut was explicitly sized on the assumption that 'one resumed-strike night is not yet a sustained new campaign' - that assumption is undercut by continuing escalation into a second day. Multi-source corroborated (CBS News, Al Jazeera, Breitbart, Yahoo, Jerusalem Post, ABC News, Seatrade Maritime, Iran International, UKMTO): a third tanker this week was hit in the Strait Aug 31 (Liberian-flagged VLCC Senegal Prosperity, struck by three unknown projectiles near Khasab, Oman, port side/engine room/ballast tank, no casualties - UKMTO-logged), following the already-priced Metro Venetian (Aug 24) and Al Salam II (Aug 25) incidents; Iran's army claimed a drone strike on the UAE's Al Minhad Air Base near Dubai, which the UAE Ministry of Defense explicitly denied while confirming its air force intercepted an Iranian drone over UAE territorial waters - a disputed target claim but a confirmed cross-border drone incursion, a genuine (if unconfirmed-as-a-hit) attempt to widen beyond the repeat-target Jordan pattern; President Trump said on-record Aug 31 he is still weighing further strikes on Iran ('a relatively little war for us,' CBS/Breitbart/Yahoo, on-record), explicitly not signaling de-escalation; Brent continued higher into Sept 1 (~+2% Tuesday per multiple market-desk reports) on fresh-clash fears, the second straight session of gains on this news cycle. No new confirmed US casualty and no confirmed hit on UAE territory, so this does not independently fire a fresh flip-line clause on its own; the move is kept small (2 points at 1mo/3mo/6mo, 1 point at 12mo, flat at 36mo, all well under the 8-point threshold) and reflects the evidence-moved-only-as-far-as-warranted rule: continuation that weakens the 'single incident, not a sustained campaign' framing used to size the Aug 30-31 cut, not a fresh shock of comparable size to that cut itself. No window moved more than ~8 points and the master call band did not flip vs. the last stamped set (2026-08-31_draft) - eligible for delegated daily auto-stamp per CLAUDE.md.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 7,
+          "3": 15,
+          "6": 32,
+          "12": 50,
           "36": 75
         },
         "Tokenization": {
