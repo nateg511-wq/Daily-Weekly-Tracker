@@ -2,6 +2,31 @@ $ErrorActionPreference = "Stop"
 $root = "C:\Users\nateg\CoinPicks Market Direction Bot"
 Set-Location $root
 
+$logDir = Join-Path $root "scripts\logs"
+if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
+$stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
+$logFile = Join-Path $logDir "weekly_$stamp.log"
+
+# Preflight (plain git, no Claude session): only skip if a full WEEKLY
+# refresh already landed on origin/master today -- a daily catch-up commit
+# does NOT satisfy this, since the weekly path does a deeper four-pillar
+# pass the daily light touch doesn't. See run_daily.ps1 for the matching
+# check on that side (which does treat an already-landed weekly as covering
+# its own job). This exists because the cloud routine can independently run
+# a weekly cycle on the same schedule; see 2026-08-31 daily/cloud collision
+# notes in run_daily.ps1.
+try {
+    git fetch origin master --quiet 2>&1 | Out-Null
+    $todayCommits = git log origin/master --since="midnight" --format="%H %s" 2>&1
+    $already = $todayCommits | Where-Object { $_ -match '\bweekly\b' } | Select-Object -First 1
+} catch {
+    $already = $null
+}
+if ($already) {
+    "[$(Get-Date -Format o)] Skipping run -- today's weekly cycle already landed on origin/master: $already" | Tee-Object -FilePath $logFile
+    exit 0
+}
+
 # Prevent Modern Standby from suspending the system mid-run. WakeToRun only
 # guarantees the wake AT the trigger time; on Modern Standby (S0ix) laptops
 # an idle timeout can still put the machine back to sleep minutes later,
@@ -17,12 +42,6 @@ $ES_CONTINUOUS = [uint32]"0x80000000"
 $ES_SYSTEM_REQUIRED = [uint32]"0x00000001"
 $ES_AWAYMODE_REQUIRED = [uint32]"0x00000040"
 [Win32.Power]::SetThreadExecutionState($ES_CONTINUOUS -bor $ES_SYSTEM_REQUIRED -bor $ES_AWAYMODE_REQUIRED) | Out-Null
-
-$logDir = Join-Path $root "scripts\logs"
-if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
-
-$stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
-$logFile = Join-Path $logDir "weekly_$stamp.log"
 
 $promptPath = Join-Path $root "scripts\weekly_prompt.txt"
 

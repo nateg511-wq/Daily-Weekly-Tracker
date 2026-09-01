@@ -2,6 +2,32 @@ $ErrorActionPreference = "Stop"
 $root = "C:\Users\nateg\CoinPicks Market Direction Bot"
 Set-Location $root
 
+$logDir = Join-Path $root "scripts\logs"
+if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
+$stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
+$logFile = Join-Path $logDir "daily_$stamp.log"
+
+# Preflight (plain git, no Claude session -- costs nothing even if it fires
+# every day): the cloud routine now runs ~15 min before this task and, when
+# it succeeds, pushes a same-day "... daily ..." or "... weekly ..." commit
+# to origin/master. If that already landed, skip -- there is no reason to
+# spend a second full research cycle re-deriving what the cloud run already
+# decided (observed 2026-08-31: both ran back-to-back, ~40 min of duplicate
+# research, only avoided colliding because the cloud run's push happened to
+# fail). A failed weekly refresh counts as covering the daily's job too; a
+# daily catch-up does NOT count as covering a still-pending weekly.
+try {
+    git fetch origin master --quiet 2>&1 | Out-Null
+    $todayCommits = git log origin/master --since="midnight" --format="%H %s" 2>&1
+    $already = $todayCommits | Where-Object { $_ -match '\b(daily|weekly)\b' } | Select-Object -First 1
+} catch {
+    $already = $null
+}
+if ($already) {
+    "[$(Get-Date -Format o)] Skipping run -- today's cycle already landed on origin/master: $already" | Tee-Object -FilePath $logFile
+    exit 0
+}
+
 # Prevent Modern Standby from suspending the system mid-run. WakeToRun only
 # guarantees the wake AT the trigger time; on Modern Standby (S0ix) laptops
 # an idle timeout can still put the machine back to sleep minutes later,
@@ -15,12 +41,6 @@ $ES_CONTINUOUS = [uint32]"0x80000000"
 $ES_SYSTEM_REQUIRED = [uint32]"0x00000001"
 $ES_AWAYMODE_REQUIRED = [uint32]"0x00000040"
 [Win32.Power]::SetThreadExecutionState($ES_CONTINUOUS -bor $ES_SYSTEM_REQUIRED -bor $ES_AWAYMODE_REQUIRED) | Out-Null
-
-$logDir = Join-Path $root "scripts\logs"
-if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
-
-$stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
-$logFile = Join-Path $logDir "daily_$stamp.log"
 
 $promptPath = Join-Path $root "scripts\daily_prompt.txt"
 
