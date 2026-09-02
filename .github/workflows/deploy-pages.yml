@@ -1,0 +1,67 @@
+name: Deploy reports to GitHub Pages
+
+# Renders reports/current/*.html into self-contained pages (charts are
+# base64-inlined by run.py render, so no separate asset hosting is needed)
+# and publishes them to GitHub Pages. Runs on every push that could change
+# what the reports show -- config/data/report edits from the local task,
+# the cloud routine, or the fetch-btc.yml quant refresh all land as commits
+# to master, so this just needs to watch the same paths.
+#
+# No Chrome on this runner, so run.py render only produces the HTML build
+# (PDF generation is skipped with a warning, which is fine here -- PDFs
+# stay a local/cloud-routine artifact, not part of the public site).
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "reports/current/**"
+      - "config/**"
+      - "data/**"
+      - "charts/**"
+      - "engine/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Render reports to reports/current/build/
+        run: python run.py render
+
+      - name: Use 00_START_HERE as the site index
+        run: cp reports/current/build/00_START_HERE.html reports/current/build/index.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports/current/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
