@@ -114,26 +114,44 @@ plus `"stamped_by": "<owner>"`. The `status` field is authoritative; a `_draft`
 key suffix is historical naming, never rename keys. `status` and `stamped_by`
 are the ONLY fields ever edited on an existing set.
 
-**Delegated auto-stamp authority (as of 2026-08-06):** Alex has asked that
-DAILY light-touch runs auto-stamp themselves — no separate manual approval
-step. For a daily run only, after Step 6 (render/selfcheck/verify) passes
-clean, stamp the new set in the same pass: set `"status": "committed"` and
-`"stamped_by": "Alex (auto-stamped)"` — the `(auto-stamped)` suffix is
-mandatory so the lineage honestly shows which commits a human actually
-reviewed versus which were self-approved by the pipeline; never write plain
-`"Alex"` for an auto-stamped set. This delegation covers ordinary daily
-re-rates only. Do NOT auto-stamp, and instead leave the set as `"draft"` and
-flag it prominently for Alex's manual review, if any of the following hold:
-- it's a **full weekly refresh**, not a light daily touch;
-- any pillar's P moved by **more than ~8 points** on any window in one cycle;
-- the equal-weight FINAL NUMBER's **call band flips** (e.g. Bear→Neutral,
-  Neutral→Mild Bull) versus the last stamped set;
-- the change rests on a **single-source claim**, a claim you're materially
-  unsure about, or a genuinely novel/ambiguous situation not clearly covered
-  by the Research Discipline rules;
-- verification (Step 6) surfaces any inconsistency you can't fully resolve.
-When in doubt, leave it as a draft and say why — auto-stamp authority is for
-routine, well-evidenced moves, not a blanket license to skip judgment.
+**Delegated auto-stamp authority (as of 2026-08-06; widened 2026-09-02):**
+Alex has asked that DAILY light-touch runs auto-stamp themselves — no
+separate manual approval step. For a daily run only, after Step 6
+(render/selfcheck/verify) passes clean, stamp the new set in the same pass:
+set `"status": "committed"` and `"stamped_by": "Alex (auto-stamped)"` — the
+`(auto-stamped)` suffix is mandatory so the lineage honestly shows which
+commits a human actually reviewed versus which were self-approved by the
+pipeline; never write plain `"Alex"` for an auto-stamped set.
+
+As of 2026-09-02, Alex trusts this delegation broadly: **the size of a move,
+a call-band flip, or how novel/dramatic the underlying news is are NOT by
+themselves reasons to withhold the stamp anymore.** The Research Discipline
+rules — primary sources first, dated facts, the sufficiency rule (a
+single-source claim may be reported but never alone moves a P) — are what
+keep a re-rate honest; that's the safeguard now, not a human review queue on
+top of it. Do the research properly, apply the rules properly, and stamp
+what they produce, however large the resulting move is.
+
+Do NOT auto-stamp, and instead leave the set as `"draft"` and flag it
+prominently for Alex's manual review, only if:
+- it's a **full weekly refresh**, not a light daily touch — weekly remains
+  categorically excluded, unchanged by this widening; it's Alex's own
+  periodic review checkpoint;
+- your **research capability was materially degraded this cycle** — e.g.
+  WebSearch/WebFetch unavailable or clearly broken, the environment's
+  network path blocking primary sources beyond the documented cloud-sandbox
+  workaround (see the GitHub Actions data-relay note above), or any other
+  gap that means you genuinely could not pull fresh intel — as distinct from
+  pulling it and simply not liking what it says;
+- **verification (Step 6) surfaces an inconsistency you cannot fully
+  resolve** — selfcheck failing, numbers not reconciling across reports, a
+  contradiction you can't run down — since that's a pipeline-integrity
+  problem, not a judgment call about the news.
+When research access itself was degraded, say so plainly and leave it as a
+draft. Any other kind of doubt — "this seems like a big deal," "I'm not sure
+Alex will like this" — is not a reason to withhold the stamp; if the
+sufficiency rule and sourcing rules are satisfied, stamp it and let the
+report explain itself.
 
 ### Step 4 — Blend
 ```bash
