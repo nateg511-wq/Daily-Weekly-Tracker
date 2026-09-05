@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-02_draft",
+  "active_qual_set": "2026-09-05_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1313,6 +1313,40 @@
           "6": 45,
           "12": 55,
           "36": 61
+        }
+      }
+    },
+    "2026-09-05_draft": {
+      "status": "draft",
+      "note": "Sept 5 light daily catch-up vs the 2026-09-02_draft committed baseline (data check: btc_usd_daily.csv and pillar_scores.json both dated 2026-09-05, fetched by the GitHub Actions workflow - valid quant read). CLARITY Act, Tokenization, and Iran War Risk held flat. CLARITY Act: WebSearch found nothing dated Sept 3-5 beyond the same Sept 15, 2:15pm ET cloture-vote schedule already priced in (Thune's cloture motion, 53 R seats needing 7+ D/I votes) - no new WH ethics-language sign-off, no fresh corroborated prediction-market pull. Tokenization: no new dated catalyst Sept 3-5 - DTCC's October 2026 full-service-launch window (Russell 1000 stocks, major ETFs, Treasuries; 50+ participating institutions incl. BlackRock/Goldman/JPMorgan/Circle/Ondo/Ripple Prime) is unchanged background, not a new event. Iran War Risk: continuation, not fresh escalation - Iran fired a second retaliatory wave Sept 3 (Ahmed al-Jaber AB, Kuwait; Al Minhad AB, UAE) but both are REPEAT targets (Kuwait struck Sept 2, UAE struck earlier this war per Apr/May incidents) so the widening-to-a-further-new-state clause still does not fire; a US official confirmed no US-manned facility was hit and no third night of Iranian launches was reported through the Day 189 (Sept 4) cutoff (GlobalSecurity); Trump corrected a misstatement to reaffirm the standing US KIA count at 18, not a new death (GlobalSecurity Day 189); Brent held ~$95.2-95.75 Sept 4, essentially flat/slightly softer vs. the Sept 1 ~$95-96.6 read, still well short of the $100 flip line - so none of the pillar's own flip-line clauses (confirmed new US combat death, further-new-state widening, sustained Brent >$100) independently fired this cycle. Two developments logged but NOT used to move P: (1) Reuters shared images/video with four independent weapons experts who concluded the Sept 1 Kuhestak wedding-party strike was likely a direct hit by a US munition (JSOW-type glide-bomb fragments identified), not a ricochet - this upgrades the casualty claim's sourcing from the Sept 2 note's 'single-narrative-sourced' flag to independently corroborated by a primary Western wire service, but the US has still not accepted responsibility (VP Vance called himself 'extremely skeptical' Sept 4, calling it under investigation) and the confirmation resolves attribution of an ALREADY-PRICED Sept 1-2 event rather than describing any new escalatory act, so it does not independently move P this cycle - flagged here for the record and for next cycle's language; (2) Sept 5 (today, developing): Iranian state/semi-official media (Fars) reported four missiles struck an Iranian oil tanker near Kharg Island, Iran's primary oil export terminal, with explosions heard and the tanker reportedly being evacuated - as of this research pass there is no CENTCOM or other US-official confirmation and no independent Western multi-source corroboration beyond outlets relaying the same Iranian-media report, so per the sufficiency rule this single-narrative claim is NOT used to move P - WATCH NEXT CYCLE, and if independently confirmed (CENTCOM statement or multi-source forensic verification) this would be a materially new escalation vector (direct hit on Iran's core oil-export infrastructure, distinct from the Sept 1-2 tanker-hull strikes) worth a fresh look. Also noted, not yet actionable: Iran reportedly warned the US that an Israeli move on the Ali al-Taher ridge (Lebanon) would trigger a 'large-scale attack' on Israel; the IDF announced Sept 3 it had cleared/taken control of the ridge, but as of this run no large-scale Iranian response against Israel has been confirmed (ISW/Critical Threats list it as one of three possible, not-yet-realized courses of action) - logged as a live pending trigger, not a fired one. Fed & Macro RE-RATED DOWN modestly (1mo 36->32, 3mo 35->31, 6mo 45->43, 12mo 55->54, 36mo 61->60): the August jobs report (BLS, primary source, released Sept 4) beat consensus sharply - nonfarm payrolls +162,000 vs. ~53-55,000 expected, unemployment steady at 4.1% - and markets repriced Sept 15-16 FOMC hike odds higher off of it, corroborated across CNBC, Yahoo Finance, TheStreet, U.S. News, and Investing.com/Reuters (exact CME FedWatch print varies by source/timestamp in the 60-66% hike-probability range, up from the 'roughly 60% HOLD' framing in the Sept 2 baseline note - directionally consistent hawkish move across all sources even if the point estimate is noisy); same-day market reaction: 2yr Treasury yield +5.3bp to its highest since January 2025, Dow -0.51%/S&P -0.38%/Nasdaq -0.29%, and BTC fell ~2% same-day ($81,265.00 Sept 3 close -> $79,676.60 Sept 4 close, data/btc_usd_daily.csv). Fed officials remain split (Warsh reiterated the need to keep fighting inflation; Waller said he'd lean toward holding if inflation data improves), with the Sept 11 CPI print now widely flagged as the likely deciding data point before Sept 15-16. This is the same category and comparable scale of evidence (primary data print + CME odds shift + yield/BTC reaction) that drove this pillar's Aug 22->28 catch-up cut of -5/-4/-2/-1/-1 on the Warsh Jackson Hole speech alone, so today's cut is sized similarly for a comparable single dated catalyst, front-loaded toward the near-term windows most exposed to the Sept 15-16 meeting, held under the 8-point/window threshold. Per the widened Sept 2 daily auto-stamp policy, this is an ordinary light daily touch (not a full weekly refresh), research access was not degraded (WebSearch fully functional throughout), and the sufficiency rule was applied correctly (both single-narrative-sourced Sept 3-5 claims - the Kharg Island tanker report and, at the margin, treating the now-Reuters-corroborated wedding strike as any kind of fresh P-moving event - were correctly excluded from moving P), so if verification (Step 6) passes clean this set is eligible for same-pass auto-stamping.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 9,
+          "6": 27,
+          "12": 47,
+          "36": 74
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 32,
+          "3": 31,
+          "6": 43,
+          "12": 54,
+          "36": 60
         }
       }
     }
