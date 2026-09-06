@@ -1351,7 +1351,8 @@
       }
     },
     "2026-09-05_draft2": {
-      "status": "draft",
+      "status": "committed",
+      "stamped_by": "Alex",
       "P": {
         "CLARITY Act": {
           "1": 32,
