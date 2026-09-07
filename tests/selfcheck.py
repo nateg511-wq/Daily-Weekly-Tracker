@@ -164,6 +164,40 @@ def run_all() -> int:
     for h in htmls:
         t = h.read_text(encoding="utf-8")
         check("{{" not in t.replace("{{CHART_", ""), f"{h.name}: no unknown placeholders")
+    # stamp-status guard: every report's decision-stamp div must agree with the
+    # ACTUAL status field in config/scores.json for the active set. Added after
+    # a real incident (2026-09-05): a daily cycle wrote "COMMITTED —
+    # AUTO-STAMPED" into every report's stamp div (class="stamp", the
+    # committed/green style) and its own commit message, but never actually
+    # flipped active_qual_set's status field from "draft" -- an execution-order
+    # bug that six reports and a commit message all echoed without ever
+    # touching the source of truth. Caught that time only by luck, because a
+    # full weekly refresh happened to run the same day and cross-checked it.
+    # House style ties status to CSS class: class="stamp" (green) means
+    # committed, class="stamp pending" (amber) means draft — see
+    # `.decision .stamp` / `.decision .stamp.pending` in any report's <style>.
+    import re
+    stamp_re = re.compile(r'class="stamp( pending)?"')
+    active_status = scores["score_sets"].get(active, {}).get("status") if active in scores.get("score_sets", {}) else None
+    if active_status is not None:
+        for h in htmls:
+            if h.name == "00_START_HERE.html":
+                continue  # summary page, no decision-stamp div of its own
+            t = h.read_text(encoding="utf-8")
+            m = stamp_re.search(t)
+            check(m is not None, f"{h.name}: has a decision-stamp div")
+            if m:
+                claims_committed = m.group(1) is None
+                if active_status == "committed":
+                    check(claims_committed, f"{h.name}: stamp div matches committed status",
+                          "report shows a pending/draft stamp (class=\"stamp pending\") but "
+                          "config/scores.json says this set is committed")
+                else:
+                    check(not claims_committed, f"{h.name}: stamp div matches draft status",
+                          "report shows a committed stamp (class=\"stamp\") but "
+                          "config/scores.json's status field for this set is still \"draft\" — "
+                          "the report is claiming a stamp that was never actually written")
+
     # prose-consistency guard: built master/START_HERE must quote the current final number
     build = REPORTS / "current" / "build"
     if build.exists() and (DATA / "master_blend.json").exists():
