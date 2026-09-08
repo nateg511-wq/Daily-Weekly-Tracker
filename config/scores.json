@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-06_draft",
+  "active_qual_set": "2026-09-08_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1418,6 +1418,41 @@
         }
       },
       "note": "DAILY light touch vs the 2026-09-05_draft2 committed weekly-refresh baseline. Quant data check: data/btc_usd_daily.csv and data/pillar_scores.json both dated 2026-09-06 (GitHub Actions fetch), BTC $79,929.30 -- valid quant read, no refetch needed (run.py quant correctly NOT invoked in this sandbox per the documented egress-block workaround). CLARITY Act: re-checked -- Sept 15, 2:15pm ET cloture vote unchanged; Polymarket 2026-enactment odds ~18% (market price, not scored) reflect the same 60-vote-threshold math already priced; House Whip Emmer's office has now also pulled the Sept 21 and Sept 28 voting weeks off the House calendar (crypto.news, Yellow), but the operative near-term event for this pillar remains the Senate cloture vote, itself unchanged -- no new dated legislative development. Held flat at 32/47/58/82/92. Tokenization: re-checked -- DTCC's October full-service launch (Russell 1000, major ETFs, Treasuries; 50+ participants) remains the operative catalyst, unchanged since the July pilot; no new dated milestone today. Held flat at 52/60/66/74/85. Fed & Macro: re-checked -- no new Fed speech or data release since Sept 3-4 (Waller dovish remarks / Aug payrolls beat, already captured in the baseline's -4/-4/-2/-1/-1 cut); Sept 6 is a Saturday, markets and the Fed calendar are quiet; the Sept 11 CPI print remains the next dated catalyst, not pre-empted here. Held flat at 32/31/43/54/60. Iran War Risk: RE-RATED DOWN, modestly -- the baseline's Sept 5 row was explicitly withheld from moving P pending CENTCOM confirmation (only Iran's Tasnim state media had claimed a strike on the tanker STARK 1). That confirmation has now arrived: CENTCOM's own on-the-record press release (centcom.mil, plus its official statement carried by AP-adjacent wire coverage and 9+ independent outlets incl. CNN, NBC, Al Arabiya, Jerusalem Post) confirms US forces struck three Iranian crude oil tankers on Sept 5 -- M/T Downy (Kharg Island, disabled), M/T Stark 1 (Jask, disabled), and M/T Kylo (Gulf of Oman, destroyed) -- in retaliation for the IRGC firing ballistic missiles at two US Navy warships (a carrier and a guided-missile destroyer); both ships evaded the attack, no US personnel harmed. This is materially more serious than the baseline knew: not a quiet single-tanker interdiction but a direct, unprovoked IRGC missile attack on US Navy vessels followed by a three-ship US retaliation -- primary-sourced and multiply corroborated, clearing the sufficiency bar the baseline explicitly withheld. Separately, Sept 6 (today) IRGC claims of further strikes on three more tankers plus three 'US-linked' vessels and a US naval drone in the Strait of Hormuz (Al Jazeera live blog, Euronews) are IRGC's own claims only, not yet US-confirmed -- per the sufficiency rule, NOT independently used to move P; watch next cycle. None of this pillar's flip-line clauses independently fire: no confirmed new US combat death (DCAS still 18 as of Sept 4, unchanged), no widening to a further new state (Kharg Island/Jask/Gulf of Oman are all existing theater, not a new state), and Brent closed ~$96/bbl Friday Sept 4 (markets closed Saturday) -- still well short of the $100 sustained-flip threshold. Cut sized as a confirmed-escalation update (not a fresh flip-line shock), similar to this pillar's own precedent for a confirmed continuation/severity-upgrade of an already-known event: 1mo held at the near-floor 1 (no further room), 3mo -1, 6mo -2, 12mo -2, 36mo -1. New: 1/8/25/45/73. This is a light daily touch (not a full weekly refresh), no window moved more than 2 points, sourcing clears the primary-source-plus-multi-outlet bar (CENTCOM's own release, not a single outlet), and verification (Step 6) is expected to reconcile cleanly -- so per the runbook's delegated auto-stamp authority this set is a candidate for AUTO-STAMP pending clean render/selfcheck.",
+      "stamped_by": "Alex (auto-stamped)"
+    },
+    "2026-09-08_draft": {
+      "status": "committed",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 7,
+          "6": 24,
+          "12": 44,
+          "36": 73
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 32,
+          "3": 31,
+          "6": 43,
+          "12": 54,
+          "36": 60
+        }
+      },
+      "note": "DAILY light touch vs the 2026-09-06_draft committed baseline. Quant data check: data/btc_usd_daily.csv last row 2026-09-08 (GitHub Actions fetch), BTC $78,435.62 -- valid quant read, no refetch needed. CLARITY Act: re-checked -- Sept 15, 2:15pm ET Senate cloture vote (motion to proceed, 60-vote threshold, Thune filed Aug 8) remains unchanged and still the operative near-term event; no new dated legislative development since the baseline (Yahoo Finance, The Block, Troutman Financial Services corroborating the same Sept 15 date). Held flat at 32/47/58/82/92. Tokenization: re-checked -- DTCC's October full-service launch remains the operative catalyst, unchanged since the July 15 production-trade stress test; 50+ firm working group, no new dated milestone today (DTCC.com, Tradeweb, CoinDesk corroborating). Held flat at 52/60/66/74/85. Fed & Macro: re-checked -- no new Fed speech or data release since Sept 3-4 (already captured in the baseline); the Sept 11 CPI print and Sept 15-16 FOMC meeting remain the next dated catalysts, not pre-empted here. Held flat at 32/31/43/54/60. Iran War Risk: RE-RATED DOWN, modestly -- new dated fact since the 2026-09-06 baseline (which covered only the Sept 5 CENTCOM tanker-strike confirmation and Sept 6 unconfirmed IRGC vessel claims): on Sept 6-7, Iran's SNSC secretary Mohsen Rezaei announced on state TV that Iran will declare, 'in the coming days,' a new 'restricted zone' beginning at the US Navy's blockade line and extending into the Persian Gulf, with any vessel entering it placed on Iran's sanctions list; he also said an Iran-Oman corridor agreement would be signed 'in the coming days.' Primary-adjacent (Rezaei's own on-record statement, carried by Iranian state media Press TV/Tehran Times) and multiply corroborated by 8+ independent outlets (Al Jazeera, The Hill, RTE, Anadolu Agency, Newsbytes, WFLA/Nexstar, GlobalSecurity.org), clearing the sufficiency bar. This is a genuine new escalatory signal -- a declared intent to sanction shipping across an expanded zone -- but it is a THREAT OF INTENT, not yet executed: 'further details, including the precise boundaries, have yet to be announced' per Al Jazeera's Sept 7 explainer, and no zone had actually been declared as of this cycle's research cutoff. Consistent with this pillar's past treatment of confirmed-but-not-yet-executed escalatory statements (e.g. Trump's Aug 31 'still weighing further strikes' comment), sized as a small continuation-of-escalation cut, not a flip-line event: none of the flip-line clauses independently fire -- DCAS US KIA remains 18 (unchanged since Sept 4, Wikipedia/factually.co corroborating), no widening to a further new state, and Brent closed ~$97.29/bbl Sept 7 (tradingeconomics.com), still short of the $100 sustained-flip threshold. GlobalSecurity's Day 192 (Sept 7) blockade count of 92 vessels redirected / 3 disabled / 2 boarded (up from Day 190's 87/3/2 on Sept 3) is a continuation of the already-priced blockade-enforcement trend, not scored separately. No permanent Iran-Oman corridor deal has been signed (still 'in the coming days' per Rezaei; the existing temporary 7-mile corridor from late August remains the operative arrangement). Cut applied only to 3mo/6mo/12mo (-1 point each: 8->7, 25->24, 45->44); 1mo held at the near-floor 1 (no further room) and 36mo held at 73 (a shipping-zone threat doesn't move the multi-year thesis). This is a light daily touch, no window moved more than 1 point, sourcing clears the primary-source-plus-multi-outlet bar, and verification (Step 6) is expected to reconcile cleanly -- so per the runbook's delegated auto-stamp authority this set is a candidate for AUTO-STAMP pending clean render/selfcheck.",
       "stamped_by": "Alex (auto-stamped)"
     }
   }
