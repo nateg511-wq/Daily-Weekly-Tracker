@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-09_draft",
+  "active_qual_set": "2026-09-10_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1472,6 +1472,41 @@
           "3": 6,
           "6": 23,
           "12": 43,
+          "36": 72
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 32,
+          "3": 31,
+          "6": 43,
+          "12": 54,
+          "36": 60
+        }
+      }
+    },
+    "2026-09-10_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "DAILY light touch vs the 2026-09-09_draft committed baseline. Quant data check: data/btc_usd_daily.csv last row 2026-09-10 (GitHub Actions fetch), BTC $77,993.99 -- valid quant read, no refetch needed. CLARITY Act: re-checked -- Sept 15, 2:15pm ET Senate cloture vote (motion to proceed) remains the operative near-term event, unchanged; no new dated legislative development found since Sept 9 (Yahoo Finance, crypto.news, Bitget reporting all describe the same Sept 15 vote already priced). Polymarket 2026-passage odds still read in the same ~16% band -- a market-price move only, not used to move P under house sufficiency rule. Held flat at 32/47/58/82/92. Tokenization: re-checked -- no new dated rwa.xyz pull, no rail failure/depeg/counterparty event found; DTCC October full-service launch remains the unchanged operative catalyst. Held flat at 52/60/66/74/85. Fed & Macro: re-checked -- Aug CPI release and the FOMC meeting are both still pending (Sept 11 and Sept 15-16 respectively per BLS and Fed calendars); no new primary data since Sept 9. Held flat at 32/31/43/54/60. Iran War Risk: RE-RATED DOWN, modestly -- two new dated facts since the Sept 9 baseline: (1) CENTCOM/Jordan confirm the IRGC retaliated for the Sept 8 five-tanker strike by firing 20 ballistic missiles at Jordan's Al Azraq (Muwaffaq Salti) air base -- Jordan's armed forces state 18 were intercepted, 2 fell in unpopulated areas, no casualties (Al Jazeera Sept 9, MiGFlug, GlobalSecurity.org Day 194, corroborating Jordan's own military statement) -- Jordan is a repeat target struck previously Aug 30-31, so the widening-to-a-further-new-state clause does NOT fire; CENTCOM/Jordan both confirm no casualties, so the confirmed-US-casualty clause also does not fire (DCAS-style US KIA count remains 18, unchanged since Sept 4 per GlobalSecurity's own tracker -- an independent low-quality aggregator claiming a fresh KIA figure was checked and rejected as uncorroborated against CENTCOM's own no-casualties statement). (2) Iran-aligned Houthi forces seized the Yemeni Red Sea port city of Mocha on Sept 10, closing in on control of the Bab el-Mandeb Strait -- a SECOND global shipping chokepoint distinct from Hormuz -- confirmed by 5+ independent outlets (The Media Line, Times of Israel, Al Jazeera, South China Morning Post, Jerusalem Post, Cyprus Mail), clearing the sufficiency bar. This is the same Houthi/Yemen actor and theater already priced (not a strike on a further new state), and no strait closure or shipping interdiction has actually been confirmed yet -- outlets describe Houthis as 'closing in on' and 'threatening' control, not as having executed a blockade -- so it does not independently fire a flip-line clause either. Separately, Brent crude has now traded near/above $100/bbl for a second straight session (CNBC: Brent above $101 Wednesday Sept 9 for the first time since May; TradingEconomics: ~$101.25 Thursday Sept 10) -- more persistent than Sept 9's single-day intraday cross, but still short of a clean multi-session 'sustained' call by this pillar's own conservative standard (which has previously treated even multi-week elevated levels in the $93-97 range as not sustained-at-100); flagged as the closest this cycle has come and worth close watching next cycle, but does not independently fire that clause. Net: a second repeat-pattern regional strike plus a new-but-same-actor Yemen/Red Sea territorial escalation, both intensifying the trend already priced without crossing any flip-line threshold -- sized as a small continuation cut on the shorter/medium windows only, consistent with how this pillar treated the comparable Sept 8 Jordan-retaliation and SNSC restricted-zone cycles. Cut applied to 3mo/6mo/12mo (-1 point each: 6->5, 23->22, 43->42); 1mo held at the near-floor 1 (no further room) and 36mo held flat at 72 (a repeat regional strike and a same-theater territorial shift do not move the multi-year thesis). This is a light daily touch, no window moved more than 1 point, sourcing clears the primary-source-plus-multi-outlet bar, and verification (Step 6) is expected to reconcile cleanly -- so per the runbook's delegated auto-stamp authority this set is a candidate for AUTO-STAMP pending clean render/selfcheck.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 5,
+          "6": 22,
+          "12": 42,
           "36": 72
         },
         "Tokenization": {
