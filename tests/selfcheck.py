@@ -203,7 +203,15 @@ def run_all() -> int:
     if build.exists() and (DATA / "master_blend.json").exists():
         mb = load_json(DATA / "master_blend.json")
         fe = f"{mb['final_number']['equal']['value']:+.2f}"
-        for name in ("CoinPicks_Master_Direction_Report.html", "00_START_HERE.html"):
+        # Extended after a real incident (2026-09-10): the four qualitative
+        # pillar reports each carry their own ".nums" line quoting "Master
+        # (equal-weight) this cycle" / THE FINAL NUMBER, separate from the
+        # master/START_HERE boxes this check already covered. Those four had
+        # gone stale (stuck on an old FINAL NUMBER) for several cycles because
+        # nothing checked them.
+        for name in ("CoinPicks_Master_Direction_Report.html", "00_START_HERE.html",
+                     "CoinPicks_CLARITY_Act_Pillar_Report.html", "CoinPicks_Fed_Macro_Pillar_Report.html",
+                     "CoinPicks_Tokenization_RWA_Pillar_Report.html", "CoinPicks_Iran_War_Pillar_Report.html"):
             b = build / name
             if b.exists():
                 check(fe in b.read_text(encoding="utf-8"),

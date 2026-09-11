@@ -2,6 +2,11 @@ $ErrorActionPreference = "Stop"
 $root = "C:\Users\nateg\CoinPicks Market Direction Bot"
 Set-Location $root
 
+# See run_daily.ps1 for why -- a literal Unicode minus sign (U+2212) printed
+# by engine/blend.py or engine/digest.py crashes on this machine's default
+# cp1252 console encoding without this (observed 2026-09-10).
+$env:PYTHONIOENCODING = "utf-8"
+
 $logDir = Join-Path $root "scripts\logs"
 if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
 $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
