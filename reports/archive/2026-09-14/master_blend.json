@@ -1,6 +1,6 @@
 {
   "asof": "2026-09-14",
-  "price": 77866.59,
+  "price": 77796.21,
   "score_set": "2026-09-14_draft",
   "score_set_status": "draft",
   "model": "equal-weight",
@@ -33,12 +33,12 @@
     "6mo": {
       "pillars": {
         "CLARITY Act": 1.09,
-        "Iran War Risk": -3.7,
+        "Iran War Risk": -3.58,
         "Tokenization": 2.18,
         "Fed & Macro": -0.77,
         "Bitcoin TA": 0.79
       },
-      "master": -0.08,
+      "master": -0.06,
       "call": "Neutral"
     },
     "1yr": {
@@ -77,8 +77,8 @@
   "leave_one_out_final_equal": {
     "CLARITY Act": -0.05,
     "Iran War Risk": 1.06,
-    "Tokenization": -0.13,
+    "Tokenization": -0.12,
     "Fed & Macro": 0.6,
-    "Bitcoin TA": 0.16
+    "Bitcoin TA": 0.17
   }
 }

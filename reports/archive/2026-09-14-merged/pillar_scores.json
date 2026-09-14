@@ -1,10 +1,10 @@
 {
   "asof": "2026-09-14",
-  "price": 77796.21,
+  "price": 77866.59,
   "cycle_month": 28.84,
   "tape": {
-    "weekly": 35.6,
-    "monthly": 1.9,
+    "weekly": 35.8,
+    "monthly": 2.0,
     "quarterly": 25.2
   },
   "powerlaw": {
@@ -13,7 +13,7 @@
     "minus1sd": 70013,
     "minus2sd": 34963,
     "pct_vs_fair": -0.445,
-    "V": 52.9,
+    "V": 52.8,
     "fit_start_sensitivity": {
       "2011": 129946,
       "2012": 134877,
@@ -31,7 +31,7 @@
   "windows": {
     "1mo": {
       "window_months": 1,
-      "S": 34.1,
+      "S": 34.2,
       "P": 59,
       "quality": 0.75,
       "impact": 8,
@@ -88,7 +88,7 @@
     },
     "1yr": {
       "window_months": 12,
-      "S": 72.5,
+      "S": 72.4,
       "P": 68,
       "quality": 0.6,
       "impact": 8,
