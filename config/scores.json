@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-13_draft",
+  "active_qual_set": "2026-09-14_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1646,6 +1646,41 @@
           "3": 3,
           "6": 19,
           "12": 39,
+          "36": 70
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 44,
+          "12": 54,
+          "36": 60
+        }
+      }
+    },
+    "2026-09-14_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "DAILY light touch vs the 2026-09-13_draft baseline. Quant refresh RAN LOCALLY this cycle (run.py quant, full fetch + recompute): BTC $77,866.59, quant draft P 59/48/59/68/69. Iran War Risk: RE-RATED **DOWN**, retracing yesterday's up-move -- the Salalah ministerial that the 09-13 re-rate was built on DID NOT HAPPEN. PRIMARY: Oman News Agency statement, Sunday Sept 13 -- 'It has been decided to postpone to a later date the regional meeting that was to be held on Monday in Salalah, in order to create conditions conducive to a constructive dialogue.' NO new date was set. Corroborated by 5+ independent outlets (Arab News, Washington Post, CNN, Gulf News, Malay Mail Sept 13-14). Gulf-Arab buy-in is absent, not merely delayed: Bahrain explicitly ruled out attending, no GCC state had confirmed participation, and the UAE had already downgraded to a minister of state rather than its FM. Iran's MFA spokesman says Saudi Arabia requested the postponement citing the Yemen war and calls that a pretext -- SINGLE-PARTY SOURCED to Iranian officials, reported but not relied on to move P. Second dated fact, and it caps the upside of the surviving bilateral track: FM Araqchi said Sept 13 that the Iran-Oman understanding 'would not mean reopening of the Strait of Hormuz' (Tehran Times / Mehr, Iranian state media quoting Iran's own FM -- primary for Iran's stated position; echoed Sept 14 by Eurasia Review and Sunday Guardian). Market reaction, reported as a MARKET PRICE not an estimate: Brent past $107/bbl (+2.8%, $107.54 Nov) and WTI $102.34 (+2.3%) on Sept 13-14. NOTE -- search surfaced Salalah/Duqm port drone strikes; those are dated MARCH 1/3/11 2026, not September, and are NOT treated as new. Windows: 1mo 3->1 (the one near-term de-escalation catalyst evaporated with no replacement date); 3mo 3->1 (GCC refusal to convene shows no Gulf-Arab consensus to build on); 6mo 19->17 (full retrace of yesterday's +2); 1yr 39->38 (retrace most but hold 1 above the 09-12 level -- the Iran-Oman bilateral lane framework, charts drawn and draft joint statement prepared, survives the postponement and Oman's FM publicly recommitted to dialogue); 3yr 70 flat (nothing structural moved). CLARITY Act: HELD FLAT at 32/47/58/82/92. The Sept 15 2:15pm ET cloture vote has not occurred; Senate returned Sept 14; Thune's account that Democrats are whipped against over the Trump-crypto ethics carve-out is already priced. Polymarket ~16% and Galaxy Research ~10% are a market price and a house estimate respectively -- reported, not blended, not scored. Tokenization: HELD FLAT at 52/60/66/74/85 -- no dated catalyst Sept 13-14, DTCC's October full-service launch unchanged and on schedule. Fed & Macro: HELD FLAT at 34/33/44/54/60 -- no new BLS/Fed/BEA primary release since Aug CPI (Sept 11) and Aug PPI (Sept 10); the Sept 15-16 FOMC with SEP/dot plot is the next dated catalyst and has not happened. Market-implied hike odds circulating 66-83% across sources are market prices and are explicitly NOT used to move P.",
+      "P": {
+        "CLARITY Act": {
+          "1": 32,
+          "3": 47,
+          "6": 58,
+          "12": 82,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 17,
+          "12": 38,
           "36": 70
         },
         "Tokenization": {
