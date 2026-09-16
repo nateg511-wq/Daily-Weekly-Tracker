@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-15_draft",
+  "active_qual_set": "2026-09-16_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1716,6 +1716,41 @@
           "6": 18,
           "12": 38,
           "36": 70
+        },
+        "Tokenization": {
+          "1": 52,
+          "3": 60,
+          "6": 66,
+          "12": 74,
+          "36": 85
+        },
+        "Fed & Macro": {
+          "1": 34,
+          "3": 33,
+          "6": 44,
+          "12": 54,
+          "36": 60
+        }
+      },
+      "stamped_by": "Alex (auto-stamped)"
+    },
+    "2026-09-16_draft": {
+      "status": "committed",
+      "note": "DAILY light touch vs the 2026-09-15_draft committed baseline. Quant DATA CHECK only (sandbox egress-block workaround; run.py quant correctly NOT invoked): data/btc_usd_daily.csv last row 2026-09-16 (GitHub Actions fetch, committed 11:37 UTC today), BTC $76,013.81 -- valid, fresh quant read. CLARITY Act: RE-RATED DOWN, 37/53/62/83/92 -> 15/28/45/72/92. The pillar's central trigger -- the Sept 15, 2:15pm ET cloture vote on the motion to proceed to H.R.3633 -- FIRED and FAILED: the Senate voted cloture down 49-50, well short of the 60 needed and a steeper shortfall than most industry watchers expected (support did not even reach 50). Corroborated by 6+ independent primary/wire outlets (CNBC, CoinDesk live-updates, CryptoTimes, Coinpedia, Bitget, HomeCryptoInvest) plus the Senate's own roll call -- clears the sufficiency bar comfortably. NEW DATED FACTS since the Sept 15 baseline: named Democrats who were working on the bill (Gillibrand, Warner, Booker, Warnock, Gallego, Alsobrooks, Cortez Masto) voted No, meaning even the lead negotiator (Gallego) the prior set flagged as 'most likely yes' did not convert; Thune filed a motion to reconsider (a procedural preservation, not a scheduled revote), but Lummis herself told reporters the bill will NOT return to the floor; Sen. Kennedy said any renewed market-structure push likely waits for the lame-duck session, and senators leave Washington in early October for the midterms (7 weeks out), not returning until after the election; the SEC 'Regulation Crypto Assets' workstream and CFTC spot-market drafting remain the live administrative fallback tracks. MARKET PRICE, REPORTED NOT SCORED: Polymarket's 'CLARITY Act signed into law in 2026' odds crashed from ~35% pre-vote to ~5% post-vote (KuCoin, Yahoo Finance, Coingabbar) -- a market price, not an institutional estimate, but directionally consistent with the re-rate. SIZING, per window: 1mo 37->15 (the one near-term floor catalyst this pillar was tracking is now resolved and lost by a wide margin, with the sponsor ruling out a quick comeback and the Senate calendar clearing out for the midterms -- near-zero realistic path to a positive CLARITY development inside 30 days); 3mo 53->28 (a lame-duck attempt is a real but uncertain path Kennedy himself hedged as 'not dead' per Cruz, so some residual odds survive inside the window, down sharply from the pre-vote optimism); 6mo 62->45 (a new Congress seated Jan 2027 plus a possible lame-duck bite give more room to recover within six months, so the cut is smaller in relative terms); 12mo 83->72 (the concessions the White House already made on ethics language are a real foundation carried into any future round, so the one-year read stays comparatively high); 36mo 92 HELD FLAT (a single failed cloture vote does not move the multi-year eventual-passage read, consistent with how this pillar has always treated single negotiation rounds). Iran War Risk: RE-RATED DOWN modestly on the 6/12/36mo windows only, 1/1/18/38/70 -> 1/1/14/33/66; 1mo and 3mo HELD FLAT at the 1 floor (already pricing near-certainty of continued conflict inside those horizons, no room to move further on new evidence). NEW DATED FACTS not previously priced: the IAEA Board of Governors voted Sept 9, 2026 to refer Iran's nuclear file to the UN Security Council (PRIMARY: IAEA institutional action, reported by globalsecurity.org/RFE-RL and others) -- a material escalatory step; separately, 130 Iranian lawmakers signed a statement Sept 12-13 calling on parliament to begin the legal process to withdraw from the NPT, with a hardline MP saying an emergency bill is being drafted (corroborated by RFE/RL, Tehran Times, and Mehr News -- 3 independent outlets, though two are Iranian state-affiliated, so treated as corroborated-but-directionally-interested reporting of a documented parliamentary act, not an independent Western confirmation). COUNTERWEIGHT, same sourcing set: President Pezeshkian publicly reiterated Iran is not seeking nuclear weapons, and the Foreign Ministry said the withdrawal bill 'is still being prepared' -- this is parliamentary pressure and an institutional referral, not a completed NPT exit or a government decision, so the move is kept small (a few points on the medium/long windows only) rather than treated as a fait accompli. Nothing new found on the Salalah ministerial, the Saudi pipeline repair timeline, or Hormuz shipping beyond what the Sept 15 baseline already priced. Tokenization: HELD FLAT at 52/60/66/74/85 -- no new dated rwa.xyz pull, rail failure, depeg, or counterparty default found since Sept 15; DTCC's tokenization timeline and prior facts are unchanged. Fed & Macro: HELD FLAT at 34/33/44/54/60 -- the September FOMC decision, SEP and dot plot are scheduled for 2:00pm ET today (Sept 16) and had NOT been released at run time (run executed ~08:03 ET); nothing new is knowable this cycle, consistent with the Sept 15 baseline's own note. This is a light daily touch, research capability was fully available (WebSearch worked cleanly on every query this cycle; WebFetch to arbitrary domains was not attempted, consistent with the documented sandbox limitation, and was not needed since WebSearch's own result summaries carried the sourced facts), and the sourcing clears the primary-plus-multi-outlet bar on both re-rated pillars -- so per the runbook's delegated auto-stamp authority (widened 2026-09-02, under which move size, a call-band flip, or how dramatic the news is are explicitly not disqualifying) this set is a candidate for AUTO-STAMP pending clean render/selfcheck/verification.",
+      "P": {
+        "CLARITY Act": {
+          "1": 15,
+          "3": 28,
+          "6": 45,
+          "12": 72,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 14,
+          "12": 33,
+          "36": 66
         },
         "Tokenization": {
           "1": 52,
