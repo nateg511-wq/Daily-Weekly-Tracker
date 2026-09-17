@@ -1,19 +1,19 @@
 {
   "asof": "2026-09-17",
-  "price": 76197.81,
+  "price": 76440.74,
   "cycle_month": 28.94,
   "tape": {
-    "weekly": 29.6,
-    "monthly": -1.4,
-    "quarterly": 23.8
+    "weekly": 30.4,
+    "monthly": -1.0,
+    "quarterly": 24.0
   },
   "powerlaw": {
     "fair": 140453,
     "r2": 0.962,
     "minus1sd": 70143,
     "minus2sd": 35030,
-    "pct_vs_fair": -0.457,
-    "V": 54.5,
+    "pct_vs_fair": -0.456,
+    "V": 54.3,
     "fit_start_sensitivity": {
       "2011": 130181,
       "2012": 135106,
@@ -31,7 +31,7 @@
   "windows": {
     "1mo": {
       "window_months": 1,
-      "S": 30.6,
+      "S": 31.2,
       "P": 58,
       "quality": 0.75,
       "impact": 8,
@@ -50,7 +50,7 @@
     },
     "3mo": {
       "window_months": 3,
-      "S": 15.3,
+      "S": 15.5,
       "P": 54,
       "quality": 0.7,
       "impact": 8,
@@ -69,7 +69,7 @@
     },
     "6mo": {
       "window_months": 6,
-      "S": 34.7,
+      "S": 34.9,
       "P": 59,
       "quality": 0.55,
       "impact": 8,
@@ -88,7 +88,7 @@
     },
     "1yr": {
       "window_months": 12,
-      "S": 74.2,
+      "S": 74.1,
       "P": 69,
       "quality": 0.6,
       "impact": 8,
@@ -107,7 +107,7 @@
     },
     "3yr": {
       "window_months": 36,
-      "S": 77.2,
+      "S": 77.0,
       "P": 69,
       "quality": 0.5,
       "impact": 8,

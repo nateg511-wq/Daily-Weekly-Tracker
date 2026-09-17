@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Research Package — Start Here (September 16, 2026)</title>
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+  .sec{ margin-top:6mm; }
+  .sec.first{ margin-top:2mm; }
+  h1{ font-size:22pt; margin:4mm 0 1mm; letter-spacing:-.4px; }
+  h1 .l2{ color:var(--blue); }
+  .deck{ font-size:11pt; color:#3a4759; margin:0 0 4mm; font-weight:500; }
+  h2{ font-size:12.5pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 2.5mm; font-style:italic; }
+  p{ margin:0 0 2.4mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.6mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  strong{ color:#10243f; }
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.2mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  td.c,th.c{ text-align:center; }
+  td.my{ font-weight:700; color:var(--blue-dk); }
+  .sig{ font-weight:700; color:#0f7a4f; } .signeg{ font-weight:700; color:#b91c1c; } .signeu{ font-weight:700; color:#6b7280; }
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:3.5mm 5mm; margin:2.5mm 0; }
+  .box h3{ margin:0 0 1.6mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.2mm 0; }
+  .finalnum{ background:#eafaf1; border:1.5px solid #8fdcb4; border-radius:8px; padding:4.5mm 6mm; margin:2.5mm 0; }
+  .finalnum .fig{ font-size:22pt; font-weight:800; color:#0f7a4f; letter-spacing:-.5px; display:inline-block; margin-right:4mm; }
+  .finalnum .lab{ font-size:8.6pt; color:#1a5c3d; letter-spacing:.6px; font-weight:700; text-transform:uppercase; }
+  .finalnum .exp{ font-size:8.8pt; color:#2c5443; margin-top:1mm; }
+  .warnbox{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin:2.5mm 0; }
+  .avoid{ page-break-inside:avoid; }
+  .file{ font-family:ui-monospace,Menlo,monospace; font-size:8.5pt; color:var(--blue-dk); }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>RESEARCH PACKAGE · START HERE · SEPTEMBER 16, 2026</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · September 16, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<section class="sec first">
+  <h1>CoinPicks Market Direction<br><span class="l2">Research Package</span></h1>
+  <div class="deck">Five pillars &mdash; four researched narratives and one pure-math read of the Bitcoin chart &mdash; scored on one standard, blended into one table, and distilled to one number. Everything in this folder is current as of <strong>September 16, 2026</strong> &mdash; a light daily touch against yesterday&rsquo;s light daily touch (2026-09-15_draft, committed).</div>
+
+  <div class="warnbox avoid"><strong>COMMITTED &mdash; AUTO-STAMPED (light daily touch, score set 2026-09-16_draft).</strong> Tokenization RWA and Fed &amp; Macro were re-checked and held flat &mdash; nothing found cleared the sufficiency bar (the FOMC decision, due 2:00pm ET today, had not landed at run time). <strong>CLARITY Act RE-RATED DOWN</strong> (37/53/62/83/92 &rarr; 15/28/45/72/92), its first downward move since June: the Sept 15, 2:15pm ET cloture vote on the motion to proceed to H.R. 3633 <strong>FAILED 49-50</strong>, well short of the 60 needed, with named Democratic negotiators (including Gallego, flagged yesterday as the likely yes) voting No and Sen. Lummis ruling out a quick floor return (6+ independent outlets plus the Senate&rsquo;s own roll call). <strong>Iran War Risk RE-RATED DOWN modestly</strong> on the 6/12/36mo windows (1/1/18/38/70 &rarr; 1/1/14/33/66): the IAEA Board of Governors referred Iran&rsquo;s nuclear file to the UN Security Council Sept 9, and 130 Iranian lawmakers pushed for NPT withdrawal Sept 12-13 (RFE/RL, Tehran Times, Mehr News), against Pezeshkian&rsquo;s public no-nukes stance. Ordinary light daily touch, full research access, verification clean &mdash; auto-stamped per the runbook&rsquo;s delegated authority.</div>
+
+  <div class="finalnum avoid">
+    <div class="lab">The Final Number · September 16, 2026 (COMMITTED — AUTO-STAMPED, light daily touch) · BTC $76,013.81 on Sept 16</div><br>
+    <span class="fig">-0.01</span><span style="font-size:11pt;font-weight:700;color:#6b7280;">Neutral — down from yesterday’s +0.45, no call-band flip on the headline number</span>
+    <div class="exp">Equal-weight mean of the five window signals below &mdash; every pillar counts 20% (scale &minus;10 to +10; horizon-weighted variant +0.56, versus yesterday&rsquo;s +0.97, still Mild Bull). CLARITY Act's failed cloture vote and Iran War Risk's modest nuclear-track re-rate both dragged the near windows down; Tokenization and Fed &amp; Macro held flat; Bitcoin TA (computed) eased slightly on price ($76,013.81) but held its calls.</div>
+  </div>
+
+  <div class="box avoid">
+    <h3>The five windows underneath it</h3>
+    <table class="data">
+      <tr><th>Window</th><th class="c">Master Signal</th><th>Call</th></tr>
+      <tr><td><strong>1 month</strong></td><td class="c signeg">&minus;2.03</td><td><strong>Bear</strong> &mdash; CLARITY&rsquo;s failed cloture vote (P 37&rarr;15) and Iran&rsquo;s already-floored &minus;4.70 both weigh; the worst window this cycle</td></tr>
+      <tr><td><strong>3 months</strong></td><td class="c signeg">&minus;1.71</td><td><strong>Bear</strong> &mdash; CLARITY crosses back to negative (+0.41&rarr;&minus;2.99) as the near-term legislative path closes off</td></tr>
+      <tr><td><strong>6 months</strong></td><td class="c signeg">&minus;0.50</td><td><strong>Mild Bear</strong> &mdash; crosses back below zero as both CLARITY and Iran re-rate down; Tokenization (+2.18) and Bitcoin TA (+0.79) partly offset</td></tr>
+      <tr><td><strong>1 year</strong></td><td class="c sig">+1.34</td><td><strong>Mild Bull</strong> &mdash; four of five pillars still positive; Iran alone negative here</td></tr>
+      <tr><td><strong>3 years</strong></td><td class="c sig">+2.85</td><td><strong>Bull</strong> &mdash; law + adoption + cycle + valuation, essentially unmoved this cycle</td></tr>
+    </table>
+    <p style="font-size:8.4pt;color:#43505f;margin-top:1.5mm;">Bands: |s| &lt; 0.5 Neutral · &lt; 1.5 Mild · &lt; 3 Bull/Bear · &lt; 5 Strong · else Very Strong. The leave-one-out range this cycle is −0.55 to +0.70 — the sign flips positive (Mild Bull) only when Iran War Risk is dropped (+0.70); <strong>dropping Tokenization alone pushes the reading further negative to −0.55, Mild Bear</strong>. See the Master Report's Robustness section.</p>
+  </div>
+</section>
+
+<section class="sec avoid">
+  <h2>Reading order</h2>
+  <div class="sub">Twenty minutes to the whole picture; each report stands alone and can be checked independently — every fact is dated with sources on its last page.</div>
+  <table class="data">
+    <tr><th>#</th><th>File</th><th>What it is</th></tr>
+    <tr><td>1</td><td class="file">CoinPicks_Master_Direction_Report.pdf</td><td><strong>The summary.</strong> The final number, the five-window table, the full pillar matrix, where the lenses agree/fight, six weeks of dated triggers, sensitivity.</td></tr>
+    <tr><td>2</td><td class="file">CoinPicks_Bitcoin_TA_Quant_Pillar_Report.pdf</td><td><strong>The math pillar.</strong> 7 indicators on 16 years of data, halving-cycle analogs, power-law valuation — with charts. Fully reproducible from code.</td></tr>
+    <tr><td>3</td><td class="file">reports/current/pdf/ — the four pillar PDFs</td><td><strong>The story pillars.</strong> CLARITY Act · Iran War Risk · Tokenization RWA · Fed &amp; Macro. Each: thesis, dated facts, honest bear case, dated triggers, and the full score lineage (June committed → … → Sept 14 committed, light daily → Sept 15 committed, light daily → Sept 16 committed, light daily, this version).</td></tr>
+    <tr><td>4</td><td class="file">reports/archive/ + prior-work/</td><td>Every earlier version, preserved untouched — the score history is fully auditable.</td></tr>
+    <tr><td>—</td><td class="file">run.py · engine/blend.py · data/master_blend.json</td><td>The blend engine (runnable Python — reproduce any score set with run.py blend --set NAME), its output, and README.md for regeneration.</td></tr>
+  </table>
+</section>
+
+<section class="sec avoid">
+  <h2>How the scoring works — one paragraph</h2>
+  <p>Every pillar answers the same question on five windows (1 month / 3 months / 6 months / 1 year / 3 years): <strong>P</strong> = the odds (0–100) that this force is <em>good for crypto</em> by then, <strong>Quality</strong> = how trustworthy the evidence is (0–1), and <strong>Impact</strong> = how hard this force moves the whole market (0–10). These combine into a <strong>Signal = ((P − 50) ÷ 50) × Quality × Impact</strong> (Impact is a uniform 8 for every pillar), so a coin-flip view scores zero no matter how loud the headlines are, and weak evidence can't shout. <strong>All five pillars are equal-weighted</strong> — the master for each window is the simple mean of the five signals (20% each; add a pillar and it auto-rebalances to 1/N) — and the Final Number averages the five master windows.</p>
+</section>
+
+<section class="sec avoid">
+  <h2>The five pillars at a glance (September 16 P&rsquo;s &mdash; light daily touch, CLARITY Act and Iran War Risk both re-rated DOWN; COMMITTED &mdash; AUTO-STAMPED)</h2>
+  <table class="data">
+    <tr><th>Pillar</th><th class="c">1mo</th><th class="c">3mo</th><th class="c">6mo</th><th class="c">1yr</th><th class="c">3yr</th><th>One-line read</th></tr>
+    <tr><td><strong>CLARITY Act</strong> (law)</td><td class="c">15</td><td class="c">28</td><td class="c">45</td><td class="c">72</td><td class="c">92</td><td>RE-RATED <strong>DOWN</strong> &mdash; the Sept 15 cloture vote FAILED 49-50, well short of 60; named Democratic negotiators (incl. Gallego) voted No, Lummis says the bill won&rsquo;t return to the floor, and senators leave for the midterms in early October. Polymarket&rsquo;s 2026-passage odds crashed from ~35% to ~5% &mdash; a market price, reported not scored</td></tr>
+    <tr><td><strong>Iran War Risk</strong></td><td class="c">1</td><td class="c">1</td><td class="c">14</td><td class="c">33</td><td class="c">66</td><td>RE-RATED DOWN on 6/12/36mo: the IAEA Board of Governors referred Iran&rsquo;s nuclear file to the UN Security Council Sept 9, and 130 Iranian lawmakers pushed for NPT withdrawal Sept 12-13 &mdash; against Pezeshkian&rsquo;s public no-nukes stance. 1mo/3mo already at the floor</td></tr>
+    <tr><td><strong>Tokenization (RWA)</strong></td><td class="c">52</td><td class="c">60</td><td class="c">66</td><td class="c">74</td><td class="c">85</td><td>Held flat: no new dated rwa.xyz pull, rail failure or depeg found; DTCC&rsquo;s October launch unchanged</td></tr>
+    <tr><td><strong>Fed &amp; Macro</strong></td><td class="c">34</td><td class="c">33</td><td class="c">44</td><td class="c">54</td><td class="c">60</td><td>Held flat: the September FOMC decision, SEP and dot plot are due 2:00pm ET today and had not landed at run time; no new BLS/Fed/BEA primary release found</td></tr>
+    <tr><td><strong>Bitcoin TA</strong> (quant)</td><td class="c">60</td><td class="c">54</td><td class="c">59</td><td class="c">69</td><td class="c">69</td><td>Data refreshed via GitHub Actions (BTC $76,013.81, Sept 16). 1mo &minus;1 and 3mo/1yr +1 each as the cycle-month clock advanced to 28.91; no new weekly, monthly or quarterly bar closed, so completed-bar composites are unchanged</td></tr>
+  </table>
+  <p style="font-size:8.6pt;color:#43505f;">P values shown (50 = coin flip). Tokenization and Fed &amp; Macro held flat this cycle; CLARITY Act and Iran War Risk both re-rated down, and this set (light daily touch, 2026-09-16_draft) is COMMITTED &mdash; AUTO-STAMPED.</p>
+</section>
+
+<section class="sec avoid">
+  <h2>Status &amp; honesty notes</h2>
+  <ul>
+    <li><strong>Score status:</strong> the September 16 light daily score set (2026-09-16_draft) builds on yesterday&rsquo;s light daily touch (2026-09-15_draft, committed). Tokenization RWA and Fed &amp; Macro were re-checked and held flat. <strong>CLARITY Act re-rated DOWN</strong> (37/53/62/83/92 &rarr; 15/28/45/72/92) on the failed cloture vote, and <strong>Iran War Risk re-rated down modestly</strong> (1/1/18/38/70 &rarr; 1/1/14/33/66) on the nuclear track. Both moves are deliberately partial: CLARITY's 3yr and Iran's 1mo/3mo were left untouched because a single vote, or a parliamentary push short of an actual NPT exit, doesn't move the multi-year or already-floored windows.</li>
+    <li><strong>Verification:</strong> facts researched with primary-source discipline, corroborated by multiple independent outlets per claim. This cycle&rsquo;s load-bearing fact &mdash; the cloture vote's 49-50 result &mdash; rests on 6+ independent outlets plus the Senate's own roll call. The IAEA referral is a primary institutional action; the 130-lawmaker NPT push is corroborated by 3 independent outlets (two Iranian state-affiliated, treated accordingly). Market prices (Polymarket's post-vote ~5% CLARITY odds) were reported but not used to move either score.</li>
+    <li><strong>Known limits, in print inside the reports:</strong> cycle-analog claims rest on 3 completed cycles, a disclosed fragility this report has repeatedly flagged; the TA pillar caps its own conviction at P = 50 ± 25; single-source items are labeled in-line; current chart bars are partial and the completed-bar numbers are printed; the Robustness section shows dropping Iran alone flips the headline to Mild Bull (+0.70), while dropping Tokenization alone pushes it further negative to Mild Bear (&minus;0.55) — the leave-one-out range this cycle (&minus;0.55 to +0.70) genuinely crosses zero.</li>
+    <li><strong>The near-term calendar is still active:</strong> the FOMC decision with SEP and dot plot, 2:00pm ET today, Sept 16, had not landed at run time &middot; Sen. Kennedy flagged the lame-duck session as the earliest realistic window for a renewed CLARITY attempt &middot; on the Iran pillar, whether the parliamentary NPT-withdrawal bill actually advances, or Pezeshkian's no-nukes line holds.</li>
+  </ul>
+  <div class="warnbox"><strong>This is research and education, not financial advice.</strong> The scores are probabilistic opinions with dated evidence — built to be argued with. If you check one thing manually, check the CLARITY Act pillar’s My Decision section and trigger table — this is the cycle where a vote this report had been tracking for weeks finally resolved, and you can see exactly how the score moved once the uncertainty it had been pricing became a resolved fact.</div>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>

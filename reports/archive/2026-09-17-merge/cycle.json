@@ -1,6 +1,6 @@
 {
   "asof": "2026-09-17",
-  "price": 76197.81,
+  "price": 76440.74,
   "cycle_month": 28.94,
   "cycles": [
     {
@@ -118,8 +118,8 @@
     "r2": 0.962,
     "minus1sd": 70143,
     "minus2sd": 35030,
-    "pct_vs_fair": -0.457,
-    "V": 54.5,
+    "pct_vs_fair": -0.456,
+    "V": 54.3,
     "fit_start_sensitivity": {
       "2011": 130181,
       "2012": 135106,
