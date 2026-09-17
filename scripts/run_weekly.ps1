@@ -17,9 +17,12 @@ $logFile = Join-Path $logDir "weekly_$stamp.log"
 # does NOT satisfy this, since the weekly path does a deeper four-pillar
 # pass the daily light touch doesn't. See run_daily.ps1 for the matching
 # check on that side (which does treat an already-landed weekly as covering
-# its own job). This exists because the cloud routine can independently run
-# a weekly cycle on the same schedule; see 2026-08-31 daily/cloud collision
-# notes in run_daily.ps1.
+# its own job). This exists because the cloud routine independently runs a
+# weekly cycle on the same schedule (Saturday 13:00 UTC = 9:00am ET, same
+# minute this task used to fire at). This task's primary trigger was moved
+# to 9:50am ET (2026-09-17) so this check has a real chance to see the
+# cloud's push land first -- before that, both fired simultaneously and this
+# check ran before either side had pushed, so it never caught anything.
 try {
     git fetch origin master --quiet 2>&1 | Out-Null
     $todayCommits = git log origin/master --since="midnight" --format="%H %s" 2>&1

@@ -16,14 +16,18 @@ $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
 $logFile = Join-Path $logDir "daily_$stamp.log"
 
 # Preflight (plain git, no Claude session -- costs nothing even if it fires
-# every day): the cloud routine now runs ~15 min before this task and, when
-# it succeeds, pushes a same-day "... daily ..." or "... weekly ..." commit
-# to origin/master. If that already landed, skip -- there is no reason to
-# spend a second full research cycle re-deriving what the cloud run already
-# decided (observed 2026-08-31: both ran back-to-back, ~40 min of duplicate
-# research, only avoided colliding because the cloud run's push happened to
-# fail). A failed weekly refresh counts as covering the daily's job too; a
-# daily catch-up does NOT count as covering a still-pending weekly.
+# every day): the cloud routine fires at 12:00 UTC (8:00am ET) and typically
+# finishes by ~12:30 UTC; this task's primary trigger was moved to 8:40am ET
+# (2026-09-17) specifically so this check has a real chance to see its push
+# before running. Before that change, both tasks fired at the same minute --
+# this check existed but ran before either side had pushed, so it never
+# caught anything and a full duplicate research cycle ran daily anyway
+# (observed every day 2026-09-13 through 2026-09-16, reconciled via git merge
+# each time -- see the "Merge the cloud ... cycle" commits). If today's cycle
+# already landed, skip -- there is no reason to spend a second full research
+# cycle re-deriving what the cloud run already decided. A failed weekly
+# refresh counts as covering the daily's job too; a daily catch-up does NOT
+# count as covering a still-pending weekly.
 try {
     git fetch origin master --quiet 2>&1 | Out-Null
     $todayCommits = git log origin/master --since="midnight" --format="%H %s" 2>&1
