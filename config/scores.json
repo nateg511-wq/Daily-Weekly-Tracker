@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-22_draft",
+  "active_qual_set": "2026-09-23_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1925,6 +1925,41 @@
           "3": 1,
           "6": 14,
           "12": 33,
+          "36": 66
+        },
+        "Tokenization": {
+          "1": 58,
+          "3": 65,
+          "6": 70,
+          "12": 77,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 31,
+          "3": 29,
+          "6": 37,
+          "12": 44,
+          "36": 58
+        }
+      }
+    },
+    "2026-09-23_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "LIGHT DAILY touch, 2026-09-23. Checking for changes since the 2026-09-22_draft committed baseline. CLARITY Act, Tokenization, and Fed & Macro CARRIED FORWARD UNCHANGED at 15/28/45/72/92, 58/65/70/77/86, and 31/29/37/44/58 respectively. Iran War Risk RE-RATED UP, modestly: 1/1/14/33/66 -> 3/3/16/35/66. TWO dated, multi-source-corroborated diplomatic developments Sept 22, 2026, neither previously priced (last Iran research was the Sept 19 full weekly refresh): (1) A senior Iranian official told REUTERS (primary wire, Sept 22) that Iran can reopen the Strait of Hormuz within 7 days if the US eases military pressure and lifts its naval blockade on Iranian ports -- Tehran's proposal was reportedly delivered to the US via mediators Sept 16. Corroborated independently by 8+ outlets carrying the Reuters wire (Washington Times, Yahoo, US News, The Star, Israel Hayom, KFGO, BOE Report, AOL) -- comfortably clears the sufficiency bar. (2) US and Iranian officials (Witkoff and Kushner for the US; FM Araghchi for Iran, per Iranian state media) held a three-hour MEDIATED meeting at the UN General Assembly sidelines in New York, Sept 22 -- the first reported direct-channel US-Iran contact at this level since the war began. Trump called it 'a very good meeting, a very productive meeting' with 'a lot of momentum' toward an agreement, and said another meeting is scheduled 'in the very near future.' Corroborated across 6+ independent outlets (Al Jazeera, Axios, The Hill, Times of Israel, New Arab, Al Arabiya) plus independent confirmation from Iranian state media of the Araghchi-Witkoff meeting itself -- not a single-source claim. WHY ONLY A MODEST MOVE, SIZED LIKE THE SEPT 13 PRECEDENT (a comparable announced-meeting cycle that moved P +2 on four windows): Iran's stated conditions are steep and unmet -- immediate full blockade lift, release of ALL frozen Iranian assets, and an end to the war on every 'resistance front' Tehran names -- a wide gap from a signed deal; President Pezeshkian is in New York but explicitly will NOT meet Trump directly, so this remains a working-level channel; and Sept 21 brought two more unattributed tanker/projectile incidents near Hormuz (UKMTO-sourced, continuation of the already-priced campaign, not a new escalation type) plus a SINGLE-SOURCE, unverified claim (one aggregator only) that Iran's Parliament Speaker Ghalibaf said Iran will not return to talks until US demands are met -- flagged, not used, per the sufficiency rule. A SINGLE-SOURCE Sept 23 report of new US sanctions on Iran airline service providers was also found and is explicitly NOT used (no primary OFAC/Treasury confirmation, no second outlet). None of this pillar's standing flip-line clauses (confirmed new US combat death, resumption of direct strikes on a genuinely new state, sustained Brent close above $100) is affected either way. P per window: 1mo 1->3, 3mo 1->3, 6mo 14->16, 12mo 33->35, 36mo held at 66 (a single diplomatic round, however well-corroborated, does not move the multi-year strategic read). Context, not scored: Brent crude fell to ~$99/bbl by Sept 22, a 5th straight down session and 2-week low (Bloomberg, CNBC, Rigzone, EnergyNow -- multi-source, a market price); Saudi Arabia's East-West Pipeline (Petroline) resumed operation around Sept 22 after its Sept 13 drone-strike outage, with full throughput recovery estimated 6-8 weeks (Reuters via multiple outlets) -- both directionally consistent with, but not used to independently justify, this re-rate. CLARITY Act: the only item found dated in this window is a single-source CoinDesk report (Sept 22, CoinPicks Policy & Regulation event) of White House/Treasury officials saying market structure 'can't wait' for a lame-duck CLARITY revival and framing the CFTC/SEC administrative track as where near-term action now sits -- a CoinSpectator pickup is a syndication of the same piece, not independent corroboration, so this does not clear the sufficiency bar; no new floor scheduling, no new Democratic yes votes, no ethics-dispute movement found. HELD FLAT. Tokenization: the only item found is CFTC Chairman Selig's Sept 22 speech at the NY Fed's Treasury Market Conference on 'mass tokenization' and 24/7 trading as the market's future -- well-corroborated (The Block, KuCoin, CoinCentral, Crypto-Economy, CoinGabbar, Blockonomi) but a rhetorical/tone signal, not a rule, transaction, or GENIUS Act rulemaking action; still zero of six agencies with a finalized GENIUS Act rule; no DTCC or Nasdaq tokenization timeline news found. HELD FLAT. Fed & Macro: 10-year Treasury yield ~4.96-4.97% Sept 22, essentially flat (CNBC, TradingEconomics -- two-source, but a market price, not scored); CME FedWatch showing 59.7% odds of an Oct 28 hike is effectively single-sourced (one aggregator citing CME, not independently pulled from CME's own site) and does not clear the bar; Fed Vice Chair Jefferson's Sept 22 speech (primary, federalreserve.gov) was on discount-window/Treasury-market plumbing, off-topic for this pillar's P (no inflation or rate-path signal). HELD FLAT. Research capability fully available this cycle (WebSearch clean throughout). Per CLAUDE.md's delegated auto-stamp authority, this is an ordinary light daily-type touch, not a weekly refresh, and the sourcing clears the sufficiency rule -- auto-stamp candidate pending clean render/selfcheck/verification.",
+      "P": {
+        "CLARITY Act": {
+          "1": 15,
+          "3": 28,
+          "6": 45,
+          "12": 72,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 3,
+          "3": 3,
+          "6": 16,
+          "12": 35,
           "36": 66
         },
         "Tokenization": {
