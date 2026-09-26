@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-23_draft",
+  "active_qual_set": "2026-09-26_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -1960,6 +1960,41 @@
           "3": 3,
           "6": 16,
           "12": 35,
+          "36": 66
+        },
+        "Tokenization": {
+          "1": 58,
+          "3": 65,
+          "6": 70,
+          "12": 77,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 31,
+          "3": 29,
+          "6": 37,
+          "12": 44,
+          "36": 58
+        }
+      }
+    },
+    "2026-09-26_draft": {
+      "status": "committed",
+      "stamped_by": "Alex (auto-stamped)",
+      "note": "LIGHT DAILY touch, 2026-09-26. Checking for changes since the 2026-09-23_draft (committed) baseline. CLARITY Act, Tokenization, and Fed & Macro CARRIED FORWARD UNCHANGED at 15/28/45/72/92, 58/65/70/77/86, and 31/29/37/44/58 respectively -- see reasons below. Iran War Risk RE-RATED DOWN, reversing the Sept 23 bump back to the Sept 22 baseline: 3/3/16/35/66 -> 1/1/14/33/66. WHY: the Wall Street Journal reported Sept 25-26 (citing US officials familiar with the matter) that Trump REJECTED Iran's 7-day Hormuz-reopening proposal -- the very proposal that drove the Sept 23 re-rate up -- and told aides he expects US bombing of Iran to resume after the November midterms. Widely syndicated (20+ outlets: Irish Times, Haaretz, JPost, Times of Israel, Al Jazeera, France24, The Week, Al Arabiya, Breitbart, The National, Japan Times, Mediaite, among others, all crediting WSJ) and independently corroborated beyond WSJ's own sourcing: CNN's own Sept 25 reporting/analysis separately calls Iran's offer 'a non-starter'; a separate report quotes senior White House officials on record confirming the administration has 'no intention of dismantling its maritime blockade,' betting sustained economic pressure forces Tehran into a worse deal. Clears the sufficiency bar on multiple independent outlets' own reporting, not mere syndication of one wire. NOT treated as a full reversal below the Sept 22 baseline, and NOT a flip-line trigger (no combat death, no actual resumption of strikes yet -- 'after the midterms' is prospective, roughly 6+ weeks out, and outside this pillar's flip-line clauses of confirmed new combat death / resumption of direct strikes on a genuinely new state / sustained Brent above $100), because the picture remains genuinely mixed: Reuters separately reported Sept 26 (citing a US official) that Washington and Tehran are still having 'positive, constructive' discussions through mediators on the nuclear file; US News (Sept 24, before the WSJ story) reported the two sides were discussing a phased deal to reopen Hormuz and end the blockade; and Al Jazeera (Sept 25) reports Iran is still formally awaiting a US response to its roadmap, i.e. no side has declared the process dead. Net read: the specific optimistic catalyst behind the Sept 23 bump has been credibly and multiply contradicted, so that bump is reversed; the situation has not deteriorated further than pre-Sept-22 baseline because talks and mediation are still reported ongoing in parallel. P per window: 1mo 3->1, 3mo 3->1, 6mo 16->14, 12mo 35->33, 36mo held at 66 (a single reported rejection, however well-corroborated, does not move the multi-year strategic read any further than reversing the prior bump). CLARITY Act: no new floor scheduling found since the Sept 15 cloture failure; the 'White House agrees to ethics provision' story recirculating in searches predates and was already priced into the Sept 15 vote setup, not new. HELD FLAT. Tokenization: CFTC staff released updated FAQs Sept 24, 2026 (cftc.gov primary, corroborated by 7+ independent outlets incl. Unchained, CoinPaprika, Cryptonomist) clarifying that customer funds may be invested in tokenized forms of permitted investments and that blockchain-based systems can satisfy CFTC recordkeeping rules -- genuine, dated, well-sourced, but staff guidance applying EXISTING rules (not a new rule or a live venue/product), consistent with this pillar's established bar (cf. the Sept 19 'watch, not fired' treatment of similar administrative items) -- LOGGED, NOT SCORED; DTCC's October full-service launch remains the pillar's operative unconfirmed catalyst to watch. Fed & Macro: August PCE (the next real data point) is not due until Sept 30, 2026 (BEA); no jobless-claims or PCE surprise found dated Sept 24-26 that moves the inflation/rate-path read; no new FOMC speakers found off the Sept 22 Jefferson speech already logged and held off-topic. HELD FLAT. Research capability fully available this cycle (WebSearch clean throughout, no EGRESS_BLOCKED hits). Per CLAUDE.md's delegated auto-stamp authority, this is an ordinary light daily-type touch, not a weekly refresh, and the sourcing clears the sufficiency rule on both the re-rate and the held-flat calls -- auto-stamp candidate pending clean render/selfcheck/verification.",
+      "P": {
+        "CLARITY Act": {
+          "1": 15,
+          "3": 28,
+          "6": 45,
+          "12": 72,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 14,
+          "12": 33,
           "36": 66
         },
         "Tokenization": {
