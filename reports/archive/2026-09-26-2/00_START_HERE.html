@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoinPicks Research Package — Start Here (September 26, 2026)</title>
+<style>
+  :root{
+    --blue:#2f6bed; --blue-dk:#1f4fbf; --ink:#1a2230; --muted:#6b7280;
+    --box:#e9f1fd; --box-bd:#c4d8fb; --line:#dbe2ec; --warn:#fff6e5; --warn-bd:#f0c870;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:10pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  table.page{ width:100%; border-collapse:collapse; }
+  table.page > thead{ display:table-header-group; }
+  table.page > tfoot{ display:table-footer-group; }
+  td.hcell,td.fcell,td.body{ border:none; padding:0; }
+  td.body{ padding:6mm 14mm 7mm 14mm; vertical-align:top; }
+  .bar{ height:5.5mm; background:var(--blue); }
+  .runhead{ display:flex; justify-content:space-between; align-items:baseline;
+    margin:2.6mm 14mm 0; padding-bottom:1.8mm; border-bottom:1px solid var(--blue);
+    font-size:7.6pt; letter-spacing:.6px; color:#33404f; }
+  .runhead b{ color:var(--blue-dk); letter-spacing:1.2px; }
+  .runfoot{ text-align:center; font-size:7.3pt; color:var(--muted); letter-spacing:.3px; margin:0 14mm 2.4mm; }
+  .sec{ margin-top:6mm; }
+  .sec.first{ margin-top:2mm; }
+  h1{ font-size:22pt; margin:4mm 0 1mm; letter-spacing:-.4px; }
+  h1 .l2{ color:var(--blue); }
+  .deck{ font-size:11pt; color:#3a4759; margin:0 0 4mm; font-weight:500; }
+  h2{ font-size:12.5pt; margin:0; color:var(--ink); letter-spacing:-.2px; }
+  .sub{ font-size:8.6pt; color:var(--muted); margin:1mm 0 2.5mm; font-style:italic; }
+  p{ margin:0 0 2.4mm; }
+  ul{ margin:1mm 0 2mm; padding-left:0; list-style:none; }
+  li{ margin:1.6mm 0; padding-left:6mm; position:relative; }
+  li:before{ content:"•"; color:var(--blue); font-weight:700; position:absolute; left:1mm; }
+  strong{ color:#10243f; }
+  table.data{ border-collapse:collapse; width:100%; font-size:9pt; margin:1mm 0; }
+  table.data th,table.data td{ border:1px solid var(--line); padding:2.2mm 3mm; text-align:left; vertical-align:top; }
+  table.data th{ background:#eef4fe; font-weight:700; color:var(--blue-dk); font-size:8.4pt; letter-spacing:.4px; text-transform:uppercase; }
+  td.c,th.c{ text-align:center; }
+  td.my{ font-weight:700; color:var(--blue-dk); }
+  .sig{ font-weight:700; color:#0f7a4f; } .signeg{ font-weight:700; color:#b91c1c; } .signeu{ font-weight:700; color:#6b7280; }
+  .box{ background:var(--box); border:1px solid var(--box-bd); border-radius:6px; padding:3.5mm 5mm; margin:2.5mm 0; }
+  .box h3{ margin:0 0 1.6mm; font-size:8.7pt; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue-dk); }
+  .box p{ margin:1.2mm 0; }
+  .finalnum{ background:#eafaf1; border:1.5px solid #8fdcb4; border-radius:8px; padding:4.5mm 6mm; margin:2.5mm 0; }
+  .finalnum .fig{ font-size:22pt; font-weight:800; color:#0f7a4f; letter-spacing:-.5px; display:inline-block; margin-right:4mm; }
+  .finalnum .lab{ font-size:8.6pt; color:#1a5c3d; letter-spacing:.6px; font-weight:700; text-transform:uppercase; }
+  .finalnum .exp{ font-size:8.8pt; color:#2c5443; margin-top:1mm; }
+  .warnbox{ background:var(--warn); border:1px solid var(--warn-bd); border-radius:6px; padding:3.5mm 5mm; font-size:9pt; margin:2.5mm 0; }
+  .avoid{ page-break-inside:avoid; }
+  .file{ font-family:ui-monospace,Menlo,monospace; font-size:8.5pt; color:var(--blue-dk); }
+</style>
+</head>
+<body>
+<table class="page">
+<thead>
+  <tr><td class="hcell">
+    <div class="bar"></div>
+    <div class="runhead"><b>COINPICKS</b><span>RESEARCH PACKAGE · START HERE · SEPTEMBER 23, 2026</span></div>
+  </td></tr>
+</thead>
+<tfoot>
+  <tr><td class="fcell">
+    <div class="runfoot">CoinPicks · September 26, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="bar"></div>
+  </td></tr>
+</tfoot>
+<tbody>
+<tr><td class="body">
+
+<section class="sec first">
+  <h1>CoinPicks Market Direction<br><span class="l2">Research Package</span></h1>
+  <div class="deck">Five pillars &mdash; four researched narratives and one pure-math read of the Bitcoin chart &mdash; scored on one standard, blended into one table, and distilled to one number. Everything in this folder is current as of <strong>September 26, 2026</strong> &mdash; a FULL WEEKLY refresh, against the Sept 26 committed daily baseline (2026-09-26_draft).</div>
+
+  <div class="warnbox avoid"><strong>UPDATED DRAFT — SEPTEMBER 26, 2026 · AWAITING MY STAMP (FULL WEEKLY refresh, score set 2026-09-26_draft2).</strong> CLARITY Act, Iran War Risk, and Tokenization RWA were each independently re-researched this cycle and are <strong>carried forward unchanged</strong> — nothing found cleared the sufficiency bar. <strong>Fed &amp; Macro re-rated down</strong> (31/29/37/44/58 &rarr; 27/25/35/43/57): independent full research surfaced a genuinely new primary-sourced cluster the intervening daily touches had missed — Fed Governor Barr's Sept 23 speech ("further policy adjustments are likely to be needed") plus the same-day S&amp;P Global flash PMI showing inflation re-accelerating to its highest since October 2022, both corroborated across 5+ independent outlets each. CME's implied October-hike odds jumped from roughly 50% to 70-76% on this same cluster. This is a FULL WEEKLY refresh, categorically excluded from delegated auto-stamp authority regardless of the size of the move — <strong>status draft, not stamped</strong>, flagged prominently for Alex's manual review, after a clean render/selfcheck/verification pass.</div>
+
+  <div class="finalnum avoid">
+    <div class="lab">The Final Number · September 26, 2026 (UPDATED DRAFT — AWAITING MY STAMP, FULL WEEKLY refresh, 2026-09-26_draft2) · BTC $83,381.75 on Sept 25</div><br>
+    <span class="fig">-0.07</span><span style="font-size:11pt;font-weight:700;color:#6b7280;">Neutral — essentially flat, barely changed from the Sept 26 committed read</span>
+    <div class="exp">Equal-weight mean of the five window signals below &mdash; every pillar counts 20% (scale &minus;10 to +10). The headline reads -0.07 equal-weight; the horizon-weighted variant reads <strong>+0.47</strong>, versus +0.52 on Sept 26 (committed), still Neutral. <strong>Only Fed &amp; Macro moved among the qualitative pillars this cycle</strong> &mdash; CLARITY Act, Iran War Risk, and Tokenization RWA all independently re-researched and held flat; the computed Bitcoin TA read is unchanged (no new quant refresh this cycle).</div>
+  </div>
+
+  <div class="box avoid">
+    <h3>The five windows underneath it</h3>
+    <table class="data">
+      <tr><th>Window</th><th class="c">Master Signal</th><th>Call</th></tr>
+      <tr><td><strong>1 month</strong></td><td class="c signeg">&minus;2.10</td><td><strong>Bear</strong> &mdash; slightly deeper than &minus;1.99. Fed &amp; Macro dropped to &minus;3.13 as Fed Governor Barr's hawkish speech and a hot flash PMI landed; CLARITY (&minus;4.76) and Iran (&minus;4.70), held flat, remain the biggest drags here</td></tr>
+      <tr><td><strong>3 months</strong></td><td class="c signeg">&minus;1.63</td><td><strong>Bear</strong> &mdash; slightly deeper than &minus;1.52</td></tr>
+      <tr><td><strong>6 months</strong></td><td class="c signeg">&minus;0.59</td><td><strong>Mild Bear</strong> &mdash; essentially unchanged from &minus;0.54. Iran remains flat at &minus;4.03, still the biggest drag</td></tr>
+      <tr><td><strong>1 year</strong></td><td class="c sig">+1.13</td><td><strong>Mild Bull</strong> &mdash; essentially unchanged from +1.16. Tokenization leads at +3.37, alongside CLARITY (+3.17) and Bitcoin TA (+1.73)</td></tr>
+      <tr><td><strong>3 years</strong></td><td class="c sig">+2.81</td><td><strong>Bull</strong> &mdash; essentially unchanged, every pillar still positive. This cycle's Fed &amp; Macro re-rate was concentrated on the near/mid windows (1mo/3mo −4, 6mo −2, 1yr/3yr −1)</td></tr>
+    </table>
+    <p style="font-size:8.4pt;color:#43505f;margin-top:1.5mm;">Bands: |s| &lt; 0.5 Neutral · &lt; 1.5 Mild · &lt; 3 Bull/Bear · &lt; 5 Strong · else Very Strong. The leave-one-out range this cycle is −0.76 to +0.62 — the sign flips positive (Mild Bull) when Iran War Risk is dropped (+0.62, the largest single standing negative even though it held flat this cycle); <strong>dropping Tokenization alone pushes the reading further negative to −0.76, Mild Bear</strong>. See the Master Report's Robustness section.</p>
+  </div>
+</section>
+
+<section class="sec avoid">
+  <h2>Reading order</h2>
+  <div class="sub">Twenty minutes to the whole picture; each report stands alone and can be checked independently — every fact is dated with sources on its last page.</div>
+  <table class="data">
+    <tr><th>#</th><th>File</th><th>What it is</th></tr>
+    <tr><td>1</td><td class="file">CoinPicks_Master_Direction_Report.pdf</td><td><strong>The summary.</strong> The final number, the five-window table, the full pillar matrix, where the lenses agree/fight, six weeks of dated triggers, sensitivity.</td></tr>
+    <tr><td>2</td><td class="file">CoinPicks_Bitcoin_TA_Quant_Pillar_Report.pdf</td><td><strong>The math pillar.</strong> 7 indicators on 16 years of data, halving-cycle analogs, power-law valuation — with charts. Fully reproducible from code.</td></tr>
+    <tr><td>3</td><td class="file">reports/current/pdf/ — the four pillar PDFs</td><td><strong>The story pillars.</strong> CLARITY Act · Iran War Risk · Tokenization RWA · Fed &amp; Macro. Each: thesis, dated facts, honest bear case, dated triggers, and the full score lineage (June committed → … → Sept 26 committed, light daily → Sept 26 draft2, full weekly refresh, this version).</td></tr>
+    <tr><td>4</td><td class="file">reports/archive/ + prior-work/</td><td>Every earlier version, preserved untouched — the score history is fully auditable.</td></tr>
+    <tr><td>—</td><td class="file">run.py · engine/blend.py · data/master_blend.json</td><td>The blend engine (runnable Python — reproduce any score set with run.py blend --set NAME), its output, and README.md for regeneration.</td></tr>
+  </table>
+</section>
+
+<section class="sec avoid">
+  <h2>How the scoring works — one paragraph</h2>
+  <p>Every pillar answers the same question on five windows (1 month / 3 months / 6 months / 1 year / 3 years): <strong>P</strong> = the odds (0–100) that this force is <em>good for crypto</em> by then, <strong>Quality</strong> = how trustworthy the evidence is (0–1), and <strong>Impact</strong> = how hard this force moves the whole market (0–10). These combine into a <strong>Signal = ((P − 50) ÷ 50) × Quality × Impact</strong> (Impact is a uniform 8 for every pillar), so a coin-flip view scores zero no matter how loud the headlines are, and weak evidence can't shout. <strong>All five pillars are equal-weighted</strong> — the master for each window is the simple mean of the five signals (20% each; add a pillar and it auto-rebalances to 1/N) — and the Final Number averages the five master windows.</p>
+</section>
+
+<section class="sec avoid">
+  <h2>The five pillars at a glance (Fed &amp; Macro updated September 26 &mdash; score set 2026-09-26_draft2, DRAFT, AWAITING ALEX'S STAMP)</h2>
+  <table class="data">
+    <tr><th>Pillar</th><th class="c">1mo</th><th class="c">3mo</th><th class="c">6mo</th><th class="c">1yr</th><th class="c">3yr</th><th>One-line read</th></tr>
+    <tr><td><strong>CLARITY Act</strong> (law)</td><td class="c">15</td><td class="c">28</td><td class="c">45</td><td class="c">72</td><td class="c">92</td><td>Held flat: independently re-researched Sept 26 — CFTC/SEC staff FAQs (Sept 24-25) apply existing rules, not evidence of legislative-passage odds; no new floor scheduling</td></tr>
+    <tr><td><strong>Iran War Risk</strong></td><td class="c">1</td><td class="c">1</td><td class="c">14</td><td class="c">33</td><td class="c">66</td><td>Held flat: independently re-researched Sept 26 — the WSJ-rejection/Reuters-still-talking stories were already priced into the same-day baseline; continued Houthi-Saudi attacks are a continuation of an already-priced front</td></tr>
+    <tr><td><strong>Tokenization (RWA)</strong></td><td class="c">58</td><td class="c">65</td><td class="c">70</td><td class="c">77</td><td class="c">86</td><td>Held flat: independently re-researched Sept 26 — a NYSE Group/Blockchain.com MOU (Sept 23-24) is pre-approval, no live product; logged, not scored</td></tr>
+    <tr><td><strong>Fed &amp; Macro</strong></td><td class="c">27</td><td class="c">25</td><td class="c">35</td><td class="c">43</td><td class="c">57</td><td>RE-RATED <strong>DOWN</strong> from 31/29/37/44/58. Fed Governor Barr's Sept 23 hawkish speech plus a hot flash PMI — a cluster the intervening daily touches missed — clears the sufficiency bar; CME's implied October-hike odds jumped to 70-76%</td></tr>
+    <tr><td><strong>Bitcoin TA</strong> (quant)</td><td class="c">58</td><td class="c">61</td><td class="c">61</td><td class="c">68</td><td class="c">69</td><td>Computed, unchanged methodology (BTC $83,381.75, Sept 25). No new quant refresh this cycle &mdash; data-check only, per the cloud-sandbox network policy</td></tr>
+  </table>
+  <p style="font-size:8.6pt;color:#43505f;">P values shown (50 = coin flip). CLARITY Act, Iran War Risk, and Tokenization RWA are held flat after independent fresh research this cycle; Fed &amp; Macro is re-rated down on a genuinely new primary-sourced cluster (score set 2026-09-26_draft2, full weekly refresh) &mdash; LEFT AS DRAFT, AWAITING ALEX'S MANUAL REVIEW.</p>
+</section>
+
+<section class="sec avoid">
+  <h2>Status &amp; honesty notes</h2>
+  <ul>
+    <li><strong>Score status &mdash; today is a full weekly refresh.</strong> One score set, <code>2026-09-26_draft2</code>, checked against today&rsquo;s earlier committed daily baseline (2026-09-26_draft). <strong>One pillar re-rated</strong>: Fed &amp; Macro, 31/29/37/44/58 &rarr; 27/25/35/43/57, on a genuinely new primary-sourced cluster the intervening daily touches had missed. <strong>Three pillars held flat</strong> (CLARITY Act, Iran War Risk, Tokenization RWA) &mdash; each independently re-researched via WebSearch this cycle, nothing found cleared the sufficiency bar on any of them. Full weekly refreshes are categorically excluded from delegated auto-stamp authority regardless of finding — <strong>LEFT AS DRAFT</strong>, awaiting Alex's manual review.</li>
+    <li><strong>Why Fed &amp; Macro moved, in one paragraph, so you can judge it yourself.</strong> Fed Governor Michael Barr — a sitting FOMC voter — said in a Chicago speech Sept 23, 2026 (PRIMARY: federalreserve.gov) that "further policy adjustments are likely to be needed" to bring inflation to target, citing inflation risk having "increased" while labor-market risk has "receded." The same day, S&amp;P Global's flash September composite PMI (PRIMARY: pmi.spglobal.com) showed the strongest private-sector activity since 2021 alongside inflation re-accelerating to its highest combined reading since October 2022. Both were independently re-verified via separate searches, and are corroborated by 5+ independent outlets each. CME's implied October-hike odds jumped from roughly 50% to 70-76% on this same cluster (a market price, corroborating context only). This is stronger sourcing than the two regional soft surveys that drove the Sept 22 one-point move — and a genuine miss by the Sept 23/26 daily touches, which had both logged "no new FOMC speaker."</li>
+    <li><strong>Why the other three held.</strong> CLARITY Act: CFTC and SEC staff FAQs (Sept 24-25) apply existing rules, not evidence of legislative-passage odds — logged, not scored. Iran War Risk: the WSJ-rejection and Reuters-still-talking stories were already priced into the same-day committed baseline; continued Houthi attacks on Saudi Arabia are a continuation of an already-priced front, not a new state. Tokenization: a NYSE Group/Blockchain.com MOU (Sept 23-24) is a pre-approval MOU with zero live product — logged, not scored.</li>
+    <li><strong>Verification:</strong> facts researched with primary-source discipline, corroborated by multiple independent outlets per claim. This cycle&rsquo;s load-bearing facts &mdash; the Barr speech and the flash PMI &mdash; were each independently re-verified via separate searches before use, beyond the original research pass.</li>
+    <li><strong>Known limits, in print inside the reports:</strong> cycle-analog claims rest on 3 completed cycles, a disclosed fragility this report has repeatedly flagged; the TA pillar caps its own conviction at P = 50 ± 25; single-source items are labeled in-line; current chart bars are partial and the completed-bar numbers are printed; the Robustness section shows dropping Iran alone flips the headline to Mild Bull (+0.62, the largest standing negative even though unchanged this cycle), while dropping Tokenization alone pushes it further negative to Mild Bear (&minus;0.76) — the leave-one-out range this cycle (&minus;0.76 to +0.62) genuinely crosses zero.</li>
+    <li><strong>The near-term calendar is still active:</strong> the August PCE print due Sept 30, the next hard test of this cycle's hawkish cluster &middot; whether the Fed delivers the further 2026 hike its own SEP median projects at the Oct 27-28 FOMC &middot; whether US strikes on Iran actually resume, or Iran's Hormuz proposal is formally answered either way &middot; whether any Tokenized Securities Venue actually announces it is live and trading under the Sept 17 SEC exemption, or the NYSE/Blockchain.com MOU advances toward a filing &middot; the October DTCC full-service tokenization launch.</li>
+  </ul>
+  <div class="warnbox"><strong>This is research and education, not financial advice.</strong> The scores are probabilistic opinions with dated evidence — built to be argued with. If you check one thing manually, check any pillar's What Changed section this cycle — three ran independent fresh research and are honest about finding nothing that cleared the bar, while the Fed &amp; Macro report explains exactly what the intervening daily touches missed and why. This score set is a draft awaiting Alex's stamp — the one thing this system leaves for a human, on purpose.</div>
+</section>
+
+</td></tr>
+</tbody>
+</table>
+</body>
+</html>
