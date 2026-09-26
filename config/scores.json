@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-09-26_draft",
+  "active_qual_set": "2026-09-26_draft2",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -2010,6 +2010,40 @@
           "6": 37,
           "12": 44,
           "36": 58
+        }
+      }
+    },
+    "2026-09-26_draft2": {
+      "status": "draft",
+      "note": "FULL WEEKLY refresh, 2026-09-26 (last full weekly refresh: Sept 19, still draft, superseded by daily touches Sept 20-26). Independent full four-pillar research pass, each pillar dispatched separately with its own primary-source research and sufficiency-rule check. Baseline: the 2026-09-26_draft committed (auto-stamped) daily set: CLARITY Act 15/28/45/72/92, Iran War Risk 1/1/14/33/66, Tokenization 58/65/70/77/86, Fed & Macro 31/29/37/44/58.\n\nCLARITY Act: HELD FLAT at 15/28/45/72/92. Fresh research (CFTC staff FAQ update Sept 24 on tokenized customer funds/blockchain recordkeeping, primary cftc.gov + 5-independent corroboration; SEC staff FAQ Sept 25 on digital-asset guidance, primary + 5-independent corroboration) found genuinely new administrative-track developments, but both are staff guidance applying EXISTING rules -- same bucket as the Sept 17 CFTC OIRA filing and Atkins' prior 'act without legislation' statements already logged as context, not legislative-passage evidence. No Senate floor scheduling found (October/November is midterm recess; lame-duck remains the only realistic 2026 window, unchanged since Sept 19). No Democratic vote-count shift found. No movement on the Tillis-Gallego ethics dispute or stablecoin-yield dispute beyond the already-logged, not-sufficiency-clearing Sept 22 CoinDesk single-source item. Polymarket/Kalshi odds ticked up modestly (~6%->~8%) but with no corroborating news event -- market price, reportable only, not scored. Sufficiency bar not cleared for any window.\n\nIran War Risk: HELD FLAT at 1/1/14/33/66. Re-verified the WSJ Sept 25-26 Trump-rejects-Hormuz-proposal story and the Reuters Sept 26 'positive, constructive' mediated-talks story that the same-day daily cycle already priced into today's committed baseline -- nothing found post-dates or exceeds that. New this window: continued Houthi (Iran-aligned) missile/drone attacks on Saudi Arabia Sept 24-26 (intercepted, no confirmed casualties; 4+ independent outlets) -- a continuation of the already-priced Aug 7 fourth-state widening, not a new state or new escalation type, so does not fire the pillar's widening flip-line clause. CENTCOM has issued no primary release since its Sept 19 blockade-totals video. No confirmed new US combat death and no confirmed (as opposed to threatened/expected) resumption of US strikes found anywhere. Brent ~$105 Sept 25, still inside the already-fired sustained->$100 band, not a new threshold event. No flip-line clause newly fires; sufficiency bar not cleared for any further move beyond today's daily baseline.\n\nTokenization: HELD FLAT at 58/65/70/77/86. Re-confirmed the Sept 24 CFTC staff FAQ (primary + 7-independent corroboration) is correctly logged-not-scored (existing-rules guidance, not a new rule or live product). Genuinely NEW this window and not yet in the report text: a NYSE Group / Blockchain.com MOU (Sept 23-24, primary via ir.theice.com + 6-independent corroboration) for Blockchain.com's 44M+ users to eventually access tokenized NYSE-listed equities/ETFs via NYSE's planned digital ATS -- explicitly exploratory, 'subject to any required regulatory approvals,' no launch date, no TSV filed, platform not live. Weaker than the Aug 24 Coinbase/Robinhood Chain launches this pillar already held insufficient (those were live products); this is a pre-approval MOU with zero live product. LOGGED AS CONTEXT, NOT SCORED -- to be added to the report's Triggers/What Changed for the audit trail. Zero of six GENIUS Act agencies have finalized a rule (Treasury's Aug 18 NPRM, comment deadline Oct 19, remains the latest milestone). DTCC's October full-service launch remains unconfirmed this week (no primary dtcc.com release either way) -- still the pillar's operative pending catalyst. SEC Innovation Exemption: Crypto Task Force chief counsel said Sept 22 he expects issuer notices 'next quarter' (Q4) -- consistent with the report's own mid-October-earliest read, still not live. Sufficiency bar not cleared for any window.\n\nFed & Macro: RE-RATED DOWN, 31/29/37/44/58 -> 27/25/35/43/57. The Sept 23 and Sept 26 daily touches logged 'no new FOMC speaker beyond the Sept 22 Jefferson speech' and held flat, but this full weekly research pass found a genuinely new, well-corroborated, primary-sourced cluster dated Sept 23 that those daily touches missed: (1) Fed Governor Michael Barr (a sitting FOMC voter) said in a Chicago speech, PRIMARY (federalreserve.gov/newsevents/speech/barr20260923a.htm), corroborated 5+ independent outlets (American Banker, National Mortgage News, Bloomberg, Reuters/Investing.com, Yahoo Finance), that 'further policy adjustments are likely to be needed' to bring inflation to target 'in a timely fashion,' explicitly citing inflation risk having 'increased' while labor-market risk 'receded.' (2) S&P Global flash September PMI, released the same day, PRIMARY (pmi.spglobal.com), corroborated 6+ independent outlets (CNBC x2, FXStreet, Kiplinger, Reuters, Mitrade): composite activity at its strongest since 2021 (services strongest in ~5 years), with input-cost and output-price inflation both accelerating to the highest combined reading since October 2022. CNBC's own reporting ties the two together directly: CME FedWatch October-hike odds jumped from roughly 50% pre-Sept-23 to 70-76% by Sept 25 (multi-source, market price, not scored, but corroborates the size of the repricing) and the 10-year Treasury yield hit its highest since June 2007 (~5.16-5.22%, though this move is confounded with Iran-war oil risk and is not used to independently justify the score). Independently re-verified both the Barr-speech text and the flash PMI figures via separate direct searches before using them. WHY THIS CLEARS THE SUFFICIENCY BAR AND EXCEEDS THE SEPT 22 PRECEDENT: a sitting FOMC voter's own explicit forward guidance plus a national (not regional) flash composite PMI, both dated the same day, both primary-sourced and independently well-corroborated -- stronger sourcing than the Sept 22 move (two REGIONAL soft surveys) that already moved P one point on three windows. Jobless claims for the week ended Sept 19 (DOL, primary, released Sept 24: 197,000, 4-week avg 202,250) are confirmatory of the already-priced tight-labor read, not independently used. SIZING: mirrors this pillar's own Sept 3 precedent for a comparable-strength single dated catalyst (hawkish repricing off a strong jobs report), sized 1mo -4, 3mo -4, 6mo -2, 1yr -1, 3yr -1: 1mo 31->27, 3mo 29->25, 6mo 37->35, 1yr 44->43, 3yr 58->57. No window moved more than 4 points. August PCE (BEA), the next hard data point, remains due Sept 30, 2026 -- NOT yet released as of this cycle; confirmed still pending, not fabricated. Research capability fully available this cycle (WebSearch clean throughout; independent verification searches also clean). Per CLAUDE.md, this is a FULL WEEKLY refresh and is therefore categorically excluded from delegated auto-stamp authority regardless of the size or direction of any move -- LEFT AS DRAFT for Alex's manual review.",
+      "P": {
+        "CLARITY Act": {
+          "1": 15,
+          "3": 28,
+          "6": 45,
+          "12": 72,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 14,
+          "12": 33,
+          "36": 66
+        },
+        "Tokenization": {
+          "1": 58,
+          "3": 65,
+          "6": 70,
+          "12": 77,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 27,
+          "3": 25,
+          "6": 35,
+          "12": 43,
+          "36": 57
         }
       }
     }
