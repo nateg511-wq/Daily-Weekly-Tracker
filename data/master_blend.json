@@ -2,7 +2,7 @@
   "asof": "2026-09-27",
   "price": 84468.35,
   "score_set": "2026-09-26_draft3",
-  "score_set_status": "draft",
+  "score_set_status": "committed",
   "model": "equal-weight",
   "n_pillars": 5,
   "weight_each": 0.2,
