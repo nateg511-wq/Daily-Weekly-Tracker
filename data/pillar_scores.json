@@ -1,24 +1,24 @@
 {
-  "asof": "2026-09-30",
-  "price": 84310.87,
-  "cycle_month": 29.37,
+  "asof": "2026-10-01",
+  "price": 84773.96,
+  "cycle_month": 29.4,
   "tape": {
-    "weekly": 57.2,
-    "monthly": 17.1,
-    "quarterly": 31.8
+    "weekly": 58.1,
+    "monthly": 23.5,
+    "quarterly": 41.5
   },
   "powerlaw": {
-    "fair": 141638,
+    "fair": 141729,
     "r2": 0.962,
-    "minus1sd": 70758,
-    "minus2sd": 35349,
-    "pct_vs_fair": -0.405,
-    "V": 47.7,
+    "minus1sd": 70806,
+    "minus2sd": 35373,
+    "pct_vs_fair": -0.402,
+    "V": 47.3,
     "fit_start_sensitivity": {
-      "2011": 131276,
-      "2012": 136182,
-      "2013": 119312,
-      "2015": 146173
+      "2011": 131360,
+      "2012": 136265,
+      "2013": 119384,
+      "2015": 146246
     }
   },
   "froth": {
@@ -31,95 +31,95 @@
   "windows": {
     "1mo": {
       "window_months": 1,
-      "S": 15.9,
+      "S": 17.9,
       "P": 54,
       "quality": 0.75,
       "impact": 8,
       "signal": 0.48,
       "analog": {
-        "score": -80.3,
+        "score": -75.8,
         "hit": "0/3",
-        "median_ret": -0.096,
+        "median_ret": -0.079,
         "rets": [
-          -0.056,
-          -0.096,
-          -0.179
+          -0.05,
+          -0.079,
+          -0.173
         ]
       },
       "quality_basis": "835+ weekly bars, indicator agreement; edge modest by design"
     },
     "3mo": {
       "window_months": 3,
-      "S": 23.9,
-      "P": 56,
+      "S": 42.9,
+      "P": 61,
       "quality": 0.7,
       "impact": 8,
-      "signal": 0.6719999999999999,
+      "signal": 1.232,
       "analog": {
-        "score": 34.1,
-        "hit": "2/3",
-        "median_ret": 0.095,
+        "score": 72.0,
+        "hit": "3/3",
+        "median_ret": 0.125,
         "rets": [
-          0.095,
-          -0.024,
-          0.186
+          0.125,
+          0.037,
+          0.161
         ]
       },
       "quality_basis": "monthly bars + analog sample thin (n=3) but unanimous"
     },
     "6mo": {
       "window_months": 6,
-      "S": 44.9,
-      "P": 61,
+      "S": 49.0,
+      "P": 62,
       "quality": 0.55,
       "impact": 8,
-      "signal": 0.9680000000000001,
+      "signal": 1.056,
       "analog": {
-        "score": 92.7,
+        "score": 87.5,
         "hit": "3/3",
-        "median_ret": 0.566,
+        "median_ret": 0.41,
         "rets": [
-          0.566,
-          1.341,
-          0.448
+          0.397,
+          1.661,
+          0.41
         ]
       },
       "quality_basis": "quarterly layer weakest; inputs can disagree in sign; analog windows flip (n=3)"
     },
     "1yr": {
       "window_months": 12,
-      "S": 69.2,
+      "S": 69.8,
       "P": 67,
       "quality": 0.6,
       "impact": 8,
       "signal": 1.6320000000000001,
       "analog": {
-        "score": 90.7,
+        "score": 92.3,
         "hit": "3/3",
-        "median_ret": 0.766,
+        "median_ret": 0.861,
         "rets": [
-          0.872,
-          0.766,
-          0.562
+          0.879,
+          0.861,
+          0.69
         ]
       },
       "quality_basis": "analogs 3/3 positive + power-law converge; n=3 is thin"
     },
     "3yr": {
       "window_months": 36,
-      "S": 73.7,
+      "S": 73.5,
       "P": 68,
       "quality": 0.5,
       "impact": 8,
       "signal": 1.44,
       "analog": {
-        "score": 99.6,
+        "score": 99.7,
         "hit": "3/3",
-        "median_ret": 10.465,
+        "median_ret": 11.214,
         "rets": [
-          36.385,
-          10.465,
-          4.643
+          33.898,
+          11.214,
+          4.497
         ]
       },
       "quality_basis": "n=3, regime-unique tailwinds in analogs; halving effect may be attenuating"
