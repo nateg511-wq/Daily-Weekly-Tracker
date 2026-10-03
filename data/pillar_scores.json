@@ -1,9 +1,9 @@
 {
   "asof": "2026-10-03",
-  "price": 84858.11,
+  "price": 84822.03,
   "cycle_month": 29.47,
   "tape": {
-    "weekly": 58.0,
+    "weekly": 57.9,
     "monthly": 23.6,
     "quarterly": 41.6
   },
@@ -13,7 +13,7 @@
     "minus1sd": 70901,
     "minus2sd": 35423,
     "pct_vs_fair": -0.402,
-    "V": 47.3,
+    "V": 47.4,
     "fit_start_sensitivity": {
       "2011": 131530,
       "2012": 136432,
