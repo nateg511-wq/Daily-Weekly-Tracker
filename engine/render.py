@@ -87,7 +87,7 @@ def render_pdfs() -> None:
             out.unlink(missing_ok=True)          # never let a stale PDF pass as fresh
             try:
                 res = subprocess.run(
-                    [chrome, "--headless", "--disable-gpu", "--no-pdf-header-footer",
+                    [chrome, "--headless", "--disable-gpu", "--no-sandbox", "--no-pdf-header-footer",
                      f"--print-to-pdf={out}", built.resolve().as_uri()],
                     capture_output=True, text=True, timeout=180,
                 )
