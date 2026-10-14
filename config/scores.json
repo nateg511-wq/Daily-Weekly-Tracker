@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-10-10_draft",
+  "active_qual_set": "2026-10-14_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -2166,6 +2166,40 @@
           "3": 1,
           "6": 14,
           "12": 33,
+          "36": 66
+        },
+        "Tokenization": {
+          "1": 58,
+          "3": 65,
+          "6": 70,
+          "12": 77,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 33,
+          "3": 26,
+          "6": 36,
+          "12": 44,
+          "36": 58
+        }
+      }
+    },
+    "2026-10-14_draft": {
+      "status": "draft",
+      "note": "Daily light touch, 2026-10-14. Baseline: 2026-10-10_draft (still draft, itself a FULL WEEKLY refresh left unstamped, and still carrying forward the unresolved 2026-10-03_draft vs _draft2 divergence -- that adjudication remains open and is NOT touched by this cycle). WebSearch research pass run against all four qualitative pillars, checking the delta since the Oct 13 daily check.\n\nCLARITY ACT: HELD FLAT at 10/27/46/73/92. Senate remains in recess (pro forma only) through Monday Nov 9; no floor or committee action found or possible in this window. No new CFTC rulemaking step beyond the already-logged Oct 5 ANPRM. Nothing clears the sufficiency rule.\n\nIRAN WAR RISK: RE-RATED DOWN, modestly, 1/1/14/33/66 -> 1/1/13/32/66 (0/0/-1/-1/0). Two findings. (1) CORRECTION to a stale fact carried in the 2026-10-10_draft rationale: that cycle's kinetic-activity read asserted \"zero deaths, zero injuries\" across this window's tanker-attack cluster. That is WRONG and was already wrong on Oct 10 -- the Panama-flagged LR2 tanker On Peace was struck in the Strait of Hormuz on Oct 6, 2026 with 12 of 19 crew injured (11 Indian nationals, airlifted to Khasab, Oman for treatment), independently confirmed via Khaleej Times, gcaptain, Seatrade Maritime, Qatar Tribune, and Herald Corp -- five-plus independent outlets, clearing the sufficiency bar. A second, separate tanker was hit by multiple projectiles 51nm off Qatar's Madinat ash Shamal on Oct 7 with UKMTO-confirmed casualties (count/extent not disclosed by UKMTO) -- corroborated via InvestingLive, Shipandbunker, Argus Media, Yenisafak, and Shafaq; one analyst (EOS Risk Group) noted it was the first strike away from the Strait of Hormuz proper since Sept 9, a theater-widening wrinkle worth flagging though it does not independently fire the pillar's 'further new state' flip-line clause (no state border crossed; same non-state actor pattern). (2) Attack frequency remained elevated and did not de-escalate: the VLCC Gem No.2 (Panama-flagged) was hit Oct 9 (fire, extinguished); UKMTO logged four separate strikes on tankers in a single day, Oct 11 (Maritime Executive, Seatrade Maritime, container-news, corroborating each other); the IRGC Navy released footage Oct 12 claiming a strike on the UAE-owned VLCC Al Maqam, timing and vessel match unconfirmed by UKMTO as of this run -- reported, not scored, consistent with this pillar's standing single-claim-vs-confirmed distinction. No confirmed new US combat death, no resumption of direct US strikes beyond the already-fired Aug 30 clause, no widening to a further new state with confirmed attribution -- so no flip-line clause fires this cycle. Net: the corrected casualty record plus continued elevated, undiminished attack frequency through Oct 12 argues for a small further downward nudge on the medium-horizon windows only (where the 'is this de-escalating' question actually matters); 1mo/3mo are already at the effective floor (1) pricing near-certain non-resolution in-window and are held; 36mo held as noise at that horizon. Research access note: fred.stlouisfed.org and eia.gov remain policy-blocked in this sandbox, so the official Brent spot series behind this pillar's already-fired 'sustained >$100' flip-line could still not be independently re-confirmed this cycle -- carried forward as an open item, same as every cycle since Oct 10.\n\nTOKENIZATION: HELD FLAT at 58/65/70/77/86. No DTCC confirmation of a live Tokenization Service found; no OKXICE development beyond the already-logged Oct 4 Issuer Notice and Cerebras opt-out; no new SEC exemption filer found. Nothing clears the sufficiency rule.\n\nFED & MACRO: HELD FLAT at 33/26/36/44/58. The September 2026 CPI print was scheduled for 8:30am ET today (Oct 14) but had NOT yet been published as of this research pass -- consensus forecasts (Dow Jones survey: +0.6% m/m, +3.6% y/y headline; core +0.2% m/m, +2.5% y/y) are explicitly NOT scored, per the sufficiency rule and this system's standing rule against scoring forecasts as facts. No other new Fed speech or data release found dated after Oct 8 (Waller, already logged). No government shutdown; BLS running its normal release calendar today is itself confirmation Public Law 119-103 funding continues to hold. Nothing clears the sufficiency rule -- this print is squarely this pillar's next cycle's first job.\n\nQUANT (computed, never hand-edited): unchanged from the Oct 13 sync already in data/pillar_scores.json -- P 55/56/62/68/69, BTC $83,032.00 (Oct 13 close, latest available via the GitHub Actions data relay). This cycle's qualitative touch does not re-run the quant model.\n\nVERIFICATION (Step 6): the On Peace casualty claim and the Oct 11 four-strikes claim were each checked against 3+ independent outlets before being written in; the Al Maqam claim was NOT independently confirmed and is reported, not scored, accordingly. Recomputed the Iran War Risk 6mo and 12mo signals by hand from the formula against the new P values -- reconciles with run.py blend's printed master table (see commit).\n\nSTAMP DECISION: LEFT AS DRAFT, NOT AUTO-STAMPED. This cycle's own move (Iran War Risk, 2 windows, 1 point each, no flip-line, no call-band change) would qualify for delegated daily auto-stamp authority on its own terms. But it is built directly on top of 2026-10-10_draft, which carries forward the STILL-UNRESOLVED divergence between 2026-10-03_draft and 2026-10-03_draft2 -- two independently-researched weekly drafts for the same week that were never reconciled, explicitly flagged by the Oct 10 cycle as 'Alex's call, not a daily routine's.' Auto-stamping this set would, as a side effect, make the Oct 10 full-weekly CLARITY Act and Tokenization re-rates (built on the unreconciled draft2 branch) the new de facto committed baseline by fiat, without Alex ever having adjudicated which Oct 3 branch was correct. That is a reconciliation problem this routine cannot resolve on its own -- a pipeline-integrity issue, not a judgment call about the news -- so per CLAUDE.md's auto-stamp exclusions ('verification surfaces an inconsistency you cannot fully resolve'), this set is left as draft pending Alex's review of BOTH the standing Oct 3 divergence and this cycle's Iran War Risk correction/re-rate.",
+      "P": {
+        "CLARITY Act": {
+          "1": 10,
+          "3": 27,
+          "6": 46,
+          "12": 73,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 13,
+          "12": 32,
           "36": 66
         },
         "Tokenization": {
