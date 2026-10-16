@@ -7,84 +7,83 @@
   ============================================================
   COINPICKS PILLAR REPORT — HOUSE TEMPLATE v2 (overlap-proof)
   Quantitative pillar: Bitcoin Technical Analysis
-  Daily sync 2026-10-15 (LIGHT DAILY touch, fresh git clone, cloud
+  Daily sync 2026-10-16 (LIGHT DAILY touch, fresh git clone, cloud
   routine). This run brings the report to the current data (BTC daily
-  close through 2026-10-14, $81,590.01) unconditionally, per the
+  close through 2026-10-15, $82,318.74) unconditionally, per the
   standing rule that this pillar syncs every cycle regardless of
   whether any qualitative pillar moved.
-  Preflight (Step 0) found no same-day duplicate "daily"/"weekly" commit
-  on origin/master since UTC midnight -- proceeded normally.
+  Preflight (Step 0): ran `git log origin/master --since=midnight` --
+  found no same-day duplicate "daily"/"weekly" commit; a stale cached
+  origin/master ref (tip at 2026-10-13) was refreshed by `git fetch` to
+  the true remote tip (2026-10-15, matching this checkout's own HEAD,
+  which already carried the Oct 14/Oct 15 cycles merged in from a
+  previously-unpushed local run) -- proceeded normally.
   Quant data check: run.py quant itself is NOT run in this sandbox (its
   fetch step always hits bitstamp.net, which this environment's egress
   proxy blocks); instead data/btc_usd_daily.csv, the indicator/cycle/
   mapping JSON and charts/*.png are refreshed by a separate GitHub
   Actions workflow on its own schedule and committed directly to the
-  repo. Confirmed fresh this cycle: last CSV row 2026-10-14, about one
+  repo. Confirmed fresh this cycle: last CSV row 2026-10-15, about one
   day old at run time -- within the allowed freshness window --
   proceeded normally. Figures below are read via run.py numbers and
   run.py blend, not run.py quant.
   Qualitative trigger-table research WAS conducted this cycle (WebSearch,
   primary sources preferred, one pass per pillar) against the active
-  2026-10-14_draft baseline (committed by Alex, Oct 14). Two pillars
-  held flat: CLARITY Act (Senate still in recess until November 9, CFTC
-  ANPRM comment period still open, nothing new) and Tokenization
-  (OKXICE's Oct 4 notice still carries no launch date; DTCC's stated
-  October launch still unconfirmed). The other two RE-RATED DOWN.
-  Fed & Macro, 33/26/36/44/58 -> 31/23/34/43/58: the September CPI
-  print (flagged by the Oct 14 cycle as its own next job) published Oct
-  14 -- PRIMARY (BLS), corroborated via CNBC/Kiplinger/Advisor
-  Perspectives/USInflationCalculator -- hot on both legs (headline
-  +3.7% y/y vs 3.6% consensus; core +2.6% y/y vs 2.5% consensus, driven
-  by gasoline +9.1% m/m), extending the Oct 8 Waller hawkish shift;
-  market-priced (Kalshi/Polymarket, labeled distinctly from
-  institutional estimates) Oct 28 hike odds rose to ~34% and Dec 9 hike
-  odds to ~75-85%. Iran War Risk, 1/1/13/32/66 -> 1/1/12/31/66: the Oct
-  11 Petro Dolphin drone attack off Sohar, Oman (already logged
-  generically) now carries a worse-than-disclosed casualty picture --
-  2 of 11 Indian crew MISSING, not merely injured, SAR ongoing,
-  corroborated across 7+ outlets -- plus a dated Seatrade tally of 18+
-  Strait-of-Hormuz attacks since Oct 1. No flip-line clause fired on
-  either pillar. config/scores.json updated: active_qual_set now points
-  to the new 2026-10-15_draft, verification raised no unresolved
-  inconsistency, and per the widened delegated auto-stamp authority
-  this set was AUTO-STAMPED (status: committed, stamped_by: "Alex
-  (auto-stamped)").
-  BTC $83,032.00 (Oct 13, last report sync) -> $81,590.01 (Oct 14,
-  current) -- -1.74% move, +39.4% off the June 30 low.
-  The weekly bar now forming (dated 2026-10-18) reads +49.4 as-is
-  (Moderate bullish, agreement 6/7, down from +53.1); the completed bar
+  2026-10-15_draft baseline (committed/auto-stamped Oct 15). Nothing
+  cleared the sufficiency rule on any of the four pillars. CLARITY Act:
+  Senate remains in recess (pro forma only) until Nov 9; no coverage
+  found of any floor/committee action or further CFTC procedural step
+  beyond the already-logged Oct 5 ANPRM (comment period still running).
+  Iran War Risk: searched for a Petro Dolphin search-and-rescue update
+  and for any new Strait-of-Hormuz incident dated Oct 15-16 -- found
+  none; the two-missing-crew status already logged is the most recent
+  dated fact available in this pass. Tokenization: OKXICE's Oct 4
+  notice and DTCC's October target are both unchanged, no launch-date
+  disclosure or go-live confirmation found. Fed & Macro: searched for
+  any Fed communication or data print after the Oct 14 CPI release --
+  found nothing dated Oct 15-16 (the week-ended-Oct-10 jobless claims
+  print, normally a Thursday release, did not turn up in this search
+  pass; treated as not found rather than assumed). config/scores.json
+  is NOT touched this cycle -- active_qual_set remains 2026-10-15_draft.
+  BTC $81,590.01 (Oct 14, last report sync) -> $82,318.74 (Oct 15,
+  current) -- +0.89% move, +40.7% off the June 30 low.
+  The weekly bar now forming (dated 2026-10-18) reads +51.0 as-is
+  (Moderate bullish, agreement 6/7, up from +49.4); the completed bar
   (dated 2026-10-11) is unchanged at +55.4. October (monthly, dated
-  2026-10-31) reads +16.3 as-is (Neutral, agreement 2/7, down from
-  +19.2/agreement 3/7); Q4 (quarterly, dated 2026-12-31) reads +37.2
-  as-is (Slight bullish, agreement 5/7, down from +38.7/agreement 6/7);
+  2026-10-31) reads +17.6 as-is (Neutral, agreement 3/7, up from
+  +16.3/agreement 2/7); Q4 (quarterly, dated 2026-12-31) reads +37.8
+  as-is (Slight bullish, agreement 6/7, up from +37.2/agreement 5/7);
   the completed September and Q3 bars hold at +15.7 and +31.1
   respectively, unchanged.
-  Model P moved on ONE of five windows: 6mo 62 -> 61 (Signal +1.06 ->
-  +0.97), as its cycle analog's median eased to +37.3% (from +39.7%)
-  while agreement held at 3-of-3. 1mo, 3mo, 1yr and 3yr P are UNCHANGED
-  at 55/56/68/69 (Signal +0.60/+0.67/+1.73/+1.52 exactly) even though
-  their own analog medians moved (1mo -11.6% -> -8.6%; 3mo +10.8% ->
-  +9.5%; 1yr +78.9% -> +88.5%; 3yr +1129.5% -> +1150.1%) -- the
-  mapping's rounding absorbed the shift on those windows this cycle. No
-  call-band boundary crossed on any window.
+  Model P did NOT move on any of the five windows this cycle: all five
+  hold exactly at 55/56/61/68/69 (Signal +0.60/+0.67/+0.97/+1.73/+1.52,
+  identical to the Oct 15 sync), even though every cycle analog's
+  median drifted (1mo -8.6% -> -10.6%; 3mo +9.5% -> +9.7%; 6mo +37.3%
+  -> +36.2%; 1yr +88.5% -> +90.4%; 3yr +1150.1% -> +1116.4%) -- the
+  mapping's rounding absorbed every shift this cycle. No call-band
+  boundary crossed on any window.
   Quality unchanged at 0.75/0.70/0.55/0.60/0.50. Power-law fair value
-  drifted slightly with the updated fit ($142,912, from $142,823);
-  levels shifted mechanically with the lower price -- one level DID
-  flip sides this cycle: $81,685 (2x touch) was support through Oct 14
-  and is now resistance (price closed $95 below it, +0.1% away) --
-  $108,330 dropped out of the printed support/resistance window and
-  $57,735 (1x) entered it as a new support below $59,930.
+  drifted slightly with the updated fit ($143,003, from $142,912);
+  levels shifted mechanically with the higher price -- one level
+  flipped BACK this cycle: $81,685 (2x touch) had flipped to resistance
+  on the Oct 14 close ($81,590.01, $95 below it) and the Oct 15 bounce
+  above it ($82,318.74, +0.8% above) restored it to support --
+  $108,330 (3x) re-entered the printed resistance window and $57,735
+  (1x) dropped back out of the printed support window.
   Master blend this cycle: THE FINAL NUMBER equal-weight -0.14
-  (Neutral), horizon-weighted +0.43 (Neutral) -- ticked down from
-  -0.08/+0.47 on the October 14 daily-sync read. This drift is
-  primarily the Fed & Macro and Iran War Risk re-rates (see those
-  reports), plus this pillar's own small 6mo tick -- no call-band flip
-  anywhere. Per house precedent, this TA pillar report is fully
-  resynced every cycle regardless of qualitative movement; the Master
-  report, 00_START_HERE and all four qualitative pillar reports'
-  decision-box number lines are updated to match (required also
-  because run.py selfcheck's prose-consistency guard checks that all
-  six quote the current final number).
+  (Neutral), horizon-weighted +0.43 (Neutral) -- held EXACTLY at the
+  October 15 daily-sync read; with Model P unchanged on all five
+  windows and no qualitative pillar re-rated, no pillar signal moved at
+  all this cycle, so the master table, leave-one-out range and THE
+  FINAL NUMBER are bit-for-bit identical to yesterday's committed
+  figures. Per the standing rule, this TA pillar report is still fully
+  resynced every cycle regardless of qualitative movement (tape/price/
+  levels/cycle-analog detail changed even though the blend didn't); the
+  Master report, 00_START_HERE and the four qualitative pillar reports
+  are NOT touched this cycle, since config/scores.json did not change
+  and their own quoted final number is already correct and unchanged
+  (run.py selfcheck's prose-consistency guard, run below, confirms all
+  six still quote the current final number).
   ============================================================
   --><style>
   :root{
@@ -166,12 +165,12 @@
 <thead>
   <tr><td class="hcell">
     <div class="bar"></div>
-    <div class="runhead"><b>COINPICKS</b><span>BITCOIN TECHNICAL ANALYSIS · QUANT PILLAR REPORT · OCTOBER 15, 2026</span></div>
+    <div class="runhead"><b>COINPICKS</b><span>BITCOIN TECHNICAL ANALYSIS · QUANT PILLAR REPORT · OCTOBER 16, 2026</span></div>
   </td></tr>
 </thead>
 <tfoot>
   <tr><td class="fcell">
-    <div class="runfoot">CoinPicks · October 15, 2026 · Research &amp; Education · Not Financial Advice</div>
+    <div class="runfoot">CoinPicks · October 16, 2026 · Research &amp; Education · Not Financial Advice</div>
     <div class="bar"></div>
   </td></tr>
 </tfoot>
@@ -184,30 +183,30 @@
   <div class="eyebrow">COINPICKS · RESEARCH &amp; EDUCATION</div>
   <h1>Bitcoin Technical Analysis<br><span class="l2">Quant Pillar Report</span></h1>
   <div class="deck">The Tape Itself — Measured, Scored, and Mapped to the Pillar Standard</div>
-  <div class="note">Machine-computed from 16 years of daily price data through a 7-indicator scoring stack, halving-cycle analogs, and a power-law valuation model. Every number is reproducible from the scripts in the BTC-TA folder. <strong>These numbers are computed, not judged, so they carry no draft/committed status of their own — they enter the master blend directly. This cycle's active qualitative score set is 2026-10-15_draft, a LIGHT DAILY touch that re-rated Fed &amp; Macro (hot September CPI) and Iran War Risk (worse tanker-attack casualty disclosure) down — status COMMITTED, auto-stamped per the delegated daily authority (no flip-line fired, no unresolved verification inconsistency, research capability not degraded). Today's daily touch (Oct 15, on data through the Oct 14 close) re-checked all four qualitative trigger tables against primary sources. CLARITY Act and Tokenization held flat; Fed &amp; Macro and Iran War Risk re-rated (see those reports). config/scores.json was updated. See the pillar reports for the full research trail. This quant pillar's own output is unaffected by qualitative status and enters the master blend the same way regardless.</strong></div>
+  <div class="note">Machine-computed from 16 years of daily price data through a 7-indicator scoring stack, halving-cycle analogs, and a power-law valuation model. Every number is reproducible from the scripts in the BTC-TA folder. <strong>These numbers are computed, not judged, so they carry no draft/committed status of their own — they enter the master blend directly. This cycle's active qualitative score set is still 2026-10-15_draft, a LIGHT DAILY touch that re-rated Fed &amp; Macro (hot September CPI) and Iran War Risk (worse tanker-attack casualty disclosure) down — status COMMITTED, auto-stamped per the delegated daily authority. Today's daily touch (Oct 16, on data through the Oct 15 close) re-checked all four qualitative trigger tables against primary sources and found nothing that cleared the sufficiency rule — CLARITY Act, Iran War Risk, Tokenization and Fed &amp; Macro all held flat; config/scores.json was not touched. See the pillar reports for the full research trail. This quant pillar's own output is unaffected by qualitative status and enters the master blend the same way regardless.</strong></div>
   <div class="grow"></div>
   <div class="infobox">
     <div class="w">COINPICKS QUANT PILLAR REPORT · THE QUANTITATIVE SLEEVE OF MY THESIS</div>
-    <div class="m">Data through October 14, 2026 (BTC $81,590.01) · Pipeline data refreshed via GitHub Actions; digest read via run.py numbers &amp; verified October 15, 2026 (qualitative set: 2026-10-15_draft, LIGHT DAILY touch, status COMMITTED — auto-stamped) · Not Financial Advice</div>
+    <div class="m">Data through October 15, 2026 (BTC $82,318.74) · Pipeline data refreshed via GitHub Actions; digest read via run.py numbers &amp; verified October 16, 2026 (qualitative set: 2026-10-15_draft, LIGHT DAILY touch, status COMMITTED — auto-stamped, unchanged today) · Not Financial Advice</div>
   </div>
 </section>
 
 <!--==================== SCORES ====================-->
 <section class="sec first avoid">
-  <h2>The Scores &mdash; October 14 Model Output</h2>
-  <div class="sub">Computed from the daily close through October 14, 2026 (last qualitative touch: October 15, 2026, committed, auto-stamped). The weekly, monthly and quarterly bars are unchanged this cycle &mdash; no new rollover, though the as-is composites and agreement counts eased on all three as the newly-forming bars absorbed the Oct 14 pullback. <strong>One window moved since the last synced read (October 14), purely mechanically:</strong> 6-month Model P fell from 62 to 61, as its cycle analog's median eased. 1-month, 3-month, 1-year and 3-year Model P all held exactly at 55/56/68/69, though their own analog medians moved too &mdash; the mapping's rounding absorbed those shifts this cycle. Historical note: the October 3 divergence between two independently-researched weekly drafts (<code>2026-10-03_draft</code> vs. <code>_draft2</code>), carried as an open item through several prior cycles, was effectively superseded when Alex committed the October 10 weekly's lineage forward on October 14 &mdash; it remains in config/scores.json permanently per house rules, but is no longer an active blocker on today's cycle.</div>
+  <h2>The Scores &mdash; October 15 Model Output</h2>
+  <div class="sub">Computed from the daily close through October 15, 2026 (last qualitative touch: October 15, 2026, committed, auto-stamped — unchanged today). The weekly, monthly and quarterly bars are unchanged this cycle &mdash; no new rollover, and the as-is composites and agreement counts firmed on all three as the newly-forming bars absorbed the Oct 15 bounce. <strong>No window moved Model P since the last synced read (October 15):</strong> all five windows hold exactly at 55/56/61/68/69, even though every cycle analog's median drifted &mdash; the mapping's rounding absorbed every shift this cycle. Historical note: the October 3 divergence between two independently-researched weekly drafts (<code>2026-10-03_draft</code> vs. <code>_draft2</code>), carried as an open item through several prior cycles, was effectively superseded when Alex committed the October 10 weekly's lineage forward on October 14 &mdash; it remains in config/scores.json permanently per house rules, but is no longer an active blocker.</div>
   <table class="data scores">
     <tr><th>Window</th><th class="c">Model P</th><th class="c">Quality</th><th class="c">Impact</th><th class="c">Signal</th><th>Call</th></tr>
-    <tr><td><strong>1 month</strong></td><td class="c my">55</td><td class="c">0.75</td><td class="c">8</td><td class="c sig">+0.60</td><td>Mild Bull &mdash; unchanged; cycle analog still 1-of-3 positive, median &minus;8.6% (was &minus;11.6%; alignment-shift fragility, disclosed)</td></tr>
-    <tr><td><strong>3 months</strong></td><td class="c my">56</td><td class="c">0.70</td><td class="c">8</td><td class="c sig">+0.67</td><td>Mild Bull &mdash; unchanged; the 3mo analog holds 2-of-3 positive, median +9.5% (was +10.8%)</td></tr>
-    <tr><td><strong>6 months</strong></td><td class="c my">61</td><td class="c">0.55</td><td class="c">8</td><td class="c sig">+0.97</td><td>Mild Bull &mdash; down from P 62; still unanimous 3-of-3 positive, median +37.3% (was +39.7%)</td></tr>
-    <tr><td><strong>1 year</strong></td><td class="c my">68</td><td class="c">0.60</td><td class="c">8</td><td class="c sig">+1.73</td><td>Bull &mdash; unchanged; every prior cycle at this exact month was higher a year later (3-of-3), median +88.5% (was +78.9%)</td></tr>
-    <tr><td><strong>3 years</strong></td><td class="c my">69</td><td class="c">0.50</td><td class="c">8</td><td class="c sig">+1.52</td><td>Bull &mdash; unchanged; value + cycle (36-month analog 3-of-3 positive, median +1150.1%, was +1129.5%)</td></tr>
+    <tr><td><strong>1 month</strong></td><td class="c my">55</td><td class="c">0.75</td><td class="c">8</td><td class="c sig">+0.60</td><td>Mild Bull &mdash; unchanged; cycle analog still 1-of-3 positive, median &minus;10.6% (was &minus;8.6%; alignment-shift fragility, disclosed)</td></tr>
+    <tr><td><strong>3 months</strong></td><td class="c my">56</td><td class="c">0.70</td><td class="c">8</td><td class="c sig">+0.67</td><td>Mild Bull &mdash; unchanged; the 3mo analog holds 2-of-3 positive, median +9.7% (was +9.5%)</td></tr>
+    <tr><td><strong>6 months</strong></td><td class="c my">61</td><td class="c">0.55</td><td class="c">8</td><td class="c sig">+0.97</td><td>Mild Bull &mdash; unchanged; still unanimous 3-of-3 positive, median +36.2% (was +37.3%)</td></tr>
+    <tr><td><strong>1 year</strong></td><td class="c my">68</td><td class="c">0.60</td><td class="c">8</td><td class="c sig">+1.73</td><td>Bull &mdash; unchanged; every prior cycle at this exact month was higher a year later (3-of-3), median +90.4% (was +88.5%)</td></tr>
+    <tr><td><strong>3 years</strong></td><td class="c my">69</td><td class="c">0.50</td><td class="c">8</td><td class="c sig">+1.52</td><td>Bull &mdash; unchanged; value + cycle (36-month analog 3-of-3 positive, median +1116.4%, was +1150.1%)</td></tr>
   </table>
   <div class="formula"><strong>Impact:</strong> 8 (the tape aggregates every driver, but adds no causal force of its own) · <strong>Formula:</strong> Signal = ((P − 50) ÷ 50) × Quality × Impact · <strong>Honesty cap:</strong> P = 50 + 25 × (window score ÷ 100) — pure TA never claims odds more than 25 points from a coin flip, because its measured out-of-sample edge is modest. Math machine-verified.</div>
   <div class="box">
     <h3>The Three Inputs, in Plain English</h3>
-    <p><strong>P</strong> — the odds the tape is <em>good for Bitcoin</em> by then. Near-term eased further on an as-is basis (weekly composite +49.4/100, Moderate bullish, agreement 6-of-7, forming bar dated Oct 18) while the just-closed bar (dated Oct 11) still reads +55.4 completed; long-term still high (at this exact point in prior cycles, the next 12 months were positive 3-for-3, median +88.5%, and price sits ~43% below its power-law fair value).</p>
+    <p><strong>P</strong> — the odds the tape is <em>good for Bitcoin</em> by then. Near-term firmed on an as-is basis (weekly composite +51.0/100, Moderate bullish, agreement 6-of-7, forming bar dated Oct 18) while the just-closed bar (dated Oct 11) still reads +55.4 completed; long-term still high (at this exact point in prior cycles, the next 12 months were positive 3-for-3, median +90.4%, and price sits ~42% below its power-law fair value).</p>
     <p><strong>Quality</strong> — how trustworthy the evidence is. Highest near-term (weekly bars of history feeding the indicator stack), lowest at 3 years (only 3 completed cycles to learn from, and this cycle is already breaking the old pattern).</p>
     <p><strong>Impact</strong> — 8 out of 10, now the uniform value shared by every pillar; the TA pillar carries an equal 20% weight in the master, same as each qualitative pillar. Price is the thing itself — but a mirror, not an engine.</p>
   </div>
@@ -217,28 +216,28 @@
 <section class="sec claim">
   <h2>The Claim</h2>
   <div class="sub">The thesis, and where the numbers differ from the mood</div>
-  <p><strong>The crowd:</strong> today's daily check re-researched all four qualitative pillars against primary sources. CLARITY Act and Tokenization held flat (Senate still in recess; OKXICE/DTCC still unconfirmed live). Fed &amp; Macro re-rated down after the hot September CPI print (headline 3.7% y/y, core 2.6% y/y, both above consensus) extended the Oct 8 Waller hawkish shift and lifted market-priced hike odds for Oct 28/Dec 9. Iran War Risk re-rated down on 6mo/12mo after a worse-than-disclosed casualty finding (2 crew missing, not merely injured, from the Oct 11 Petro Dolphin attack) plus a dated tally of continued elevated attack frequency (see those pillars' reports). config/scores.json was updated — active_qual_set now points to 2026-10-15_draft, AUTO-STAMPED the same day under the delegated daily authority. The tape itself pulled back since this report's last sync. (Price sits at $81,590.01 on the Oct 14 close, down 1.74% — now +39.4% off the June 30 low; the tape doesn't know why price moved, only that it did.)</p>
-  <p><strong>The model:</strong> the weekly bar dated Oct 11 remains closed — its completed-bar composite still reads +55.4 (Moderate bullish, agreement 6-of-7); the bar now forming (dated Oct 18) eased to +49.4 as-is, down from +53.1. Monthly and quarterly bars remain in the bars opened by the Oct 1 rollover, with no new rollover this cycle: October (monthly, as-is +16.3, Neutral, agreement 2-of-7, down from +19.2/3-of-7) and Q4 (quarterly, as-is +37.2, Slight bullish, agreement 5-of-7, down from +38.7/6-of-7) continue forming, while the completed September and Q3 bars hold at +15.7 and +31.1. Repair Signal #1 (a weekly close above the 200-week MA) stays confirmed, with price +22.1% above it ($66,840) and +6.6% above the 50-week MA ($76,537). One window moved this cycle: 6-month fell to P 61 (from 62), staying within Mild Bull, as its cycle analog's median eased. The 1-month, 3-month, 1-year and 3-year windows held exactly at P 55/56/68/69 (Mild Bull/Mild Bull/Bull/Bull) even as their analog medians also moved (1mo −11.6%→−8.6%; 3mo +10.8%→+9.5%; 1yr +78.9%→+88.5%; 3yr +1129.5%→+1150.1%). Price is ~43% below fair value ($142,912), and the froth that precedes real crashes remains absent. One level flipped sides this cycle: $81,685 (2x touch) was support through Oct 14 and is now resistance, just $95 above the close.</p>
-  <p><strong>The edge:</strong> the model reads three separate clocks that don't take a position on the news cycle — tape (confirmed at the weekly level on the just-closed bar, easing further on the newly-forming one), cycle clock (bottoming window: prior cycles bottomed at months 26–30; we're at month 29.83, past the average-bottom date), and valuation (~43% below the power-law fair line, with price sitting above the −1σ "cheap" band at $71,419). All three clocks point the same direction on the medium-to-long horizon — the near-term clock is the one doing the day-to-day flexing, exactly as its lower Quality input says it should.</p>
+  <p><strong>The crowd:</strong> today's daily check re-researched all four qualitative pillars against primary sources and found nothing that cleared the sufficiency rule. CLARITY Act, Iran War Risk, Tokenization and Fed &amp; Macro all held flat (Senate still in recess; OKXICE/DTCC still unconfirmed live; no new dated Hormuz incident or Petro Dolphin SAR update found; no Fed communication or data print found dated after the Oct 14 CPI release). config/scores.json was not touched — active_qual_set remains 2026-10-15_draft, still COMMITTED/auto-stamped from the prior cycle. The tape itself bounced since this report's last sync. (Price sits at $82,318.74 on the Oct 15 close, up 0.89% — now +40.7% off the June 30 low; the tape doesn't know why price moved, only that it did.)</p>
+  <p><strong>The model:</strong> the weekly bar dated Oct 11 remains closed — its completed-bar composite still reads +55.4 (Moderate bullish, agreement 6-of-7); the bar now forming (dated Oct 18) firmed to +51.0 as-is, up from +49.4. Monthly and quarterly bars remain in the bars opened by the Oct 1 rollover, with no new rollover this cycle: October (monthly, as-is +17.6, Neutral, agreement 3-of-7, up from +16.3/2-of-7) and Q4 (quarterly, as-is +37.8, Slight bullish, agreement 6-of-7, up from +37.2/5-of-7) continue forming, while the completed September and Q3 bars hold at +15.7 and +31.1. Repair Signal #1 (a weekly close above the 200-week MA) stays confirmed, with price +23.2% above it ($66,844) and +7.5% above the 50-week MA ($76,552). No window moved this cycle: all five hold exactly at P 55/56/61/68/69 (Mild Bull/Mild Bull/Mild Bull/Bull/Bull) even as every analog median moved (1mo −8.6%→−10.6%; 3mo +9.5%→+9.7%; 6mo +37.3%→+36.2%; 1yr +88.5%→+90.4%; 3yr +1150.1%→+1116.4%). Price is ~42% below fair value ($143,003), and the froth that precedes real crashes remains absent. One level flipped back this cycle: $81,685 (2x touch) had flipped to resistance on the Oct 14 close and is support again, with price now $634 above it.</p>
+  <p><strong>The edge:</strong> the model reads three separate clocks that don't take a position on the news cycle — tape (confirmed at the weekly level on the just-closed bar, firming further on the newly-forming one), cycle clock (bottoming window: prior cycles bottomed at months 26–30; we're at month 29.86, past the average-bottom date), and valuation (~42% below the power-law fair line, with price sitting above the −1σ "cheap" band at $71,466). All three clocks point the same direction on the medium-to-long horizon — the near-term clock is the one doing the day-to-day flexing, exactly as its lower Quality input says it should.</p>
 </section>
 
 <!--==================== THE FACTS: TAPE ====================-->
 <section class="sec">
   <h2>The Facts — The Tape</h2>
-  <div class="sub">Computed from daily data through October 14, 2026 (BTC $81,590.01, close; report synced October 15). The weekly, monthly and quarterly bars are unchanged this cycle (no new rollover); scores use the current bar as-is. Quantified: on completed bars only, weekly is <strong>+55.4</strong> (bar dated 2026-10-11, just closed), monthly <strong>+15.7</strong> (September's bar, dated 2026-09-30, closed) and quarterly <strong>+31.1</strong> (Q3's bar, dated 2026-09-30, closed) — monthly/quarterly unchanged since the Oct 1 rollover. Both readings are quoted deliberately — the as-is figure includes a bar that has not finished.</div>
+  <div class="sub">Computed from daily data through October 15, 2026 (BTC $82,318.74, close; report synced October 16). The weekly, monthly and quarterly bars are unchanged this cycle (no new rollover); scores use the current bar as-is. Quantified: on completed bars only, weekly is <strong>+55.4</strong> (bar dated 2026-10-11, just closed), monthly <strong>+15.7</strong> (September's bar, dated 2026-09-30, closed) and quarterly <strong>+31.1</strong> (Q3's bar, dated 2026-09-30, closed) — monthly/quarterly unchanged since the Oct 1 rollover. Both readings are quoted deliberately — the as-is figure includes a bar that has not finished.</div>
   <ul>
-    <li><strong>Weekly composite +49.4/100 (Moderate bullish), agreement 6-of-7 indicators</strong> — this is the bar now forming (dated 2026-10-18), down from +53.1; the bar that just closed (dated 2026-10-11) still reads +55.4 on completed bars — both must be quoted together because the current bar is still forming. Price is above the 20-week ($71,512, +14.1%) and well above the <strong>200-week average ($66,840, +22.1%)</strong>; price sits above the 50-week ($76,537, +6.6%). RSI 56.6; MACD line 2,302 with histogram positive (+2,258) — momentum repair continuing but easing; %B 0.78.</li>
-    <li class="fix"><strong>Repair signal #1 (a weekly close above the 200-week MA) remains CONFIRMED.</strong> Price ($81,590.01) sits +22.1% above the 200-week average ($66,840). The weekly bar dated 2026-10-11 just CLOSED — its completed-bar weekly composite reads <strong>+55.4</strong>; a new bar (dated 2026-10-18) is forming, reading +49.4 as-is.</li>
-    <li><strong>Monthly bar remains in its October cycle (rolled over Oct 1) — September's completed bar holds at +15.7/100.</strong> The forming bar (October, dated 2026-10-31) reads <strong>+16.3/100 (Neutral), agreement 2-of-7</strong>, down from +19.2/agreement 3-of-7 — below the 20-month average ($87,142, −6.4%), above the 50-month ($63,487, +28.5%); RSI 52.3; monthly MACD line 958 with histogram −2,535 — still negative; %B 0.42.</li>
-    <li><strong>Quarterly bar remains in its Q4 cycle (rolled over Oct 1) — Q3's completed bar holds at +31.1/100.</strong> The forming bar (Q4, dated 2026-12-31) reads <strong>+37.2/100 (Slight bullish), agreement 5-of-7</strong>, down from +38.7/agreement 6-of-7 — comfortably above the 20-quarter average ($60,169, +35.6%) and the 50-quarter ($30,456, +167.9%); RSI 57.8, MACD line 16,096 with histogram −515; %B 0.68.</li>
-    <li><strong>Levels that matter:</strong> price ($81,590.01) sits just below $81,685, which FLIPPED from support to resistance this cycle (+0.1%, 2x touch) as price closed below it — then $89,164 (+9.3%, 1x) and $98,090 (+20.2%, 2x) further overhead. Below, the nearest support is $74,434 (−8.8%, 1x), then $59,930 (−26.6%, 1x) and $57,735 (−29.2%, 1x, newly in range). The falling weekly support trendline sits at $38,033; the falling resistance trendline sits at $71,765, well below current price.</li>
-    <li class="fix"><strong>June 30 remains the cycle low: $58,526 close</strong> — the flush tagged the Fib golden pocket ($54,257–$57,802 = 61.8–65% retrace of the $15,479 → $126,272 run) and has since built a <strong>+39.4% bounce to $81,590.01</strong>. <strong>$58,526 is still the line in the sand</strong> — a decisive break back below it would undo this entire recovery leg.</li>
+    <li><strong>Weekly composite +51.0/100 (Moderate bullish), agreement 6-of-7 indicators</strong> — this is the bar now forming (dated 2026-10-18), up from +49.4; the bar that just closed (dated 2026-10-11) still reads +55.4 on completed bars — both must be quoted together because the current bar is still forming. Price is above the 20-week ($71,548, +15.1%) and well above the <strong>200-week average ($66,844, +23.2%)</strong>; price sits above the 50-week ($76,552, +7.5%). RSI 57.5; MACD line 2,360 with histogram positive (+2,305) — momentum repair continuing and firming; %B 0.80.</li>
+    <li class="fix"><strong>Repair signal #1 (a weekly close above the 200-week MA) remains CONFIRMED.</strong> Price ($82,318.74) sits +23.2% above the 200-week average ($66,844). The weekly bar dated 2026-10-11 just CLOSED — its completed-bar weekly composite reads <strong>+55.4</strong>; a new bar (dated 2026-10-18) is forming, reading +51.0 as-is.</li>
+    <li><strong>Monthly bar remains in its October cycle (rolled over Oct 1) — September's completed bar holds at +15.7/100.</strong> The forming bar (October, dated 2026-10-31) reads <strong>+17.6/100 (Neutral), agreement 3-of-7</strong>, up from +16.3/agreement 2-of-7 — below the 20-month average ($87,178, −5.6%), above the 50-month ($63,502, +29.6%); RSI 52.6; monthly MACD line 1,016 with histogram −2,488 — still negative; %B 0.43.</li>
+    <li><strong>Quarterly bar remains in its Q4 cycle (rolled over Oct 1) — Q3's completed bar holds at +31.1/100.</strong> The forming bar (Q4, dated 2026-12-31) reads <strong>+37.8/100 (Slight bullish), agreement 6-of-7</strong>, up from +37.2/agreement 5-of-7 — comfortably above the 20-quarter average ($60,205, +36.7%) and the 50-quarter ($30,470, +170.2%); RSI 58.0, MACD line 16,154 with histogram −469; %B 0.69.</li>
+    <li><strong>Levels that matter:</strong> price ($82,318.74) sits just above $81,685, which FLIPPED BACK from resistance to support this cycle (−0.8%, 2x touch) as price closed back above it — then $74,434 (−9.6%, 1x) and $59,930 (−27.2%, 1x) further below. Above, the nearest resistance is $89,164 (+8.3%, 1x), then $98,090 (+19.2%, 2x) and $108,330 (+31.6%, 3x, back in range). The falling weekly support trendline sits at $38,033; the falling resistance trendline sits at $71,765, well below current price.</li>
+    <li class="fix"><strong>June 30 remains the cycle low: $58,526 close</strong> — the flush tagged the Fib golden pocket ($54,257–$57,802 = 61.8–65% retrace of the $15,479 → $126,272 run) and has since built a <strong>+40.7% bounce to $82,318.74</strong>. <strong>$58,526 is still the line in the sand</strong> — a decisive break back below it would undo this entire recovery leg.</li>
   </ul>
 </section>
 
 <section class="sec avoid">
   <img class="chart" src="{{CHART_WEEKLY}}" alt="BTC weekly chart">
-  <div class="cap">Weekly tape, scored +49.4/100 as-is on the now-forming bar (Moderate bullish, +55.4 on the just-closed bar, dated Oct 11) with agreement 6 of 7 indicators: the weekly close above the 200-week MA remains confirmed, MACD histogram remains positive, price above the 50-week MA. Machine-annotated from the same data that feeds the scores.</div>
+  <div class="cap">Weekly tape, scored +51.0/100 as-is on the now-forming bar (Moderate bullish, +55.4 on the just-closed bar, dated Oct 11) with agreement 6 of 7 indicators: the weekly close above the 200-week MA remains confirmed, MACD histogram remains positive, price above the 50-week MA. Machine-annotated from the same data that feeds the scores.</div>
 </section>
 
 <!--==================== THE FACTS: CYCLE + VALUE ====================-->
@@ -246,10 +245,10 @@
   <h2>The Facts — The Cycle Clock &amp; The Value Floor</h2>
   <div class="sub">The two slower clocks. Same data, longer lenses.</div>
   <ul>
-    <li><strong>The halving clock says "bottoming window."</strong> The three completed cycles topped 12–18 months after their halving (avg 15.8) and bottomed at months 26–30 (avg 28.4). This cycle topped at month 18 (Oct 6, 2025 — $124,728) and printed its low-so-far at month 26 (June 30, $58,526, −53% from the top). <strong>We are at month 29.83 — past the average-bottom date.</strong></li>
-    <li class="fix"><strong>The cycle analogs are the spine of the long-window scores.</strong> Standing at this exact cycle-month in C1/C2/C3: next 1 month positive <strong>1-of-3</strong> (median &minus;8.6%, up from &minus;11.6%) &middot; next 3 months positive <strong>2-of-3</strong> (median +9.5%, down from +10.8%) &middot; next 6 months positive <strong>3-of-3</strong> (median +37.3%, down from +39.7%) &middot; next 12 months positive <strong>3-of-3</strong> (median +88.5%, up from +78.9%) &middot; next 36 months positive <strong>3-of-3</strong> (median +1150.1%, up from +1129.5%). <em>Fragility disclosure: the medians and agreement counts move as the cycle-month clock advances. Treat the analog levels as soft, the direction as the signal. And know what the 36-month number is: from month ~30 that window reaches month ~66 — it contains the NEXT halving's rally.</em></li>
+    <li><strong>The halving clock says "bottoming window."</strong> The three completed cycles topped 12–18 months after their halving (avg 15.8) and bottomed at months 26–30 (avg 28.4). This cycle topped at month 18 (Oct 6, 2025 — $124,728) and printed its low-so-far at month 26 (June 30, $58,526, −53% from the top). <strong>We are at month 29.86 — past the average-bottom date.</strong></li>
+    <li class="fix"><strong>The cycle analogs are the spine of the long-window scores.</strong> Standing at this exact cycle-month in C1/C2/C3: next 1 month positive <strong>1-of-3</strong> (median &minus;10.6%, down from &minus;8.6%) &middot; next 3 months positive <strong>2-of-3</strong> (median +9.7%, up from +9.5%) &middot; next 6 months positive <strong>3-of-3</strong> (median +36.2%, down from +37.3%) &middot; next 12 months positive <strong>3-of-3</strong> (median +90.4%, up from +88.5%) &middot; next 36 months positive <strong>3-of-3</strong> (median +1116.4%, down from +1150.1%). <em>Fragility disclosure: the medians and agreement counts move as the cycle-month clock advances. Treat the analog levels as soft, the direction as the signal. And know what the 36-month number is: from month ~30 that window reaches month ~66 — it contains the NEXT halving's rally.</em></li>
     <li><strong>1-year momentum turned positive at months 34–37 in every completed cycle (avg 35.5)</strong> → still projects to <strong>~April 2027</strong> for this cycle.</li>
-    <li><strong>The power-law floor:</strong> a log-log fit over the full price series puts fair value at <strong>$142,912</strong> — price is <strong>−43%</strong> versus fair. Fit-window honesty: starting the fit in 2011, 2012, 2013, or 2015 instead moves fair value materially ($132,454 / $137,339 / $120,317 / $147,186) — the level is soft, but the <strong>"well below fair" verdict holds across every window tested</strong>. Price ($81,590.01) sits above the <strong>−1σ band ($71,419)</strong> — out of the "cheap" zone (the −2σ band sits at $35,691, far below). Every halving-era cycle trough was −77% to −85% from ATH ($18.7K–$28.7K equivalent today) — the pre-halving 2011 bear went ~−93% (~$8.7K equivalent), excluded from the range but in the data; this cycle's low-so-far was −53% from the ATH.</li>
+    <li><strong>The power-law floor:</strong> a log-log fit over the full price series puts fair value at <strong>$143,003</strong> — price is <strong>−42%</strong> versus fair. Fit-window honesty: starting the fit in 2011, 2012, 2013, or 2015 instead moves fair value materially ($132,537 / $137,420 / $120,388 / $147,257) — the level is soft, but the <strong>"well below fair" verdict holds across every window tested</strong>. Price ($82,318.74) sits above the <strong>−1σ band ($71,466)</strong> — out of the "cheap" zone (the −2σ band sits at $35,715, far below). Every halving-era cycle trough was −77% to −85% from ATH ($18.7K–$28.7K equivalent today) — the pre-halving 2011 bear went ~−93% (~$8.7K equivalent), excluded from the range but in the data; this cycle's low-so-far was −53% from the ATH.</li>
     <li><strong>No froth in the system:</strong> the altcoin-froth index reads z = −0.87 — the opposite of the euphoric signature that preceded prior deep crashes. Validated on 16 years of data: high-froth days led to −39% average 12-month drawdowns vs −23% for low-froth days (gap significant, 95% CI excludes zero). <em>Data lags ~6 weeks (through May 23, unchanged) — used as a tilt, not a score input.</em></li>
     <li class="fix"><strong>What we rejected:</strong> a 5-feature logistic crash model was tested leave-one-cycle-out and <strong>failed</strong> (AUC 0.44 vs 0.58 for froth alone; 0.70 = useful). It is not in this report's numbers. The scores rest only on what survived out-of-sample testing.</li>
   </ul>
@@ -257,7 +256,7 @@
 
 <section class="sec avoid">
   <img class="chart" src="{{CHART_CYCLE}}" alt="Halving cycle overlay">
-  <div class="cap">All four halving cycles aligned (log scale, price ÷ price-at-halving). Triangles mark where 1-year momentum turned positive in each prior cycle — months 34–37, projecting to ~April 2027 for this one. The red dot is today: month 29.83, past the historical bottoming window.</div>
+  <div class="cap">All four halving cycles aligned (log scale, price ÷ price-at-halving). Triangles mark where 1-year momentum turned positive in each prior cycle — months 34–37, projecting to ~April 2027 for this one. The red dot is today: month 29.86, past the historical bottoming window.</div>
 </section>
 
 <section class="sec avoid">
@@ -270,8 +269,8 @@
   <h2>The Prize</h2>
   <div class="sub">Illustrative only — not price targets, not advice</div>
   <div class="box tight">
-    <p>From $81,590.01: the 20-week average ($71,512) is well behind us — price sits <strong>+14.1%</strong> above it; the 50-week average ($76,537) is further behind, price sitting <strong>+6.6%</strong> above it. A retest of the $124,728 ATH is <strong>+52.9%</strong>; the power-law fair line is <strong>+75.2%</strong>. The median 12-month analog from this cycle-month is <strong>+88.5%</strong>; the median 36-month analog is +1150.1% — <strong>discount that one hard</strong>, it leans on regimes (2017 mania, post-COVID ZIRP) that don't repeat on demand.</p>
-    <p>The Prize doesn't feed the math — it tells you what the lean is worth acting on. Here it says: the tape itself held its model-P ground this cycle on four of five windows, with only the 6-month easing to P 61 (from 62) as its cycle analog's median softened — this cycle's real action was qualitative, not quantitative: Fed &amp; Macro and Iran War Risk both re-rated down on primary-sourced evidence (the hot September CPI print and a worse-than-disclosed tanker-attack casualty count; see those pillars' reports), while the tape's own three clocks (tape, cycle, valuation) kept pointing the same medium-to-long direction regardless. The 1-year read holds at Bull (P 68, unchanged) and the 3-year read holds at Bull (P 69, unchanged) despite both analogs' medians shifting, with the 6-month case remaining unanimous (3-of-3) even at the lower P 61.</p>
+    <p>From $82,318.74: the 20-week average ($71,548) is well behind us — price sits <strong>+15.1%</strong> above it; the 50-week average ($76,552) is further behind, price sitting <strong>+7.5%</strong> above it. A retest of the $124,728 ATH is <strong>+51.5%</strong>; the power-law fair line is <strong>+73.7%</strong>. The median 12-month analog from this cycle-month is <strong>+90.4%</strong>; the median 36-month analog is +1116.4% — <strong>discount that one hard</strong>, it leans on regimes (2017 mania, post-COVID ZIRP) that don't repeat on demand.</p>
+    <p>The Prize doesn't feed the math — it tells you what the lean is worth acting on. Here it says: the tape itself held its model-P ground this cycle on all five windows — unlike the prior cycle's small 6-month tick, nothing moved this time even as every cycle analog's median drifted — and no qualitative pillar re-rated either (today's research pass found nothing new on any of the four pillars; see each pillar's own report). The tape's own three clocks (tape, cycle, valuation) kept pointing the same medium-to-long direction regardless. The 1-year read holds at Bull (P 68, unchanged) and the 3-year read holds at Bull (P 69, unchanged) despite both analogs' medians shifting, with the 6-month case remaining unanimous (3-of-3) at P 61.</p>
   </div>
 </section>
 
@@ -295,9 +294,9 @@
   <table class="data">
     <tr><th>When / Level</th><th>Event</th><th>Means</th></tr>
     <tr><td>$58,526</td><td>Daily close below the June 30 low</td><td>Flush scenario live — golden pocket $54.3–57.8K is the target; re-rate 1/3-month down</td></tr>
-    <tr><td>~$66,840</td><td>Weekly close above the 200-week MA</td><td><strong>CONFIRMED</strong> — price sits +22.1% above this level; the weekly bar (dated Oct 11) just CLOSED; its completed-bar weekly composite reads +55.4; a new bar (dated Oct 18) is forming, reading +49.4 as-is</td></tr>
-    <tr><td>~$76,537</td><td>Weekly close above the 50-week MA</td><td><strong>CONFIRMED</strong> — price sits +6.6% above it, trend repair intact but easing</td></tr>
-    <tr><td>~Aug 31, 2026</td><td>Historical average-bottom month (28.4) has now passed (we're at month 29.83)</td><td>Price sits well off the June 30 low (+39.4%); a higher low + improving monthly momentum after this date = basing confirmed — September's completed monthly bar (+15.7) is a further such sign</td></tr>
+    <tr><td>~$66,844</td><td>Weekly close above the 200-week MA</td><td><strong>CONFIRMED</strong> — price sits +23.2% above this level; the weekly bar (dated Oct 11) just CLOSED; its completed-bar weekly composite reads +55.4; a new bar (dated Oct 18) is forming, reading +51.0 as-is</td></tr>
+    <tr><td>~$76,552</td><td>Weekly close above the 50-week MA</td><td><strong>CONFIRMED</strong> — price sits +7.5% above it, trend repair intact and firming</td></tr>
+    <tr><td>~Aug 31, 2026</td><td>Historical average-bottom month (28.4) has now passed (we're at month 29.86)</td><td>Price sits well off the June 30 low (+40.7%); a higher low + improving monthly momentum after this date = basing confirmed — September's completed monthly bar (+15.7) is a further such sign</td></tr>
     <tr><td>Jan–Jul 2027</td><td>Projected 1-yr momentum turn window (point: ~Apr 2027)</td><td>Arriving without new lows = cycle thesis on track; re-rate 1-year up</td></tr>
     <tr><td>$50,000</td><td>Weekly close below</td><td>−60% from ATH; the dampened-cycle story is failing — see the flip line</td></tr>
   </table>
@@ -308,31 +307,31 @@
 <section class="sec avoid">
   <h2>My Decision</h2>
   <div class="decision">
-    <div class="stamp">COMPUTED OUTPUT &mdash; OCTOBER 15, 2026 &middot; NO STAMP REQUIRED FOR THE QUANT PILLAR (it is never hand-edited) &middot; THE QUALITATIVE SET IT BLENDS WITH, 2026-10-15_draft, WAS AUTO-STAMPED UNDER ALEX'S DELEGATED AUTHORITY, OCTOBER 15, 2026 (see Scores section)</div>
-    <div class="nums">Computed P: 55 / 56 / 61 / 68 / 69 &middot; Quality: 0.75 / 0.70 / 0.55 / 0.60 / 0.50 &middot; Impact: 8 (uniform) &middot; This pillar&rsquo;s signals: 1mo +0.60 &middot; 3mo +0.67 &middot; 6mo +0.97 &middot; 1yr +1.73 &middot; 3yr +1.52 &middot; P moved on one of five windows since the Oct 14 daily-sync read: 6mo 62&rarr;61 (stays within the Mild Bull band; BTC pulled back to the Oct 14 close and its cycle analog's median eased, not a qualitative signal) &middot; Master (equal-weight), this cycle&rsquo;s blend: 1mo &minus;2.20 &middot; 3mo &minus;1.82 &middot; 6mo &minus;0.63 &middot; 1yr +1.12 &middot; 3yr +2.84 &middot; <strong>THE FINAL NUMBER (this blend): &minus;0.14 equal-weight (Neutral) / +0.43 horizon-weighted (Neutral)</strong>, ticked from &minus;0.08 / +0.47 on the October 14 daily-sync read &mdash; this cycle's drift is primarily the Fed &amp; Macro and Iran War Risk pillars' re-rates (see those pillars' reports for the CPI and casualty-finding rationale), plus this pillar's own small 6mo tick &mdash; no call-band flip anywhere &middot; Leave-one-out range: &minus;0.84 to +0.56 &middot; BTC $81,590.01 (close, October 14, 2026, read via run.py numbers)</div>
-    <p>This is the quantitative sleeve of the thesis — the same five windows, same formula, same table as every qualitative pillar, but computed instead of judged. The weekly bar dated Oct 11 just CLOSED — its completed-bar composite reads +55.4 (6-of-7) — while a new bar (dated Oct 18) is now forming, reading +49.4 as-is, down from +53.1; monthly and quarterly bars remain in the bars opened by the Oct 1 rollover, with no new rollover this cycle — the completed September and Q3 bars hold at +15.7 and +31.1. The 6-month window eased within Mild Bull (P 61, from 62) as BTC pulled back to $81,590.01 and its cycle analog's median eased, and the cycle-month clock advanced to 29.83. The 1-month, 3-month, 1-year and 3-year windows held exactly at P 55/56/68/69 (Mild Bull/Mild Bull/Bull/Bull, unchanged) even though their analog medians also shifted (1mo −11.6%→−8.6%; 3mo +10.8%→+9.5%; 1yr +78.9%→+88.5%; 3yr +1129.5%→+1150.1%) — this is the disclosed single-window fragility this report has always carried, not a new qualitative finding. The near-term read sits at 1mo (55, Mild Bull, unchanged) and 3mo (56, Mild Bull, unchanged) — the direction, not the level, is the signal.</p>
-    <p><strong>These numbers enter the master blend exactly as computed — this pillar has no override/re-stamp step of its own.</strong> Unlike the four qualitative pillars, this pillar carries no draft/committed status of its own: this cycle's active qualitative score set is 2026-10-15_draft, a LIGHT DAILY touch that re-rated two of four qualitative pillars (Fed &amp; Macro and Iran War Risk; CLARITY Act and Tokenization held flat). It is status COMMITTED, auto-stamped under the delegated daily authority — the research cleared the sufficiency rule on primary/multi-source evidence, no flip-line clause fired, and verification raised no unresolved inconsistency (see the Scores section above and each qualitative pillar's own report for the full detail). Today's daily check (October 15) re-researched all four qualitative trigger tables; two pillars cleared the sufficiency rule and were re-rated, so config/scores.json was updated accordingly. This pillar's own computed output is unaffected by qualitative status and enters the master blend the same way it does every cycle.</p>
+    <div class="stamp">COMPUTED OUTPUT &mdash; OCTOBER 16, 2026 &middot; NO STAMP REQUIRED FOR THE QUANT PILLAR (it is never hand-edited) &middot; THE QUALITATIVE SET IT BLENDS WITH, 2026-10-15_draft, WAS AUTO-STAMPED UNDER ALEX'S DELEGATED AUTHORITY, OCTOBER 15, 2026, AND IS UNCHANGED TODAY (see Scores section)</div>
+    <div class="nums">Computed P: 55 / 56 / 61 / 68 / 69 &middot; Quality: 0.75 / 0.70 / 0.55 / 0.60 / 0.50 &middot; Impact: 8 (uniform) &middot; This pillar&rsquo;s signals: 1mo +0.60 &middot; 3mo +0.67 &middot; 6mo +0.97 &middot; 1yr +1.73 &middot; 3yr +1.52 &middot; P did NOT move on any window since the Oct 15 daily-sync read (BTC bounced to the Oct 15 close and every cycle analog's median drifted, but none crossed a new rounded P value) &middot; Master (equal-weight), this cycle&rsquo;s blend: 1mo &minus;2.20 &middot; 3mo &minus;1.82 &middot; 6mo &minus;0.63 &middot; 1yr +1.12 &middot; 3yr +2.84 &middot; <strong>THE FINAL NUMBER (this blend): &minus;0.14 equal-weight (Neutral) / +0.43 horizon-weighted (Neutral)</strong>, held EXACTLY at the October 15 daily-sync read &mdash; no pillar signal moved this cycle (no qualitative pillar re-rated, and this pillar's own P held on every window) &mdash; no call-band flip anywhere &middot; Leave-one-out range: &minus;0.84 to +0.56 &middot; BTC $82,318.74 (close, October 15, 2026, read via run.py numbers)</div>
+    <p>This is the quantitative sleeve of the thesis — the same five windows, same formula, same table as every qualitative pillar, but computed instead of judged. The weekly bar dated Oct 11 just CLOSED — its completed-bar composite reads +55.4 (6-of-7) — while a new bar (dated Oct 18) is now forming, reading +51.0 as-is, up from +49.4; monthly and quarterly bars remain in the bars opened by the Oct 1 rollover, with no new rollover this cycle — the completed September and Q3 bars hold at +15.7 and +31.1. The 6-month window held exactly at P 61 (Mild Bull) even as BTC bounced to $82,318.74 and its cycle analog's median drifted, and the cycle-month clock advanced to 29.86. The 1-month, 3-month, 1-year and 3-year windows also held exactly at P 55/56/68/69 (Mild Bull/Mild Bull/Bull/Bull, unchanged) even though their analog medians shifted too (1mo −8.6%→−10.6%; 3mo +9.5%→+9.7%; 1yr +88.5%→+90.4%; 3yr +1150.1%→+1116.4%) — this is the disclosed single-window fragility this report has always carried, not a new qualitative finding. The near-term read sits at 1mo (55, Mild Bull, unchanged) and 3mo (56, Mild Bull, unchanged) — the direction, not the level, is the signal.</p>
+    <p><strong>These numbers enter the master blend exactly as computed — this pillar has no override/re-stamp step of its own.</strong> Unlike the four qualitative pillars, this pillar carries no draft/committed status of its own: this cycle's active qualitative score set is still 2026-10-15_draft, a LIGHT DAILY touch that re-rated two of four qualitative pillars (Fed &amp; Macro and Iran War Risk; CLARITY Act and Tokenization held flat) on its own day. It is status COMMITTED, auto-stamped under the delegated daily authority — the research cleared the sufficiency rule on primary/multi-source evidence, no flip-line clause fired, and verification raised no unresolved inconsistency (see the Scores section above and each qualitative pillar's own report for the full detail). Today's daily check (October 16) re-researched all four qualitative trigger tables against this same baseline; nothing cleared the sufficiency rule this time, so config/scores.json was not touched. This pillar's own computed output is unaffected by qualitative status and enters the master blend the same way it does every cycle.</p>
   </div>
 </section>
 
 <!--==================== WHAT CHANGED ====================-->
 <section class="sec">
   <h2>What Changed Since Last Check</h2>
-  <div class="sub">Daily sync October 15, 2026, on data through the October 14, 2026 close (previous: October 14, 2026, status COMMITTED; today's own light daily touch, 2026-10-15_draft, status COMMITTED — AUTO-STAMPED).</div>
+  <div class="sub">Daily sync October 16, 2026, on data through the October 15, 2026 close (previous: October 15, 2026, status COMMITTED, auto-stamped; no qualitative change today — active_qual_set remains 2026-10-15_draft).</div>
   <ul>
-    <li><strong>Today&rsquo;s refresh in one line:</strong> a routine daily tape sync, unconditional per the standing rule, run on a fresh git clone (cloud routine). BTC fell to <strong>$81,590.01</strong> (Oct 14, down 1.74% from $83,032.00); model P moved on one of five windows — 6-month 62&rarr;61, as its cycle analog's median eased — and the cycle-month clock advanced to 29.83. No new weekly/monthly/quarterly rollover this cycle, though all three forming-bar composites and agreement counts eased with the pullback.</li>
-    <li><strong>Qualitative score-set change today:</strong> a WebSearch-based research pass per pillar, primary sources preferred, against the active committed set (2026-10-14_draft), checking the delta since the Oct 14 daily check. CLARITY Act: the Senate remains in recess (pro forma sessions only) until it returns for business November 9; the CFTC's Oct 5 ANPRM comment period re-confirmed still open — nothing new found. Tokenization RWA: OKXICE's Oct 4 notice re-confirmed still carries no launch date; DTCC's stated October launch re-confirmed still unconfirmed. <strong>Fed &amp; Macro RE-RATED DOWN on four windows (33/26/36/44/58 &rarr; 31/23/34/43/58):</strong> the September CPI print (flagged by the Oct 14 cycle as its own next job) published Oct 14 — PRIMARY (BLS), corroborated via CNBC/Kiplinger/Advisor Perspectives/USInflationCalculator — hot on both legs (headline +3.7% y/y vs 3.6% consensus; core +2.6% y/y vs 2.5% consensus, energy-driven), extending the Oct 8 Waller hawkish shift; market-priced Oct 28/Dec 9 hike odds (Kalshi/Polymarket, labeled distinctly from institutional estimates) rose to ~34%/~75-85%. <strong>Iran War Risk RE-RATED DOWN on 6mo/12mo (13&rarr;12, 32&rarr;31):</strong> the Oct 11 Petro Dolphin drone attack off Sohar, Oman (already logged generically) now carries a worse-than-disclosed casualty picture — 2 of 11 Indian crew MISSING, not merely injured, SAR ongoing, corroborated across 7+ outlets — plus a dated Seatrade tally of 18+ Strait-of-Hormuz attacks since Oct 1; no flip-line clause fired on either pillar. config/scores.json updated: <strong>active_qual_set now points to 2026-10-15_draft</strong>, verification raised no unresolved inconsistency, and under the widened delegated daily authority this set was <strong>AUTO-STAMPED</strong> (stamped_by: "Alex (auto-stamped)").</li>
-    <li><strong>Price: $81,590.01 (Oct 14), down 1.74% from $83,032.00 (Oct 13).</strong> This pillar scores the tape, not the day's qualitative news.</li>
-    <li class="fix"><strong>Repair signal #1 remains CONFIRMED:</strong> price sits +22.1% above the 200-week average ($66,840).</li>
-    <li><strong>The weekly bar dated Oct 11 remains CLOSED.</strong> Its completed-bar composite still reads <strong>+55.4</strong> (agreement 6/7); a new bar (dated Oct 18) is now forming, reading <strong>+49.4</strong> as-is (agreement 6/7), down from +53.1.</li>
-    <li><strong>Monthly and quarterly bars remain in the bars opened by the Oct 1 rollover</strong> &mdash; no new rollover this cycle. October (monthly) reads <strong>+16.3</strong> as-is (agreement 2/7, Neutral, down from +19.2/agreement 3/7); Q4 (quarterly) reads <strong>+37.2</strong> as-is (agreement 5/7, Slight bullish, down from +38.7/agreement 6/7); the completed September and Q3 bars hold at <strong>+15.7</strong> and <strong>+31.1</strong>.</li>
-    <li class="fix"><strong>Model P moved on one of five windows: 55/56/61/68/69</strong> &mdash; down from 55/56/62/68/69 on the Oct 14 daily-sync read, with no call-band boundary crossed. The cycle-month clock sits at <strong>29.83</strong>; the 1-month analog median moved to &minus;8.6% (from &minus;11.6%, still 1-of-3); the 3-month analog median moved to +9.5% (from +10.8%, still 2-of-3); the 6-month analog median moved to +37.3% (from +39.7%), the 1-year analog median moved to +88.5% (from +78.9%) and the 3-year analog median moved to +1150.1% (from +1129.5%) &mdash; only the 6-month shift crossed into a new rounded P value this cycle. Honesty note: analogs rest on <strong>n=3 completed cycles</strong> and single windows flip when alignment shifts by days &mdash; the direction is the signal, the levels are soft.</li>
-    <li><strong>Power-law fair value: $142,912</strong> (up slightly from $142,823; price now &minus;43% vs. fair, the move driven mostly by the lower price). Fit-window sensitivity spans $120,317 (2013 start) to $147,186 (2015 start): quote it as a range, never a target.</li>
+    <li><strong>Today&rsquo;s refresh in one line:</strong> a routine daily tape sync, unconditional per the standing rule, run on a fresh git clone (cloud routine). BTC rose to <strong>$82,318.74</strong> (Oct 15, up 0.89% from $81,590.01); model P did <strong>not</strong> move on any of the five windows, and the cycle-month clock advanced to 29.86. No new weekly/monthly/quarterly rollover this cycle; all three forming-bar composites and agreement counts firmed with the bounce.</li>
+    <li><strong>Qualitative research today, no score-set change:</strong> a WebSearch-based research pass per pillar, primary sources preferred, against the active committed set (2026-10-15_draft), checking the delta since the Oct 15 daily check. CLARITY Act: the Senate remains in recess (pro forma sessions only) until it returns for business November 9; no new floor/committee action or CFTC procedural step found. Iran War Risk: searched specifically for a Petro Dolphin search-and-rescue update and for any new Strait-of-Hormuz incident dated Oct 15-16 — found none; the two-missing-crew status logged on Oct 15 remains the most recent dated fact available. Tokenization RWA: OKXICE's Oct 4 notice and DTCC's October target both re-confirmed unchanged, no launch-date disclosure or go-live confirmation found. Fed &amp; Macro: searched for any Fed communication or data print dated after the Oct 14 CPI release — found nothing (the week-ended-Oct-10 jobless claims print did not surface in this search pass; treated as not found rather than assumed). Nothing cleared the sufficiency rule on any pillar, so <strong>config/scores.json was NOT touched</strong> — active_qual_set remains 2026-10-15_draft, status COMMITTED, auto-stamped (stamped_by: "Alex (auto-stamped)"), unchanged from yesterday.</li>
+    <li><strong>Price: $82,318.74 (Oct 15), up 0.89% from $81,590.01 (Oct 14).</strong> This pillar scores the tape, not the day's qualitative news.</li>
+    <li class="fix"><strong>Repair signal #1 remains CONFIRMED:</strong> price sits +23.2% above the 200-week average ($66,844).</li>
+    <li><strong>The weekly bar dated Oct 11 remains CLOSED.</strong> Its completed-bar composite still reads <strong>+55.4</strong> (agreement 6/7); a new bar (dated Oct 18) is now forming, reading <strong>+51.0</strong> as-is (agreement 6/7), up from +49.4.</li>
+    <li><strong>Monthly and quarterly bars remain in the bars opened by the Oct 1 rollover</strong> &mdash; no new rollover this cycle. October (monthly) reads <strong>+17.6</strong> as-is (agreement 3/7, Neutral, up from +16.3/agreement 2/7); Q4 (quarterly) reads <strong>+37.8</strong> as-is (agreement 6/7, Slight bullish, up from +37.2/agreement 5/7); the completed September and Q3 bars hold at <strong>+15.7</strong> and <strong>+31.1</strong>.</li>
+    <li class="fix"><strong>Model P held exactly at 55/56/61/68/69</strong> &mdash; unchanged from the Oct 15 daily-sync read, no call-band boundary crossed. The cycle-month clock sits at <strong>29.86</strong>; the 1-month analog median moved to &minus;10.6% (from &minus;8.6%, still 1-of-3); the 3-month analog median moved to +9.7% (from +9.5%, still 2-of-3); the 6-month analog median moved to +36.2% (from +37.3%), the 1-year analog median moved to +90.4% (from +88.5%) and the 3-year analog median moved to +1116.4% (from +1150.1%) &mdash; none of these shifts crossed into a new rounded P value this cycle. Honesty note: analogs rest on <strong>n=3 completed cycles</strong> and single windows flip when alignment shifts by days &mdash; the direction is the signal, the levels are soft.</li>
+    <li><strong>Power-law fair value: $143,003</strong> (up slightly from $142,912; price now &minus;42% vs. fair, the move driven mostly by the higher price). Fit-window sensitivity spans $120,388 (2013 start) to $147,257 (2015 start): quote it as a range, never a target.</li>
     <li><strong>Froth unchanged at z = &minus;0.87</strong>, still dated 2026-05-23 &mdash; Coin Metrics community data lags ~6 weeks, so this stays a robustness tilt, never a score input.</li>
-    <li class="fix"><strong>Levels note: one level FLIPPED sides this cycle</strong> &mdash; $81,685 (2x touch) was support through Oct 14's close ($83,032.00) and is now resistance, with price closing $95 (+0.1%) below it. $108,330 dropped out of the printed support/resistance window on the overhead side; $57,735 (1x) entered it as a new support below $59,930. The falling trendlines shifted slightly (support $38,033, unchanged; resistance $71,765, unchanged) as the fit window advanced.</li>
-    <li><strong>Data refreshed:</strong> daily price data through October 14, 2026 via the GitHub Actions fetch workflow (run.py quant itself is not run in this sandbox; its fetch step is blocked by the network egress proxy); indicators/levels/scores/cycle/mapping read via <code>run.py numbers</code>.</li>
-    <li><strong>Context:</strong> this cycle&rsquo;s active qualitative score set is <strong>2026-10-15_draft</strong>, a LIGHT DAILY touch that re-rated Fed &amp; Macro and Iran War Risk (CLARITY Act and Tokenization RWA held flat). It is status COMMITTED, auto-stamped under the delegated daily authority. This quant pillar is computed fresh every run regardless of qualitative status.</li>
-    <li><strong>Master blend moved accordingly:</strong> THE FINAL NUMBER ticked from &minus;0.08/+0.47 (Oct 14) to <strong>&minus;0.14/+0.43</strong> (Oct 15) — primarily the Fed &amp; Macro and Iran War Risk pillars' re-rates, plus this pillar's own small 6mo move — both readings stay Neutral, no call-band flip at the master level.</li>
+    <li class="fix"><strong>Levels note: one level FLIPPED BACK this cycle</strong> &mdash; $81,685 (2x touch) had flipped to resistance on the Oct 14 close ($81,590.01, $95 below it) and is support again, with price closing $634 (+0.8% vs. the level) above it. $108,330 (3x) re-entered the printed resistance window on the overhead side; $57,735 (1x) dropped back out of the printed support window. The falling trendlines held unchanged (support $38,033, resistance $71,765) as the fit window advanced.</li>
+    <li><strong>Data refreshed:</strong> daily price data through October 15, 2026 via the GitHub Actions fetch workflow (run.py quant itself is not run in this sandbox; its fetch step is blocked by the network egress proxy); indicators/levels/scores/cycle/mapping read via <code>run.py numbers</code>.</li>
+    <li><strong>Context:</strong> this cycle&rsquo;s active qualitative score set is still <strong>2026-10-15_draft</strong>, a LIGHT DAILY touch (from yesterday) that re-rated Fed &amp; Macro and Iran War Risk (CLARITY Act and Tokenization RWA held flat). It is status COMMITTED, auto-stamped under the delegated daily authority. This quant pillar is computed fresh every run regardless of qualitative status.</li>
+    <li><strong>Master blend unchanged:</strong> THE FINAL NUMBER held EXACTLY at &minus;0.14/+0.43 (Oct 15 &rarr; Oct 16) — no pillar signal moved this cycle, qualitative or quantitative — both readings stay Neutral, no call-band flip at the master level. Because nothing in config/scores.json or the blend changed, the Master report, 00_START_HERE and the four qualitative pillar reports are not re-synced this cycle (their quoted final number is already current); this TA report alone resyncs every cycle per the standing rule.</li>
   </ul>
 </section>
 
@@ -347,7 +346,7 @@
     <li><span class="grp">Cycle &amp; value:</span> <a href="#">cycle_analysis.py</a> — halving-aligned tops/bottoms/momentum turns, projections from C1–C3 · <a href="#">downside.py</a> / <a href="#">downside_map.py</a> — power-law bands (R² 0.96) + historical troughs + 6-method bottom-zone synthesis · <a href="#">test_altcoin_froth.py</a> — froth quartiles vs forward drawdowns, block-bootstrap CI.</li>
     <li><span class="grp">The mapping (new):</span> <a href="#">pillar_mapping.py</a> — window scores from tape composites + cycle analogs + power-law value; P = 50 + 25×(S/100); Quality rubric per window; writes data/pillar_scores.json for the master blend.</li>
     <li><span class="grp">Run order:</span> fetch_btc_history → build_master_history → fetch_altcoin_data → indicators → levels → score → charts → cycle_analysis → downside → downside_map → pillar_mapping.</li>
-    <li><span class="grp">Honesty notes:</span> the weekly bar dated Oct 11 remains closed (completed-bar composite +55.4) with a new bar dated Oct 18 now forming (+49.4 as-is, down from +53.1); monthly and quarterly bars rolled over Oct 1, closing out September and Q3/Jul-Sep (completed-bar composites: monthly +15.7 / quarterly +31.1), with October and Q4 the bars currently forming (no new rollover this cycle) · the multi-signal crash model failed out-of-sample (AUC 0.44) and is excluded · the AUC figures are the pipeline's own attestation · froth data lags ~6 weeks · n=3 on all cycle claims, and analog windows can cross into the next cycle · the 2024 halving is dated Apr 19 (US ET; block 840,000 hit Apr 20 00:09 UTC — 0.03 cycle-month effect) · S/R levels are algorithmic swing-clusters with 1–2 touches each · the bottom-odds split (40/35/17/8) is a judgment synthesis, not a model output.</li>
+    <li><span class="grp">Honesty notes:</span> the weekly bar dated Oct 11 remains closed (completed-bar composite +55.4) with a new bar dated Oct 18 now forming (+51.0 as-is, up from +49.4); monthly and quarterly bars rolled over Oct 1, closing out September and Q3/Jul-Sep (completed-bar composites: monthly +15.7 / quarterly +31.1), with October and Q4 the bars currently forming (no new rollover this cycle) · the multi-signal crash model failed out-of-sample (AUC 0.44) and is excluded · the AUC figures are the pipeline's own attestation · froth data lags ~6 weeks · n=3 on all cycle claims, and analog windows can cross into the next cycle · the 2024 halving is dated Apr 19 (US ET; block 840,000 hit Apr 20 00:09 UTC — 0.03 cycle-month effect) · S/R levels are algorithmic swing-clusters with 1–2 touches each · the bottom-odds split (40/35/17/8) is a judgment synthesis, not a model output.</li>
   </ul>
 </section>
 
