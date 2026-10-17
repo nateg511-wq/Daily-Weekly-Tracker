@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-10-15_draft",
+  "active_qual_set": "2026-10-17_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -2253,6 +2253,40 @@
         }
       },
       "stamped_by": "Alex (auto-stamped)"
+    },
+    "2026-10-17_draft": {
+      "P": {
+        "CLARITY Act": {
+          "1": 10,
+          "3": 27,
+          "6": 46,
+          "12": 73,
+          "36": 92
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 12,
+          "12": 31,
+          "36": 66
+        },
+        "Tokenization": {
+          "1": 58,
+          "3": 65,
+          "6": 70,
+          "12": 77,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 31,
+          "3": 23,
+          "6": 34,
+          "12": 43,
+          "36": 58
+        }
+      },
+      "status": "draft",
+      "note": "FULL WEEKLY REFRESH, 2026-10-17 (last full weekly was Oct 10; today's earlier daily light touch already found no material change and did not create a new set -- this checkpoint runs the deeper, categorically-excluded-from-auto-stamp weekly review on top of that, via four independent parallel primary-source-first research passes, one per pillar, per CLAUDE.md Step 2/6/7). Quant DATA CHECK only (sandbox egress-block workaround; run.py quant correctly NOT invoked): GitHub Actions fetch already committed data/btc_usd_daily.csv through 2026-10-16, BTC $81,507.28 -- 1 day stale, within the documented tolerance -- a valid, fresh-enough quant read; run.py selfcheck passes with price data fresh as of the last bar. ALL FOUR QUALITATIVE PILLARS HELD FLAT this cycle -- nothing cleared the sufficiency bar on any of the 20 windows since the 2026-10-15_draft baseline (committed by Alex, auto-stamped).\n\nCLARITY ACT: HELD FLAT at 10/27/46/73/92. The Senate's own published 2026 calendar (senate.gov, via WebSearch) confirms a State Work Period Oct 5 - Nov 6, 2026, corroborating (not merely repeating) the baseline's 'recess through Monday Nov 9' read -- no floor or committee action on H.R. 3633 was possible or found this window. A Sidley Austin client alert (single-source, not independently corroborated) states the CFTC's Oct 5 ANPRM (RIN 3038-AF80) comment deadline as Dec 14, 2026 -- a procedural timing detail on an already-priced fact, not a substantive development, so it is reported but does not move any window. No new whip-count, co-sponsor, or administration-statement news found.\n\nIRAN WAR RISK: HELD FLAT at 1/1/12/31/66. Attack tempo in the Strait of Hormuz theater remains elevated and undiminished (an Oct 17 liveblog report of 4 more tankers hit since Oct 16 could not be independently corroborated this cycle -- reported, not scored). The Petro Dolphin's 2 missing Indian crew (named by the Forward Seamen's Union of India as Bir Bahadur Yadav and Amit Singh) remain officially unresolved -- one family member's personal belief that a crew member has died is explicitly NOT an official determination and is not scored. The Al Maqam strike claim remains unconfirmed by UKMTO (IRGC's own claim only). None of the pillar's four flip-line clauses fired: (a) no confirmed new US combat death -- the Pentagon's Oct 9 toll revision to 21 added two non-hostile deaths (a March Kuwait training death, a September suicide) that both predate this window and are not combat deaths; (b) no resumption of direct US strikes -- a CNN report (Oct 15, not independently confirmed by CNBC itself or any other outlet found) describing Pentagon MOAB strike-planning options is reported war-planning, not an actual strike, and Trump's standing pledge not to strike before the Nov 3 midterms was not found retracted; (c) no new state entering with confirmed attribution; (d) Brent >$100 status unchanged and still independently unverifiable -- fred.stlouisfed.org and eia.gov remain blocked in this sandbox, carried forward as an open item every cycle since Oct 10.\n\nTOKENIZATION: HELD FLAT at 58/65/70/77/86. New but immaterial finding: at least 9 issuers (up from Cerebras alone) have now objected to or opted out of OKXICE's Tokenized Securities Venue filing, per 2+ independent secondary outlets (CoinInsider; a Troutman Pepper Locke Oct 16 digital-assets digest) -- friction that does not change the venue's still-not-live status or its ~early-November earliest-plausible-launch read (30-day issuer-notice clock from the Oct 4 filing), so it does not move any window. DTCC's broader October 2026 Tokenization Service launch remains unconfirmed either way -- absence of confirmation is not evidence of either delay or launch, so it is not scored. No new SEC Innovation Exemption filer found. rwa.xyz remained unreachable this cycle (now a network-level block, not merely the data-quality/shifting-basis problem flagged in prior cycles).\n\nFED & MACRO: HELD FLAT at 31/23/34/43/58. No new Fed-official statements found since the Oct 14 CPI print already priced into the baseline (plausibly explained by the approaching FOMC blackout period ahead of the Oct 27-28 meeting). Secondary-aggregator reports of September PPI and retail-sales prints (dated Oct 15) were internally inconsistent across sources (a PPI y/y figure in one source was irreconcilable with another) and could not be checked against BLS.gov or Census.gov (both unreachable this cycle) -- correctly excluded from the re-rate under the sufficiency rule rather than used on uncorroborated, internally contradictory secondary sourcing. Market-priced Oct 28 hike-odds reports found this cycle (CME FedWatch/Kalshi/Polymarket, variously ~33-47% depending on source and intraday timing) are consistent with, not incremental beyond, the Oct 14 figures already logged in the baseline. No change to shutdown/funding status found.\n\nQUANT (computed, never hand-edited): unchanged from the Oct 16 sync already in data/pillar_scores.json -- P 55/56/61/68/69, BTC $81,507.28 (Oct 16 close, latest available via the GitHub Actions data relay as of this run). This cycle's qualitative touch does not re-run the quant model.\n\nRESEARCH ACCESS NOTE (applies to all four passes this cycle): WebFetch returned DNS resolution failures (getaddrinfo ENOTFOUND) for every domain attempted this run, government and non-government alike, including a neutral control fetch -- a tool-wide failure for this run, not a per-site block. Direct curl to a handful of specific hosts (congress.gov, federalregister.gov, bls.gov, census.gov, rwa.xyz) was separately refused by the sandbox's own egress proxy (403 connect_rejected). WebSearch worked normally throughout and was the sole research channel this cycle -- this matches the environment's already-documented pattern (WebFetch blocked for arbitrary domains; WebSearch reliable) rather than a new or worsening degradation, so it is not treated as the 'research capability materially degraded' auto-stamp exclusion. The sufficiency rule and single-source labeling discipline were applied strictly throughout in WebFetch's absence -- every candidate fact that rested on only one outlet or an unconfirmed claim (the Oct 17 liveblog tally, the Al Maqam claim, the CNN MOAB report, the Sidley CFTC deadline date, the inconsistent PPI secondary figures) was reported where relevant but explicitly excluded from moving any P value.\n\nVERIFICATION (Step 6/7): recomputed a sample of unchanged signals by hand from the formula against the held P values across all four pillars -- reconciles with run.py blend's printed master table (see commit). Cross-checked BTC price ($81,507.28) and the quant P-curve (55/56/61/68/69) as quoted identically across data/pillar_scores.json, run.py numbers, and this note. No inconsistency surfaced.\n\nSTAMP DECISION: per CLAUDE.md, a full weekly refresh is categorically excluded from auto-stamp regardless of research quality or how flat the result -- this set stays DRAFT for Alex's manual review. Note for Alex: this is a zero-move cycle -- all four pillars held exactly at the already-committed 2026-10-15_draft values -- so beyond confirming this checkpoint happened, there is no new re-rate decision to adjudicate."
     }
   }
 }
