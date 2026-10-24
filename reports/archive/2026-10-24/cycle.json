@@ -1,0 +1,135 @@
+{
+  "asof": "2026-10-23",
+  "price": 81500.31,
+  "cycle_month": 30.12,
+  "cycles": [
+    {
+      "halving": "2012-11-28",
+      "price_at_halving": 12.22,
+      "top_date": "2013-12-04",
+      "top": 1132.01,
+      "m_top": 12.2,
+      "bottom_date": "2015-01-14",
+      "bottom": 171.41,
+      "m_bottom": 25.5,
+      "drawdown": -0.849,
+      "turn_date": "2015-11-01",
+      "m_turn": 35.1
+    },
+    {
+      "halving": "2016-07-09",
+      "price_at_halving": 647.78,
+      "top_date": "2017-12-16",
+      "top": 19187.78,
+      "m_top": 17.2,
+      "bottom_date": "2018-12-15",
+      "bottom": 3179.54,
+      "m_bottom": 29.2,
+      "drawdown": -0.834,
+      "turn_date": "2019-05-23",
+      "m_turn": 34.4
+    },
+    {
+      "halving": "2020-05-11",
+      "price_at_halving": 8571.98,
+      "top_date": "2021-11-08",
+      "top": 67559.0,
+      "m_top": 17.9,
+      "bottom_date": "2022-11-21",
+      "bottom": 15766.0,
+      "m_bottom": 30.4,
+      "drawdown": -0.767,
+      "turn_date": "2023-06-13",
+      "m_turn": 37.1
+    },
+    {
+      "halving": "2024-04-19",
+      "price_at_halving": 63821.0,
+      "top_date": "2025-10-06",
+      "top": 124728.0,
+      "m_top": 17.6,
+      "bottom_date": "2026-06-30",
+      "bottom": 58526.17,
+      "m_bottom": 26.3,
+      "drawdown": -0.531,
+      "turn_date": null,
+      "m_turn": null
+    }
+  ],
+  "projections_from_C1_C3": {
+    "m_top": 15.8,
+    "m_bottom": 28.4,
+    "m_turn": 35.5
+  },
+  "analogs": {
+    "1": {
+      "score": 39.4,
+      "hit": "2/3",
+      "median_ret": 0.073,
+      "rets": [
+        0.141,
+        -0.008,
+        0.073
+      ]
+    },
+    "3": {
+      "score": 89.9,
+      "hit": "3/3",
+      "median_ret": 0.314,
+      "rets": [
+        0.022,
+        0.4,
+        0.314
+      ]
+    },
+    "6": {
+      "score": 94.2,
+      "hit": "3/3",
+      "median_ret": 0.638,
+      "rets": [
+        0.6,
+        2.146,
+        0.638
+      ]
+    },
+    "12": {
+      "score": 96.3,
+      "hit": "3/3",
+      "median_ret": 1.262,
+      "rets": [
+        1.399,
+        1.262,
+        1.144
+      ]
+    },
+    "36": {
+      "score": 99.7,
+      "hit": "3/3",
+      "median_ret": 10.815,
+      "rets": [
+        33.075,
+        10.815,
+        5.005
+      ]
+    }
+  },
+  "powerlaw": {
+    "fair": 143721,
+    "r2": 0.962,
+    "minus1sd": 71837,
+    "minus2sd": 35906,
+    "pct_vs_fair": -0.433,
+    "V": 51.3,
+    "fit_start_sensitivity": {
+      "2011": 133201,
+      "2012": 138069,
+      "2013": 120950,
+      "2015": 147815
+    }
+  },
+  "froth": {
+    "z": -0.87,
+    "asof": "2026-05-23",
+    "note": "robustness tilt only \u2014 Coin Metrics community data lags ~6 weeks"
+  }
+}
