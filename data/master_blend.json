@@ -1,6 +1,6 @@
 {
-  "asof": "2026-10-23",
-  "price": 81500.31,
+  "asof": "2026-10-24",
+  "price": 80035.37,
   "score_set": "2026-10-24_draft",
   "score_set_status": "draft",
   "model": "equal-weight",
@@ -14,9 +14,9 @@
         "Iran War Risk": -4.7,
         "Tokenization": 1.15,
         "Fed & Macro": -2.18,
-        "Bitcoin TA": 1.32
+        "Bitcoin TA": 1.44
       },
-      "master": -1.97,
+      "master": -1.95,
       "call": "Bear"
     },
     "3mo": {
@@ -36,9 +36,9 @@
         "Iran War Risk": -4.26,
         "Tokenization": 2.72,
         "Fed & Macro": -2.05,
-        "Bitcoin TA": 1.06
+        "Bitcoin TA": 0.97
       },
-      "master": -0.61,
+      "master": -0.63,
       "call": "Mild Bear"
     },
     "1yr": {
@@ -47,9 +47,9 @@
         "Iran War Risk": -1.98,
         "Tokenization": 3.37,
         "Fed & Macro": -0.84,
-        "Bitcoin TA": 1.73
+        "Bitcoin TA": 1.82
       },
-      "master": 1.12,
+      "master": 1.14,
       "call": "Mild Bull"
     },
     "3yr": {
@@ -66,7 +66,7 @@
   },
   "final_number": {
     "equal": {
-      "value": -0.07,
+      "value": -0.06,
       "call": "Neutral"
     },
     "horizon": {
@@ -78,7 +78,7 @@
     "CLARITY Act": -0.11,
     "Iran War Risk": 0.65,
     "Tokenization": -0.75,
-    "Fed & Macro": 0.31,
+    "Fed & Macro": 0.32,
     "Bitcoin TA": -0.43
   }
 }
