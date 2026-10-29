@@ -1,6 +1,6 @@
 {
-  "asof": "2026-10-28",
-  "price": 80362.8,
+  "asof": "2026-10-29",
+  "price": 79991.36,
   "score_set": "2026-10-29_draft",
   "score_set_status": "committed",
   "model": "equal-weight",
@@ -14,9 +14,9 @@
         "Iran War Risk": -4.7,
         "Tokenization": 1.15,
         "Fed & Macro": -2.18,
-        "Bitcoin TA": 0.6
+        "Bitcoin TA": 1.32
       },
-      "master": -2.11,
+      "master": -1.97,
       "call": "Bear"
     },
     "3mo": {
@@ -66,19 +66,19 @@
   },
   "final_number": {
     "equal": {
-      "value": -0.09,
+      "value": -0.06,
       "call": "Neutral"
     },
     "horizon": {
-      "value": 0.47,
+      "value": 0.48,
       "call": "Neutral"
     }
   },
   "leave_one_out_final_equal": {
-    "CLARITY Act": -0.14,
-    "Iran War Risk": 0.62,
-    "Tokenization": -0.79,
-    "Fed & Macro": 0.29,
+    "CLARITY Act": -0.1,
+    "Iran War Risk": 0.66,
+    "Tokenization": -0.75,
+    "Fed & Macro": 0.32,
     "Bitcoin TA": -0.41
   }
 }
