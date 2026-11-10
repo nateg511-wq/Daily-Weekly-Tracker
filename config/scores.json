@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-11-07_draft2",
+  "active_qual_set": "2026-11-10_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -2564,6 +2564,41 @@
       },
       "status": "draft",
       "note": "FULL WEEKLY refresh, 2026-11-07, vs the 2026-11-07_draft committed baseline (this morning's light daily touch). Four independent WebSearch research passes (one per qualitative pillar), each explicitly more thorough than a light daily touch, re-checked every trigger-table row and swept the past week for anything prior daily cycles might have missed, not just the delta since this morning.\n\nCLARITY ACT: HELD FLAT at 10/25/43/70/91. Dedicated extended search found nothing dated Nov 5-7 that clears the sufficiency bar. Alaska and Mississippi Senate races remain uncalled (margins reported inconsistently across aggregators - MS narrow Colom lead, AK narrow Peltola lead, both single-source-quality and non-primary), but neither changes the already-priced chamber-control read (Democratic control of both chambers was already baked into the baseline regardless of these two seats). Senate's Nov 9 lame-duck return remains confirmatory, not new. No SEC/CFTC/ Federal Register action found dated Nov 5-7. Warren's expected Banking-chair role in Jan 2027 is unchanged, still an expectation. Trigger table: nothing fired. Hold.\n\nIRAN WAR RISK: RE-RATED DOWN, modestly, 1/1/11/30/65 -> 1/1/9/29/65 (6mo -2, 1yr -1; 1mo/3mo already at the P=1 floor; 3yr held). NEW, CONFIRMED: a second US strike on Iranian air-defense targets near Qeshm Island, Friday Nov 7 - President Trump told reporters on the record that US forces carried out 'minor strikes' knocking out an Iranian anti-aircraft system ('we knocked it out in about 15 minutes'), corroborated independently by Al Jazeera (2 separate dated pieces), CNBC, Euronews, and National Herald India - clears this pillar's own established sufficiency bar (on-record principal statement plus multiple independent outlets), same standard used for the Aug 31 and Sept-cycle on-record Trump statements already in this report's lineage. CNBC separately notes Trump did not explicitly tie his remarks to the Qeshm location by name, a minor sourcing nuance, but the corroborated core fact - renewed US strikes on Iranian air-defense infrastructure, Nov 7 - stands on its own. This is DISTINCT from, and five days after, the already-priced Nov 2-3 Qeshm strike (confirmed by Trump Nov 3) - a second strike within five days confirms a sustained resumption pattern rather than a one-off retaliation, which is what the 6mo/1yr windows price. Iran's state media/IRGC claim of downing a US MQ-9 drone over Qeshm is SINGLE-SOURCE (Iranian state broadcaster IRIB only, no US confirmation found) and, per the sufficiency rule, is reported here but NOT used to move P. Separately, IRGC claims of new mines struck near Hormuz (Nov 6) are explicitly DISPUTED by CENTCOM (shipping lanes clear, 3,000+ vessel transits over 6 months under US naval escort) - net not escalatory, not used to move P. No breakthrough or breakdown in Qatari-mediated talks confirmed this week; Trump says 'a lot of progress' without detail. No confirmed new US combat death - that flip-line clause remains unfired. 3yr long-run de-escalation thesis unchanged, held at 65.\n\nTOKENIZATION: HELD FLAT at 59/66/71/78/86. OCC remains the only federal agency to have finalized a GENIUS Act rule (Fed's R-1899, FDIC's rule still proposals). OKXICE live-venue trigger has NOT fired; objector-count reporting since Nov 2 continues to come only from mutually-conflicting, low-quality aggregators (figures ranging 9-50 depending on source, one carrying an internally-impossible date) - fails sufficiency even taken at face value. No fresher rwa.xyz snapshot found (most recent dated figures remain Jul-Oct). No new DTCC/bank tokenization news dated Nov 5-7. Hold.\n\nFED & MACRO: HELD FLAT at 32/21/34/43/58. October CPI is confirmed not yet released - BLS's own schedule (via WebSearch; bls.gov itself blocked by the sandbox egress proxy) puts it at Tuesday Nov 10, 8:30am ET, unchanged from the baseline's own note. No new Fed-official remarks found with a verifiable Nov 6-7 date or text (searches surfaced only stale mid-2026 quotes). No reliable, freshly-dated CME FedWatch Dec 9 reading found post-jobs-report (and any such reading would be market-price data, never blended with institutional estimates, per house rules in any case). No other primary release found beyond the already-scored Nov 6 October jobs report. Re-rating further on top of this morning's jobs-report move, with no new qualifying evidence, would double-count the same fact and violate the 'move P only as far as evidence moved' rule - so this pass logs an explicit, independently re-verified HOLD rather than a second move. Hold.\n\nResearch access was NOT degraded this cycle - WebSearch functioned normally across all four passes; only WebFetch to a handful of arbitrary government/news domains (bls.gov, aljazeera.com) hit the documented sandbox egress block, worked around via WebSearch per the standing note. The Iran War Nov 7 strike fact was independently re-verified via a second, separate WebSearch pass (outside the original research fork) before being accepted, per this cycle's verification discipline.\n\nThis is a FULL WEEKLY refresh - categorically excluded from delegated auto-stamp authority regardless of move size (per CLAUDE.md's delegated auto-stamp policy, weekly remains excluded unchanged by the Sept 2 widening). LEFT AS DRAFT, flagged for Alex's manual review, not because of the size of the Iran move (it is small, -1/-2 points) but because weekly refreshes are Alex's own periodic review checkpoint by design."
+    },
+    "2026-11-10_draft": {
+      "P": {
+        "CLARITY Act": {
+          "1": 10,
+          "3": 25,
+          "6": 43,
+          "12": 70,
+          "36": 91
+        },
+        "Iran War Risk": {
+          "1": 1,
+          "3": 1,
+          "6": 9,
+          "12": 29,
+          "36": 65
+        },
+        "Tokenization": {
+          "1": 59,
+          "3": 66,
+          "6": 71,
+          "12": 78,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 30,
+          "3": 19,
+          "6": 33,
+          "12": 43,
+          "36": 58
+        }
+      },
+      "status": "committed",
+      "note": "LIGHT DAILY touch, 2026-11-10 (local second pass, after the 8:30am ET release the cloud pass ran ahead of), stacked on the 2026-11-07_draft2 weekly baseline (still DRAFT, awaiting Alex's review; its Iran 6mo/1yr move is carried unchanged, not re-litigated).\n\nFED & MACRO: RE-RATED DOWN 32/21/34/43/58 -> 30/19/33/43/58 (1mo -2, 3mo -2, 6mo -1; 1yr/3yr held). FIRED, PRIMARY: October 2026 CPI (bls.gov, released Tue Nov 10, 8:30am ET): headline +0.4% m/m, core +0.3% m/m (third straight 0.3% - Aug, Sept, Oct), energy +0.7% (after +5.2% in Sept), food +0.5%, shelter +0.3%; BLS published NO 12-month changes (Oct 2025 data never collected during the shutdown). Consensus was +0.3% headline / +0.2% core (LSEG via Fox Business; FXStreet - two independent outlets agree): both a tenth HOT. FIRED, PRIMARY: Fed Governor Waller, Bank of England Watchers Conference, London, Nov 10 (federalreserve.gov, verbatim): leaning toward +25bp in December, but 'if the October CPI inflation data out later today are similar to the past two monthly readings, with core CPI inflation around 0.3 percent or even higher ... a 50 basis point hike in the policy rate should be considered at the December meeting. Hiking only 25 basis points would put our credibility at risk.' Core printed exactly at his 0.3% threshold. A December 25bp hike was already largely priced (MARKET PRICE, not an institutional estimate: CME FedWatch ~80% pre-release per FXStreet; a 100% figure attributed to TheStreet via mlq.ai is single-source, reported not used), so the re-rate prices the higher hike PATH (50bp risk, more 2027 hikes), not the December hike itself - hence 1mo/3mo -2 and 6mo -1 rather than a larger move. 1yr/3yr held: nothing here changes the longer-run regime read. Mirrors the Oct 14 hot-September-CPI re-rate in size.\n\nCLARITY ACT, IRAN WAR RISK, TOKENIZATION: HELD FLAT. Second-pass searches (~9:30am ET) found nothing new dated Nov 10 beyond the cloud pass's 8am sweep. Research access NOT degraded (WebSearch and WebFetch to bls.gov/federalreserve.gov both worked from the local machine).\n\nLight daily touch, verification-gated: eligible for delegated auto-stamp per CLAUDE.md.",
+      "stamped_by": "Alex (auto-stamped)"
     }
   }
 }
