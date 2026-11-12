@@ -1,8 +1,8 @@
 {
   "quarterly": {
     "date": "2026-12-31",
-    "close": 72801.82,
-    "composite": 25.7,
+    "close": 71658.36,
+    "composite": 24.5,
     "composite_completed_bars": 31.1,
     "overall": "bullish",
     "overall_intensity": "Slight",
@@ -10,45 +10,45 @@
     "indicators": [
       {
         "indicator": "Moving Averages",
-        "score": 83.9,
+        "score": 83.5,
         "call": "bullish",
         "intensity": "Strong",
-        "why": "Price is above SMA20 ($59,730, +22%), SMA50 ($30,280, +140%)."
+        "why": "Price is above SMA20 ($59,672, +20%), SMA50 ($30,257, +137%)."
       },
       {
         "indicator": "RSI (14)",
-        "score": 16.5,
+        "score": 15.3,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "RSI 54.9 sits 5 pts above the 50 midline. Firm momentum, normal range."
+        "why": "RSI 54.6 sits 5 pts above the 50 midline. Firm momentum, normal range."
       },
       {
         "indicator": "MACD (12/26/9)",
-        "score": 18.6,
+        "score": 16.7,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "MACD line above zero (15,395) sets a bullish regime; histogram -1,076 shows negative momentum (sign, not direction). Regime and momentum diverge (inflection)."
+        "why": "MACD line above zero (15,304) sets a bullish regime; histogram -1,149 shows negative momentum (sign, not direction). Regime and momentum diverge (inflection)."
       },
       {
         "indicator": "Volume / OBV",
-        "score": -2.2,
+        "score": -3.1,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "Over 4 bars OBV has drifted -2,987 (~-2% of its range) and sits at 54% of range \u2014 a falling tape (distribution). No decisive net flow."
+        "why": "Over 4 bars OBV has drifted -4,192 (~-3% of its range) and sits at 53% of range \u2014 a falling tape (distribution). No decisive net flow."
       },
       {
         "indicator": "Bollinger Bands",
-        "score": 22.4,
+        "score": 20.5,
         "call": "bullish",
         "intensity": "Slight",
-        "why": "%B 0.61: price is in the upper half; band width 196% of price (expanded/high-volatility). Mid-band, indecisive."
+        "why": "%B 0.60: price is in the upper half; band width 196% of price (expanded/high-volatility). Mid-band, indecisive."
       },
       {
         "indicator": "Support/Resist",
-        "score": 3.5,
+        "score": 1.4,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "Price is 52% up its 20-bar range ($15,479-$126,272) \u2014 mid-range. Nearest resistance $73,794 (+1.4%, 1x); nearest support $69,000 (-5.2%, 1x)."
+        "why": "Price is 51% up its 20-bar range ($15,479-$126,272) \u2014 mid-range. Nearest resistance $73,794 (+3.0%, 1x); nearest support $69,000 (-3.7%, 1x)."
       },
       {
         "indicator": "Trendlines",
@@ -61,8 +61,8 @@
   },
   "monthly": {
     "date": "2026-11-30",
-    "close": 72801.82,
-    "composite": -0.9,
+    "close": 71658.36,
+    "composite": -3.0,
     "composite_completed_bars": 7.8,
     "overall": "neutral",
     "overall_intensity": "Neutral",
@@ -70,59 +70,59 @@
     "indicators": [
       {
         "indicator": "Moving Averages",
-        "score": -2.5,
+        "score": -5.5,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "Price is above SMA50 ($64,471, +13%); below SMA20 ($86,447, -16%)."
+        "why": "Price is above SMA50 ($64,448, +11%); below SMA20 ($86,390, -17%)."
       },
       {
         "indicator": "RSI (14)",
-        "score": -6.5,
+        "score": -8.2,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "RSI 48.1 sits 2 pts below the 50 midline. Weak momentum, normal range."
+        "why": "RSI 47.5 sits 2 pts below the 50 midline. Weak momentum, normal range."
       },
       {
         "indicator": "MACD (12/26/9)",
-        "score": -44.2,
+        "score": -46.2,
         "call": "bearish",
-        "intensity": "Slight",
-        "why": "MACD line above zero (176) sets a bullish regime; histogram -2,600 shows negative momentum (sign, not direction). Regime and momentum diverge (inflection)."
+        "intensity": "Moderate",
+        "why": "MACD line above zero (85) sets a bullish regime; histogram -2,673 shows negative momentum (sign, not direction). Regime and momentum diverge (inflection)."
       },
       {
         "indicator": "Volume / OBV",
-        "score": 62.9,
+        "score": 62.2,
         "call": "bullish",
         "intensity": "Moderate",
-        "why": "Over 6 bars OBV has drifted +85,734 (~+63% of its range) and sits at 54% of range \u2014 a rising tape (accumulation). Volume confirms the advance."
+        "why": "Over 6 bars OBV has drifted +84,777 (~+62% of its range) and sits at 53% of range \u2014 a rising tape (accumulation). Volume confirms the advance."
       },
       {
         "indicator": "Bollinger Bands",
-        "score": -38.8,
+        "score": -41.8,
         "call": "bearish",
         "intensity": "Slight",
-        "why": "%B 0.31: price is in the lower half; band width 81% of price (expanded/high-volatility). Mid-band, indecisive."
+        "why": "%B 0.29: price is in the lower half; band width 82% of price (expanded/high-volatility). Mid-band, indecisive."
       },
       {
         "indicator": "Support/Resist",
-        "score": -20.6,
+        "score": -23.2,
         "call": "bearish",
         "intensity": "Slight",
-        "why": "Price is 40% up its 36-bar range ($37,628-$126,272) \u2014 mid-range. Nearest resistance $74,114 (+1.8%, 2x); nearest support $58,832 (-19.2%, 2x)."
+        "why": "Price is 38% up its 36-bar range ($37,628-$126,272) \u2014 mid-range. Nearest resistance $74,114 (+3.4%, 2x); nearest support $58,832 (-17.9%, 2x)."
       },
       {
         "indicator": "Trendlines",
-        "score": 98.7,
+        "score": 97.9,
         "call": "bullish",
         "intensity": "Strong",
-        "why": "Price is holding above its rising support trendline ($62,355, +14.3% of price). Overhead resistance line at $110,185 (rising). Trend support intact. (Trendlines are least-squares fits \u2014 treat as lower-confidence.)"
+        "why": "Price is holding above its rising support trendline ($62,355, +13.0% of price). Overhead resistance line at $110,185 (rising). Trend support intact. (Trendlines are least-squares fits \u2014 treat as lower-confidence.)"
       }
     ]
   },
   "weekly": {
     "date": "2026-11-15",
-    "close": 72801.82,
-    "composite": -3.2,
+    "close": 71658.36,
+    "composite": -8.0,
     "composite_completed_bars": 12.3,
     "overall": "neutral",
     "overall_intensity": "Neutral",
@@ -130,52 +130,52 @@
     "indicators": [
       {
         "indicator": "Moving Averages",
-        "score": 18.2,
+        "score": 7.4,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "Price is above SMA200 ($68,014, +7%); below SMA20 ($74,237, -2%), SMA50 ($75,141, -3%). 50>200 (golden-cross structure)"
+        "why": "Price is above SMA200 ($68,009, +5%); below SMA20 ($74,179, -3%), SMA50 ($75,118, -5%). 50>200 (golden-cross structure)"
       },
       {
         "indicator": "RSI (14)",
-        "score": -14.6,
+        "score": -18.7,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "RSI 45.6 sits 4 pts below the 50 midline. Weak momentum, normal range."
+        "why": "RSI 44.4 sits 6 pts below the 50 midline. Weak momentum, but not yet oversold (<30)."
       },
       {
         "indicator": "MACD (12/26/9)",
-        "score": 20.8,
-        "call": "bullish",
-        "intensity": "Slight",
-        "why": "MACD line above zero (1,086) sets a bullish regime; histogram +88 shows positive momentum (sign, not direction). Regime and momentum aligned."
+        "score": 17.2,
+        "call": "neutral",
+        "intensity": "Neutral",
+        "why": "MACD line above zero (995) sets a bullish regime; histogram +15 shows positive momentum (sign, not direction). Regime and momentum aligned."
       },
       {
         "indicator": "Volume / OBV",
         "score": -40.5,
         "call": "bearish",
         "intensity": "Slight",
-        "why": "Over 13 bars OBV has drifted -23,800 (~-41% of its range) and sits at 0% of range \u2014 a falling tape (distribution). Volume confirms the decline."
+        "why": "Over 13 bars OBV has drifted -24,330 (~-40% of its range) and sits at 0% of range \u2014 a falling tape (distribution). Volume confirms the decline."
       },
       {
         "indicator": "Bollinger Bands",
-        "score": -8.9,
+        "score": -15.6,
         "call": "neutral",
         "intensity": "Neutral",
-        "why": "%B 0.46: price is in the lower half; band width 43% of price (expanded/high-volatility). Mid-band, indecisive."
+        "why": "%B 0.42: price is in the lower half; band width 44% of price (expanded/high-volatility). Mid-band, indecisive."
       },
       {
         "indicator": "Support/Resist",
-        "score": -56.0,
+        "score": -59.4,
         "call": "bearish",
         "intensity": "Moderate",
-        "why": "Price is 22% up its 104-bar range ($57,735-$126,272) \u2014 deep in the lower portion. Nearest resistance $74,434 (+2.2%, 1x); nearest support $59,930 (-17.7%, 1x)."
+        "why": "Price is 20% up its 104-bar range ($57,735-$126,272) \u2014 deep in the lower portion. Nearest resistance $74,434 (+3.9%, 1x); nearest support $59,930 (-16.4%, 1x)."
       },
       {
         "indicator": "Trendlines",
         "score": 60.0,
         "call": "bullish",
         "intensity": "Moderate",
-        "why": "Price is holding above its falling support trendline ($34,237, +53.0% of price). Overhead resistance line at $72,816 (falling). Trend support intact. (Trendlines are least-squares fits \u2014 treat as lower-confidence.)"
+        "why": "Price is holding above its falling support trendline ($34,237, +52.2% of price). Overhead resistance line at $72,816 (falling). Trend support intact. (Trendlines are least-squares fits \u2014 treat as lower-confidence.)"
       }
     ]
   }

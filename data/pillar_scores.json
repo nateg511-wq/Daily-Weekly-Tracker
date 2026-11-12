@@ -1,24 +1,24 @@
 {
   "asof": "2026-11-12",
-  "price": 72801.82,
+  "price": 71658.36,
   "cycle_month": 30.78,
   "tape": {
-    "weekly": -3.2,
-    "monthly": -0.9,
-    "quarterly": 25.7
+    "weekly": -8.0,
+    "monthly": -3.0,
+    "quarterly": 24.5
   },
   "powerlaw": {
-    "fair": 145444,
+    "fair": 145443,
     "r2": 0.962,
-    "minus1sd": 72713,
-    "minus2sd": 36352,
-    "pct_vs_fair": -0.499,
-    "V": 59.9,
+    "minus1sd": 72712,
+    "minus2sd": 36351,
+    "pct_vs_fair": -0.507,
+    "V": 60.9,
     "fit_start_sensitivity": {
-      "2011": 134785,
-      "2012": 139600,
-      "2013": 122267,
-      "2015": 149071
+      "2011": 134784,
+      "2012": 139599,
+      "2013": 122266,
+      "2015": 149069
     }
   },
   "froth": {
@@ -31,11 +31,11 @@
   "windows": {
     "1mo": {
       "window_months": 1,
-      "S": 11.6,
-      "P": 53,
+      "S": 8.3,
+      "P": 52,
       "quality": 0.75,
       "impact": 8,
-      "signal": 0.36,
+      "signal": 0.24,
       "analog": {
         "score": 46.3,
         "hit": "2/3",
@@ -50,11 +50,11 @@
     },
     "3mo": {
       "window_months": 3,
-      "S": 22.0,
-      "P": 56,
+      "S": 20.8,
+      "P": 55,
       "quality": 0.7,
       "impact": 8,
-      "signal": 0.6719999999999999,
+      "signal": 0.5599999999999999,
       "analog": {
         "score": 56.4,
         "hit": "2/3",
@@ -69,7 +69,7 @@
     },
     "6mo": {
       "window_months": 6,
-      "S": 37.6,
+      "S": 36.4,
       "P": 59,
       "quality": 0.55,
       "impact": 8,
@@ -88,7 +88,7 @@
     },
     "1yr": {
       "window_months": 12,
-      "S": 78.7,
+      "S": 79.2,
       "P": 70,
       "quality": 0.6,
       "impact": 8,
@@ -107,7 +107,7 @@
     },
     "3yr": {
       "window_months": 36,
-      "S": 79.8,
+      "S": 80.2,
       "P": 70,
       "quality": 0.5,
       "impact": 8,
