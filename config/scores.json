@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-11-10_draft",
+  "active_qual_set": "2026-11-13_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -2598,6 +2598,41 @@
       },
       "status": "committed",
       "note": "LIGHT DAILY touch, 2026-11-10 (local second pass, after the 8:30am ET release the cloud pass ran ahead of), stacked on the 2026-11-07_draft2 weekly baseline (still DRAFT, awaiting Alex's review; its Iran 6mo/1yr move is carried unchanged, not re-litigated).\n\nFED & MACRO: RE-RATED DOWN 32/21/34/43/58 -> 30/19/33/43/58 (1mo -2, 3mo -2, 6mo -1; 1yr/3yr held). FIRED, PRIMARY: October 2026 CPI (bls.gov, released Tue Nov 10, 8:30am ET): headline +0.4% m/m, core +0.3% m/m (third straight 0.3% - Aug, Sept, Oct), energy +0.7% (after +5.2% in Sept), food +0.5%, shelter +0.3%; BLS published NO 12-month changes (Oct 2025 data never collected during the shutdown). Consensus was +0.3% headline / +0.2% core (LSEG via Fox Business; FXStreet - two independent outlets agree): both a tenth HOT. FIRED, PRIMARY: Fed Governor Waller, Bank of England Watchers Conference, London, Nov 10 (federalreserve.gov, verbatim): leaning toward +25bp in December, but 'if the October CPI inflation data out later today are similar to the past two monthly readings, with core CPI inflation around 0.3 percent or even higher ... a 50 basis point hike in the policy rate should be considered at the December meeting. Hiking only 25 basis points would put our credibility at risk.' Core printed exactly at his 0.3% threshold. A December 25bp hike was already largely priced (MARKET PRICE, not an institutional estimate: CME FedWatch ~80% pre-release per FXStreet; a 100% figure attributed to TheStreet via mlq.ai is single-source, reported not used), so the re-rate prices the higher hike PATH (50bp risk, more 2027 hikes), not the December hike itself - hence 1mo/3mo -2 and 6mo -1 rather than a larger move. 1yr/3yr held: nothing here changes the longer-run regime read. Mirrors the Oct 14 hot-September-CPI re-rate in size.\n\nCLARITY ACT, IRAN WAR RISK, TOKENIZATION: HELD FLAT. Second-pass searches (~9:30am ET) found nothing new dated Nov 10 beyond the cloud pass's 8am sweep. Research access NOT degraded (WebSearch and WebFetch to bls.gov/federalreserve.gov both worked from the local machine).\n\nLight daily touch, verification-gated: eligible for delegated auto-stamp per CLAUDE.md.",
+      "stamped_by": "Alex (auto-stamped)"
+    },
+    "2026-11-13_draft": {
+      "P": {
+        "CLARITY Act": {
+          "1": 10,
+          "3": 25,
+          "6": 43,
+          "12": 70,
+          "36": 91
+        },
+        "Iran War Risk": {
+          "1": 2,
+          "3": 2,
+          "6": 10,
+          "12": 29,
+          "36": 65
+        },
+        "Tokenization": {
+          "1": 59,
+          "3": 66,
+          "6": 71,
+          "12": 78,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 30,
+          "3": 19,
+          "6": 33,
+          "12": 43,
+          "36": 58
+        }
+      },
+      "status": "committed",
+      "note": "LIGHT DAILY touch, 2026-11-13 (local Windows pass, ~7:45am ET, ahead of the cloud routine), stacked on the committed 2026-11-10_draft (itself stacked on the 2026-11-07_draft2 weekly baseline, still DRAFT awaiting Alex's review; carried unchanged, not re-litigated).\n\nIRAN WAR RISK: RE-RATED UP, modestly, 1/1/9/29/65 -> 2/2/10/29/65 (1mo +1, 3mo +1, 6mo +1; 1yr/3yr held). FIRED, PRIMARY: flip-line clause (d) 'sustained Brent above $100' has UN-FIRED. FRED DCOILBRENTEU (EIA Europe Brent spot FOB, read locally Nov 13) now runs through Nov 11 and shows six consecutive sub-$100 closes: Nov 4 $91.84, Nov 5 $97.96, Nov 6 $97.83, Nov 9 $91.03, Nov 10 $90.16, Nov 11 $92.14 (last >$100 print: Nov 3 $107.03). Previous cycles could only see this in futures (MARKET PRICE) because FRED stopped at Nov 3; today it is primary. Independent corroboration: Reuters via NST (Nov 10) - Brent futures settled $92.57 on Nov 9, down $5.75, 'lowest since late August' (MARKET PRICE, futures basis). This pillar's own flip line names 'Brent spot closing back below $100' as a P-lifting event; the Sept 11 cycle treated three straight >$100 sessions as firing, so six straight sub-$100 closes is the symmetric un-fire. Sized at +1 on the three nearer windows only: the war itself has not de-escalated - clause (b) US strikes on Iran proper fired Nov 2 and Nov 7 and stays live; Iran says Hormuz stays shut until its seven conditions are met (Rezaei/Al Jazeera Nov 11); Ghalibaf (Nov 12, Al Jazeera) says Tehran is still open to a ceasefire-and-reopening deal and awaits a US reply; analysts call it 'no war, no peace' (Al Jazeera Nov 12); IRGC claims of tankers hitting mines (~Nov 11) are single-source, reported not used. 1yr/3yr held: energy-price relief does not change the longer-run settlement read.\n\nCLARITY ACT, TOKENIZATION, FED & MACRO: HELD FLAT. CLARITY: no lame-duck Senate floor/committee/cloture action or new text found. Tokenization: federalreserve.gov and fdic.gov press pages checked directly - no new GENIUS Act final rule (OCC Oct 21 remains the only one). Fed: federalreserve.gov lists only Barr (Nov 12, 'American Inequality and the Future of AI', non-policy) after the Nov 10 Waller/Bowman speeches; October PPI (bls.gov, PRIMARY, released Nov 13 8:30am ET, read ~8:33am): final demand +0.3% m/m, +6.5% y/y unadjusted; less foods, energy & trade services +0.5% m/m (+4.9% y/y); goods +0.5% (foods +1.3%, energy -0.1%), services +0.2%. Versus a Dow Jones consensus of +0.4% / +6.6% (stocktitan preview Nov 11, SINGLE-SOURCE) the headline is a tenth soft and the core firm - mixed, consensus single-source, so no re-rate; a December hike is already priced. Research access NOT degraded (WebSearch; WebFetch to FRED, federalreserve.gov, fdic.gov, bls.gov all worked locally).\n\nLight daily touch, verification-gated: eligible for delegated auto-stamp per CLAUDE.md.",
       "stamped_by": "Alex (auto-stamped)"
     }
   }
