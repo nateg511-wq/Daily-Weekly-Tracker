@@ -1,6 +1,6 @@
 {
   "_comment": "THE data file an operator (human or AI) edits. Windows are months: 1/3/6/12/36. P = odds (0-100) the pillar is good for crypto by then; 50 = neutral. Quality 0-1. EQUAL-WEIGHT MODEL: every pillar counts the same (1/N of the master) and shares one uniform Impact (config/settings.json 'impact'), so pillars differ ONLY by P and Quality. To add a pillar: give it a name + a quality per window here, plus a P per window in each score_set. No weight, no per-pillar impact. The quant Bitcoin-TA pillar is NEVER edited here - it is computed by the pipeline into data/pillar_scores.json and joins the equal-weight mean automatically.",
-  "active_qual_set": "2026-11-18_draft",
+  "active_qual_set": "2026-11-21_draft",
   "pillars": {
     "CLARITY Act": {
       "quality": {
@@ -2738,6 +2738,40 @@
       "status": "committed",
       "note": "LIGHT DAILY touch, 2026-11-18 (local Windows pass, ~7:40am ET, ahead of the cloud routine), stacked on the committed 2026-11-15_draft (the Nov 16 and Nov 17 cycles were quant-only and did not create sets).\n\nIRAN WAR RISK: RE-RATED DOWN, modestly, 2/2/8/29/65 -> 2/2/7/28/65 (6mo -1, 1yr -1; 1mo/3mo held at 2, 3yr held). NEW since the Nov 17 cycles (both ran before it): a THIRD US strike on Iranian territory in ~two weeks -- US fighter jets hit an IRGC missile-launch site on Qeshm Island on Tue Nov 17, described as 'self-defense' after the IRGC's Nov 13/15/17 drone attacks on US radar sites in Bahrain (unnamed US military official via AP, carried by NewsNation/Yahoo/IBTimes; Gulf News live blog Nov 18; Iranian provincial official Ahmad Nafisi on record that no residential/commercial/vital infrastructure was hit). Iran retaliated early Wed Nov 18: Kuwait's army says its air defences intercepted hostile drones (Iran's army claims it targeted Patriot systems at Ali Al-Salem Air Base -- Iranian claim, not used) and Bahrain's Defence Force says it intercepted several Iranian strikes; no casualties reported. Reportedly Kuwait's first since September (IBTimes; an independent check could not confirm that timeline). Separately, ADNOC Logistics & Services (via UAE state agency WAM) reports one of its vessels was attacked in the Strait of Hormuz on the evening of Nov 17: 1 crew missing, 11 injured -- attacker not attributed in the report, so logged, not used to fire clause (c). Flip line: (a) no new US combat death found (CENTCOM: no US injuries); (b) US strikes on Iran proper -- fired Nov 2 and Nov 7, FIRES AGAIN Nov 17, days after Trump's Nov 12 'we don't need a deal with Iran' post (Truth Social; Breitbart, Fox) and his description of new strikes as unlikely but not ruled out; (c) Kuwait is a repeat state, not a new one (same treatment as Jordan on Aug 30-31), so it does not fire independently; (d) FRED DCOILBRENTEU (PRIMARY, read locally Nov 18) still ends Nov 11 at $92.14 -- six straight sub-$100 closes, clause (d) stays UN-FIRED, which is why 1mo/3mo hold at 2. Sized like the Nov 7 and Nov 15 precedents: a renewed tit-for-tat strike cycle that widens retaliation back to Kuwait is a sustained-escalation read for 6mo/1yr; mediation 'stagnated' despite intensified Qatari efforts (AP, Nov 17). Trump's Nov 12 'US does not need a deal' (Truth Social, multi-outlet) was already in the Nov 13-15 sets.\n\nCLARITY ACT, TOKENIZATION, FED & MACRO: HELD FLAT. CLARITY: no lame-duck Senate floor/committee/cloture action found. Tokenization: Governor Waller, 'Considerations at the Intersection of Payments and Tokenized Markets' (federalreserve.gov, PRIMARY, Nov 17, The Clearing House conference) -- describes stablecoins already settling card-network obligations behind the scenes, but announces no new rule, program or account-access change; no new GENIUS Act final rule beyond the OCC's Oct 21. Fed: the Waller speech carried no rate/inflation/December signal; federalreserve.gov speeches since Nov 13: Jefferson (Nov 13), Warsh and Barr (Nov 16), Waller (Nov 17) -- none move P. The October FOMC minutes are due 2:00pm ET today, after this pass -- unscoreable until tomorrow. Independent adversarial check (subagent, own sources: The National, Iran International, Fox, Asharq Al-Awsat, Business Recorder, WAM via The National/Oilprice) CONFIRMED the Qeshm strike, the Kuwait/Bahrain interceptions, the ADNOC casualties and no US casualties. Research access NOT degraded (WebSearch and WebFetch to FRED, federalreserve.gov, PBS/AP, NBC, Gulf News all worked from the local machine).\n\nLight daily touch, verification-gated: eligible for delegated auto-stamp per CLAUDE.md.",
       "stamped_by": "Alex (auto-stamped)"
+    },
+    "2026-11-21_draft": {
+      "P": {
+        "CLARITY Act": {
+          "1": 10,
+          "3": 25,
+          "6": 43,
+          "12": 70,
+          "36": 91
+        },
+        "Iran War Risk": {
+          "1": 2,
+          "3": 2,
+          "6": 7,
+          "12": 28,
+          "36": 65
+        },
+        "Tokenization": {
+          "1": 59,
+          "3": 66,
+          "6": 71,
+          "12": 78,
+          "36": 86
+        },
+        "Fed & Macro": {
+          "1": 30,
+          "3": 19,
+          "6": 33,
+          "12": 43,
+          "36": 58
+        }
+      },
+      "status": "draft",
+      "note": "FULL WEEKLY refresh, November 21, 2026 (cloud routine) -- checked against the last COMMITTED baseline, 2026-11-18_draft (CLARITY 10/25/43/70/91, Iran 2/2/7/28/65, Tokenization 59/66/71/78/86, Fed 30/19/33/43/58). Four independent primary-source-first research passes (one per pillar) re-swept the full trigger table for each pillar, not just the Nov 19-20 delta already logged by the daily touches. CLARITY ACT: HELD at 10/25/43/70/91 -- no Senate floor, committee, or cloture action on H.R. 3633 found dated Nov 18-21; bill remains stalled after the Sept 15 49-50 cloture failure, Tillis's motion to reconsider still the only live procedural path; CFTC's Oct 5 ANPRM (RIN 3038-AF80) remains at ANPRM stage, no proposed rule text; no new SEC Federal Register action found. IRAN WAR RISK: HELD at 2/2/7/28/65 -- re-verified all four flip-line clauses from scratch: (a) no new US combat death; (b) no further direct US strike on Iran proper since the Nov 17 Qeshm Island strike already priced into this set; (c) no new state entering (Kuwait/Bahrain are repeat, already-priced states); (d) Brent crude confirmed sub-$100 and falling (~$92, Nov 18, multi-outlet, consistent with the primary FRED read of $92.94 on Nov 17) -- stays UN-FIRED. CENTCOM's own release confirms the Nov 17-18 Kuwait/Bahrain intercepts and denies Iran's claim of hitting the Bahrain radar site -- already priced, nothing newer found. TOKENIZATION RWA: HELD at 59/66/71/78/86 -- no new GENIUS Act final rule beyond the OCC's Oct 21 rule (Fed/FDIC remain at proposal stage); OKX-ICE tokenized-equities venue still targeting its Nov 23 launch, not yet live; no new DTCC announcement found. FED & MACRO: HELD at 30/19/33/43/58 -- NY Fed's Williams (Nov 17, Axios BFD conference, corroborated by Newsquawk) explicitly said persistent inflation \"does not justify an outsized rate increase\" and he sees \"one more hike this year,\" a partial, multi-sourced nuance against the 50bp-hike tail Waller raised Nov 10 -- but it confirms, rather than changes, the already-priced December 25bp expectation, so it does not move P either direction. Vice Chair Jefferson's Nov 19 Brasilia speech on AI-driven inflation pressure (federalreserve.gov, PRIMARY) corroborates, not adds to, the already-priced AI-inflation theme first scored via Barr's Sept 29 remarks. October housing starts (Census, Nov 18) and preliminary November UMich consumer sentiment (51.0, up from 48.0) are single, volatile data points that this pillar's standing practice excludes from moving P alone. No CPI/PPI/jobs/FOMC release fell in this window (next CPI Dec 10, next FOMC Dec 8-9). Nothing anywhere cleared the sufficiency rule on any window of any pillar -- P HELD FLAT across the board at 10/25/43/70/91 / 2/2/7/28/65 / 59/66/71/78/86 / 30/19/33/43/58. Research access NOT degraded on any pillar (WebSearch fully functional throughout; WebFetch to arbitrary domains, including centcom.mil and fred.stlouisfed.org, remained the documented sandbox EGRESS_BLOCKED limitation, worked around via WebSearch per the runbook note -- not treated as degradation). Per CLAUDE.md, a full weekly refresh is categorically excluded from the delegated daily auto-stamp authority regardless of outcome, however flat the result -- this set stays DRAFT, AWAITING ALEX'S MANUAL REVIEW. Quant pillar read directly from the GitHub Actions data relay (not re-fetched; this sandbox's egress proxy blocks bitstamp.net), last close $58,139.99 (Nov 20, finalized)."
     }
   }
 }
